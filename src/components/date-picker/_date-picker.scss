@@ -9,19 +9,19 @@
     position: relative;
   }
 
-  .bx--date-picker[data-date-picker="no-calendar"] {
+  .bx--date-picker[data-date-picker-type="no-calendar"] {
     .bx--date-picker__input {
       width: 8.125rem;
     }
   }
 
-  .bx--date-picker[data-date-picker="no-calendar"][data-date-picker-mm-yy] {
+  .bx--date-picker[data-date-picker-type="no-calendar"][data-date-picker-mm-yy] {
     .bx--date-picker__input {
       width: 6.125rem;
     }
   }
 
-  .bx--date-picker[data-date-picker="basic"] {
+  .bx--date-picker[data-date-picker-type="basic"] {
     .bx--date-picker__input {
       width: 9.75rem;
     }

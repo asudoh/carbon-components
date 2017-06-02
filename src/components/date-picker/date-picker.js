@@ -16,7 +16,7 @@ class DatePicker extends mixin(createComponent, initComponentBySearch) {
     if (this.element.dataset.datePicker === 'no-calendar') {
       this._addInputLogic(this.element.querySelector(this.options.selectorDatePickerInput));
     } else {
-      this.element.calendar = this._initDatePicker(this.element.dataset.datePicker);
+      this.calendar = this._initDatePicker(this.element.getAttribute(this.options.attribType));
     }
   }
 
@@ -24,10 +24,9 @@ class DatePicker extends mixin(createComponent, initComponentBySearch) {
     const date = (type === 'single')
     ? this.element.querySelector(this.options.selectorDatePickerInput)
     : this.element.querySelector(this.options.selectorDatePickerInputFrom);
-    const calendar = new Flatpickr(date, {
+    const calendar = this.calendar || new Flatpickr(date, Object.assign({}, this.options, {
       allowInput: true,
-      dateFormat: 'm/d/Y',
-      mode: this.element.dataset.datePicker,
+      mode: type,
       onClose: (selectedDates) => {
         this._updateInputFields(selectedDates, type);
       },
@@ -45,7 +44,7 @@ class DatePicker extends mixin(createComponent, initComponentBySearch) {
       },
       nextArrow: this._rightArrowHTML(),
       prevArrow: this._leftArrowHTML(),
-    });
+    }));
     if (type === 'range') {
       this.element.querySelector(this.options.selectorDatePickerInputTo).addEventListener('click', () => {
         this.element.querySelector(this.options.selectorDatePickerInputTo).focus();
@@ -60,22 +59,20 @@ class DatePicker extends mixin(createComponent, initComponentBySearch) {
     return calendar;
   }
 
-  getCalendar = () => this.element.calendar;
-
   setMinDate = (date) => {
-    this.element.calendar.set('minDate', date);
+    this.calendar.set('minDate', date);
   }
 
   setMaxDate = (date) => {
-    this.element.calendar.set('maxDate', date);
+    this.calendar.set('maxDate', date);
   }
 
   setDisabledDates = (dates) => {
-    this.element.calendar.set('disable', dates);
+    this.calendar.set('disable', dates);
   }
 
   setDefaultDates = (dates) => {
-    this.element.calendar.set('defaultDate', dates);
+    this.calendar.set('defaultDate', dates);
   }
 
   _rightArrowHTML() {
@@ -169,8 +166,15 @@ class DatePicker extends mixin(createComponent, initComponentBySearch) {
   }
 
   _formatDate = (date) => {
-    const formattedDate = new Intl.DateTimeFormat().format(date).split('/');
-    return `${formattedDate[0]} / ${formattedDate[1]} / ${formattedDate[2]}`;
+    return this.calendar.format(date);
+  }
+
+  release() {
+    if (this.calendar) {
+      this.calendar.destroy();
+      this.calendar = null;
+    }
+    return super.release();
   }
 
   /**
@@ -192,6 +196,8 @@ class DatePicker extends mixin(createComponent, initComponentBySearch) {
     classDays: 'bx--date-picker__days',
     classWeekday: 'bx--date-picker__weekday',
     classDay: 'bx--date-picker__day',
+    attribType: 'data-date-picker-type',
+    dateFormat: 'm/d/Y',
   };
 
   /**
