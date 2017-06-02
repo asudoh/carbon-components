@@ -16,7 +16,7 @@ class DatePicker extends mixin(createComponent, initComponentBySearch) {
     if (this.element.dataset.datePicker === 'no-calendar') {
       this._addInputLogic(this.element.querySelector(this.options.selectorDatePickerInput));
     } else {
-      this.element.calendar = this._initDatePicker(this.element.dataset.datePicker);
+      this.calendar = this._initDatePicker(this.element.dataset.datePicker);
     }
   }
 
@@ -24,7 +24,7 @@ class DatePicker extends mixin(createComponent, initComponentBySearch) {
     const date = (type === 'single')
     ? this.element.querySelector(this.options.selectorDatePickerInput)
     : this.element.querySelector(this.options.selectorDatePickerInputFrom);
-    const calendar = new Flatpickr(date, {
+    const calendar = this.calendar || new Flatpickr(date, {
       allowInput: true,
       dateFormat: 'm/d/Y',
       mode: this.element.dataset.datePicker,
@@ -60,22 +60,20 @@ class DatePicker extends mixin(createComponent, initComponentBySearch) {
     return calendar;
   }
 
-  getCalendar = () => this.element.calendar;
-
   setMinDate = (date) => {
-    this.element.calendar.set('minDate', date);
+    this.calendar.set('minDate', date);
   }
 
   setMaxDate = (date) => {
-    this.element.calendar.set('maxDate', date);
+    this.calendar.set('maxDate', date);
   }
 
   setDisabledDates = (dates) => {
-    this.element.calendar.set('disable', dates);
+    this.calendar.set('disable', dates);
   }
 
   setDefaultDates = (dates) => {
-    this.element.calendar.set('defaultDate', dates);
+    this.calendar.set('defaultDate', dates);
   }
 
   _rightArrowHTML() {
@@ -171,6 +169,17 @@ class DatePicker extends mixin(createComponent, initComponentBySearch) {
   _formatDate = (date) => {
     const formattedDate = new Intl.DateTimeFormat().format(date).split('/');
     return `${formattedDate[0]} / ${formattedDate[1]} / ${formattedDate[2]}`;
+  }
+
+  release() {
+    if (this.calendar) {
+      try {
+        // `Flatpickr#destroy()` attemps to delete non-configurable properties, which throws
+        this.calendar.destroy();
+      } catch (err) {} // eslint-disable-line no-empty
+      this.calendar = null;
+    }
+    return super.release();
   }
 
   /**
