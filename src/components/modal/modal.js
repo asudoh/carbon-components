@@ -4,6 +4,7 @@ import initComponentByLauncher from '../../globals/js/mixins/init-component-by-l
 import eventedShowHideState from '../../globals/js/mixins/evented-show-hide-state';
 import eventMatches from '../../globals/js/misc/event-matches';
 import on from '../../globals/js/misc/on';
+import LauncherButton from '../launcher-button/launcher-button';
 
 class Modal extends mixin(createComponent, initComponentByLauncher, eventedShowHideState) {
   /**
@@ -147,7 +148,6 @@ class Modal extends mixin(createComponent, initComponentByLauncher, eventedShowH
    * @member Modal.options
    * @type {Object}
    * @property {string} selectorInit The CSS class to find modal dialogs.
-   * @property {string} attribInitTarget The attribute name in the launcher buttons to find target modal dialogs.
    * @property {string} [classVisible] The CSS class for the visible state.
    * @property {string} [classNoScroll] The CSS class for hiding scroll bar in body element while modal is shown.
    * @property {string} [eventBeforeShown]
@@ -168,13 +168,22 @@ class Modal extends mixin(createComponent, initComponentByLauncher, eventedShowH
     selectorModalClose: '[data-modal-close]',
     selectorPrimaryFocus: '[data-modal-primary-focus]',
     classVisible: 'is-visible',
-    attribInitTarget: 'data-modal-target',
-    initEventNames: ['click'],
     eventBeforeShown: 'modal-beingshown',
     eventAfterShown: 'modal-shown',
     eventBeforeHidden: 'modal-beinghidden',
     eventAfterHidden: 'modal-hidden',
   };
 }
+
+export class ModalLauncherButton extends LauncherButton {
+  static options = Object.assign(Object.create(LauncherButton.options), {
+    selectorInit: '[data-modal-target]',
+    attribInitTarget: 'data-modal-target',
+    ComponentToLaunch: Modal,
+  });
+}
+
+// When `Modal` is defined `ModalLauncherButton` hasn't been defined yet
+Modal.options.LauncherButtonClass = ModalLauncherButton;
 
 export default Modal;

@@ -1,5 +1,5 @@
 import 'core-js/modules/es6.weak-map'; // For PhantomJS
-import Modal from '../../src/components/modal/modal';
+import Modal, { ModalLauncherButton } from '../../src/components/modal/modal';
 import ModalHtml from '../../src/components/modal/modal.html';
 import EventManager from '../utils/event-manager';
 
@@ -30,12 +30,11 @@ describe('Test modal', function () {
         selectorModalClose: '[data-modal-close]',
         selectorPrimaryFocus: '[data-modal-primary-focus]',
         classVisible: 'is-visible',
-        attribInitTarget: 'data-modal-target',
-        initEventNames: ['click'],
         eventBeforeShown: 'modal-beingshown',
         eventAfterShown: 'modal-shown',
         eventBeforeHidden: 'modal-beinghidden',
         eventAfterHidden: 'modal-hidden',
+        LauncherButtonClass: ModalLauncherButton,
       });
     });
 
