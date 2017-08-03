@@ -36,6 +36,7 @@ import ProgressIndicator from './components/progress-indicator/progress-indicato
 import FloatingMenu from './components/floating-menu/floating-menu';
 import StructuredList from './components/structured-list/structured-list';
 import Slider from './components/slider/slider';
+import FocusWithin from './components/focus-within/focus-within';
 
 export { default as watch } from './globals/js/watch';
 
@@ -203,6 +204,11 @@ export {
    * @type Slider
    */
   Slider,
+  /**
+   * FocusWithin.
+   * @type FocusWithin
+   */
+  FocusWithin,
 };
 
 /**
@@ -236,6 +242,7 @@ export const componentClasses = [
   StructuredList,
   DatePicker,
   Slider,
+  FocusWithin,
   // Floating menu instances are created by Tooltip, etc. and thus not for automatic instantiation
 ];
 
