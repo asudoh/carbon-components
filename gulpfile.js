@@ -27,6 +27,7 @@ const jsdoc = require('gulp-jsdoc3');
 const rollup = require('rollup');
 const rollupConfigDev = require('./tools/rollup.config.dev');
 const rollupConfigProd = require('./tools/rollup.config');
+const getRollupConfigTest = require('./tests/get-rollup-config');
 
 // Generic utility
 const del = require('del');
@@ -36,9 +37,14 @@ const exec = require('child_process').exec;
 const Server = require('karma').Server;
 const cloptions = require('minimist')(process.argv.slice(2), {
   alias: {
+    b: 'browsers',
+    d: 'debug',
+    f: 'files',
     k: 'keepalive',
+    s: 'sauce',
+    v: 'verbose',
   },
-  boolean: ['keepalive'],
+  boolean: ['debug', 'keepalive', 'verbose'],
 });
 
 // Axe A11y Test
@@ -84,6 +90,11 @@ gulp.task('clean', () =>
 /**
  * JavaScript Tasks
  */
+
+gulp.task('scripts:test', () => {
+  const rollupConfigTest = getRollupConfigTest(cloptions);
+  return rollup.rollup(rollupConfigTest).then(bundle => bundle.write(rollupConfigTest));
+});
 
 gulp.task('scripts:dev', () =>
   rollup.rollup(rollupConfigDev)
@@ -300,6 +311,7 @@ gulp.task('test:unit', done => {
     {
       configFile: path.resolve(__dirname, 'tests/karma.conf.js'),
       singleRun: !cloptions.keepalive,
+      cloptions,
     },
     done
   ).start();

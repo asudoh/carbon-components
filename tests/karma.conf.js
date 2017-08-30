@@ -23,17 +23,6 @@ function flatten(a) {
   }, []);
 }
 
-const cloptions = require('minimist')(process.argv.slice(2), {
-  alias: {
-    b: 'browsers',
-    f: 'files',
-    d: 'debug',
-    s: 'sauce',
-    v: 'verbose',
-  },
-  boolean: ['debug', 'verbose'],
-});
-
 const customLaunchers = {
   sl_chrome_sierra: {
     base: 'SauceLabs',
@@ -122,6 +111,7 @@ const travisLaunchers = {
 };
 
 module.exports = function (config) {
+  const cloptions = config.cloptions;
   const objectToStringPolyfillPath = require.resolve('core-js/library/modules/es6.object.to-string.js');
 
   if (cloptions.sauce) {
