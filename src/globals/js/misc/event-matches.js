@@ -14,7 +14,8 @@ export default function eventMatches(event, selector) {
       return event.target;
     } else if (event.target.matches(`${selector} *`)) {
       const closest = event.target.closest(selector);
-      if (event.currentTarget.contains(closest)) {
+      const currentTarget = event.currentTarget;
+      if ((currentTarget.nodeType === Node.DOCUMENT_NODE ? currentTarget.documentElement : currentTarget).contains(closest)) {
         return closest;
       }
     }
