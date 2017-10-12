@@ -71,6 +71,37 @@
     list-style: none;
     position: absolute;
     z-index: z('dropdown');
+    transition: height $transition--base $bx--standard-easing;
+
+    .bx--dropdown-item {
+      opacity: 0;
+      transition: opacity $bx--system-360-delay-unit * 10 $bx--standard-easing $bx--system-360-delay-unit * 9;
+
+      &:nth-child(1) {
+        transition: opacity $bx--system-360-delay-unit * 10 $bx--standard-easing $bx--system-360-delay-unit * 1;
+      }
+      &:nth-child(2) {
+        transition: opacity $bx--system-360-delay-unit * 10 $bx--standard-easing $bx--system-360-delay-unit * 2;
+      }
+      &:nth-child(3) {
+        transition: opacity $bx--system-360-delay-unit * 10 $bx--standard-easing $bx--system-360-delay-unit * 3;
+      }
+      &:nth-child(4) {
+        transition: opacity $bx--system-360-delay-unit * 10 $bx--standard-easing $bx--system-360-delay-unit * 4;
+      }
+      &:nth-child(5) {
+        transition: opacity $bx--system-360-delay-unit * 10 $bx--standard-easing $bx--system-360-delay-unit * 5;
+      }
+      &:nth-child(6) {
+        transition: opacity $bx--system-360-delay-unit * 10 $bx--standard-easing $bx--system-360-delay-unit * 6;
+      }
+      &:nth-child(7) {
+        transition: opacity $bx--system-360-delay-unit * 10 $bx--standard-easing $bx--system-360-delay-unit * 7;
+      }
+      &:nth-child(8) {
+        transition: opacity $bx--system-360-delay-unit * 10 $bx--standard-easing $bx--system-360-delay-unit * 8;
+      }
+    }
   }
 
   .bx--dropdown-link {
@@ -105,11 +136,31 @@
       display: flex;
       flex-direction: column;
       background-color: $ui-01;
+
+      .bx--dropdown-item {
+        opacity: 1;
+      }
     }
 
     &:focus {
       .bx--dropdown-list {
         box-shadow: 0 1px 0 0 $brand-01, 1px 0 0 0 $brand-01, -1px 0 0 0 $brand-01;
+      }
+    }
+  }
+
+  .bx--dropdown--transient-start {
+    .bx--dropdown-list {
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+  }
+
+  .bx--dropdown--transient-end {
+    .bx--dropdown-list {
+      .bx--dropdown-item {
+        opacity: 1;
       }
     }
   }

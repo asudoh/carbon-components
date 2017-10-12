@@ -8,6 +8,7 @@ $bx--ease-out: cubic-bezier(
   1
 ); // Used for adding elements to the screen or changing on-screen states at a users's input.
 $bx--standard-easing: cubic-bezier(0.5, 0, 0.1, 1); // Used for the majority of animations.
+$bx--system-360-delay-unit: 0.02s;
 $transition--base: 250ms;
 
 // Color Theme Variables
