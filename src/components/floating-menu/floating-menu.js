@@ -202,6 +202,9 @@ class FloatingMenu extends mixin(createComponent, eventedShowHideState, trackBlu
       }
       this._getContainer().appendChild(this.element);
       this._place();
+      if (!collapsible) {
+        (this.element.querySelector(this.options.selectorPrimaryFocus) || this.element).focus();
+      }
     }
     if (state === 'hidden' && this.hResize) {
       this.hResize.release();
