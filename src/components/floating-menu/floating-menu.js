@@ -4,6 +4,7 @@ import eventedShowHideState from '../../globals/js/mixins/evented-show-hide-stat
 import trackBlur from '../../globals/js/mixins/track-blur';
 import getLaunchingDetails from '../../globals/js/misc/get-launching-details';
 import optimizedResize from '../../globals/js/misc/resize';
+import CollapsibleElement from '../collapsible-element/collapsible-element';
 
 class FloatingMenu extends mixin(createComponent, eventedShowHideState, trackBlur) {
   /**
@@ -161,8 +162,7 @@ class FloatingMenu extends mixin(createComponent, eventedShowHideState, trackBlu
    */
   _changeState(state, detail, callback) {
     const shown = state === 'shown';
-    const { refNode, classShown, classRefShown } = this.options;
-    this.element.classList.toggle(classShown, shown);
+    const { refNode, classShown, classRefShown, classTransient } = this.options;
     if (classRefShown) {
       refNode.classList.toggle(classRefShown, shown);
     }
@@ -179,6 +179,14 @@ class FloatingMenu extends mixin(createComponent, eventedShowHideState, trackBlu
     if (state === 'hidden' && this.hResize) {
       this.hResize.release();
       this.hResize = null;
+    }
+    if (!this.collapsible) {
+      // Lazily create a component instance for collapsible
+      this.collapsible = CollapsibleElement.create(this.element, {
+        classExpanded: classShown,
+        classTransient,
+      });
+      this.children.push(this.collapsible);
     }
     callback();
   }
