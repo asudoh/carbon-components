@@ -12,11 +12,22 @@ import eventedState from '../../globals/js/mixins/evented-state';
  * @param {Element} [options.stateNode]
  *   The element that the CSS classes representing expanded/transient/collapsed states should be applied.
  * @param {string} [options.classExpanded] The CSS class for the expanded state.
- * @param {string} [options.classTransientStart] The CSS class for the initial transient state.
- * @param {string} [options.classTransientEnd] The CSS class for the target transient state.
+ * @param {string} [options.classTransient] The CSS class for the transient state.
  * @param {string} [options.classCollapsed] The CSS class for the collapsed state.
  */
 class CollapsibleElement extends mixin(createComponent, eventedState) {
+  /**
+   * @param {string} state The new state.
+   * @returns {boolean} `true` if the given `state` is different from current state.
+   */
+  shouldStateBeChanged(state) {
+    const stateNode = this.options.stateNode || this.element;
+    const expanded =
+      (this.options.classExpanded && stateNode.classList.contains(this.options.classExpanded)) ||
+      (this.options.classCollapsed && !stateNode.classList.contains(this.options.classCollapsed));
+    return (state === 'expanded') !== Boolean(expanded);
+  }
+
   /**
    * Changes the expanded/collapsed state.
    * @private
@@ -30,36 +41,32 @@ class CollapsibleElement extends mixin(createComponent, eventedState) {
     const expanded = state === 'expanded';
     const w = element.ownerDocument.defaultView;
 
-    const classTransientStart = this.options.classTransientStart;
-    const classTransientEnd = this.options.classTransientEnd;
+    const classTransient = this.options.classTransient;
     const classExpanded = this.options.classExpanded;
     const classCollapsed = this.options.classCollapsed;
 
     const transitionEnd = () => {
       element.removeEventListener('transitionend', transitionEnd);
-      if (classExpanded) {
-        stateNode.classList.toggle(classExpanded, expanded);
-      }
-      if (this.options.classCollapsed) {
-        stateNode.classList.toggle(classCollapsed, !expanded);
-      }
-      if (classTransientStart) {
-        stateNode.classList.remove(classTransientStart);
+      if (classTransient) {
+        stateNode.classList.remove(classTransient);
       }
       element.style.height = '';
       callback();
     };
 
     w.requestAnimationFrame(() => {
-      if (classTransientStart) {
-        stateNode.classList.add(classTransientStart);
+      if (classTransient) {
+        stateNode.classList.add(classTransient);
       }
       const height = this.element.scrollHeight;
       element.style.height = expanded ? '0px' : `${height}px`;
 
       w.requestAnimationFrame(() => {
-        if (classTransientEnd) {
-          stateNode.classList.add(classTransientEnd);
+        if (classExpanded) {
+          stateNode.classList.toggle(classExpanded, expanded);
+        }
+        if (classCollapsed) {
+          stateNode.classList.toggle(classCollapsed, !expanded);
         }
         element.style.height = expanded ? `${height}px` : '0px';
         element.addEventListener('transitionend', transitionEnd);

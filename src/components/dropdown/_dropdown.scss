@@ -149,19 +149,12 @@
     }
   }
 
-  .bx--dropdown--transient-start {
+  .bx--dropdown--transient {
     .bx--dropdown-list {
       display: flex;
       flex-direction: column;
       overflow: hidden;
-    }
-  }
-
-  .bx--dropdown--transient-end {
-    .bx--dropdown-list {
-      .bx--dropdown-item {
-        opacity: 1;
-      }
+      background-color: white;
     }
   }
 

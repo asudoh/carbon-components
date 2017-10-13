@@ -121,8 +121,7 @@ class Dropdown extends mixin(createComponent, initComponentBySearch, trackBlur) 
       this.collapsible = CollapsibleElement.create(list, {
         stateNode: this.element,
         classExpanded: this.options.classOpen,
-        classTransientStart: this.options.classTransientStart,
-        classTransientEnd: this.options.classTransientEnd,
+        classTransient: this.options.classTransient,
       });
       this.children.push(this.collapsible);
     }
@@ -230,8 +229,7 @@ class Dropdown extends mixin(createComponent, initComponentBySearch, trackBlur) 
    * @property {string} [selectorItem] The CSS selector to find clickable areas in dropdown items.
    * @property {string} [selectorItemSelected] The CSS selector to find the clickable area in the selected dropdown item.
    * @property {string} [classOpen] The CSS class for the open state.
-   * @property {string} [classTransientStart] The CSS class for the initial transient state.
-   * @property {string} [classTransientEnd] The CSS class for the target transient state.
+   * @property {string} [classTransient] The CSS class for the transient, collapsed state.
    * @property {string} [classSelected] The CSS class for the selected dropdown item.
    * @property {string} [eventBeforeSelected]
    *   The name of the custom event fired before a drop down item is selected.
@@ -245,8 +243,7 @@ class Dropdown extends mixin(createComponent, initComponentBySearch, trackBlur) 
     selectorItem: '.bx--dropdown-link',
     selectorItemSelected: '.bx--dropdown--selected',
     classOpen: 'bx--dropdown--open',
-    classTransientStart: 'bx--dropdown--transient-start',
-    classTransientEnd: 'bx--dropdown--transient-end',
+    classTransient: 'bx--dropdown--transient',
     classSelected: 'bx--dropdown--selected',
     eventBeforeSelected: 'dropdown-beingselected',
     eventAfterSelected: 'dropdown-selected',
