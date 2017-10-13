@@ -50,10 +50,20 @@
     margin-top: 0.25rem;
     padding: 0.285rem 0 0.5rem;
     left: -20px;
+    transition: height $transition--base $bx--standard-easing;
   }
 
   .bx--overflow-menu-options--open {
     display: flex;
+    
+    .bx--overflow-menu-options__option {
+      opacity: 1;
+    }
+  }
+
+  .bx--overflow-menu-options--transient {
+    display: flex;
+    overflow: hidden;
   }
 
   .bx--overflow-menu-options:before {
@@ -73,11 +83,39 @@
 
   .bx--overflow-menu-options__option {
     @include reset;
-    display: flex;
+    display: list-item;
     background-color: transparent;
     align-items: center;
     width: 100%;
     padding: 0;
+
+    opacity: 0;
+    transition: opacity $bx--system-360-delay-unit * 10 $bx--standard-easing $bx--system-360-delay-unit * 9;
+
+    &:nth-child(1) {
+      transition: opacity $bx--system-360-delay-unit * 10 $bx--standard-easing $bx--system-360-delay-unit * 1;
+    }
+    &:nth-child(2) {
+      transition: opacity $bx--system-360-delay-unit * 10 $bx--standard-easing $bx--system-360-delay-unit * 2;
+    }
+    &:nth-child(3) {
+      transition: opacity $bx--system-360-delay-unit * 10 $bx--standard-easing $bx--system-360-delay-unit * 3;
+    }
+    &:nth-child(4) {
+      transition: opacity $bx--system-360-delay-unit * 10 $bx--standard-easing $bx--system-360-delay-unit * 4;
+    }
+    &:nth-child(5) {
+      transition: opacity $bx--system-360-delay-unit * 10 $bx--standard-easing $bx--system-360-delay-unit * 5;
+    }
+    &:nth-child(6) {
+      transition: opacity $bx--system-360-delay-unit * 10 $bx--standard-easing $bx--system-360-delay-unit * 6;
+    }
+    &:nth-child(7) {
+      transition: opacity $bx--system-360-delay-unit * 10 $bx--standard-easing $bx--system-360-delay-unit * 7;
+    }
+    &:nth-child(8) {
+      transition: opacity $bx--system-360-delay-unit * 10 $bx--standard-easing $bx--system-360-delay-unit * 8;
+    }
   }
 
   .bx--overflow-menu--divider {

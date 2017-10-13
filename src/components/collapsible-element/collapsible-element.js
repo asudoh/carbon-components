@@ -54,10 +54,11 @@ class CollapsibleElement extends mixin(createComponent, eventedState) {
       callback();
     };
 
+    if (classTransient) {
+      stateNode.classList.add(classTransient);
+    }
+
     w.requestAnimationFrame(() => {
-      if (classTransient) {
-        stateNode.classList.add(classTransient);
-      }
       const height = this.element.scrollHeight;
       element.style.height = expanded ? '0px' : `${height}px`;
 

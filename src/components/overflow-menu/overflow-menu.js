@@ -57,6 +57,7 @@ class OverflowMenu extends mixin(createComponent, initComponentBySearch, evented
       this.optionMenu = FloatingMenu.create(optionMenu, {
         refNode: this.element,
         classShown: this.options.classMenuShown,
+        classTransient: this.options.classMenuTransient,
         classRefShown: this.options.classShown,
         offset: this.options.objMenuOffset,
       });
@@ -133,6 +134,7 @@ class OverflowMenu extends mixin(createComponent, initComponentBySearch, evented
     selectorOptionMenu: '.bx--overflow-menu-options',
     classShown: 'bx--overflow-menu--open',
     classMenuShown: 'bx--overflow-menu-options--open',
+    classMenuTransient: 'bx--overflow-menu-options--transient',
     classMenuFlip: 'bx--overflow-menu--flip',
     objMenuOffset: { top: 3, left: 61 },
     objMenuOffsetFlip: { top: 3, left: -61 },
