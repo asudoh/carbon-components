@@ -55,6 +55,7 @@ class OverflowMenu extends mixin(createComponent, initComponentBySearch, evented
 
       // Lazily create a component instance for menu
       this.optionMenu = FloatingMenu.create(optionMenu, {
+        collapsible: true,
         refNode: this.element,
         classShown: this.options.classMenuShown,
         classTransient: this.options.classMenuTransient,

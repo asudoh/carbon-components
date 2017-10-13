@@ -161,34 +161,39 @@ class FloatingMenu extends mixin(createComponent, eventedShowHideState, trackBlu
    * @param {Function} callback Callback called when change in state completes.
    */
   _changeState(state, detail, callback) {
+    const collapsible = this.options.collapsible;
     const shown = state === 'shown';
     const { refNode, classShown, classRefShown, classTransient } = this.options;
     if (classRefShown) {
       refNode.classList.toggle(classRefShown, shown);
     }
-    if (!this.collapsible) {
-      // Lazily create a component instance for collapsible
-      this.collapsible = CollapsibleElement.create(this.element, {
-        classExpanded: classShown,
-        classTransient,
-      });
-      this.children.push(this.collapsible);
-    }
-    this.collapsible.changeState(
-      {
-        shown: 'expanded',
-        hidden: 'collapsed',
-      }[state],
-      detail,
-      () => {
-        if (state === 'shown') {
-          (this.element.querySelector(this.options.selectorPrimaryFocus) || this.element).focus();
-        }
-        if (callback) {
-          callback();
-        }
+    if (collapsible) {
+      if (!this.collapsible) {
+        // Lazily create a component instance for collapsible
+        this.collapsible = CollapsibleElement.create(this.element, {
+          classExpanded: classShown,
+          classTransient,
+        });
+        this.children.push(this.collapsible);
       }
-    );
+      this.collapsible.changeState(
+        {
+          shown: 'expanded',
+          hidden: 'collapsed',
+        }[state],
+        detail,
+        () => {
+          if (state === 'shown') {
+            (this.element.querySelector(this.options.selectorPrimaryFocus) || this.element).focus();
+          }
+          if (callback) {
+            callback();
+          }
+        }
+      );
+    } else {
+      this.element.classList.toggle(classShown, shown);
+    }
     if (state === 'shown') {
       if (!this.hResize) {
         this.hResize = optimizedResize.add(() => {
@@ -201,6 +206,9 @@ class FloatingMenu extends mixin(createComponent, eventedShowHideState, trackBlu
     if (state === 'hidden' && this.hResize) {
       this.hResize.release();
       this.hResize = null;
+    }
+    if (!collapsible && callback) {
+      callback();
     }
   }
 
