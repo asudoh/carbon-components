@@ -1,4 +1,5 @@
 import 'core-js/modules/es6.weak-map'; // For PhantomJS
+import { delay } from 'bluebird';
 import EventManager from '../utils/event-manager';
 import Dropdown from '../../src/components/dropdown/dropdown';
 
@@ -29,6 +30,7 @@ describe('Dropdown', function() {
     let element;
     let itemNode;
     let stubFocus;
+    const events = new EventManager();
 
     before(function() {
       element = document.createElement('ul');
@@ -38,6 +40,7 @@ describe('Dropdown', function() {
       const list = listContainer.appendChild(document.createElement('ul'));
 
       const itemContainerNode = document.createElement('li');
+      itemContainerNode.classList.add('bx--dropdown-list');
       itemContainerNode.dataset.option = '';
 
       itemNode = document.createElement('a');
@@ -52,62 +55,78 @@ describe('Dropdown', function() {
       document.body.appendChild(element);
     });
 
-    it('Should add "open" stateful modifier class', function() {
+    it('Should add "open" stateful modifier class', async function() {
       element.dispatchEvent(new CustomEvent('click', { bubbles: true }));
+      await delay(100);
+      element.querySelector('.bx--dropdown-list').dispatchEvent(new CustomEvent('transitionend', { bubbles: true }));
       expect(element.classList.contains('bx--dropdown--open')).to.be.true;
       expect(element.getAttribute('class')).to.equal('bx--dropdown bx--dropdown--open');
     });
 
-    it('Should remove "open" stateful modifier class (closed default state)', function() {
+    it('Should remove "open" stateful modifier class (closed default state)', async function() {
       element.classList.add('bx--dropdown--open');
       element.dispatchEvent(new CustomEvent('click', { bubbles: true }));
+      await delay(100);
+      element.querySelector('.bx--dropdown-list').dispatchEvent(new CustomEvent('transitionend', { bubbles: true }));
       expect(element.classList.contains('bx--dropdown--open')).to.be.false;
       expect(element.getAttribute('class')).to.equal('bx--dropdown');
     });
 
-    it('Should always close dropdown when clicking document', function() {
+    it('Should always close dropdown when clicking document', async function() {
       element.classList.add('bx--dropdown--open');
       document.dispatchEvent(new CustomEvent('click', { bubbles: true }));
+      await delay(100);
+      element.querySelector('.bx--dropdown-list').dispatchEvent(new CustomEvent('transitionend', { bubbles: true }));
       expect(element.getAttribute('class')).to.equal('bx--dropdown');
     });
 
-    it('Should close dropdown when clicking on an item', function() {
+    it('Should close dropdown when clicking on an item', async function() {
       element.classList.add('bx--dropdown--open');
       itemNode.dispatchEvent(new CustomEvent('click', { bubbles: true }));
+      await delay(100);
+      element.querySelector('.bx--dropdown-list').dispatchEvent(new CustomEvent('transitionend', { bubbles: true }));
       expect(element.getAttribute('class')).to.equal('bx--dropdown');
     });
 
-    it('Should open dropdown with enter key', function() {
+    it('Should open dropdown with enter key', async function() {
       stubFocus = sinon.stub(element, 'focus');
       element.dispatchEvent(Object.assign(new CustomEvent('keydown'), { which: 13 }));
+      await delay(100);
+      element.querySelector('.bx--dropdown-list').dispatchEvent(new CustomEvent('transitionend', { bubbles: true }));
       expect(element.classList.contains('bx--dropdown--open'), 'Open state').to.be.true;
       expect(stubFocus, 'Focus requested').to.have.been.calledOnce;
     });
 
-    it('Should close dropdown with enter key', function() {
+    it('Should close dropdown with enter key', async function() {
       stubFocus = sinon.stub(element, 'focus');
       element.classList.add('bx--dropdown--open');
       element.dispatchEvent(Object.assign(new CustomEvent('keydown'), { which: 13 }));
+      await delay(100);
+      element.querySelector('.bx--dropdown-list').dispatchEvent(new CustomEvent('transitionend', { bubbles: true }));
       expect(element.classList.contains('bx--dropdown--open'), 'Open state').to.be.false;
       expect(stubFocus, 'Focus requested').to.have.been.calledOnce;
     });
 
-    it('Should open dropdown with space key', function() {
+    it('Should open dropdown with space key', async function() {
       stubFocus = sinon.stub(element, 'focus');
       element.dispatchEvent(Object.assign(new CustomEvent('keydown'), { which: 32 }));
+      await delay(100);
+      element.querySelector('.bx--dropdown-list').dispatchEvent(new CustomEvent('transitionend', { bubbles: true }));
       expect(element.classList.contains('bx--dropdown--open'), 'Open state').to.be.true;
       expect(stubFocus, 'Focus requested').to.have.been.calledOnce;
     });
 
-    it('Should close dropdown with space key', function() {
+    it('Should close dropdown with space key', async function() {
       stubFocus = sinon.stub(element, 'focus');
       element.classList.add('bx--dropdown--open');
       element.dispatchEvent(Object.assign(new CustomEvent('keydown'), { which: 32 }));
+      await delay(100);
+      element.querySelector('.bx--dropdown-list').dispatchEvent(new CustomEvent('transitionend', { bubbles: true }));
       expect(element.classList.contains('bx--dropdown--open'), 'Open state').to.be.false;
       expect(stubFocus, 'Focus requested').to.have.been.calledOnce;
     });
 
-    it('Shouldn not close dropdown with space key on an item', function() {
+    it('Shouldn not close dropdown with space key on an item', async function() {
       stubFocus = sinon.stub(element, 'focus');
       element.classList.add('bx--dropdown--open');
       itemNode.dispatchEvent(
@@ -115,19 +134,23 @@ describe('Dropdown', function() {
           which: 32,
         })
       );
+      await delay(100);
+      element.querySelector('.bx--dropdown-list').dispatchEvent(new CustomEvent('transitionend', { bubbles: true }));
       expect(element.classList.contains('bx--dropdown--open'), 'Open state').to.be.true;
       expect(stubFocus, 'Focus requested').not.to.have.been.called;
     });
 
-    it('Should close dropdown with ESC key', function() {
+    it('Should close dropdown with ESC key', async function() {
       stubFocus = sinon.stub(element, 'focus');
       element.classList.add('bx--dropdown--open');
       element.dispatchEvent(Object.assign(new CustomEvent('keydown'), { which: 27 }));
+      await delay(100);
+      element.querySelector('.bx--dropdown-list').dispatchEvent(new CustomEvent('transitionend', { bubbles: true }));
       expect(element.classList.contains('bx--dropdown--open'), 'Open state').to.be.false;
       expect(stubFocus, 'Focus requested').to.have.been.calledOnce;
     });
 
-    it('Should close dropdown with ESC key on an item', function() {
+    it('Should close dropdown with ESC key on an item', async function() {
       stubFocus = sinon.stub(element, 'focus');
       element.classList.add('bx--dropdown--open');
       itemNode.dispatchEvent(
@@ -135,24 +158,31 @@ describe('Dropdown', function() {
           which: 27,
         })
       );
+      await delay(100);
+      element.querySelector('.bx--dropdown-list').dispatchEvent(new CustomEvent('transitionend', { bubbles: true }));
       expect(element.classList.contains('bx--dropdown--open'), 'Open state').to.be.false;
       expect(stubFocus, 'Focus requested').to.have.been.calledOnce;
     });
 
-    it('Should not open dropdown with ESC key', function() {
+    it('Should not open dropdown with ESC key', async function() {
       stubFocus = sinon.stub(element, 'focus');
       element.dispatchEvent(Object.assign(new CustomEvent('keydown'), { which: 27 }));
+      await delay(100);
+      element.querySelector('.bx--dropdown-list').dispatchEvent(new CustomEvent('transitionend', { bubbles: true }));
       expect(element.classList.contains('bx--dropdown--open'), 'Open state').to.be.false;
       expect(stubFocus, 'Focus requested').not.to.have.been.called;
     });
 
-    it('Should not open when the disabled class is applied', function() {
+    it('Should not open when the disabled class is applied', async function() {
       element.classList.add('bx--dropdown--disabled');
       element.dispatchEvent(new CustomEvent('click', { bubbles: true }));
+      await delay(100);
+      element.querySelector('.bx--dropdown-list').dispatchEvent(new CustomEvent('transitionend', { bubbles: true }));
       expect(element.classList.contains('bx--dropdown--open'), 'Open state').to.be.false;
     });
 
     afterEach(function() {
+      events.reset();
       if (stubFocus) {
         stubFocus.restore();
         stubFocus = null;
@@ -180,6 +210,7 @@ describe('Dropdown', function() {
       textNode.textContent = '0';
 
       const listContainer = element.appendChild(document.createElement('li'));
+      listContainer.classList.add('bx--dropdown-list');
       const list = listContainer.appendChild(document.createElement('ul'));
 
       itemNodes = [...new Array(2)].map((item, i) => {
@@ -274,6 +305,7 @@ describe('Dropdown', function() {
       element = document.createElement('ul');
 
       const listContainer = element.appendChild(document.createElement('li'));
+      listContainer.classList.add('bx--dropdown-list');
       const list = listContainer.appendChild(document.createElement('ul'));
 
       itemNodes = [...new Array(3)].map((item, i) => {

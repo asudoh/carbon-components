@@ -1,4 +1,5 @@
 import 'core-js/modules/es6.weak-map'; // For PhantomJS
+import { delay } from 'bluebird';
 import EventManager from '../utils/event-manager';
 import OverflowMenu from '../../src/components/overflow-menu/overflow-menu';
 import HTML from '../../src/components/overflow-menu/overflow-menu.html';
@@ -21,22 +22,28 @@ describe('Test Overflow menu', function() {
   describe('Toggling a single overflow-menu', function() {
     let menu;
     let element;
+    let options;
     const container = document.createElement('div');
     container.innerHTML = HTML;
 
     before(function() {
       document.body.appendChild(container);
       element = document.querySelector('[data-overflow-menu]');
+      options = container.querySelector('.bx--overflow-menu-options');
       menu = new OverflowMenu(element);
     });
 
-    it('Should set and remove "bx--overflow-menu--open" class on the element on click event', function() {
+    it('Should set and remove "bx--overflow-menu--open" class on the element on click event', async function() {
       // Initial click to open overflow-menu:
       element.dispatchEvent(new CustomEvent('click', { bubbles: true }));
+      await delay(100);
+      options.dispatchEvent(new CustomEvent('transitionend', { bubbles: true }));
       expect(element.classList.contains('bx--overflow-menu--open')).to.be.true;
 
       // Secondary click to close overflow-menu:
       element.dispatchEvent(new CustomEvent('click', { bubbles: true }));
+      await delay(100);
+      options.dispatchEvent(new CustomEvent('transitionend', { bubbles: true }));
       expect(element.classList.contains('bx--overflow-menu--open')).to.be.false;
     });
 
@@ -53,6 +60,7 @@ describe('Test Overflow menu', function() {
   describe('Custom event emission', function() {
     let menu;
     let element;
+    let options;
     const container = document.createElement('div');
     container.innerHTML = HTML;
 
@@ -61,6 +69,7 @@ describe('Test Overflow menu', function() {
     before(function() {
       document.body.appendChild(container);
       element = document.querySelector('.bx--overflow-menu');
+      options = element.querySelector('.bx--overflow-menu-options');
       menu = new OverflowMenu(element);
     });
 
@@ -75,10 +84,12 @@ describe('Test Overflow menu', function() {
       expect(element.classList.contains('bx--overflow-menu--open'), 'State of root element').to.be.false;
     });
 
-    it('Should emit an event after showing', function() {
+    it('Should emit an event after showing', async function() {
       const spyOverflowEvent = sinon.spy();
       events.on(document, 'floating-menu-shown', spyOverflowEvent);
       element.dispatchEvent(new CustomEvent('click', { bubbles: true }));
+      await delay(100);
+      options.dispatchEvent(new CustomEvent('transitionend', { bubbles: true }));
       expect(spyOverflowEvent).to.have.been.called;
     });
 
@@ -94,11 +105,13 @@ describe('Test Overflow menu', function() {
       expect(element.classList.contains('bx--overflow-menu--open'), 'State of root element').to.be.true;
     });
 
-    it('Should emit an event after hiding', function() {
+    it('Should emit an event after hiding', async function() {
       const spyOverflowEvent = sinon.spy();
       events.on(document, 'floating-menu-hidden', spyOverflowEvent);
       element.classList.add('bx--overflow-menu--open');
       element.dispatchEvent(new CustomEvent('click', { bubbles: true }));
+      await delay(100);
+      options.dispatchEvent(new CustomEvent('transitionend', { bubbles: true }));
       expect(spyOverflowEvent).to.have.been.called;
     });
 
@@ -118,6 +131,9 @@ describe('Test Overflow menu', function() {
     let element1;
     let element2;
     let element3;
+    let options1;
+    let options2;
+    let options3;
     const container = document.createElement('div');
     container.innerHTML = [HTML, HTML, HTML].join('');
 
@@ -127,21 +143,32 @@ describe('Test Overflow menu', function() {
       element1 = elements[0];
       element2 = elements[1];
       element3 = elements[2];
+      options1 = element1.querySelector('.bx--overflow-menu-options');
+      options2 = element2.querySelector('.bx--overflow-menu-options');
+      options3 = element3.querySelector('.bx--overflow-menu-options');
       new OverflowMenu(element1);
       new OverflowMenu(element2);
       new OverflowMenu(element3);
     });
 
-    it('Should open one menu on a single click event', function() {
+    it('Should open one menu on a single click event', async function() {
       element1.dispatchEvent(new CustomEvent('click', { bubbles: true }));
+      await delay(100);
+      options1.dispatchEvent(new CustomEvent('transitionend', { bubbles: true }));
+      options2.dispatchEvent(new CustomEvent('transitionend', { bubbles: true }));
+      options3.dispatchEvent(new CustomEvent('transitionend', { bubbles: true }));
       expect(element1.classList.contains('bx--overflow-menu--open'), '1st overflow menu').to.be.true;
       expect(element2.classList.contains('bx--overflow-menu--open'), '2nd overflow menu').to.be.false;
       expect(element3.classList.contains('bx--overflow-menu--open'), '3rd overflow menu').to.be.false;
     });
 
-    it('Should open one menu on multiple click events', function() {
+    it('Should open one menu on multiple click events', async function() {
       element1.dispatchEvent(new CustomEvent('click', { bubbles: true }));
       element2.dispatchEvent(new CustomEvent('click', { bubbles: true }));
+      await delay(100);
+      options1.dispatchEvent(new CustomEvent('transitionend', { bubbles: true }));
+      options2.dispatchEvent(new CustomEvent('transitionend', { bubbles: true }));
+      options3.dispatchEvent(new CustomEvent('transitionend', { bubbles: true }));
       expect(element1.classList.contains('bx--overflow-menu--open'), '1st overflow menu').to.be.false;
       expect(element2.classList.contains('bx--overflow-menu--open'), '2nd overflow menu').to.be.true;
       expect(element3.classList.contains('bx--overflow-menu--open'), '3rd overflow menu').to.be.false;
@@ -161,6 +188,7 @@ describe('Test Overflow menu', function() {
   describe('Managing focus', function() {
     let menu;
     let element;
+    let options;
     let firstItemNode;
     let spyFocusFirstItemNode;
     const container = document.createElement('div');
@@ -169,13 +197,16 @@ describe('Test Overflow menu', function() {
     before(function() {
       document.body.appendChild(container);
       element = document.querySelector('.bx--overflow-menu');
+      options = element.querySelector('.bx--overflow-menu-options');
       firstItemNode = element.querySelector('[data-floating-menu-primary-focus]');
       spyFocusFirstItemNode = sinon.spy(firstItemNode, 'focus');
       menu = new OverflowMenu(element);
     });
 
-    it('Should focus on the floating menu when the menu is open', function() {
+    it('Should focus on the floating menu when the menu is open', async function() {
       element.dispatchEvent(new CustomEvent('click', { bubbles: true }));
+      await delay(100);
+      options.dispatchEvent(new CustomEvent('transitionend', { bubbles: true }));
       expect(spyFocusFirstItemNode).to.have.been.calledOnce;
     });
 
