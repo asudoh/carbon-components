@@ -21,6 +21,16 @@ function flatten(a) {
  */
 
 /**
+ * @function mixinto
+ * @param {Class} Base The base class.
+ * @param {...mixinfn} mixinfns The functions generating mix-ins.
+ * @returns {Class} The class generated with the given base class and mix-ins.
+ */
+export function mixinto(Base, ...mixinfns) {
+  return flatten(mixinfns).reduce((Class, mixinfn) => mixinfn(Class), Base);
+}
+
+/**
  * @function mixin
  * @param {...mixinfn} mixinfns The functions generating mix-ins.
  * @returns {Class} The class generated with the given mix-ins.

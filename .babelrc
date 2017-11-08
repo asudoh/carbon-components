@@ -9,5 +9,10 @@
         }
     }]
   ],
-  "plugins": ["transform-class-properties", "dev-expression"],
+  "plugins": [
+    "transform-class-properties",
+    ["transform-react-jsx", { "pragma": "this.createElement" }],
+    "./tools/babel-plugin-convert-this-identifier",
+    "dev-expression"
+  ]
 }

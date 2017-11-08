@@ -34,6 +34,15 @@
       outline: 1px solid transparent;
       box-shadow: 0 -1px 0 0 $brand-01, 1px 0 0 0 $brand-01, -1px 0 0 0 $brand-01;
     }
+
+    .bx--search-input {
+      padding-left: 1rem;
+      padding-right: 3.625rem;
+    }
+  
+    .bx--search-close {
+      right: 2.625rem;
+    }
   }
 
   .bx--dropdown__arrow {
