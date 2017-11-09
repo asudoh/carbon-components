@@ -106,6 +106,13 @@ class Dropdown extends mixin(createComponent, initComponentBySearch, trackBlur) 
   }
 
   /**
+   * Sets the currently highlighted element.
+   */
+  setCurrentNavigation(element) {
+    element.focus();
+  }
+
+  /**
    * Moves up/down the focus.
    * @param {number} direction The direction of navigating.
    */
@@ -121,7 +128,7 @@ class Dropdown extends mixin(createComponent, initComponentBySearch, trackBlur) 
     };
     for (let current = getNextItem(start); current && current !== start; current = getNextItem(current)) {
       if (!current.matches(this.options.selectorItemSelected)) {
-        current.focus();
+        this.setCurrentNavigation(current);
         break;
       }
     }
@@ -191,6 +198,7 @@ class Dropdown extends mixin(createComponent, initComponentBySearch, trackBlur) 
    * @property {string} [selectorText] The CSS selector to find the element showing the selected item.
    * @property {string} [selectorItem] The CSS selector to find clickable areas in dropdown items.
    * @property {string} [selectorItemSelected] The CSS selector to find the clickable area in the selected dropdown item.
+   * @property {string} [classOpen] The CSS class for the open state.
    * @property {string} [classSelected] The CSS class for the selected dropdown item.
    * @property {string} [classOpen] The CSS class for the open state.
    * @property {string} [classDisabled] The CSS class for the disabled state.

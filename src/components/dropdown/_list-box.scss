@@ -1,0 +1,165 @@
+@import '../../scss/globals/scss/colors';
+@import '../../scss/globals/scss/import-once';
+@import '../../scss/globals/scss/css--helpers';
+@import '../../scss/globals/scss/vars';
+
+$list-box-width: rem(300px);
+$list-box-height: rem(40px);
+
+/**
+ * Changelog from React version:
+ * * Added position:relative to .bx--list-box
+ * * Hoisted open state class to .bx--list-box--open, and let it show/hide the menu (React version clobbers DOM for that)
+ * * Removed focus outline for the menu item as it's focus behavior is only for scroll-into-view behavior.
+ */
+
+@include exports('list-box') {
+  .bx--list-box {
+    background-color: $field-01;
+    width: $list-box-width;
+    height: $list-box-height;
+    position: relative;
+  }
+
+  .bx--list-box__field {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: $list-box-height;
+    cursor: pointer;
+    user-select: none;
+    padding: 0 1rem;
+    font-size: rem(14px);
+    font-weight: 600;
+    color: $text-01;
+  }
+
+  .bx--list-box__field:focus {
+    outline: 1px solid $brand-01;
+  }
+
+  .bx--list-box__field:focus ~ .bx--list-box__menu {
+    box-shadow: 0 1px 0 0 $brand-01,
+      1px 0 0 0 $brand-01,
+      -1px 0 0 0 $brand-01,
+      0 4px 8px 0 rgba(0, 0, 0, .1);
+  }
+
+  .bx--list-box__field--inline {
+    display: inline-flex;
+    justify-content: normal;
+    color: $brand-01;
+  }
+
+  .bx--list-box__field--inline:focus {
+    outline: 1px solid $brand-01;
+  }
+
+  .bx--list-box__field--inline:focus ~ .bx--list-box__menu {
+    outline: 1px solid $brand-01;
+  }
+
+  .bx--list-box__field--inline > .bx--list-box__label {
+    margin-right: rem(10px);
+  }
+
+  .bx--list-box--open .bx--list-box__field--inline {
+    outline: 1px solid transparent;
+  }
+
+  .bx--list-box__label {
+    display: flex;
+    align-items: center;
+    height: 100%;
+  }
+
+  .bx--list-box__menu {
+    @include box-shadow();
+
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: $list-box-height;
+    background-color: $ui-01;
+    max-height: rem(120px);
+    overflow-y: auto;
+    display: none;
+  }
+
+  .bx--list-box--open .bx--list-box__menu {
+    display: block;
+  }
+
+  .bx--list-box__menu-item {
+    display: flex;
+    align-items: center;
+    height: rem(40px);
+    padding: 0 1rem;
+    cursor: pointer;
+    user-select: none;
+    outline: none;
+  }
+
+  .bx--list-box__menu-item:hover,
+  .bx--list-box__menu-item--highlighted {
+    background-color: rgba($field-01, 0.1);
+  }
+
+  .bx--list-box__menu-icon {
+    fill: $brand-01;
+    transition: transform 200ms $bx--standard-easing;
+  }
+
+  .bx--list-box--open .bx--list-box__menu-icon {
+    transform: rotate(180deg);
+  }
+
+  .bx--list-box__badge {
+    display: none;
+    align-items: center;
+    height: rem(18px);
+    margin-right: rem(10px);
+    color: white;
+    background-color: $brand-01;
+    padding: 0 rem(5px);
+    border-radius: rem(13px);
+  }
+
+  .bx--list-box__badge--active {
+    display: flex;
+  }
+
+  .bx--list-box__badge:focus {
+    outline: 1px solid $brand-01;
+    outline-offset: rem(5px);
+  }
+
+  .bx--list-box__badge:hover {
+    background-color: $brand-02;
+  }
+
+  .bx--list-box__badge-text {
+    margin-right: rem(5px);
+    font-size: rem(12px);
+    font-weight: 200;
+  }
+
+  .bx--list-box__clear {
+    width: rem(8px);
+    height: rem(8px);
+    fill: white;
+  }
+
+  .bx--list-box--inline {
+    background-color: inherit;
+  }
+
+  .bx--list-box--inline  > .bx--list-box__field {
+    height: rem(32px);
+    padding: 0 rem(10px);
+  }
+
+  .bx--list-box--inline  > .bx--list-box__menu {
+    top: rem(32px);
+  }
+}
