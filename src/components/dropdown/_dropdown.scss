@@ -63,6 +63,8 @@
     overflow: hidden;
     text-overflow: ellipsis;
     border: $input-border;
+    display: flex;
+    align-items: center;
   }
 
   .bx--dropdown-list {
@@ -129,6 +131,89 @@
 
     &:focus {
       outline: none;
+    }
+  }
+
+  .bx--combobox-item {
+    display: flex;
+    align-items: center;
+    color: currentColor;
+    text-decoration: none;
+    padding-top: 0.875rem;
+    padding-bottom: 0.875rem;
+    padding-left: 1rem;
+    padding-right: 1.5rem;
+
+    &:hover {
+      background-color: rgba($brand-02, 0.1);
+    }
+  }
+
+  .bx--combobox__badge {
+    background-color: $brand-01;
+    border-radius: 1.125rem;
+    color: $color__white;
+    display: none;
+    // font-size: .75rem;
+    font-weight: normal;
+    height: 1.125rem;
+    line-height: 1.125rem;
+    margin-left: 0.5rem;
+    text-align: center;
+    width: 1.125rem;
+
+    &--active {
+      display: inline-block;
+    }
+  }
+
+  .bx--combobox__clear {
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    margin-right: 0.5rem;
+    display: none;
+    
+    &__icon {
+      width: 0.625rem;
+      height: 0.625rem;
+      fill: $text-03;
+    }
+
+    &--active {
+      display: inline-block;
+    }
+  }
+
+  .bx--combobox--inline {
+    background-color: transparent;
+    width: auto;
+    border: solid transparent 2px;
+
+    .bx--dropdown-text {
+      color: $brand-01;
+      width: auto;
+    }
+
+    .bx--dropdown-list {
+      min-width: 13.75rem;
+      width: auto;
+    }
+
+    &:hover {
+      border: solid $brand-01 2px;
+    }
+
+    &:focus {
+      box-shadow: none;
+    }
+
+    &.bx--dropdown--open:focus {
+      box-shadow: none;
+  
+      .bx--dropdown-list {
+        box-shadow: 0 1px 0 0 $brand-01, 1px 0 0 0 $brand-01, -1px 0 0 0 $brand-01, 0 -1px 0 0 $brand-01;
+      }
     }
   }
 }

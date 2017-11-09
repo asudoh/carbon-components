@@ -16,6 +16,7 @@ import OverflowMenu from './components/overflow-menu/overflow-menu';
 import Modal from './components/modal/modal';
 import Loading from './components/loading/loading';
 import Dropdown from './components/dropdown/dropdown';
+import Combobox from './components/dropdown/combobox';
 import Card from './components/card/card';
 import NumberInput from './components/number-input/number-input';
 import DataTable from './components/data-table/data-table';
@@ -117,6 +118,11 @@ export {
    * @type Dropdown
    */
   Dropdown,
+  /**
+   * A dropdown box for multiple selections.
+   * @type Combobox
+   */
+  Combobox,
   /**
    * The container for cards.
    * @type Card
@@ -241,6 +247,7 @@ export const componentClasses = [
   Modal,
   Loading,
   Dropdown,
+  Combobox,
   Card,
   NumberInput,
   DataTable,
