@@ -2,12 +2,23 @@
 <html lang="en">
 
 <head>
-  <base href="/">
-  <meta charset="UTF-8">
+  <meta name="content-type" content="text/html; charset=UTF-8">
   <meta name="viewport" content="width=device-width">
+  <meta name="description" content="Carbon Components demo">
+  <meta name="keywords" content="carbon,component,components,css,html,ibm,javascript,js,library,pattern,patterns,sass,scss,style guide,eyeglass-module">
+  <meta name="robots" content="noindex,nofollow,noarchive">
+  <meta name="owner" content="carbon@us.ibm.com">
+  <meta name="security" content="Public">
+  <meta name="source" content="na delivery:na authoring:na">
+  <meta name="DC.date" scheme="iso8601" content="2018-01-01">
+  <meta name="DC.language" content="en">
+  <meta name="DC.Rights" content="&#169; Copyright IBM Corporation 2018">
+  <meta name="ibm.country" content="US">
+  <meta name="ibm.effective" scheme="W3CDTF" content="2017-03-31">
+  <base href="/">
   <title>Carbon Components</title>
   <link rel="stylesheet" href="/demo.css">
-  <style>
+  <style type="text/css">
     body {
       padding-top: 72px;
     }
@@ -81,7 +92,7 @@
   </nav>
   {/links}
 
-  <div class="demo--container" data-floating-menu-container>
+  <div class="demo--container" data-floating-menu-container role="main">
     {?links} {#links} {?items} {#items}
     <div class="demo--container__panel" data-card-list data-demo-name="{name}" {^selected} hidden{/selected}>
       {content|s}
