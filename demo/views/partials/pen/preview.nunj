@@ -1,0 +1,53 @@
+{% import "macros/render.nunj" as render %}
+<div class="tab-content">
+  <div class="page code-page test">
+    <div class="component-example">
+      <div class="component-example__live">
+        {% if renderError -%}
+          {{ renderError }}
+        {% else %}
+          <iframe
+            data-role="window"
+            class="component-example__live--rendered"
+            src="{{ previewUrl }}"
+            sandbox="allow-same-origin allow-scripts allow-forms"
+            {% if entity.display %} style="{% for property, value in entity.display %}{{ property }}: {{ value }} !important; {% endfor %}"{% endif %}
+            marginwidth="0" marginheight="0" frameborder="0" vspace="0" hspace="0" scrolling="yes">
+          </iframe>
+          <a class="component-example__view-full-render" href="{{ previewUrl }}">View full render</a>
+        {%- endif %}
+      </div>
+    </div>
+    <div class="code-example">
+      <div class="code-example__raw-html">
+        <pre class="line-numbers language-html">
+          <code class="language-html"><!--
+            {% if not entity.isCollated or entity.isVariant or entity.variants().size == 1 %}
+              -->{{ render.entity(entity.render(null, renderEnv, {preview: false, collate: false}) | async(true)) | trim }}<!--
+            {% else %}
+              {% for variant in entity.variants().items() %}
+                -->{{ '<span class="hljs-comment">&lt;!-- ' + variant.label + ' --&gt;</span>' }}
+                {{ render.entity(variant.render(null, renderEnv, {preview: false, collate: false}) | async(true)) | trim }}<!--
+              {% endfor %}
+            {% endif %}
+          --></code>
+        </pre>
+      </div>
+      <button data-copy-btn="true" class="bx--snippet-button code-example__copy-btn">
+        Copy
+        <svg class="code-example__copy-btn--icon bx--snippet__icon" fill-rule="evenodd" height="24" name="copy" role="img" viewBox="0 0 18 24" width="18" aria-label="Copy code icon">
+          <title>Copy code icon</title>
+          <path d="M13 5V0H0v19h5v5h13V5h-5zM2 17V2h9v3H5v12H2zm14 5H7V7h9v15z"></path><path d="M9 9h5v2H9zm0 3h5v2H9zm0 3h3v2H9z"></path>
+        </svg>
+        <div class="bx--btn--copy__feedback" data-feedback="Copied!"></div>
+      </button>
+    </div>
+    <div class="page_md">
+      {% if entity.notes %}
+        {{ frctl.docs.renderString(entity.notes, renderEnv) | async }}
+      {% else %}
+        <p>There are no notes for this item.</p>
+      {% endif %}
+    </div>
+  </div>
+</div>

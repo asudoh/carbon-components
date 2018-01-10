@@ -1,0 +1,45 @@
+{% import "macros/status.nunj" as status %}
+
+{% macro tree(root, current, request) %}
+  <div data-behaviour="tree" id="tree-{{ root.name }}">
+    <h3 class="demo--tree-title">{{ root.label }}</h3>
+    <ul role="menubar" class="left-nav-list" data-interior-left-nav-list aria-hidden="false">
+      {{ leaves(root.filter('isHidden', false).items(), root, current, 2, request) }}
+    </ul>
+  </div>
+{% endmacro %}
+
+{% macro leaves(items, root, current, depth, request) %}
+  {% for item in items %}
+    {% if item.isCollection or (item.isComponent and not item.isCollated and item.variants().filter('isHidden', false).size > 1) %}
+      {% if item.isComponent and not item.isCollated %}
+        {% set items = item.variants().filter('isHidden', false).items() %}
+        {% set hasCurrent = true if (current and (item.variants().filter('id', current.id).size > 0)) else false %}
+      {% else %}
+        {% set items = item.filter('isHidden', false).items() %}
+        {% set hasCurrent = true if (current and (item.filter('id', current.id).size > 0)) else false %}
+      {% endif %}
+      <li role="menuitem" tabindex="0" class="left-nav-list__item left-nav-list__item--has-children{% if hasCurrent %} left-nav-list__item--expanded{% endif %}" data-interior-left-nav-item
+        data-interior-left-nav-with-children data-behaviour="collection" id="tree-{{ root.name }}-collection-{{ item.handle }}">
+        <a class="left-nav-list__item-link" data-role="toggle">
+          {{ item.label }}
+          <div class="left-nav-list__item-icon">
+            <svg class="bx--interior-left-nav__icon" width="10" height="5" viewBox="0 0 10 5" fill-rule="evenodd">
+              <path d="M10 0L5 5 0 0z"></path>
+            </svg>
+          </div>
+        </a>
+        <ul role="menu" aria-hidden="true" class="left-nav-list left-nav-list--nested" data-interior-left-nav-nested-list data-role="items">
+        {{ leaves(items, root, current, (depth + 1), request) }}
+        </ul>
+      </li>
+    {% else %}
+      {% set isCurrent = true if (current and (current.id == item.id)) else false %}
+      <li role="menuitem" tabindex="0" class="left-nav-list__item{% if isCurrent %} left-nav-list__item--active{% endif %}" data-interior-left-nav-item>
+        <a class="left-nav-list__item-link" href="{{ path( (item | url), request) }}" data-pjax>
+          {{ item.label }}{% if item.status %}{{ status.unlabelled(item.status) }}{% endif %}
+        </a>
+      </li>
+    {% endif %}
+  {% endfor %}
+{% endmacro %}

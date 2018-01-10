@@ -1,5 +1,3 @@
-# Contributing
-
 ## Requirements
 
 Set up your SSH Key GitHub Enterprise account and install node.js 4 or higher.

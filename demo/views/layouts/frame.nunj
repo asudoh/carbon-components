@@ -1,0 +1,11 @@
+{% extends "layouts/skeleton.nunj" %}
+{% import "macros/navigation.nunj" as nav %}
+
+{% block page %}
+  <div class="bx--body demo--shell" id="frame">
+    {% include 'partials/navigation/navigation.nunj' %}
+    <div class="container" data-role="main">
+      {% block content %}{% endblock %}
+    </div>
+  </div>
+{% endblock %}

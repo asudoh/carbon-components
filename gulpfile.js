@@ -12,9 +12,13 @@ const babel = require('gulp-babel');
 const eslint = require('gulp-eslint');
 const uglify = require('gulp-uglify');
 const pump = require('pump');
+const resolveFrom = require('resolve-from');
 
-// BrowserSync
-const browserSync = require('browser-sync').create();
+// Fractal/BrowserSync
+const mandelbrot = require('@frctl/mandelbrot');
+const Fractal = require('@frctl/fractal');
+// eslint-disable-next-line import/no-dynamic-require
+const browserSync = require(resolveFrom.silent(require.resolve('@frctl/fractal'), 'browser-sync'));
 
 // Gulp
 const gulp = require('gulp');
@@ -48,38 +52,12 @@ const axe = require('gulp-axe-webdriver');
 const axeArgs = require('minimist')(process.argv.slice(2));
 
 /**
- * BrowserSync
- */
-
-gulp.task('browser-sync', ['build:dev'], () => {
-  browserSync.init({
-    logPrefix: 'Carbon Components',
-    open: false,
-    proxy: 'localhost:8080',
-    timestamps: false,
-  });
-});
-
-/**
  * Clean
  */
 
 // Use: npm run prebuild
 gulp.task('clean', () =>
-  del([
-    'scss',
-    'css',
-    'es',
-    'umd',
-    'scripts',
-    'html',
-    'dist',
-    'demo/**/*.{js,map}',
-    '!demo/js/demo-switcher.js',
-    '!demo/js/theme-switcher.js',
-    '!demo/index.js',
-    '!demo/polyfills/*.js',
-  ])
+  del(['scss', 'css', 'es', 'umd', 'scripts', 'html', 'dist', 'demo/**/*.{js,map}', '!demo/index.js', '!demo/polyfills/*.js'])
 );
 
 /**
@@ -320,14 +298,41 @@ gulp.task('test:a11y', ['sass:compiled'], done => {
 });
 
 // Watch Tasks
-gulp.task('watch', () => {
+gulp.task('watch', ['build:dev'], () => {
   gulp.watch('src/**/**/*.html').on('change', browserSync.reload);
   gulp.watch(['src/**/**/*.js'], ['scripts:dev', 'scripts:compiled']);
   gulp.watch(['demo/**/**/*.js', '!demo/demo.js'], ['scripts:dev']);
   gulp.watch(['src/**/**/*.scss', 'demo/**/*.scss'], ['sass:dev']);
 });
 
-gulp.task('serve', ['browser-sync', 'watch']);
+gulp.task('fractal', () => {
+  const customTheme = mandelbrot({
+    scripts: '/demo.js',
+    styles: '/demo.css',
+  });
+  customTheme.addLoadPath(path.join(__dirname, '/demo/views'));
+
+  const fractal = Fractal.create();
+  fractal.set('project.title', 'Carbon Components');
+  fractal.components.set('path', path.join(__dirname, 'src/components'));
+  fractal.components.set('ext', '.html');
+  fractal.components.set('statuses.ready.color', '#5aa700');
+  fractal.components.set('statuses.wip.color', '#efc100');
+  fractal.components.set('statuses.prototype.color', '#e71d32');
+  fractal.docs.set('path', path.join(__dirname, 'docs'));
+  fractal.docs.set('statuses.ready.color', '#5aa700');
+  fractal.docs.set('statuses.draft.color', '#efc100');
+  fractal.web.set('static.path', path.join(__dirname, 'demo'));
+  fractal.web.set('server.sync', true);
+  fractal.web.theme(customTheme);
+
+  const server = fractal.web.server();
+  return server.start().then(() => {
+    console.log(`Local dev server is now running at ${server.url}`); // eslint-disable-line no-console
+  });
+});
+
+gulp.task('serve', ['fractal', 'watch']);
 
 // Build task collection
 gulp.task('build:scripts', ['scripts:umd', 'scripts:es', 'scripts:compiled', 'scripts:dev']);

@@ -1,0 +1,4 @@
+<div class="page-header">
+  <h4 class="page-header__label">component</h4>
+  <h1 id="page-title" class="page-header__title">{{ entity.title }}</h1>
+</div>

@@ -1,0 +1,7 @@
+<div class="Browser-panel bx--snippet bx--snippet--code " data-role="tab-panel" id="browser-{{ entity.id }}-panel-view">
+  <div class="bx--snippet-container">
+    <code class="Code--lang-{{ entity.editorMode | default(entity.lang) }}">
+      <pre>{{ entity.getPreviewContent() | async | trim | highlight(entity.editorMode | default(entity.lang)) | linkRefs(entity) }}</pre>
+    </code>
+  </div>
+</div>

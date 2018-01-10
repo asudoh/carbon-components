@@ -1,17 +1,84 @@
 @import '../../src/globals/scss/styles';
+@import './vars.scss';
+@import './mixins.scss';
+@import './code-example.scss';
+@import './component-example.scss';
+@import './layout.scss';
+@import './markdown-page.scss';
+@import './page.scss';
+@import './page-header.scss';
+@import './prism.scss';
+@import './syntax.scss';
+@import './toggle-btn.scss';
+
+html, body, .demo--container {
+  height: 100%;
+}
 
 .demo--container {
   box-sizing: border-box;
-  padding-top: 1em;
+  padding: 2em;
   transition: .2s;
   background-color: $ui-02;
+}
 
-  .demo--collapsed & {
-    padding-left: 3rem;
+.demo--shell {
+  background-color: #fff;
+
+  .bx--global-header {
+    top: 0;
   }
 
-  .demo--standalone & {
-    padding-left: 0;
+  .bx--global-header__left-nav {
+    top: 0;
+  }
+
+  .bx--interior-left-nav {
+    top: 0;
+    overflow: auto;
+    border-right: none;
+    z-index: 7000;
+
+    &--collapsing, &--collapsed {
+      width: 0;
+    }
+  }
+
+  .bx--snippet--code {
+    padding: 0;
+    max-width: none;
+
+    .bx--snippet-container {
+      margin-right: 0;
+      padding: 1rem;
+      max-height: none;
+    }
+  }
+
+  .left-nav-list__item-link,
+  .bx--interior-left-nav--collapseable .left-nav-list--nested .left-nav-list__item-link {
+    padding-right: 1.5rem;
+  }
+
+  .component-example__live {
+    margin: 0;
+    padding: 0;
+
+    iframe {
+      min-height: 200px;
+    }
+  }
+  .page-header__label {
+    letter-spacing: normal;
+    text-transform: capitalize;
+  }
+  
+  .demo--tree-title {
+    margin: 0.5rem 0;
+    padding: 0 1.25rem;
+    font-size: 1rem;
+    line-height: 1.2;
+    text-transform: capitalize;
   }
 }
 
@@ -27,119 +94,6 @@
   .bx--col {
     background: none;
     margin-bottom: 1rem;
-  }
-}
-
-.demo--container__panel {
-  @include grid-container;
-  width: 100%;
-  max-width: 960px;
-  height: 100%;
-  min-height: 2000px;
-  padding: 1em;
-
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-
-  .demo--container.flex-col & {
-    flex-direction: column;
-    margin: 0 auto;
-
-    & > * {
-      margin: 1rem 0;
-    }
-  }
-
-  .demo--container.flex-row & {
-    flex-direction: row;
-    flex-wrap: wrap;
-    margin: 0 auto;
-
-    & > * {
-      margin: 1rem;
-    }
-  }
-
-  &.mobile {
-    max-width: 600px;
-  }
-
-  &[hidden] {
-    display: none;
-  }
-}
-
-.bx--global-header--demo {
-  top: 0;
-  height: 5.375em;
-  display: flex;
-  align-items: center;
-  padding: 1em;
-  z-index: 0;
-}
-
-.demo-switcher {
-  &__container {
-    display: flex;
-    align-items: center;
-
-    label {
-      color: #fff;
-      margin-right: 1rem;
-    }
-  }
-}
-
-.demo--standalone {
-  .test-header {
-    position: fixed;
-    background-color: $ui-05;
-    width: 100%;
-    top: 0;
-    left: 0;
-    height: 86px;
-    z-index: 8000;
-  }
-
-  .test-nav {
-    position: fixed;
-    background-color: $ui-04;
-    width: 200px;
-    height: calc(100vh - 86px);
-    bottom: 0;
-    left: 0;
-    z-index: 8000;
-  }
-}
-
-.demo--navigated {
-  .test-header {
-    display: none;
-  }
-
-  .test-nav {
-    display: none;
-  }
-
-  .demo--container {
-    padding-left: 12.5rem;
-  }
-
-  .bx--detail-page-header--with-tabs {
-    margin-left: 12.5em;
-  }
-
-  &.demo--collapsed .bx--detail-page-header--with-tabs {
-    margin-left: 3rem;
-  }
-}
-
-// carbon-components no longer owns alternate theme, hiding the theme switcher for now
-.theme-switcher {
-  .demo--navigated &,
-  .demo--standalone & {
-    display: none;
   }
 }
 

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <link media="all" rel="stylesheet" href="{{ path '/demo.css' }}">
+    <title>Carbon Components</title>
+    <style>
+      .offleft {
+        position: absolute;
+        top: 0;
+        left: -10000px;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="demo--container" data-floating-menu-container data-card-list>
+      {{{ yield }}}
+    </div>
+
+    <!-- Pseudo element to demonstrate focus-wrap behavior (focus trap) -->
+    <input aria-label="inpute-text-offleft" type="text" class="offleft" />
+
+    <!-- Scripts -->
+    <!-- <script src="/carbon-components.min.js"></script> -->
+    <script src="/demo.js"></script>
+    <!-- Disable Auto Init with this flag -->
+    <!-- true = JavaScript will not initialize automatically -->
+    <!-- false = JavaScript will initialize automatically -->
+    <script>
+      CarbonComponents.settings.disableAutoInit = false;
+    </script>
+  </body>
+</html>
