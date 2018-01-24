@@ -1,16 +1,9 @@
-@import '../../src/globals/scss/styles';
+@import '../../src/globals/scss/styles.scss';
 @import './_vars.scss';
 @import './_mixins.scss';
+@import 'carbon-addons-website/scss/globals/scss/styles.scss';
 @import './_layout.scss';
-@import './_markdown-page.scss';
-@import './_page.scss';
 @import './_prism.scss';
-@import '../js/components/CodeExample/code-example.scss';
-@import '../js/components/CodePage/code-page.scss';
-@import '../js/components/ComponentExample/component-example.scss';
-@import '../js/components/ComponentExample/component-overrides.scss';
-@import '../js/components/PageHeader/page-header.scss';
-@import '../js/components/SideNavToggle/side-nav-toggle.scss';
 
 [data-renderroot] {
   .component-example__live {

@@ -2,7 +2,7 @@
   "root": true,
   "extends": [
     "carbon",
-    "../../.eslintrc"
+    "../.eslintrc"
   ],
   "rules": {
     "react/require-extension": 0

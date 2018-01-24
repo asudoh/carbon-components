@@ -1,6 +1,6 @@
 import './polyfills/index';
 
-import './js/components/boot-nav';
+import './js/boot-nav';
 import './js/prism';
 
 import * as components from '../src/globals/js/components';
