@@ -9,6 +9,8 @@
  *   by searching for elements with `data-component-name` (e.g. `data-loading`) attribute
  *   or upon DOM events (e.g. clicking) on such elements.
  *   See each components' static `.init()` methods for details.
+ * @property {boolean} [ignoreDuplicateClassCheck]
+ *   Disables check for duplicate Carbon classes in an app.
  * @property {string} [prefix=bx]
  *   Brand prefix. Should be in sync with `$prefix` Sass variable in carbon-components/src/globals/scss/_vars.scss.
  */

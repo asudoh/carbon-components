@@ -1,3 +1,5 @@
+/* eslint no-underscore-dangle: [2, { "allow": ["__carbon_classes"] }] */
+
 import './polyfills/index';
 
 import './js/components/boot-nav';
@@ -22,7 +24,7 @@ if (typeof module !== 'undefined' && module.hot) {
     });
   }
 
-  // Preserves component classe refs, that would be replaced replaced with new ones by HMR, to `window`
+  // Preserves component classes refs, that would be replaced replaced with new ones by HMR, to `window`
   window.oldComponentClasses = Object.keys(components)
     .map(key => components[key])
     .filter(component => typeof component.init === 'function');
