@@ -66,6 +66,8 @@
     "cz-conventional-changelog": "^1.2.0",
     "del": "~2.0.2",
     "diff": "^3.4.0",
+    "dustjs-helpers": "^1.7.0",
+    "dustjs-linkedin": "^2.7.0",
     "eslint": "^3.0.0",
     "eslint-config-airbnb": "^11.0.0",
     "eslint-config-airbnb-base": "^11.0.0",
@@ -109,9 +111,10 @@
     "markdown-it": "^8.4.0",
     "merge-stream": "^1.0.0",
     "minimatch": "^3.0.0",
+    "mkdirp": "^0.5.0",
     "mock-raf": "^1.0.0",
     "nodemon": "1.9.1",
-    "prettier": "^1.7.0",
+    "prettier": "^1.10.0",
     "prop-types": "^15.6.0",
     "pump": "^1.0.2",
     "react": "^16.2.0",
@@ -131,7 +134,8 @@
     "vinyl-named": "^1.1.0",
     "webpack": "^3.10.0",
     "webpack-dev-middleware": "^2.0.0",
-    "webpack-hot-middleware": "^2.21.0"
+    "webpack-hot-middleware": "^2.21.0",
+    "whatwg-fetch": "^2.0.0"
   },
   "files": [
     "css/**/*",

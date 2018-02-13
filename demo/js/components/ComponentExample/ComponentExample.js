@@ -20,7 +20,7 @@ const ComponentExample = ({ htmlFile, component, variant, codepenSlug, hideViewF
   });
 
   const codepenLink = codepenSlug && `https://codepen.io/team/carbon/full/${codepenSlug}/`;
-  const componentLink = variant ? `/component/${component}/${variant}` : `/component/${component}`;
+  const componentLink = variant ? `/component/${variant}` : `/component/${component}`;
 
   const viewFullRender = hideViewFullRender ? null : (
     <Link className="component-example__view-full-render" target="_blank" href={codepenLink || componentLink}>

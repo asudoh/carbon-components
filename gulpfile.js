@@ -1,6 +1,7 @@
 'use strict';
 
 // Node
+const fs = require('fs');
 const path = require('path');
 
 // Styles
@@ -40,9 +41,15 @@ const jsdocConfig = require('gulp-jsdoc3/dist/jsdocConfig.json');
 // Generic utility
 const del = require('del');
 
+const writeFile = promisify(fs.writeFile);
+const mkdirp = promisify(require('mkdirp'));
+
 // Test environment
 const Server = require('karma').Server;
 const commander = require('commander');
+
+// Fractal templates
+const templates = require('./tools/templates');
 
 const assign = v => v;
 const cloptions = commander
@@ -64,8 +71,7 @@ gulp.task('browser-sync', ['sass:dev'], cb => {
   let started;
   nodemon({
     script: './server.js',
-    ext: 'dust js',
-    watch: ['./demo/views', './server.js'],
+    watch: ['demo/**/*.dust', 'src/**/*.dust', 'src/**/*.config.js', 'server.js'],
     env: {
       PORT: cloptions.serverport,
     },
@@ -99,8 +105,10 @@ gulp.task('clean', () =>
     'html',
     'dist',
     'demo/**/*.{js,map}',
+    '!demo/js/components/**/*',
     '!demo/js/demo-switcher.js',
     '!demo/js/theme-switcher.js',
+    '!demo/js/prism.js',
     '!demo/index.js',
     '!demo/polyfills/*.js',
   ])
@@ -250,11 +258,17 @@ gulp.task('sass:source', () => {
   return gulp.src(srcFiles).pipe(gulp.dest('scss'));
 });
 
-gulp.task('html:source', () => {
-  const srcFiles = './src/components/**/*.html';
-
-  return gulp.src(srcFiles).pipe(gulp.dest('html'));
-});
+gulp.task('html:source', () =>
+  templates.render({ preview: '_preview-empty' }).then(renderedItems => {
+    const promises = [];
+    renderedItems.forEach((rendered, item) => {
+      const dirname = path.dirname(path.resolve(__dirname, 'html', item.relViewPath));
+      const filename = `${item.handle.replace(/--default$/, '')}.html`;
+      promises.push(mkdirp(dirname).then(() => writeFile(path.resolve(dirname, filename), rendered)));
+    });
+    return Promise.all(promises);
+  })
+);
 
 /**
  * Lint
@@ -330,7 +344,7 @@ gulp.task('jsdoc', cb => {
 
 gulp.task('test', ['test:unit', 'test:a11y']);
 
-gulp.task('test:unit', done => {
+gulp.task('test:unit', ['html:source'], done => {
   new Server(
     {
       configFile: path.resolve(__dirname, 'tests/karma.conf.js'),
