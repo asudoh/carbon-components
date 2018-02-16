@@ -2,9 +2,12 @@ import settings from '../../globals/js/settings';
 import mixin from '../../globals/js/misc/mixin';
 import createComponent from '../../globals/js/mixins/create-component';
 import initComponentBySearch from '../../globals/js/mixins/init-component-by-search';
+import handles from '../../globals/js/mixins/handles';
+import on from '../../globals/js/misc/on';
+import trackFocusWithin from '../../globals/js/misc/track-focus-within';
 import eventMatches from '../../globals/js/misc/event-matches';
 
-class Tile extends mixin(createComponent, initComponentBySearch) {
+class Tile extends mixin(createComponent, initComponentBySearch, handles) {
   /**
    * Tile.
    * @extends CreateComponent
@@ -42,24 +45,39 @@ class Tile extends mixin(createComponent, initComponentBySearch) {
         this.element.style.maxHeight = `${this.atfHeight}px`;
       }
     }
-    this.element.addEventListener('click', evt => {
-      const input = eventMatches(evt, this.options.selectorTileInput);
-      if (!input) {
-        this.element.classList.toggle(tileClass);
-      }
-      if (isExpandable) {
-        this._setTileHeight();
-      }
-    });
-    this.element.addEventListener('keydown', evt => {
-      const input = this.element.querySelector(this.options.selectorTileInput);
-      if (evt.which === 13 || evt.which === 32) {
-        if (!isExpandable) {
-          this.element.classList.toggle(tileClass);
-          input.checked = !input.checked;
+    this.manage(
+      on(this.element, 'click', evt => {
+        if (this.tileType !== 'selectable') {
+          const input = eventMatches(evt, this.options.selectorTileInput);
+          if (!input) {
+            this.element.classList.toggle(tileClass);
+          }
         }
-      }
-    });
+        if (isExpandable) {
+          this._setTileHeight();
+        }
+      })
+    );
+    this.manage(
+      on(this.element, 'keydown', evt => {
+        if (evt.which === 13 || evt.which === 32) {
+          const inputParent = eventMatches(evt, this.options.selectorTileInput);
+          if (inputParent) {
+            if (evt.which === 13) {
+              inputParent.click();
+            }
+          } else if (!isExpandable) {
+            // Backward-compatibility code for older markup of selectable tile
+            this.element.classList.toggle(tileClass);
+            const inputChild = this.element.querySelector(this.options.selectorTileInput);
+            if (inputChild) {
+              inputChild.checked = !inputChild.checked;
+            }
+          }
+        }
+      })
+    );
+    this.manage(trackFocusWithin(this.element, this.options.classFocus));
   };
 
   _setTileHeight = () => {
@@ -89,6 +107,7 @@ class Tile extends mixin(createComponent, initComponentBySearch) {
       selectorInit: '[data-tile]',
       selectorAboveTheFold: '[data-tile-atf]',
       selectorTileInput: '[data-tile-input]',
+      classFocus: `${prefix}--tile--has-focus-within`,
       classExpandedTile: `${prefix}--tile--is-expanded`,
       classClickableTile: `${prefix}--tile--is-clicked`,
       classSelectableTile: `${prefix}--tile--is-selected`,

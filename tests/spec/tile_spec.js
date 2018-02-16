@@ -33,6 +33,7 @@ describe('Test tile', function() {
         classExpandedTile: 'bx--tile--is-expanded',
         classClickableTile: 'bx--tile--is-clicked',
         classSelectableTile: 'bx--tile--is-selected',
+        classFocus: 'bx--tile--has-focus-within',
       });
     });
 
@@ -140,13 +141,13 @@ describe('Test tile', function() {
       instance = new Tile(tileElement);
     });
 
-    it('Should not have the is-clicked class before its been clicked', function() {
-      expect(tileElement.classList.contains('bx--tile--is-selected')).toBe(false);
+    it('Should not have the is-selected class before its been clicked', function() {
+      expect(tileElement.classList.contains('bx--tile--has-focus-within')).toBe(false);
     });
 
-    it('Should have the is-clicked class after its been clicked', function() {
-      tileElement.dispatchEvent(new CustomEvent('click', { bubbles: true }));
-      expect(tileElement.classList.contains('bx--tile--is-selected')).toBe(true);
+    it('Should have the is-selected class after its been clicked', function() {
+      tileElement.click();
+      expect(tileElement.classList.contains('bx--tile--has-focus-within')).toBe(true);
     });
 
     afterAll(function() {

@@ -60,6 +60,9 @@
     padding-right: $spacing-3xl;
   }
 
+  // NOTE: Using :focus-within pseudo class breaks IE
+  .#{$prefix}--tile--has-focus-within,
+  .#{$prefix}--tile--has-focus-within:hover,
   .#{$prefix}--tile--selectable:focus {
     outline: none;
     border: 1px solid $brand-01;
@@ -90,15 +93,15 @@
 
     svg {
       border-radius: 50%;
-      background-color: rgba($ui-01, .25);
-      fill: rgba($brand-01, .25);
+      background-color: rgba($ui-01, 0.25);
+      fill: rgba($brand-01, 0.25);
     }
   }
 
   .#{$prefix}--tile__chevron {
     position: absolute;
-    bottom: .5rem;
-    right: .5rem;
+    bottom: 0.5rem;
+    right: 0.5rem;
     height: 1rem;
 
     svg {
@@ -166,6 +169,11 @@
   }
 
   .#{$prefix}--tile-input {
-    display: none;
+    position: absolute;
+    top: 0;
+    left: -10000px;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
   }
 }
