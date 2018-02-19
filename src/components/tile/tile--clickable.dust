@@ -1,5 +1,0 @@
-{>_layout/}
-
-{<content}
-  <a data-tile="clickable" class="bx--tile bx--tile--clickable" tabindex="0"></a>
-{/content}

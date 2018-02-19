@@ -4,15 +4,20 @@ const globby = require('globby');
 const { promisify } = require('bluebird');
 const fs = require('fs');
 const path = require('path');
-const dust = require('dustjs-linkedin');
-const helpers = require('dustjs-helpers');
+const expressHandlebars = require('express-handlebars');
+const helpers = require('handlebars-helpers');
 const Fractal = require('@frctl/fractal');
 
-const readFile = promisify(fs.readFile);
-const render = promisify(dust.render);
+const handlebars = expressHandlebars.create({
+  defaultLayout: 'demo-nav',
+  layoutsDir: path.resolve(__dirname, '../demo/views/layouts'),
+  extname: '.hbs',
+});
 
-dust.config.whitespace = true;
-Object.assign(dust.helpers, helpers);
+const Handlebars = handlebars.handlebars;
+helpers();
+
+const readFile = promisify(fs.readFile);
 
 /**
  * @param {string} glob A glob.
@@ -27,31 +32,32 @@ const getContents = glob =>
     return Promise.all(
       filePaths.map(filePath =>
         readFile(filePath, { encoding: 'utf8' }).then(content => {
-          contents.set(path.basename(filePath, '.dust'), content);
+          contents.set(path.basename(filePath, '.hbs'), content);
         })
       )
     ).then(() => contents);
   });
 
 /**
- * Loads Dust templates and compiles them.
+ * Loads Handlebars templates and compiles them.
  * @param {string} glob A glob.
  * @returns {Set<string, string>} A set of file contents matching the given glob, keyed by the basename of the file.
  */
 const loadContents = glob =>
   getContents(glob).then(contents => {
     contents.forEach((content, templateName) => {
-      dust.loadSource(dust.compile(content, templateName));
+      Handlebars.registerPartial(templateName, content);
+      contents.set(templateName, Handlebars.compile(content));
     });
     return contents;
   });
 
 const fractal = Fractal.create();
 fractal.components.set('path', path.join(__dirname, '../src/components'));
-fractal.components.set('ext', '.dust');
+fractal.components.set('ext', '.hbs');
 fractal.docs.set('path', path.join(__dirname, '../docs'));
 
-const promiseCache = Promise.all([fractal.load(), loadContents(path.resolve(__dirname, '../{demo,src}/**/*.dust'))]).then(
+const promiseCache = Promise.all([fractal.load(), loadContents(path.resolve(__dirname, '../{demo,src}/**/*.hbs'))]).then(
   ([sources, contents]) => {
     const [componentSource, docSource] = sources;
     return {
@@ -64,8 +70,8 @@ const promiseCache = Promise.all([fractal.load(), loadContents(path.resolve(__di
 
 /**
  * @param {Object} [options] The options.
- * @param {string} [options.preview] The preview Dust template name to force. Useful to force an empty preview.
- * @param {string} [options.defauktPreview] The preview Dust template name working as the default one.
+ * @param {string} [options.preview] The preview Handlebars template name to force. Useful to force an empty preview.
+ * @param {string} [options.defaultPreview] The preview Handlebars template name working as the default one.
  * @param {boolean} [options.concat] Setting `true` here returns rendered contents all concatenated, instead of returning a map.
  * @param {string} [handle]
  *   The internal component name seen in Fractal.
@@ -75,7 +81,6 @@ const promiseCache = Promise.all([fractal.load(), loadContents(path.resolve(__di
  */
 const renderComponent = ({ preview, defaultPreview, concat } = {}, handle) =>
   promiseCache.then(({ componentSource, contents }) => {
-    const promises = [];
     const renderedItems = new Map();
     componentSource.forEach(metadata => {
       const items = metadata.isCollection ? metadata : !metadata.isCollated && metadata.variants && metadata.variants();
@@ -83,30 +88,27 @@ const renderComponent = ({ preview, defaultPreview, concat } = {}, handle) =>
         const filteredItems = !handle || handle === metadata.handle ? items : items.filter(item => handle === item.handle);
         filteredItems.forEach(item => {
           const { handle: itemHandle, baseHandle, context } = item;
-          const template = contents.has(itemHandle) ? itemHandle : baseHandle;
-          promises.push(
-            render(template, Object.assign({}, context, { preview: preview || item.preview || defaultPreview })).then(
-              rendered => {
-                renderedItems.set(item, rendered);
-              }
-            )
-          );
+          const template = contents.get(itemHandle) || contents.get(baseHandle);
+          if (template) {
+            const body = template(context);
+            const layoutTemplate = contents.get(preview || item.preview || defaultPreview);
+            renderedItems.set(item, !layoutTemplate ? body : layoutTemplate(Object.assign({ body }, context)));
+          }
         });
       }
     });
-    return Promise.all(promises).then(() => {
-      if (!concat) {
-        return renderedItems;
-      }
-      const accumulated = [];
-      renderedItems.forEach(rendered => {
-        accumulated.push(rendered);
-      });
-      return accumulated.join('\n');
+    if (!concat) {
+      return renderedItems;
+    }
+    const accumulated = [];
+    renderedItems.forEach(rendered => {
+      accumulated.push(rendered);
     });
+    return accumulated.length > 0 ? accumulated.join('\n') : undefined;
   });
 
 module.exports = {
   promiseCache,
   render: renderComponent,
+  handlebars,
 };

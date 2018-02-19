@@ -1,5 +1,0 @@
-{>_layout/}
-
-{<content}
-  <div class="bx--tile"></div>
-{/content}

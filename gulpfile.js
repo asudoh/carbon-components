@@ -71,8 +71,8 @@ gulp.task('dev-server', cb => {
   let started;
   const options = {
     script: './server.js',
-    ext: 'dust js',
-    watch: ['demo/**/*.dust', 'src/**/*.dust', 'src/**/*.config.js', 'server.js'],
+    ext: 'hbs js',
+    watch: ['demo/**/*.hbs', 'src/**/*.hbs', 'src/**/*.config.js', 'server.js'],
     env: {
       PORT: cloptions.port,
     },
@@ -254,7 +254,7 @@ gulp.task('sass:source', () => {
 });
 
 gulp.task('html:source', () =>
-  templates.render({ preview: '_preview-empty' }).then(renderedItems => {
+  templates.render({ preview: 'NONE' }).then(renderedItems => {
     const promises = [];
     renderedItems.forEach((rendered, item) => {
       const dirname = path.dirname(path.resolve(__dirname, 'html', item.relViewPath));

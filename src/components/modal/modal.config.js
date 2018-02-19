@@ -10,6 +10,8 @@ module.exports = {
       `,
       context: {
         hasFooter: true,
+        classPrimaryButton: 'bx--btn--primary',
+        classCloseButton: 'bx--btn--secondary',
       },
     },
     {
@@ -18,6 +20,18 @@ module.exports = {
       notes: 'Passive modals are modals without footers.',
       context: {
         hasFooter: false,
+        classPrimaryButton: 'bx--btn--primary',
+        classCloseButton: 'bx--btn--secondary',
+      },
+    },
+    {
+      name: 'danger',
+      label: 'Danger',
+      context: {
+        hasFooter: true,
+        classModalSupplemental: 'bx--modal--danger',
+        classPrimaryButton: 'bx--btn--danger--primary',
+        classCloseButton: 'bx--btn--tertiary',
       },
     },
   ],

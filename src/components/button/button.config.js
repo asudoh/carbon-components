@@ -46,6 +46,27 @@ module.exports = {
       },
     },
     {
+      name: 'tertiary',
+      label: 'Tertiary Buttons',
+      notes: 'Tertiary buttons should be used for tertiary actions on each page.',
+      context: {
+        variant: 'tertiary',
+      },
+    },
+    {
+      name: 'tertiary--small',
+      label: 'Tertiary Buttons (Small)',
+      notes: `
+        Small buttons may be used when there is not enough space for a
+        regular sized button. This issue is most found in tables. Small button should have three words
+        or less.
+      `,
+      context: {
+        variant: 'tertiary',
+        small: true,
+      },
+    },
+    {
       name: 'danger',
       label: 'Danger Buttons',
       notes: 'Danger buttons should be used for a negative action (such as Delete) on the page.',

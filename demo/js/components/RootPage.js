@@ -30,23 +30,28 @@ const load = (componentItems, selectedNavItemId) => {
       })
       .then(responseContent => {
         if (Object(responseContent) === responseContent) {
-          return componentItems.map(
-            item =>
-              item.id !== selectedNavItemId
-                ? item
-                : {
-                    ...item,
-                    items: item.items.map(
-                      subItem =>
-                        !responseContent[subItem.handle]
-                          ? subItem
-                          : {
-                              ...subItem,
-                              renderedContent: responseContent[subItem.handle],
-                            }
-                    ),
-                  }
-          );
+          return componentItems.map(item => {
+            if (item.id !== selectedNavItemId) {
+              return item;
+            }
+            return !item.items
+              ? {
+                  ...item,
+                  renderedContent: responseContent[`${item.handle}--default`],
+                }
+              : {
+                  ...item,
+                  items: item.items.map(
+                    subItem =>
+                      !responseContent[subItem.handle]
+                        ? subItem
+                        : {
+                            ...subItem,
+                            renderedContent: responseContent[subItem.handle],
+                          }
+                  ),
+                };
+          });
         }
         return componentItems.map(
           item =>
