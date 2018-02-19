@@ -1,35 +1,26 @@
 'use strict';
 
-const globby = require('globby'); // eslint-disable-line
-const { promisify } = require('bluebird'); // eslint-disable-line
-const path = require('path');
-const express = require('express'); // eslint-disable-line
-const Fractal = require('@frctl/fractal'); // eslint-disable-line
+/* eslint import/no-extraneous-dependencies: [2, {"devDependencies": true}] */
 
-const webpack = require('webpack'); // eslint-disable-line
-const webpackDevMiddleware = require('webpack-dev-middleware'); // eslint-disable-line
-const webpackHotMiddleware = require('webpack-hot-middleware'); // eslint-disable-line
+const path = require('path');
+const express = require('express');
+
+const webpack = require('webpack');
+const webpackDevMiddleware = require('webpack-dev-middleware');
+const webpackHotMiddleware = require('webpack-hot-middleware');
 
 const templates = require('./tools/templates');
 
 const app = express();
-const adaro = require('adaro'); // eslint-disable-line
-
 const port = process.env.PORT || 8080;
-
 const config = require('./tools/webpack.dev.config');
 
 const compiler = webpack(config);
 app.use(webpackDevMiddleware(compiler, { noInfo: true, publicPath: config.output.publicPath }));
 app.use(webpackHotMiddleware(compiler));
 
-const fractal = Fractal.create();
-fractal.components.set('path', path.join(__dirname, 'src/components'));
-fractal.components.set('ext', '.dust');
-fractal.docs.set('path', path.join(__dirname, 'docs'));
-
-app.engine('dust', adaro.dust());
-app.set('view engine', 'dust');
+app.engine('hbs', templates.handlebars.engine);
+app.set('view engine', 'hbs');
 app.set('views', path.resolve(__dirname, 'demo/views'));
 app.use('/demo', express.static('demo'));
 app.use(express.static('src'));
@@ -84,7 +75,7 @@ const promiseNavItems = templates.promiseCache
     } else {
       promiseNavItems
         .then(({ componentItems, docItems }) => {
-          res.render('demo-nav', {
+          res.render('demo-nav-data', {
             componentItems,
             docItems,
           });
@@ -104,8 +95,12 @@ app.get('/component/:component', (req, res) => {
     res.status(404).end();
   } else {
     templates
-      .render({ defaultPreview: '_preview-default', concat: true }, name)
+      .render({ defaultPreview: 'preview', concat: true }, name)
       .then(rendered => {
+        // eslint-disable-next-line eqeqeq
+        if (rendered == null) {
+          res.status(404).end();
+        }
         res.send(rendered);
       })
       .catch(error => {
@@ -122,7 +117,7 @@ app.get('/code/:component', (req, res) => {
     res.status(404).end();
   } else {
     templates
-      .render({ preview: '_preview-empty' }, name)
+      .render({ preview: 'NONE' }, name)
       .then(renderedItems => {
         const o = {};
         renderedItems.forEach((rendered, item) => {

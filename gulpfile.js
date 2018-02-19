@@ -71,7 +71,7 @@ gulp.task('browser-sync', ['sass:dev'], cb => {
   let started;
   nodemon({
     script: './server.js',
-    watch: ['demo/**/*.dust', 'src/**/*.dust', 'src/**/*.config.js', 'server.js'],
+    watch: ['demo/**/*.hbs', 'src/**/*.hbs', 'src/**/*.config.js', 'server.js'],
     env: {
       PORT: cloptions.serverport,
     },
