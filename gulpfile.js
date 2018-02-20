@@ -19,6 +19,7 @@ const nodemon = require('gulp-nodemon');
 
 // Gulp
 const gulp = require('gulp');
+const through = require('through2');
 const rename = require('gulp-rename');
 const sourcemaps = require('gulp-sourcemaps');
 const gutil = require('gulp-util');
@@ -32,6 +33,10 @@ const rollupConfigProd = require('./tools/rollup.config');
 // WebPack
 const webpack = promisify(require('webpack'));
 const webpackDevConfig = require('./tools/webpack.dev.config');
+
+// Design tokens
+const theo = require('gulp-theo');
+const prefixTokens = require('./tools/prefix-tokens');
 
 // JSDoc
 const jsdocConfig = require('gulp-jsdoc3/dist/jsdocConfig.json');
@@ -113,6 +118,125 @@ gulp.task('clean', () =>
 );
 
 /**
+ * Design Token Tasks
+ */
+
+gulp.task('tokens:sass:globals', () =>
+  gulp
+    .src('src/globals/tokens/color-theme.yml')
+    .pipe(
+      theo
+        .plugin({
+          transform: { type: 'web' },
+          format: { type: 'scss' },
+        })
+        .on('error', gutil.log)
+    )
+    .pipe(gulp.dest('scss/globals/tokens'))
+);
+
+gulp.task('tokens:sass:components', () =>
+  gulp
+    .src(['src/components/**/*.yml', '!src/components/**/_*.yml'])
+    .pipe(
+      theo
+        .plugin({
+          transform: { type: 'web' },
+          format: { type: 'map.scss' },
+        })
+        .on('error', gutil.log)
+    )
+    .pipe(
+      through.obj((file, enc, cb) => {
+        file.contents = Buffer.from(file.contents.toString('utf8').replace(/(\$[\w\-_]+)-map\b/, '$1'));
+        cb(null, file);
+      })
+    )
+    .pipe(
+      rename(filePath => {
+        filePath.basename = filePath.basename.replace(/\.map$/i, '');
+      })
+    )
+    .pipe(gulp.dest('scss/components'))
+);
+
+gulp.task('tokens:sass', ['tokens:sass:globals', 'tokens:sass:components']);
+
+gulp.task('tokens:json:types', () =>
+  gulp
+    .src(['src/components/**/*.yml', '!src/components/**/_*.yml'])
+    .pipe(
+      theo
+        .plugin({
+          transform: { type: 'web' },
+          format: { type: 'json' },
+        })
+        .on('error', gutil.log)
+    )
+    .pipe(gulp.dest('tokens'))
+);
+
+gulp.task('tokens:json:component', ['tokens:json:types'], () => {
+  const contents = new Map();
+  const table = {
+    accordion: {
+      classes: {
+        'item-active': 'classActive',
+      },
+      selectors: {
+        init: 'selectorInit',
+        item: 'selectorAccordionItem',
+        heading: 'selectorAccordionItemHeading',
+        content: 'selectorAccordionContent',
+      },
+    },
+  };
+  return gulp
+    .src('tokens/**/*.json')
+    .pipe(
+      through.obj(
+        (file, enc, done) => {
+          const dirname = path.dirname(file.relative);
+          const basename = path.basename(file.relative, '.json');
+          const tokens = /^(\w+)--(\w+)$/.exec(basename) || [];
+          if (dirname === tokens[1]) {
+            const dirContents = contents.get(dirname) || new Map();
+            dirContents.set(tokens[2], file);
+            contents.set(dirname, dirContents);
+          }
+          done();
+        },
+        function endStream(cb) {
+          // eslint-disable-line prefer-arrow-callback
+          try {
+            contents.forEach((dirContents, dirname) => {
+              // const file = dirContents.values().next().value.close({ contents: false });
+              let lastFile;
+              const o = {};
+              dirContents.forEach((file, name) => {
+                lastFile = file;
+                Object.assign(o, prefixTokens(JSON.parse(file.contents.toString('utf8')), (table[dirname] || {})[name]));
+              });
+              if (lastFile) {
+                const file = lastFile.clone({ contents: false });
+                file.path = path.join(path.dirname(lastFile.path), `${dirname}.json`);
+                file.contents = new Buffer(JSON.stringify(o, null, 2));
+                this.push(file);
+              }
+            });
+            cb();
+          } catch (err) {
+            cb(err);
+          }
+        }
+      )
+    )
+    .pipe(gulp.dest('tokens'));
+});
+
+gulp.task('tokens:json', ['tokens:json:component']);
+
+/**
  * JavaScript Tasks
  */
 
@@ -192,14 +316,14 @@ gulp.task('scripts:compiled', ['scripts:rollup'], cb => {
  * Sass Tasks
  */
 
-gulp.task('sass:compiled', () => {
+gulp.task('sass:compiled', ['tokens:sass'], () => {
   function buildStyles(prod) {
     return gulp
       .src('src/globals/scss/styles.scss')
       .pipe(sourcemaps.init())
       .pipe(
         sass({
-          includePaths: ['node_modules/'],
+          includePaths: ['node_modules', path.resolve(__dirname, 'scss/globals/tokens')],
           outputStyle: prod ? 'compressed' : 'expanded',
         }).on('error', sass.logError)
       )
@@ -232,13 +356,13 @@ gulp.task('sass:compiled', () => {
   buildStyles(true); // Minified CSS
 });
 
-gulp.task('sass:dev', () =>
+gulp.task('sass:dev', ['tokens:sass'], () =>
   gulp
     .src('demo/scss/demo.scss')
     .pipe(sourcemaps.init())
     .pipe(
       sass({
-        includePaths: ['node_modules/'],
+        includePaths: ['node_modules', path.resolve(__dirname, 'scss/globals/tokens')],
         outputStyle: 'expanded',
       }).on('error', sass.logError)
     )
@@ -344,7 +468,8 @@ gulp.task('watch', () => {
   if (cloptions.rollup) {
     gulp.watch(['src/**/**/*.js', 'demo/**/**/*.js', '!demo/demo.js'], ['scripts:dev']);
   }
-  gulp.watch(['src/**/**/*.scss', 'demo/**/*.scss'], ['sass:dev']);
+  gulp.watch(['src/**/**/*.scss', 'demo/**/*.scss', 'src/**/**/*.yml'], ['sass:dev']);
+  gulp.watch('src/**/*.yml', ['tokens:json']);
 });
 
 gulp.task('serve', ['browser-sync', 'watch']);

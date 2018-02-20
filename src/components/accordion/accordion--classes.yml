@@ -1,0 +1,20 @@
+imports:
+  - ./_accordion.yml
+global:
+  type: class
+  category: component
+props:
+  base:
+    value: "{!prefix}--{!name}"
+  item:
+    value: "{!prefix}--{!name}__item"
+  item-active:
+    value: "{!prefix}--{!name}__item--active"
+  arrow:
+    value: "{!prefix}--{!name}__arrow"
+  heading:
+    value: "{!prefix}--{!name}__heading"
+  title:
+    value: "{!prefix}--{!name}__title"
+  content:
+    value: "{!prefix}--{!name}__content"

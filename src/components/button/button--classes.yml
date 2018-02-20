@@ -1,0 +1,24 @@
+imports:
+  - ./_button.yml
+global:
+  type: class
+  category: component
+props:
+  base:
+    value: "{!prefix}--{!name}"
+  icon:
+    value: "{!prefix}--{!name}__icon"
+  primary:
+    value: "{!prefix}--{!name}--primary"
+  secondary:
+    value: "{!prefix}--{!name}--secondary"
+  tertiary:
+    value: "{!prefix}--{!name}--tertiary"
+  ghost:
+    value: "{!prefix}--{!name}--ghost"
+  danger:
+    value: "{!prefix}--{!name}--danger"
+  danger-primary:
+    value: "{!prefix}--{!name}--danger--primary"
+  small:
+    value: "{!prefix}--{!name}--sm"

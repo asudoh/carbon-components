@@ -1,0 +1,14 @@
+imports:
+  - ./_accordion.yml
+global:
+  type: selector
+  category: component
+props:
+  init:
+    value: "[data-{!name}]"
+  item:
+    value: ".{!prefix}--{!name}__item"
+  heading:
+    value: ".{!prefix}--{!name}__heading"
+  content:
+    value: ".{!prefix}--{!name}__content"

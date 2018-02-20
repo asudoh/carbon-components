@@ -1,0 +1,5 @@
+imports:
+  - ../../globals/tokens/brand.yml
+aliases:
+  name:
+    value: "accordion"

@@ -1,0 +1,18 @@
+imports:
+  - ./_loading.yml
+global:
+  type: class
+  category: component
+props:
+  base:
+    value: "{!prefix}--{!name}"
+  svg:
+    value: "{!prefix}--{!name}__svg"
+  stop:
+    value: "{!prefix}--{!name}--stop"
+  small:
+    value: "{!prefix}--{!name}--small"
+  overlay:
+    value: "{!prefix}--{!name}-overlay"
+  overlay-stop:
+    value: "{!prefix}--{!name}-overlay--stop"

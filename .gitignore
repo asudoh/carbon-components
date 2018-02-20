@@ -34,6 +34,7 @@ tests/coverage
 /css/**
 /scss
 /html
+/tokens
 /docs/js
 
 # a11y testing

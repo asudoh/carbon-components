@@ -6,20 +6,22 @@
 @import 'mixins';
 @import '../../globals/scss/css--reset';
 
+@import 'scss/components/button/button--classes';
+
 @include exports('button') {
   // <button> elements cannot be used as flex containers
-  button.#{$prefix}--btn {
+  button.#{map-get($button--classes, 'base')} {
     display: inline-block;
   }
 
   // Reset intrisic padding in Firefox (see #731)
-  button.#{$prefix}--btn::-moz-focus-inner {
+  button.#{map-get($button--classes, 'base')}::-moz-focus-inner {
     padding: 0;
     border: 0;
   }
 
   // Vertically center icon inside <button>
-  button.#{$prefix}--btn .#{$prefix}--btn__icon {
+  button.#{map-get($button--classes, 'base')} .#{map-get($button--classes, 'icon')} {
     position: relative;
     vertical-align: middle;
     top: -1px;
@@ -30,11 +32,11 @@
     }
   }
 
-  .#{$prefix}--btn {
+  .#{map-get($button--classes, 'base')} {
     @include button-base;
   }
 
-  .#{$prefix}--btn--primary {
+  .#{map-get($button--classes, 'primary')} {
     @include button-theme(
       $brand-01,
       transparent,
@@ -44,7 +46,7 @@
     );
   }
 
-  .#{$prefix}--btn--secondary {
+  .#{map-get($button--classes, 'secondary')} {
     @include button-theme(
       transparent,
       $brand-01,
@@ -62,8 +64,8 @@
       color: $brand-01;
     }
 
-    &:hover > .#{$prefix}--btn__icon,
-    &:focus > .#{$prefix}--btn__icon {
+    &:hover > .#{map-get($button--classes, 'icon')},
+    &:focus > .#{map-get($button--classes, 'icon')} {
       fill: $inverse-01;
     }
 
@@ -73,7 +75,7 @@
     }
   }
 
-  .#{$prefix}--btn--tertiary {
+  .#{map-get($button--classes, 'tertiary')} {
     @include button-theme(
       transparent,
       $ui-05,
@@ -97,7 +99,7 @@
     }
   }
 
-  .#{$prefix}--btn--ghost {
+  .#{map-get($button--classes, 'ghost')} {
     @include button-theme(
       transparent,
       transparent,
@@ -110,12 +112,12 @@
     &:focus {
       color: $inverse-01;
 
-      .#{$prefix}--btn__icon {
+      .#{map-get($button--classes, 'icon')} {
         fill: $inverse-01;
       }
     }
 
-    .#{$prefix}--btn__icon {
+    .#{map-get($button--classes, 'icon')} {
       margin-left: $spacing-xs;
     }
 
@@ -123,13 +125,13 @@
     &:focus:disabled {
       color: $brand-01;
 
-      .#{$prefix}--btn__icon {
+      .#{map-get($button--classes, 'icon')} {
         fill: $brand-01;
       }
     }
   }
 
-  .#{$prefix}--btn--danger {
+  .#{map-get($button--classes, 'danger')} {
     @include button-theme(
       transparent,
       $support-01,
@@ -154,7 +156,7 @@
     }
   }
 
-  .#{$prefix}--btn--danger--primary {
+  .#{map-get($button--classes, 'danger-primary')} {
     @include button-theme(
       $support-01,
       transparent,
@@ -170,13 +172,13 @@
     }
   }
 
-  .#{$prefix}--btn--sm {
+  .#{map-get($button--classes, 'small')} {
     height: 2rem;
     padding: $button-padding-sm;
     letter-spacing: 0;
   }
 
-  .#{$prefix}--btn--secondary + .#{$prefix}--btn--primary {
+  .#{map-get($button--classes, 'secondary')} + .#{map-get($button--classes, 'primary')} {
     margin-left: $spacing-md;
   }
 }

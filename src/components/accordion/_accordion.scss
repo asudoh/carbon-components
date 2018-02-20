@@ -7,15 +7,17 @@
 @import '../../globals/scss/css--reset';
 @import '../../globals/scss/css--typography';
 
+@import 'scss/components/accordion/accordion--classes';
+
 @include exports('accordion') {
-  .#{$prefix}--accordion {
+  .#{map-get($accordion--classes, "base")} {
     @include reset;
     @include font-family;
     list-style: none;
     width: 100%;
   }
 
-  .#{$prefix}--accordion__item {
+  .#{map-get($accordion--classes, "item")} {
     transition: all $transition--base $carbon--standard-easing;
     border-top: 1px solid $ui-04;
     overflow: hidden;
@@ -23,7 +25,7 @@
     &:focus {
       outline: none;
 
-      .#{$prefix}--accordion__arrow {
+      .#{map-get($accordion--classes, "arrow")} {
         @include focus-outline('border');
         overflow: visible; // safari fix
         outline-offset: -.5px; // safari fix
@@ -35,7 +37,7 @@
     }
   }
 
-  .#{$prefix}--accordion__heading {
+  .#{map-get($accordion--classes, "heading")} {
     @include button-reset;
     color: $text-01;
     display: flex;
@@ -58,7 +60,7 @@
     }
   }
 
-  .#{$prefix}--accordion__arrow {
+  .#{map-get($accordion--classes, "arrow")} {
     transition: all $transition--base $carbon--standard-easing;
     height: 1.25rem;
     width: 1.25rem;
@@ -67,11 +69,11 @@
     fill: $ui-05;
   }
 
-  .#{$prefix}--accordion__title {
+  .#{map-get($accordion--classes, "title")} {
     margin: $accordion-title-margin;
   }
 
-  .#{$prefix}--accordion__content {
+  .#{map-get($accordion--classes, "content")} {
     transition: all $transition--expansion $carbon--ease-out;
     padding: $accordion-content-padding;
     height: 0;
@@ -84,10 +86,10 @@
   }
 }
 
-.#{$prefix}--accordion__item--active {
+.#{map-get($accordion--classes, "item-active")} {
   overflow: visible;
 
-  .#{$prefix}--accordion__content {
+  .#{map-get($accordion--classes, "content")} {
     padding-top: $spacing-md;
     padding-bottom: $spacing-lg;
     height: auto;
@@ -96,7 +98,7 @@
     transition: all $transition--expansion $carbon--ease-in;
   }
 
-  .#{$prefix}--accordion__arrow {
+  .#{map-get($accordion--classes, "arrow")} {
     transform: rotate(90deg);
     fill: $brand-01;
   }
