@@ -1,12 +1,9 @@
 imports:
   - ./_loading.yml
-global:
-  type: selector
-  category: component
+namespaces:
+  - "{!name}"
+  - "selector"
 props:
-  init:
-    value: "[data-loading]"
-  svg:
-    value: ".{!prefix}--{!name}__svg"
-  overlay:
-    value: ".{!prefix}--{!name}-overlay"
+  init: "[data-loading]"
+  svg: ".{!prefix}--{!name}__svg"
+  overlay: ".{!prefix}--{!name}-overlay"

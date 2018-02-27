@@ -1,0 +1,12 @@
+imports:
+  - ./accordion--classes.yml
+  - ./accordion--selectors.yml
+namespaces:
+  - "{!name}"
+  - "setting"
+props:
+  selectorInit: "{!init:selector}"
+  selectorAccordionItem: "{!item:selector}"
+  selectorAccordionItemHeading: "{!item:selector}"
+  selectorAccordionContent: "{!content:selector}"
+  classActive: "{!item-active:class}"

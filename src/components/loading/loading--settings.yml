@@ -1,0 +1,13 @@
+imports:
+  - ./loading--classes.yml
+  - ./loading--selectors.yml
+namespaces:
+  - "{!name}"
+  - "setting"
+props:
+  selectorInit: "{!init:selector}"
+  selectorLoadingOverlay: "{!overlay:selector}"
+  classLoadingOverlay: "{!overlay:class}"
+  classLoadingStop: "{!stop:class}"
+  classLoadingOverlayStop: "{!overlay-stop:class}"
+  active: true

@@ -19,7 +19,6 @@ const nodemon = require('gulp-nodemon');
 
 // Gulp
 const gulp = require('gulp');
-const through = require('through2');
 const rename = require('gulp-rename');
 const sourcemaps = require('gulp-sourcemaps');
 const gutil = require('gulp-util');
@@ -35,8 +34,7 @@ const webpack = promisify(require('webpack'));
 const webpackDevConfig = require('./tools/webpack.dev.config');
 
 // Design tokens
-const theo = require('gulp-theo');
-const prefixTokens = require('./tools/prefix-tokens');
+const tokens = require('./tools/tokens/index');
 
 // JSDoc
 const jsdocConfig = require('gulp-jsdoc3/dist/jsdocConfig.json');
@@ -125,10 +123,10 @@ gulp.task('tokens:sass:globals', () =>
   gulp
     .src('src/globals/tokens/color-theme.yml')
     .pipe(
-      theo
+      tokens
         .plugin({
-          transform: { type: 'web' },
-          format: { type: 'scss' },
+          format: 'scss',
+          flat: true,
         })
         .on('error', gutil.log)
     )
@@ -137,102 +135,32 @@ gulp.task('tokens:sass:globals', () =>
 
 gulp.task('tokens:sass:components', () =>
   gulp
-    .src(['src/components/**/*.yml', '!src/components/**/_*.yml'])
+    .src(['src/components/**/*-{classes,selectors}.yml', '!src/components/**/_*.yml'])
     .pipe(
-      theo
+      tokens
         .plugin({
-          transform: { type: 'web' },
-          format: { type: 'map.scss' },
+          format: 'scss',
         })
         .on('error', gutil.log)
-    )
-    .pipe(
-      through.obj((file, enc, cb) => {
-        file.contents = Buffer.from(file.contents.toString('utf8').replace(/(\$[\w\-_]+)-map\b/, '$1'));
-        cb(null, file);
-      })
-    )
-    .pipe(
-      rename(filePath => {
-        filePath.basename = filePath.basename.replace(/\.map$/i, '');
-      })
     )
     .pipe(gulp.dest('scss/components'))
 );
 
 gulp.task('tokens:sass', ['tokens:sass:globals', 'tokens:sass:components']);
 
-gulp.task('tokens:json:types', () =>
+gulp.task('tokens:json:component', () =>
   gulp
-    .src(['src/components/**/*.yml', '!src/components/**/_*.yml'])
+    .src(['src/components/**/*-settings.yml', '!src/components/**/_*.yml'])
     .pipe(
-      theo
+      tokens
         .plugin({
-          transform: { type: 'web' },
-          format: { type: 'json' },
+          format: 'json',
+          flat: true,
         })
         .on('error', gutil.log)
     )
     .pipe(gulp.dest('tokens'))
 );
-
-gulp.task('tokens:json:component', ['tokens:json:types'], () => {
-  const contents = new Map();
-  const table = {
-    accordion: {
-      classes: {
-        'item-active': 'classActive',
-      },
-      selectors: {
-        init: 'selectorInit',
-        item: 'selectorAccordionItem',
-        heading: 'selectorAccordionItemHeading',
-        content: 'selectorAccordionContent',
-      },
-    },
-  };
-  return gulp
-    .src('tokens/**/*.json')
-    .pipe(
-      through.obj(
-        (file, enc, done) => {
-          const dirname = path.dirname(file.relative);
-          const basename = path.basename(file.relative, '.json');
-          const tokens = /^(\w+)--(\w+)$/.exec(basename) || [];
-          if (dirname === tokens[1]) {
-            const dirContents = contents.get(dirname) || new Map();
-            dirContents.set(tokens[2], file);
-            contents.set(dirname, dirContents);
-          }
-          done();
-        },
-        function endStream(cb) {
-          // eslint-disable-line prefer-arrow-callback
-          try {
-            contents.forEach((dirContents, dirname) => {
-              // const file = dirContents.values().next().value.close({ contents: false });
-              let lastFile;
-              const o = {};
-              dirContents.forEach((file, name) => {
-                lastFile = file;
-                Object.assign(o, prefixTokens(JSON.parse(file.contents.toString('utf8')), (table[dirname] || {})[name]));
-              });
-              if (lastFile) {
-                const file = lastFile.clone({ contents: false });
-                file.path = path.join(path.dirname(lastFile.path), `${dirname}.json`);
-                file.contents = new Buffer(JSON.stringify(o, null, 2));
-                this.push(file);
-              }
-            });
-            cb();
-          } catch (err) {
-            cb(err);
-          }
-        }
-      )
-    )
-    .pipe(gulp.dest('tokens'));
-});
 
 gulp.task('tokens:json', ['tokens:json:component']);
 

@@ -1,5 +1,6 @@
 imports:
   - ../../globals/tokens/brand.yml
+namespaces:
+  - "{!name}"
 aliases:
-  name:
-    value: "accordion"
+  name: "accordion"
