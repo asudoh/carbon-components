@@ -1,7 +1,10 @@
 #!/bin/sh
 
-yarn lint
-yarn build
-yarn test:unit -- -b ChromeHeadless_Travis -b Firefox
-if [[ -n "$RUN_EACH" ]]; then find tests/spec -name "*.js" ! -name left-nav_spec.js -print0 | xargs -0 -n 1 -P 1 yarn test:unit -- -d -f; fi
-if [[ -n "$AAT_TOKEN" ]]; then yarn test:a11y; fi
+tasks=("lint" "build" "test:unit:ci")
+if [[ -n "$RUN_EACH" ]]; then
+  tasks[${#tasks[@]}] = "test:unit:each:ci"
+fi
+if [[ -n "$AAT_TOKEN" ]]; then
+  tasks[${#tasks[@]}] = "test:a11y"
+fi
+./node_modules/.bin/npm-run-all -p ${tasks[@]}
