@@ -35,7 +35,7 @@
     "class-methods-use-this": 0,
     "max-len": [2, 130, 4],
     "no-plusplus": 0,
-    "no-underscore-dangle": [2, { "allowAfterThis": true, "allowAfterSuper": true }]
+    "no-underscore-dangle": [2, { "allow": ["_activeElement"], "allowAfterThis": true, "allowAfterSuper": true }]
   },
   "settings": {
     "jsdoc": {

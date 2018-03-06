@@ -25,7 +25,7 @@ function flattenOptions(options) {
  * @returns {Flatpickr} The augmented Flatpickr instance.
  * @private
  */
-function augmentFlatpickr(calendar) {
+function augmentFlatpickr(calendar, { selectorDatePickerInputFrom, selectorDatePickerInputTo } = {}) {
   const container = calendar._;
   if (container) {
     if (container.changeEvent) {
@@ -41,6 +41,26 @@ function augmentFlatpickr(calendar) {
       },
     });
   }
+  const origClose = calendar.close;
+  calendar.close = function closeCalendar(...args) {
+    if (
+      !calendar._activeElement ||
+      (!calendar._activeElement.matches(selectorDatePickerInputFrom) &&
+        !calendar._activeElement.matches(selectorDatePickerInputTo))
+    ) {
+      origClose.call(this, ...args);
+    }
+  };
+  const origClear = calendar.clear;
+  calendar.clear = function closeCalendar(...args) {
+    if (
+      !calendar._activeElement ||
+      (!calendar._activeElement.matches(selectorDatePickerInputFrom) &&
+        !calendar._activeElement.matches(selectorDatePickerInputTo))
+    ) {
+      origClear.call(this, ...args);
+    }
+  };
   return calendar;
 }
 
@@ -80,6 +100,20 @@ class DatePicker extends mixin(createComponent, initComponentBySearch, handles) 
           this.element.querySelector(this.options.selectorDatePickerInputFrom).focus();
         }
       })
+    );
+    const hasFocusin = 'onfocusin' in window;
+    const focusinEventName = hasFocusin ? 'focusin' : 'focus';
+    this.manage(
+      on(
+        this.element.ownerDocument,
+        focusinEventName,
+        event => {
+          if (this.calendar) {
+            this.calendar._activeElement = event.target;
+          }
+        },
+        !hasFocusin
+      )
     );
   }
 
@@ -136,7 +170,8 @@ class DatePicker extends mixin(createComponent, initComponentBySearch, handles) 
           this._updateClassNames(calendar);
         })
       );
-      this._addInputLogic(this.element.querySelector(this.options.selectorDatePickerInputTo));
+      this._addInputLogic(this.element.querySelector(this.options.selectorDatePickerInputFrom), 0);
+      this._addInputLogic(this.element.querySelector(this.options.selectorDatePickerInputTo), 1);
     }
     this.manage(
       on(this.element.querySelector(this.options.selectorDatePickerIcon), 'click', () => {
@@ -144,8 +179,10 @@ class DatePicker extends mixin(createComponent, initComponentBySearch, handles) 
       })
     );
     this._updateClassNames(calendar);
-    this._addInputLogic(date);
-    return augmentFlatpickr(calendar);
+    if (type !== 'range') {
+      this._addInputLogic(date);
+    }
+    return augmentFlatpickr(calendar, this.options);
   };
 
   _rightArrowHTML() {
@@ -162,14 +199,21 @@ class DatePicker extends mixin(createComponent, initComponentBySearch, handles) 
       </svg>`;
   }
 
-  _addInputLogic = input => {
+  _addInputLogic = (input, index) => {
     const inputField = input;
     this.manage(
       on(inputField, 'change', evt => {
         if (!evt.detail || !evt.detail.fromFlatpickr) {
           const inputDate = this.calendar.parseDate(inputField.value);
           if (!isNaN(inputDate.valueOf())) {
-            this.calendar.setDate(inputDate);
+            if (isNaN(index)) {
+              this.calendar.setDate(inputDate);
+            } else {
+              const selectedDates = this.calendar.selectedDates;
+              selectedDates[index] = inputDate;
+              this.calendar.setDate(selectedDates);
+            }
+            this.calendar.redraw();
           }
         }
         this._updateClassNames(this.calendar);
