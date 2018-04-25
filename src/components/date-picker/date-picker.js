@@ -143,54 +143,62 @@ class DatePicker extends mixin(createComponent, initComponentBySearch, handles) 
     }
     const self = this;
     const date = type === 'range' ? this._rangeInput : this.element.querySelector(this.options.selectorDatePickerInput);
-    const { onClose, onChange, onMonthChange, onYearChange, onOpen, onValueUpdate } = this.options;
+    const { onClose, onChange, onMonthChange, onYearChange, onOpen, onValueUpdate, inline, appendTo } = this.options;
     const calendar = new Flatpickr(
       date,
-      Object.assign(flattenOptions(this.options), {
-        allowInput: true,
-        mode: type,
-        positionElement: type === 'range' && this.element.querySelector(this.options.selectorDatePickerInputFrom),
-        onClose(selectedDates, ...remainder) {
-          if (!onClose || onClose.call(this, selectedDates, ...remainder) !== false) {
-            self._updateClassNames(calendar);
-            self._updateInputFields(selectedDates, type);
-          }
-        },
-        onChange(...args) {
-          if (!onChange || onChange.call(this, ...args) !== false) {
-            self._updateClassNames(calendar);
-            if (type === 'range') {
-              if (calendar.selectedDates.length === 1 && calendar.isOpen) {
-                self.element.querySelector(self.options.selectorDatePickerInputTo).classList.add(self.options.classFocused);
-              } else {
-                self.element.querySelector(self.options.selectorDatePickerInputTo).classList.remove(self.options.classFocused);
+      Object.assign(
+        flattenOptions(this.options),
+        {
+          allowInput: true,
+          mode: type,
+          positionElement: type === 'range' && this.element.querySelector(this.options.selectorDatePickerInputFrom),
+          onClose(selectedDates, ...remainder) {
+            if (!onClose || onClose.call(this, selectedDates, ...remainder) !== false) {
+              self._updateClassNames(calendar);
+              self._updateInputFields(selectedDates, type);
+            }
+          },
+          onChange(...args) {
+            if (!onChange || onChange.call(this, ...args) !== false) {
+              self._updateClassNames(calendar);
+              if (type === 'range') {
+                if (calendar.selectedDates.length === 1 && calendar.isOpen) {
+                  self.element.querySelector(self.options.selectorDatePickerInputTo).classList.add(self.options.classFocused);
+                } else {
+                  self.element.querySelector(self.options.selectorDatePickerInputTo).classList.remove(self.options.classFocused);
+                }
               }
             }
-          }
+          },
+          onMonthChange(...args) {
+            if (!onMonthChange || onMonthChange.call(this, ...args) !== false) {
+              self._updateClassNames(calendar);
+            }
+          },
+          onYearChange(...args) {
+            if (!onYearChange || onYearChange.call(this, ...args) !== false) {
+              self._updateClassNames(calendar);
+            }
+          },
+          onOpen(...args) {
+            if (!onOpen || onOpen.call(this, ...args) !== false) {
+              self._updateClassNames(calendar);
+            }
+          },
+          onValueUpdate(...args) {
+            if ((!onValueUpdate || onValueUpdate.call(this, ...args) !== false) && type === 'range') {
+              self._updateInputFields(self.calendar.selectedDates, type);
+            }
+          },
+          nextArrow: this._rightArrowHTML(),
+          prevArrow: this._leftArrowHTML(),
         },
-        onMonthChange(...args) {
-          if (!onMonthChange || onMonthChange.call(this, ...args) !== false) {
-            self._updateClassNames(calendar);
-          }
-        },
-        onYearChange(...args) {
-          if (!onYearChange || onYearChange.call(this, ...args) !== false) {
-            self._updateClassNames(calendar);
-          }
-        },
-        onOpen(...args) {
-          if (!onOpen || onOpen.call(this, ...args) !== false) {
-            self._updateClassNames(calendar);
-          }
-        },
-        onValueUpdate(...args) {
-          if ((!onValueUpdate || onValueUpdate.call(this, ...args) !== false) && type === 'range') {
-            self._updateInputFields(self.calendar.selectedDates, type);
-          }
-        },
-        nextArrow: this._rightArrowHTML(),
-        prevArrow: this._leftArrowHTML(),
-      })
+        !inline
+          ? {}
+          : {
+              appendTo: appendTo || this.element.parentNode,
+            }
+      )
     );
     if (type === 'range') {
       this._addInputLogic(this.element.querySelector(this.options.selectorDatePickerInputFrom), 0);
