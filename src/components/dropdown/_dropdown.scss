@@ -51,7 +51,8 @@
     }
   }
 
-  .#{$prefix}--dropdown__arrow {
+  .#{$prefix}--dropdown__arrow,
+  .#{$prefix}--dropdown-text svg {
     fill: $brand-01;
     position: absolute;
     right: 1rem;
@@ -124,7 +125,8 @@
   }
 
   .#{$prefix}--dropdown--open {
-    .#{$prefix}--dropdown__arrow {
+    .#{$prefix}--dropdown__arrow,
+    .#{$prefix}--dropdown-text svg {
       transform: rotate(-180deg);
     }
 
@@ -193,7 +195,8 @@
       outline: none;
     }
 
-    .#{$prefix}--dropdown__arrow {
+    .#{$prefix}--dropdown__arrow,
+    .#{$prefix}--dropdown-text svg {
       position: relative;
       top: -2px;
       left: 8px;
