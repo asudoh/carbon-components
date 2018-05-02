@@ -6,6 +6,15 @@ import trackBlur from '../../globals/js/mixins/track-blur';
 import eventMatches from '../../globals/js/misc/event-matches';
 import on from '../../globals/js/misc/on';
 
+const editAriaAttribute = (element, name, action) => {
+  const value = {
+    add: true,
+    remove: false,
+    toggle: element.getAttribute(name) !== 'true',
+  }[action];
+  element.setAttribute(name, String(value));
+};
+
 class Dropdown extends mixin(createComponent, initComponentBySearch, trackBlur) {
   /**
    * A selector with drop downs.
@@ -88,8 +97,12 @@ class Dropdown extends mixin(createComponent, initComponentBySearch, trackBlur) 
         remove: (!isOfSelf || event.which === 27) && isOpen,
         toggle: isOfSelf && event.which !== 27 && event.which !== 40,
       };
+      const trigger = this.element.querySelector(this.options.selectorTrigger);
       Object.keys(actions).forEach(action => {
         if (actions[action]) {
+          if (trigger) {
+            editAriaAttribute(trigger, 'aria-expanded', action);
+          }
           this.element.classList[action](this.options.classOpen);
           this.element.focus();
         }
@@ -195,6 +208,9 @@ class Dropdown extends mixin(createComponent, initComponentBySearch, trackBlur) 
    * @member Dropdown.options
    * @type {Object}
    * @property {string} selectorInit The CSS selector to find selectors.
+   * @property {string} [selectorTrigger]
+   *   The CSS selector to find the trigger button.
+   *   Inherited classes may define this property.
    * @property {string} [selectorText] The CSS selector to find the element showing the selected item.
    * @property {string} [selectorItem] The CSS selector to find clickable areas in dropdown items.
    * @property {string} [selectorItemSelected] The CSS selector to find the clickable area in the selected dropdown item.

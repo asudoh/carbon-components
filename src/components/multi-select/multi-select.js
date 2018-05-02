@@ -1,5 +1,6 @@
+import settings from '../../globals/js/settings';
 import eventMatches from '../../globals/js/misc/event-matches';
-import Dropdown from './dropdown';
+import Dropdown from '../dropdown/dropdown';
 
 class MultiSelect extends Dropdown {
   /**
@@ -9,13 +10,13 @@ class MultiSelect extends Dropdown {
    * @param {Object} [options] The component options.
    * @param {string} options.selectorInit The CSS selector to find the select boxes.
    * @param {string} [options.selectorList] The CSS selector to find the dropdown list.
-   * @param {string} [options.selectorBadge] The CSS selector to find the badge.
-   * @param {string} [options.selectorBadgeText] The CSS selector to find the badge text.
+   * @param {string} [options.selectorSelection] The CSS selector to find the badge.
+   * @param {string} [options.selectorSelectionText] The CSS selector to find the badge text.
    * @param {string} [options.selectorItem] The CSS selector to find the dropdown items.
    * @param {string} [options.selectorCheckbox] The CSS selector to find the checkboxes.
    * @param {string} [options.selectorCheckboxChecked] The CSS selector to find the checkboxes that are checked.
    * @param {string} [options.classOpen] The CSS class for the open state.
-   * @param {string} [options.classBadgeActive] The CSS class for the activated badge.
+   * @param {string} [options.classSelectionActive] The CSS class for the activated badge.
    * @param {string} [options.classItemHighlighted] The CSS class for the highlighted dropdown item.
    * @param {string} [options.eventAfterSelected]
    *   The name of the custom event fired after a drop down item is selected or unselected.
@@ -37,7 +38,7 @@ class MultiSelect extends Dropdown {
    * @param {Event} evt The event triggering this method.
    */
   _handleBadgeClick = evt => {
-    if (eventMatches(evt, this.options.selectorBadge)) {
+    if (eventMatches(evt, this.options.selectorSelection)) {
       [...this.element.querySelectorAll(this.options.selectorCheckboxChecked)].forEach(elem => {
         elem.checked = false;
       });
@@ -70,7 +71,7 @@ class MultiSelect extends Dropdown {
     if (
       !this.element.contains(evt.target) ||
       evt.which === 27 ||
-      (!eventMatches(evt, this.options.selectorList) && !eventMatches(evt, this.options.selectorBadge))
+      (!eventMatches(evt, this.options.selectorList) && !eventMatches(evt, this.options.selectorSelection))
     ) {
       const wasOpen = this.element.classList.contains(this.options.classOpen);
       super._toggle(evt);
@@ -125,15 +126,15 @@ class MultiSelect extends Dropdown {
    * Updates the badge and the button to clear selections upon change in selection.
    */
   _handleSelection = () => {
-    const badge = this.element.querySelector(this.options.selectorBadge);
-    const badgeText = this.element.querySelector(this.options.selectorBadgeText);
+    const badge = this.element.querySelector(this.options.selectorSelection);
+    const badgeText = this.element.querySelector(this.options.selectorSelectionText);
     const selected = [...this.element.querySelectorAll(this.options.selectorCheckboxChecked)];
     const selectedCount = selected.length;
     if (badgeText) {
       badgeText.textContent = selectedCount;
     }
     if (badge) {
-      badge.classList.toggle(this.options.classBadgeActive, selectedCount > 0);
+      badge.classList.toggle(this.options.classSelectionMulti, selectedCount > 0);
     }
     this.element.dispatchEvent(
       new CustomEvent(this.options.eventAfterSelected, {
@@ -156,30 +157,37 @@ class MultiSelect extends Dropdown {
    * @member MultiSelect.options
    * @type {Object}
    * @property {string} selectorInit The CSS selector to find the select boxes.
+   * @property {string} [selectorTrigger] The CSS selector to find the trigger button.
    * @property {string} [selectorList] The CSS selector to find the dropdown list.
-   * @property {string} [selectorBadge] The CSS selector to find the badge.
-   * @property {string} [selectorBadgeText] The CSS selector to find the badge text.
+   * @property {string} [selectorSelection] The CSS selector to find the badge.
+   * @property {string} [selectorSelectionText] The CSS selector to find the badge text.
    * @property {string} [selectorItem] The CSS selector to find the dropdown items.
    * @property {string} [selectorCheckbox] The CSS selector to find the checkboxes.
    * @property {string} [selectorCheckboxChecked] The CSS selector to find the checkboxes that are checked.
    * @property {string} [classOpen] The CSS class for the open state.
-   * @property {string} [classBadgeActive] The CSS class for the activated badge.
+   * @property {string} [classSelectionInactive] The CSS class for the deactivated badge.
+   * @property {string} [classSelectionMulti] The CSS class for the badge for multiple selections.
    * @property {string} [classItemHighlighted] The CSS class for the highlighted dropdown item.
    * @property {string} [eventAfterSelected] The name of the custom event fired after a drop down item is selected or unselected.
    */
-  static options = Object.assign(Object.create(Dropdown.options), {
-    selectorInit: '[data-multiselect]',
-    selectorList: '.bx--list-box__menu',
-    selectorBadge: '.bx--list-box__badge',
-    selectorBadgeText: '.bx--list-box__badge-text',
-    selectorCheckbox: '.bx--checkbox',
-    selectorCheckboxChecked: '.bx--checkbox:checked',
-    selectorItem: '.bx--list-box__menu-item',
-    classOpen: 'bx--list-box--open',
-    classBadgeActive: 'bx--list-box__badge--active',
-    classItemHighlighted: 'bx--list-box__menu-item--highlighted',
-    eventAfterSelected: 'multiselect-selected',
-  });
+  static get options() {
+    const { prefix } = settings;
+    return Object.assign(Object.create(Dropdown.options), {
+      selectorInit: '[data-multi-select]',
+      selectorTrigger: `.${prefix}--list-box__field`,
+      selectorList: `.${prefix}--list-box__menu`,
+      selectorSelection: `.${prefix}--list-box__selection`,
+      selectorSelectionText: `.${prefix}--list-box__selection-text`,
+      selectorCheckbox: `.${prefix}--checkbox`,
+      selectorCheckboxChecked: `.${prefix}--checkbox:checked`,
+      selectorItem: `.${prefix}--list-box__menu-item`,
+      classOpen: `${prefix}--list-box--open`,
+      classSelectionInactive: `${prefix}--list-box__selection--inactive`,
+      classSelectionMulti: `${prefix}--list-box__selection--multi`,
+      classItemHighlighted: `${prefix}--list-box__menu-item--highlighted`,
+      eventAfterSelected: 'multi-select-selected',
+    });
+  }
 }
 
 export default MultiSelect;

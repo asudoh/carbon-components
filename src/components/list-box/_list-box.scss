@@ -125,6 +125,7 @@ $list-box-menu-width: rem(300px);
     height: 100%;
   }
 
+  .#{$prefix}--list-box--open .#{$prefix}--list-box__menu-icon,
   .#{$prefix}--list-box__menu-icon--open {
     transform: rotate(180deg);
   }
@@ -141,6 +142,10 @@ $list-box-menu-width: rem(300px);
     cursor: pointer;
     user-select: none;
     transition: background-color 200ms $carbon--standard-easing;
+
+    &--toggle {
+      display: none;
+    }
   }
 
   .#{$prefix}--list-box__selection > svg {
@@ -196,6 +201,14 @@ $list-box-menu-width: rem(300px);
     max-height: rem(120px);
     overflow-y: auto;
     z-index: z('dropdown');
+
+    &--toggle {
+      display: none; // Simply adding display:none would break React version
+    }
+  }
+
+  .bx--list-box--open .bx--list-box__menu--toggle {
+    display: block;
   }
 
   // Descendant of a `list-box__menu` that represents a selection for a control
@@ -208,6 +221,7 @@ $list-box-menu-width: rem(300px);
     padding: 0 1rem;
     cursor: pointer;
     user-select: none;
+    outline: none;
   }
 
   .#{$prefix}--list-box__menu-item:hover,
