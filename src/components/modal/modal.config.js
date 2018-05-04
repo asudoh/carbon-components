@@ -29,6 +29,7 @@ module.exports = {
       label: 'Danger',
       context: {
         hasFooter: true,
+        labelPrimaryButton: 'Danger',
         classModalSupplemental: 'bx--modal--danger',
         classPrimaryButton: 'bx--btn--danger--primary',
         classCloseButton: 'bx--btn--tertiary',

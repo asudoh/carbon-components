@@ -20,7 +20,7 @@
     {{#if hasFooter}}
       <div class="bx--modal-footer">
         <button class="bx--btn {{classCloseButton}}" type="button" data-modal-close>Secondary button</button>
-        <button class="bx--btn {{classPrimaryButton}}" type="button" data-modal-primary-focus>Primary button</button>
+        <button class="bx--btn {{classPrimaryButton}}" type="button" {{#if labelPrimaryButton}}aria-label="{{labelPrimaryButton}}"{{/if}} data-modal-primary-focus>Primary button</button>
       </div>
     {{/if}}
   </div>
