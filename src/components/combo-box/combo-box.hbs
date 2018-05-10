@@ -1,6 +1,6 @@
-<div class="bx--form-item bx--combo-box bx--list-box{?disabled} bx--list-box--disabled{/disabled}">
-  <div role="button" class="bx--list-box__field" tabindex="0" aria-label="open menu" aria-expanded="false" aria-haspopup="true"{?disabled} disabled{/disabled}>
-    <input class="bx--text-input" role="combobox" aria-autocomplete="list" aria-expanded="false" autocomplete="off" value="" id="downshift-input-2" placeholder="Filter..."{?disabled} disabled{/disabled}>
+<div class="bx--form-item bx--combo-box bx--list-box{{#if disabled}} bx--list-box--disabled{{/if}}">
+  <div role="button" class="bx--list-box__field" tabindex="0" aria-label="open menu" aria-expanded="false" aria-haspopup="true"{{#if disabled}} disabled{{/if}}>
+    <input class="bx--text-input" role="combobox" aria-autocomplete="list" aria-expanded="false" autocomplete="off" value="" id="downshift-input-2" placeholder="Filter..."{{#if disabled}} disabled{{/if}}>
     <div class="bx--list-box__menu-icon">
       <svg fill-rule="evenodd" height="5" name="caret--down" role="img" viewBox="0 0 10 5" width="10" aria-label="Open menu">
         <title>Open menu</title>
@@ -9,9 +9,9 @@
     </div>
   </div>
 </div>
-<div class="bx--form-item bx--combo-box bx--list-box{?disabled} bx--list-box--disabled{/disabled}">
-  <div role="button" class="bx--list-box__field" tabindex="0" aria-label="close menu" aria-expanded="true" aria-haspopup="true"{?disabled} disabled{/disabled}>
-    <input class="bx--text-input" role="combobox" aria-autocomplete="list" aria-expanded="true" autocomplete="off" value="" id="downshift-input-2" placeholder="Filter..." aria-activedescendant="downshift-1-item-2"{?disabled} disabled{/disabled}>
+<div class="bx--form-item bx--combo-box bx--list-box{{#if disabled}} bx--list-box--disabled{{/if}}">
+  <div role="button" class="bx--list-box__field" tabindex="0" aria-label="close menu" aria-expanded="true" aria-haspopup="true"{{#if disabled}} disabled{{/if}}>
+    <input class="bx--text-input" role="combobox" aria-autocomplete="list" aria-expanded="true" autocomplete="off" value="" id="downshift-input-2" placeholder="Filter..." aria-activedescendant="downshift-1-item-2"{{#if disabled}} disabled{{/if}}>
     <div class="bx--list-box__menu-icon bx--list-box__menu-icon--open">
       <svg fill-rule="evenodd" height="5" name="caret--down" role="img" viewBox="0 0 10 5" width="10" aria-label="Close menu">
         <title>Close menu</title>

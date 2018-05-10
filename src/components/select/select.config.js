@@ -20,5 +20,27 @@ module.exports = {
         inline: true,
       },
     },
+    {
+      name: 'light',
+      label: 'Light',
+      context: {
+        light: true,
+      },
+    },
+    {
+      name: 'invalid',
+      label: 'Invalid',
+      context: {
+        invalid: true,
+      },
+    },
+    {
+      name: 'light-invalid',
+      label: 'Light invalid',
+      context: {
+        light: true,
+        invalid: true,
+      },
+    },
   ],
 };
