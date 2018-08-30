@@ -1,9 +1,15 @@
 @import 'feature-flags';
 
-//Used for enabling features
+/// @param {string} $feature - The name of the feature.
+/// @returns {bool} -
+///   The effective feature flag value.
+///   If feature flag does not define the given feature, returns the default one.
 @function feature-flag-enabled($feature) {
-  @if global-variable-exists(feature-flags) == true and map-get($feature-flags, $feature) == true {
-    @return true;
+  @if map-has-key($feature-flags, $feature) == false {
+    @if map-has-key($default-feature-flags, $feature) == false {
+      @return false;
+    }
+    @return map-get($default-feature-flags, $feature);
   }
-  @return false;
+  @return map-get($feature-flags, $feature);
 }

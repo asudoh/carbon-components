@@ -38,4 +38,22 @@ describe('styles', () => {
       }
     );
   });
+
+  it('should evaluate feature flags', done => {
+    const filepath = path.resolve(__dirname, './fixture/test--feature-flags.scss');
+    sass.render(
+      {
+        file: filepath,
+        ...defaultOptions,
+      },
+      error => {
+        if (error) {
+          const { column, line, message } = error;
+          done.fail(`${filepath}\n[${line}:${column}] ${message}`);
+          return;
+        }
+        done();
+      }
+    );
+  });
 });

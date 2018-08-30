@@ -1,0 +1,12 @@
+@function assert($case, $actual, $expected) {
+  @if ($actual == $expected) {
+    @return 'green';
+  }
+  @error '#{$case}: Expected #{$actual} to equal #{$expected}.';
+}
+
+@mixin expect($case, $actual, $expected) {
+  .test {
+    color: assert($case, $actual, $expected);
+  }
+}

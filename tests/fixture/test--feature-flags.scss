@@ -1,0 +1,18 @@
+@import 'utils';
+
+$feature-flags: (
+  foo: true,
+  baz: false,
+);
+
+@import '../../src/globals/scss/functions';
+
+$default-feature-flags: (
+  bar: true,
+  baz: true,
+);
+
+@include expect('Respecting feature flag', feature-flag-enabled(foo), true);
+@include expect('Falling back to default', feature-flag-enabled(bar), true);
+@include expect('Explicit feature flag over default one', feature-flag-enabled(baz), false);
+@include expect('Returning null for undefined feature flag', feature-flag-enabled(qux), false);

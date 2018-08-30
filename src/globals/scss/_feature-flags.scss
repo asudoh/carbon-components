@@ -3,10 +3,12 @@
 //-------------------------
 
 // Initialize our feature flag map with default values
-$feature-flags: (
+$feature-flags: () !default;
+
+$default-feature-flags: (
   components-x: false,
   ui-shell: false,
-) !default;
+);
 
 // We supported a flag for experimental grid in the past that we want to keep
 // supporting till our next major release. These two @if statements will assign
@@ -25,26 +27,6 @@ $feature-flags: (
     $feature-flags,
     (
       grid--fallback: $css--use-experimental-grid-fallback,
-    )
-  );
-}
-
-// However, if we don't have those flags available let's go ahead and add in
-// some defaults for the grid and grid--fallback
-@if map-has-key($feature-flags, grid) == false {
-  $feature-flags: map-merge(
-    $feature-flags,
-    (
-      grid: false,
-    )
-  );
-}
-
-@if map-has-key($feature-flags, grid--fallback) == false {
-  $feature-flags: map-merge(
-    $feature-flags,
-    (
-      grid--fallback: false,
     )
   );
 }
