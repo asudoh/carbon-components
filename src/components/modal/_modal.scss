@@ -41,6 +41,45 @@
       transition: opacity 200ms;
       visibility: visible;
     }
+
+    // It is recommended that ALL modals add this modifier and use the updated HTML layout
+    &.#{$prefix}--modal-tall {
+      .#{$prefix}--modal-content {
+        margin-bottom: 1rem;
+        overflow-y: auto;
+      }
+
+      .#{$prefix}--modal__buttons {
+        display: block;
+        align-items: flex-start;
+        justify-content: flex-start;
+        flex: 0 1 auto;
+        padding: 0;
+        margin: 0 -1rem 0 -1rem;
+
+        @include breakpoint(640px) {
+          margin: 0 -3rem 0 -3rem;
+        }
+
+        &-container {
+          display: flex;
+          align-items: flex-end;
+          justify-content: flex-end;
+          padding: 1.5rem 3rem;
+        }
+      }
+
+      .#{$prefix}--modal-inner {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: stretch;
+        padding-top: 2.75rem;
+        padding-bottom: 0;
+        padding-left: 3rem;
+        padding-right: 3rem;
+      }
+    }
   }
 
   .#{$prefix}--modal--danger {
