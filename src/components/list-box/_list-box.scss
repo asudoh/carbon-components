@@ -199,6 +199,8 @@ $list-box-menu-width: rem(300px);
     padding: 0;
     background-color: $brand-01;
     height: rem(18px);
+    // TODO: Re-enable this rule soon
+    // stylelint-disable-next-line color-named
     color: white;
     line-height: 0;
     padding: rem(5px);
@@ -207,6 +209,8 @@ $list-box-menu-width: rem(300px);
   }
 
   .#{$prefix}--list-box__selection--multi > svg {
+    // TODO: Re-enable this rule soon
+    // stylelint-disable-next-line color-named
     fill: white;
     width: 0.5rem;
     height: 0.5rem;

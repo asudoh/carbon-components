@@ -163,6 +163,7 @@
     display: block;
 
     @-moz-document url-prefix() {
+      // stylelint-disable-next-line selector-max-compound-selectors, scss/selector-no-redundant-nesting-selector
       & {
         stroke: $brand-01;
       }

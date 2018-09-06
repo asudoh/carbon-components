@@ -5,6 +5,9 @@
 @import '../../globals/scss/vars';
 @import '../../globals/scss/colors';
 
+// TODO: Remove this file soon
+// stylelint-disable selector-max-compound-selectors, selector-nested-pattern
+
 @include exports('account-switcher') {
   .#{$prefix}--account-switcher {
     @include reset;

@@ -1,3 +1,6 @@
+// Disabling some rules as the code is from `design-system-website`
+// stylelint-disable selector-nested-pattern
+
 .component-example {
   width: 100%;
   max-width: 100%;

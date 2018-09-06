@@ -41,6 +41,8 @@
   }
 
   @if ($size == 'small') {
+    // TODO: Re-enable this rule soon
+    // stylelint-disable-next-line length-zero-no-unit
     box-shadow: 0px 3px 3px 0 $box-shadow;
   }
 }

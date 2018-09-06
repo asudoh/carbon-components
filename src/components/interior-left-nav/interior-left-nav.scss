@@ -12,6 +12,9 @@
 @import '../../globals/scss/css--reset';
 @import '../../globals/scss/css--typography';
 
+// TODO: Delete this file soon
+// stylelint-disable selector-max-compound-selectors, selector-nested-pattern, scss/selector-no-redundant-nesting-selector
+
 @include exports('interior-left-nav') {
   @include deprecate(
     'Accessing the `interior-left-nav` component from the `carbon-components` ' +

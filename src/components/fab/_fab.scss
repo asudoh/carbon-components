@@ -14,14 +14,20 @@
     width: rem(72px);
     height: rem(72px);
     text-decoration: none;
+    // TODO: Re-enable this rule soon
+    // stylelint-disable-next-line length-zero-no-unit
     filter: drop-shadow(0px 3px 3px 0 $box-shadow);
 
+    // TODO: Re-enable this rule soon
+    // stylelint-disable-next-line selector-nested-pattern
     &__hidden {
       @include hidden;
       color: $color__white;
     }
 
     // Styles for "Open" state
+    // TODO: Re-enable this rule soon
+    // stylelint-disable-next-line selector-nested-pattern
     &__svg {
       width: 100%;
 
@@ -37,6 +43,8 @@
     }
 
     // Styles for "Closed" state
+    // TODO: Re-enable this rule soon
+    // stylelint-disable-next-line selector-nested-pattern
     &[data-state='closed'] {
       @include rotate(90deg, $transition--base);
 

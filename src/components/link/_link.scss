@@ -36,6 +36,8 @@
       @include focus-outline('border');
     }
 
+    // TODO: Re-enable this rule soon
+    // stylelint-disable-next-line selector-nested-pattern
     &[aria-disabled='true'] {
       opacity: 0.5;
       pointer-events: none;

@@ -139,6 +139,8 @@
     &:after {
       background-color: $ui-01;
       border-color: $ui-01;
+      // TODO: Re-enable this rule soon
+      // stylelint-disable-next-line length-zero-no-unit
       margin-left: 0px;
       transform: translateX(17px);
     }

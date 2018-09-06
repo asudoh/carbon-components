@@ -8,7 +8,10 @@
 @import '../../globals/scss/import-once';
 @import '../../globals/scss/layer';
 @import '../form/form';
-@import 'flatpickr.scss';
+@import 'flatpickr';
+
+// Class from 3rd-party component is this file
+// stylelint-disable selector-class-pattern
 
 @include exports('date-picker') {
   .#{$prefix}--date-picker {
@@ -74,6 +77,8 @@
       color: $brand-01;
     }
 
+    // TODO: Re-enable this rule soon
+    // stylelint-disable-next-line selector-nested-pattern
     &[data-invalid],
     &[data-invalid]:focus {
       box-shadow: 0 2px 0 0 $support-01;
@@ -83,6 +88,8 @@
       color: $support-01;
     }
 
+    // TODO: Re-enable these rules soon
+    // stylelint-disable-next-line selector-nested-pattern, scss/selector-no-redundant-nesting-selector
     & ~ .#{$prefix}--form-requirement {
       order: 3;
       color: $support-01;
@@ -188,6 +195,8 @@
     line-height: rem(20px);
     fill: $text-01;
 
+    // TODO: Re-enable this rule soon
+    // stylelint-disable-next-line selector-nested-pattern
     &:hover svg {
       fill: $hover-secondary;
     }
@@ -430,6 +439,8 @@
 
   .flatpickr-next-month.disabled,
   .flatpickr-prev-month.disabled {
+    // TODO: Re-enable this rule soon
+    // stylelint-disable-next-line selector-nested-pattern
     svg {
       fill: $ui-05;
       opacity: 0.5;
@@ -437,6 +448,8 @@
     }
 
     &:hover {
+      // TODO: Re-enable this rule soon
+      // stylelint-disable-next-line selector-nested-pattern
       svg {
         fill: $ui-05;
       }
@@ -449,6 +462,7 @@
     @include skeleton;
     width: 100%;
 
+    // stylelint-disable-next-line selector-no-vendor-prefix
     &::-webkit-input-placeholder {
       color: transparent;
     }

@@ -11,6 +11,8 @@
 @include exports('lightbox') {
   .#{$prefix}--lightbox {
     width: rem(1056px);
+    // TODO: Re-enable this rule soon
+    // stylelint-disable-next-line order/order
     @include layer('pop-out');
   }
   .#{$prefix}--lightbox__main {
@@ -36,6 +38,8 @@
       @include focus-outline;
     }
 
+    // TODO: Re-enable this rule soon
+    // stylelint-disable-next-line selector-nested-pattern
     svg {
       height: rem(24px);
       fill: $ui-05;

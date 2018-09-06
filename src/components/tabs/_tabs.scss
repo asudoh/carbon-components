@@ -40,6 +40,8 @@
     background-color: $field-01;
     box-shadow: 0 1px 0 0 $ui-05;
 
+    // TODO: Re-enable this rule soon
+    // stylelint-disable-next-line selector-nested-pattern
     svg {
       width: rem(10px);
       height: rem(5px);
@@ -51,6 +53,8 @@
       box-shadow: 0 2px 0 0 $brand-01;
     }
 
+    // TODO: Re-enable this rule soon
+    // stylelint-disable-next-line order/order
     @include breakpoint(bp--sm--major) {
       display: none;
     }
@@ -122,6 +126,8 @@
       }
     }
 
+    // TODO: Re-enable this rule soon
+    // stylelint-disable-next-line order/order
     @include breakpoint(bp--sm--major) {
       background: transparent;
       padding: $spacing-sm 0 $spacing-sm;
@@ -171,6 +177,8 @@
       color: $inverse-01;
     }
 
+    // TODO: Re-enable this rule soon
+    // stylelint-disable-next-line order/order
     @include breakpoint(bp--sm--major) {
       padding: 0 $spacing-3xs;
       width: auto;

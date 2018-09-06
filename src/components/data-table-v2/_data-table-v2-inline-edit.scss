@@ -51,16 +51,22 @@
     display: block;
     margin-left: rem(-12px);
 
+    // TODO: Re-enable this rule soon
+    // stylelint-disable-next-line selector-nested-pattern
     input {
       padding-left: $spacing-sm;
     }
   }
 
   .#{$prefix}--data-table-v2--short {
+    // TODO: Re-enable this rule soon
+    // stylelint-disable-next-line selector-nested-pattern
     input {
       height: rem(32px);
     }
 
+    // TODO: Re-enable this rule soon
+    // stylelint-disable-next-line selector-nested-pattern
     select {
       padding: 0.45rem 2.75rem 0.45rem $spacing-md;
     }

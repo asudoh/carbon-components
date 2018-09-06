@@ -10,6 +10,8 @@
       display: none;
     }
 
+    // TODO: Re-enable this rule soon
+    // stylelint-disable-next-line selector-nested-pattern
     > td:first-of-type {
       position: relative;
 
@@ -24,7 +26,11 @@
       }
     }
 
+    // TODO: Re-enable this rule soon
+    // stylelint-disable-next-line selector-nested-pattern
     + tr[data-child-row] {
+      // TODO: Re-enable this rule soon
+      // stylelint-disable-next-line selector-nested-pattern
       td {
         border-top: 0;
         padding-bottom: $spacing-xs;
@@ -32,23 +38,35 @@
     }
 
     &:hover {
+      // TODO: Re-enable this rule soon
+      // stylelint-disable-next-line selector-nested-pattern
       > td {
         background-color: $hover-row;
       }
 
+      // TODO: Re-enable this rule soon
+      // stylelint-disable-next-line selector-nested-pattern
       > td:first-of-type {
         border-left: 1px solid transparent;
       }
 
+      // TODO: Re-enable this rule soon
+      // stylelint-disable-next-line selector-nested-pattern
       > td:last-of-type {
         border-right: 1px solid $brand-01;
       }
 
+      // TODO: Re-enable this rule soon
+      // stylelint-disable-next-line selector-nested-pattern
       &[data-parent-row] > td {
         border-bottom: 0;
       }
 
+      // TODO: Re-enable this rule soon
+      // stylelint-disable-next-line selector-nested-pattern
       + tr[data-child-row] {
+        // TODO: Re-enable this rule soon
+        // stylelint-disable-next-line selector-nested-pattern
         > td {
           background-color: $hover-row;
           border-bottom: 1px solid $brand-01;
@@ -59,11 +77,15 @@
   }
 
   tr.#{$prefix}--expandable-row--hover-v2 {
+    // TODO: Re-enable this rule soon
+    // stylelint-disable-next-line selector-nested-pattern
     > td {
       background-color: $hover-row;
       border-top: 1px solid $brand-01;
     }
 
+    // TODO: Re-enable this rule soon
+    // stylelint-disable-next-line selector-nested-pattern
     > td:last-of-type {
       border-right: 1px solid $brand-01;
     }
@@ -80,7 +102,11 @@
     &:focus {
       outline: 1px solid transparent;
 
+      // TODO: Re-enable this rule soon
+      // stylelint-disable-next-line selector-nested-pattern
       svg {
+        // TODO: Re-enable this rule soon
+        // stylelint-disable-next-line length-zero-no-unit
         box-shadow: inset 0px 0px 0px 1px $brand-01;
       }
     }

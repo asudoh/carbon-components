@@ -2,6 +2,9 @@
 @import 'mixins';
 @import 'variables';
 
+// Disabling some rules as the code is from `css-gridish`
+// stylelint-disable selector-max-compound-selectors, selector-nested-pattern, order/order
+
 @mixin grid-experimental {
   body {
     font-size: map-get($grid-values, 'rem') * 1px;

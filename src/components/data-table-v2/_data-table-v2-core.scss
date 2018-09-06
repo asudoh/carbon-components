@@ -17,21 +17,29 @@
     width: 100%;
     border-bottom: 1px solid $ui-03;
 
+    // TODO: Re-enable this rule soon
+    // stylelint-disable-next-line selector-nested-pattern
     thead {
       @include typescale('zeta');
       background-color: $ui-02;
       font-weight: 700;
     }
 
+    // TODO: Re-enable this rule soon
+    // stylelint-disable-next-line selector-nested-pattern
     tbody {
       @include typescale('zeta');
       background-color: $ui-01;
     }
 
+    // TODO: Re-enable this rule soon
+    // stylelint-disable-next-line selector-nested-pattern
     tr {
       height: rem(48px);
 
       &:hover {
+        // TODO: Re-enable this rule soon
+        // stylelint-disable-next-line selector-nested-pattern
         td {
           background-color: rgba($brand-02, 0.1);
           border-top: 1px solid $brand-01;
@@ -52,10 +60,14 @@
       }
     }
 
+    // TODO: Re-enable this rule soon
+    // stylelint-disable-next-line selector-nested-pattern
     th {
       border-top: 1px solid $ui-03;
     }
 
+    // TODO: Re-enable this rule soon
+    // stylelint-disable-next-line selector-nested-pattern
     th,
     td {
       @include typescale('zeta');
@@ -90,6 +102,8 @@
         box-shadow: none;
 
         .#{$prefix}--overflow-menu__icon {
+          // TODO: Re-enable this rule soon
+          // stylelint-disable-next-line length-zero-no-unit
           box-shadow: inset 0px 0px 0px 1px $brand-01;
         }
       }
@@ -108,20 +122,28 @@
   }
 
   .#{$prefix}--data-table-v2--zebra {
+    // TODO: Re-enable this rule soon
+    // stylelint-disable-next-line selector-nested-pattern
     tbody tr:nth-child(even) {
       background-color: $ui-02;
     }
   }
 
   .#{$prefix}--data-table-v2--no-border {
+    // TODO: Re-enable this rule soon
+    // stylelint-disable-next-line selector-nested-pattern
     tr {
       &:last-of-type {
+        // TODO: Re-enable this rule soon
+        // stylelint-disable-next-line selector-nested-pattern
         td {
           border-bottom-color: transparent;
         }
       }
     }
 
+    // TODO: Re-enable this rule soon
+    // stylelint-disable-next-line selector-nested-pattern
     th,
     td {
       &:first-of-type {
@@ -135,18 +157,24 @@
   }
 
   .#{$prefix}--data-table-v2--compact {
+    // TODO: Re-enable this rule soon
+    // stylelint-disable-next-line selector-nested-pattern
     tbody tr {
       height: rem(24px);
     }
   }
 
   .#{$prefix}--data-table-v2--short {
+    // TODO: Re-enable this rule soon
+    // stylelint-disable-next-line selector-nested-pattern
     tbody tr {
       height: rem(32px);
     }
   }
 
   .#{$prefix}--data-table-v2--tall {
+    // TODO: Re-enable this rule soon
+    // stylelint-disable-next-line selector-nested-pattern
     tbody tr {
       height: rem(64px);
     }

@@ -4,6 +4,9 @@
 @import '../../globals/scss/colors';
 @import '../../globals/scss/theme';
 
+// TODO: Remove this file soon
+// stylelint-disable length-zero-no-unit, selector-max-compound-selectors, selector-nested-pattern
+
 @include exports('topnav') {
   .#{$prefix}--top-nav {
     @include reset;

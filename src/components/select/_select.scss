@@ -42,6 +42,8 @@
       display: none;
     }
 
+    // TODO: Re-enable this rule soon
+    // stylelint-disable-next-line scss/selector-no-redundant-nesting-selector
     & ~ .#{$prefix}--label {
       order: 1;
     }
@@ -51,6 +53,8 @@
       box-shadow: 0 2px 0 0 $brand-01;
     }
 
+    // TODO: Re-enable this rule soon
+    // stylelint-disable-next-line selector-nested-pattern
     &[data-invalid],
     &[data-invalid]:focus {
       box-shadow: 0 2px 0 0 $support-01;
@@ -158,6 +162,8 @@
         top: 1rem;
       }
 
+      // TODO: Re-enable this rule soon
+      // stylelint-disable-next-line selector-nested-pattern
       &[data-invalid] {
         color: $text-01;
         outline-offset: 2px;
@@ -168,6 +174,8 @@
         }
       }
 
+      // TODO: Re-enable this rule soon
+      // stylelint-disable-next-line selector-nested-pattern
       &:disabled ~ * {
         opacity: 0.5;
         cursor: not-allowed;

@@ -89,6 +89,8 @@
     right: 1rem;
     opacity: 0;
 
+    // TODO: Re-enable this rule soon
+    // stylelint-disable-next-line selector-nested-pattern
     svg {
       border-radius: 50%;
       background-color: rgba($ui-01, 0.25);
@@ -102,6 +104,8 @@
     right: 0.5rem;
     height: 1rem;
 
+    // TODO: Re-enable this rule soon
+    // stylelint-disable-next-line selector-nested-pattern
     svg {
       transform-origin: center;
       transition: $transition--base $carbon--standard-easing;
@@ -151,10 +155,14 @@
   }
 
   .#{$prefix}--tile-input:checked {
+    // TODO: Re-enable this rule soon
+    // stylelint-disable-next-line scss/selector-no-redundant-nesting-selector
     & + .#{$prefix}--tile__checkmark {
       opacity: 1;
     }
 
+    // TODO: Re-enable this rule soon
+    // stylelint-disable-next-line scss/selector-no-redundant-nesting-selector
     & + .#{$prefix}--tile__checkmark svg {
       fill: $brand-01;
       background-color: $ui-01;

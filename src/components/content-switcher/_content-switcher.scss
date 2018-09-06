@@ -54,6 +54,8 @@
     margin-right: $spacing-xs;
     fill: currentColor;
     // need to color any child path or g
+    // TODO: Re-enable this rule soon
+    // stylelint-disable-next-line selector-nested-pattern
     * {
       fill: currentColor;
     }

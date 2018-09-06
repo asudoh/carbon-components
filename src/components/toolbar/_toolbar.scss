@@ -21,6 +21,8 @@ $css--helpers: true;
     align-items: center;
     margin: 1rem 0;
 
+    // TODO: Re-enable this rule soon
+    // stylelint-disable-next-line selector-nested-pattern
     > div {
       margin: 0 rem(4px);
     }
@@ -49,6 +51,8 @@ $css--helpers: true;
       cursor: pointer;
     }
 
+    // TODO: Re-enable this rule soon
+    // stylelint-disable-next-line selector-nested-pattern
     fieldset {
       border: 0;
       padding: 0;

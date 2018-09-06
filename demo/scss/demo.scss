@@ -1,18 +1,21 @@
 // Used for sidebar in dev environment
 @import '../../src/components/interior-left-nav/interior-left-nav';
 @import '../../src/globals/scss/styles';
-@import './_vars.scss';
-@import './_mixins.scss';
-@import './_layout.scss';
-@import './_markdown-page.scss';
-@import './_page.scss';
-@import './_prism.scss';
-@import '../js/components/CodeExample/code-example.scss';
-@import '../js/components/CodePage/code-page.scss';
-@import '../js/components/ComponentExample/component-example.scss';
-@import '../js/components/ComponentExample/component-overrides.scss';
-@import '../js/components/PageHeader/page-header.scss';
-@import '../js/components/SideNavToggle/side-nav-toggle.scss';
+@import './vars';
+@import './mixins';
+@import './layout';
+@import './markdown-page';
+@import './page';
+@import './prism';
+@import '../js/components/CodeExample/code-example';
+@import '../js/components/CodePage/code-page';
+@import '../js/components/ComponentExample/component-example';
+@import '../js/components/ComponentExample/component-overrides';
+@import '../js/components/PageHeader/page-header';
+@import '../js/components/SideNavToggle/side-nav-toggle';
+
+// TODO: Re-enable these rules soon
+// stylelint-disable selector-max-compound-selectors, selector-nested-pattern
 
 [data-renderroot] {
   display: block;
@@ -96,7 +99,7 @@
     flex-direction: column;
     margin: 0 auto;
 
-    & > * {
+    > * {
       margin: 1rem 0;
     }
   }
@@ -106,7 +109,7 @@
     flex-wrap: wrap;
     margin: 0 auto;
 
-    & > * {
+    > * {
       margin: 1rem;
     }
   }
@@ -175,18 +178,18 @@
 }
 
 .col-example {
-  background-color: rgba(blue, 0.2);
+  background-color: rgba(#00f, 0.2);
   height: 100%;
 }
 
 .red {
-  background-color: rgba(red, 0.2);
+  background-color: rgba(#f00, 0.2);
 }
 
 .green {
-  background-color: rgba(green, 0.2);
+  background-color: rgba(#0f0, 0.2);
 }
 
 .indigo {
-  background-color: rgba(indigo, 0.2);
+  background-color: rgba(#4b0082, 0.2);
 }

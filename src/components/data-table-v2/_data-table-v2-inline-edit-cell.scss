@@ -4,6 +4,9 @@
 @import '../../globals/scss/layout';
 @import '../../globals/scss/theme';
 
+// TODO: Re-enable this rule soon
+// stylelint-disable order/order
+
 @mixin assistive-text {
   position: absolute;
   width: 1px;

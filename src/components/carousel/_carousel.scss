@@ -62,6 +62,8 @@
       transform: rotate(180deg);
     }
 
+    // TODO: Re-enable this rule soon
+    // stylelint-disable-next-line selector-nested-pattern
     svg {
       height: rem(24px);
       width: rem(16px);

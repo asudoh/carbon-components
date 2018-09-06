@@ -55,6 +55,8 @@
   }
 
   .#{$prefix}--progress-step--current {
+    // TODO: Re-enable this rule soon
+    // stylelint-disable-next-line selector-nested-pattern
     circle:first-child {
       stroke: $brand-01;
       stroke-width: $progress-indicator-stroke-width;
@@ -72,6 +74,8 @@
   }
 
   .#{$prefix}--progress-step--incomplete {
+    // TODO: Re-enable this rule soon
+    // stylelint-disable-next-line selector-nested-pattern
     circle {
       stroke: $ui-04;
       stroke-width: $progress-indicator-stroke-width;
@@ -88,12 +92,16 @@
   }
 
   .#{$prefix}--progress-step--complete {
+    // TODO: Re-enable this rule soon
+    // stylelint-disable-next-line selector-nested-pattern
     circle {
       stroke: $brand-01;
       stroke-width: $progress-indicator-stroke-width;
       fill: transparent;
     }
 
+    // TODO: Re-enable this rule soon
+    // stylelint-disable-next-line selector-nested-pattern
     polygon {
       fill: $brand-01;
     }

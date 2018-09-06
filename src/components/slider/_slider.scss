@@ -87,6 +87,8 @@
     cursor: pointer;
     outline: none;
 
+    // TODO: Re-enable this rule soon
+    // stylelint-disable-next-line selector-nested-pattern
     &--clicked {
       transition: left $transition--base $carbon--standard-easing;
     }
@@ -115,7 +117,7 @@
     padding: 0;
     text-align: center;
     font-weight: 600;
-    -moz-appearance: textfield;
+    -moz-appearance: textfield; // stylelint-disable-line property-no-vendor-prefix
     &::-webkit-outer-spin-button,
     &::-webkit-inner-spin-button {
       display: none;

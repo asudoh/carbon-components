@@ -5,6 +5,8 @@
 
 @include exports('data-table-v2-skeleton') {
   .#{$prefix}--data-table-v2.#{$prefix}--skeleton {
+    // TODO: Re-enable this rule soon
+    // stylelint-disable-next-line selector-nested-pattern
     th {
       border-bottom: 1px solid $brand-01;
 
@@ -21,6 +23,8 @@
       }
     }
 
+    // TODO: Re-enable this rule soon
+    // stylelint-disable-next-line selector-nested-pattern
     th span,
     td span {
       @include skeleton;
@@ -29,7 +33,11 @@
       display: block;
     }
 
+    // TODO: Re-enable this rule soon
+    // stylelint-disable-next-line selector-nested-pattern
     tr:hover {
+      // TODO: Re-enable this rule soon
+      // stylelint-disable-next-line selector-nested-pattern
       td {
         border-color: $ui-03;
         background: transparent;

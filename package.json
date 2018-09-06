@@ -146,6 +146,10 @@
     "semantic-release": "^15.5.0",
     "serve-static": "^1.13.0",
     "style-loader": "^0.20.0",
+    "stylelint": "^9.5.0",
+    "stylelint-config-prettier": "^4.0.0",
+    "stylelint-config-property-sort-order-smacss": "^4.0.0",
+    "stylelint-config-sass-guidelines": "^5.2.0",
     "vinyl-named": "^1.1.0",
     "webpack": "^3.10.0",
     "webpack-dev-middleware": "^2.0.0",
@@ -170,8 +174,11 @@
     "ci-check": "sh ./tools/ci-check.sh",
     "commitmsg": "commitlint -e $GIT_PARAMS",
     "dev": "gulp serve",
-    "lint": "eslint .",
-    "lint:staged": "eslint",
+    "lint": "yarn lint:js && yarn lint:sass",
+    "lint:js": "eslint .",
+    "lint:sass": "stylelint .",
+    "lint:staged:js": "eslint",
+    "lint:staged:sass": "stylelint",
     "prebuild": "gulp clean",
     "precommit": "lint-staged",
     "prepublishOnly": "npm run build",
@@ -220,11 +227,12 @@
   "lint-staged": {
     "*.js": [
       "yarn format:staged",
-      "yarn lint:staged",
+      "yarn lint:staged:js",
       "git add"
     ],
     "*.{css,md,scss}": [
       "yarn format:staged",
+      "yarn lint:staged:sass",
       "git add"
     ]
   },

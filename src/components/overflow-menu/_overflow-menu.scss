@@ -76,6 +76,8 @@
       left: 24px;
     }
 
+    // TODO: Re-enable this rule soon
+    // stylelint-disable-next-line selector-nested-pattern
     &[data-floating-menu-direction='top']:before {
       transform: rotate(225deg);
       top: auto;
@@ -145,6 +147,8 @@
   }
 
   .#{$prefix}--overflow-menu-options__option--danger {
+    // TODO: Re-enable this rule soon
+    // stylelint-disable-next-line selector-nested-pattern
     .bx--overflow-menu-options__btn {
       &:hover,
       &:focus {

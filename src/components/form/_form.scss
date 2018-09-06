@@ -55,6 +55,8 @@
   textarea[data-invalid],
   select[data-invalid],
   .#{$prefix}--list-box[data-invalid] {
+    // TODO: Re-enable this rule soon
+    // stylelint-disable-next-line length-zero-no-unit
     box-shadow: 0 2px 0px 0px $support-01;
 
     ~ .#{$prefix}--form-requirement {

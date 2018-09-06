@@ -31,6 +31,8 @@
     position: absolute;
     top: 0.75rem;
 
+    // TODO: Re-enable this rule soon
+    // stylelint-disable-next-line selector-nested-pattern
     &[hidden] {
       display: none;
     }

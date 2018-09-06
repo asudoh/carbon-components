@@ -6,6 +6,10 @@
 @import '../../globals/scss/colors';
 @import '../../globals/scss/theme';
 
+// TODO: Remove this file soon
+// stylelint-disable length-zero-no-unit, selector-nested-pattern, shorthand-property-no-redundant-values
+// stylelint-disable scss/at-extend-no-missing-placeholder, scss/selector-no-redundant-nesting-selector
+
 @include exports('left-nav') {
   .#{$prefix}--global-header__left-nav {
     @include layer('temporary-nav');

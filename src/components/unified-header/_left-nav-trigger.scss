@@ -4,6 +4,9 @@
 @import '../../globals/scss/theme';
 @import '../../globals/scss/mixins';
 
+// TODO: Remove this file soon
+// stylelint-disable selector-nested-pattern, scss/selector-no-redundant-nesting-selector
+
 @include exports('left-nav-trigger') {
   .#{$prefix}--left-nav__trigger {
     @include reset;

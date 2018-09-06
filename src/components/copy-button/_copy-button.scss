@@ -25,6 +25,8 @@
     left: 50%;
 
     &:focus {
+      // TODO: Re-enable this rule soon
+      // stylelint-disable-next-line color-named
       border: 2px solid red;
     }
 
@@ -62,6 +64,8 @@
       background: $inverse-02;
     }
 
+    // TODO: Re-enable this rule soon
+    // stylelint-disable-next-line selector-nested-pattern
     &--displayed {
       display: inline-flex;
     }

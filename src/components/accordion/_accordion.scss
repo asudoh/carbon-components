@@ -80,6 +80,8 @@
     visibility: hidden;
     opacity: 0;
 
+    // TODO: Re-enable this rule soon
+    // stylelint-disable-next-line selector-nested-pattern
     p {
       @include typescale('zeta');
     }

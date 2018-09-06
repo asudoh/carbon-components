@@ -151,6 +151,8 @@
       }
     }
 
+    // TODO: Re-enable this rule soon
+    // stylelint-disable-next-line selector-nested-pattern
     .bx--structured-list-th span {
       @include skeleton;
       width: 75%;
@@ -163,6 +165,8 @@
     .#{$prefix}--structured-list-th:first-child {
       width: 5%;
 
+      // TODO: Re-enable this rule soon
+      // stylelint-disable-next-line selector-nested-pattern
       span {
         display: none;
       }

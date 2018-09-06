@@ -41,6 +41,8 @@
       fill: $hover-primary;
     }
 
+    // TODO: Re-enable this rule soon
+    // stylelint-disable-next-line selector-nested-pattern
     path,
     polygon,
     circle {
@@ -50,6 +52,9 @@
     &:hover,
     &:focus {
       color: $text-01;
+
+      // TODO: Re-enable this rule soon
+      // stylelint-disable-next-line selector-nested-pattern
       path,
       polygon,
       circle {
@@ -77,11 +82,15 @@
     word-wrap: break-word;
     color: $text-01;
 
+    // TODO: Re-enable this rule soon
+    // stylelint-disable-next-line selector-nested-pattern
     p {
       @include font-family;
       @include typescale('zeta');
     }
 
+    // TODO: Re-enable this rule soon
+    // stylelint-disable-next-line selector-nested-pattern
     div {
       display: flex;
       justify-content: space-between;
@@ -104,6 +113,8 @@
       content: '';
     }
 
+    // TODO: Re-enable this rule soon
+    // stylelint-disable-next-line selector-nested-pattern
     &[data-floating-menu-direction='left'] {
       .#{$prefix}--tooltip__caret {
         left: auto;
@@ -113,6 +124,8 @@
       }
     }
 
+    // TODO: Re-enable this rule soon
+    // stylelint-disable-next-line selector-nested-pattern
     &[data-floating-menu-direction='top'] {
       .#{$prefix}--tooltip__caret {
         top: auto;
@@ -121,6 +134,8 @@
       }
     }
 
+    // TODO: Re-enable this rule soon
+    // stylelint-disable-next-line selector-nested-pattern
     &[data-floating-menu-direction='right'] {
       .#{$prefix}--tooltip__caret {
         left: rem(-5px);
@@ -184,6 +199,8 @@
     pointer-events: none;
     cursor: pointer;
 
+    // TODO: Re-enable this rule soon
+    // stylelint-disable-next-line selector-nested-pattern
     p {
       @include font-family;
       @include typescale('omega');
@@ -232,6 +249,8 @@
     cursor: pointer;
     overflow: visible;
 
+    // TODO: Re-enable this rule soon
+    // stylelint-disable-next-line selector-nested-pattern
     path {
       fill: $brand-01;
     }
@@ -274,6 +293,8 @@
 
     &:hover,
     &:focus {
+      // TODO: Re-enable this rule soon
+      // stylelint-disable-next-line selector-nested-pattern
       path {
         fill: $hover-primary;
       }
@@ -288,6 +309,8 @@
     &:focus {
       outline: 1px solid transparent;
 
+      // TODO: Re-enable this rule soon
+      // stylelint-disable-next-line selector-nested-pattern
       svg {
         @include focus-outline('border');
       }
@@ -323,6 +346,8 @@
   // Tooltip position - icon only
   .#{$prefix}--tooltip--icon {
     .#{$prefix}--tooltip__trigger {
+      // TODO: Re-enable this rule soon
+      // stylelint-disable-next-line selector-nested-pattern
       svg {
         margin-left: 0;
       }

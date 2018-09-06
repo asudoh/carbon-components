@@ -1,3 +1,7 @@
+/* stylelint-disable order/order */
+/* stylelint-disable scss/at-mixin-pattern */
+/* stylelint-disable scss/dollar-variable-pattern */
+
 // Enclose content in appropiate media query
 @mixin gridBreakpointWrapper($breakpoint, $first) {
   @if isSameBreakpoint($breakpoint, $first) {
@@ -26,7 +30,7 @@
     }
 
     @if isSameBreakpoint($breakpoint, $last) and $totalMargin != 0 {
-      $columnSize: calc( (#{map-get($breakpoint, breakpoint) * 1rem} - #{$totalMargin}) / #{$columnQuantity});
+      $columnSize: calc((#{map-get($breakpoint, breakpoint) * 1rem} - #{$totalMargin}) / #{$columnQuantity});
     } @else if isSameBreakpoint($breakpoint, $last) {
       $columnSize: calc(#{map-get($breakpoint, breakpoint) * 1rem} / #{$columnQuantity});
     } @else if $totalMargin != 0 {
@@ -87,7 +91,7 @@
 
           @if map-get($last, margin) > 0 {
             $maxColumnSize: calc(
-               (#{map-get($last, breakpoint)}rem - #{map-get($last, margin)} * 2) / #{map-get($currentBreakpoint, columns)} * #{$i}
+              (#{map-get($last, breakpoint)}rem - #{map-get($last, margin)} * 2) / #{map-get($currentBreakpoint, columns)} * #{$i}
             );
           }
 
@@ -146,7 +150,7 @@
 @mixin gridLegacyZeros($breakpoint, $breakpoints, $name) {
   // Undo previous breakpoint’s 0--only class
   $onlyCorrectionFound: false;
-  @for $i from length($breakpoints) *-1 through -1 {
+  @for $i from length($breakpoints) * -1 through -1 {
     $currentBreakpoint: nth($breakpoints, $i);
     @if map-get(nth($currentBreakpoint, 2), breakpoint) < map-get($breakpoint, breakpoint) and $onlyCorrectionFound == false {
       .#{$prefix}-grid__col--#{nth($currentBreakpoint, 1)}--0--only {

@@ -10,11 +10,14 @@
     font-family: inherit;
     vertical-align: baseline;
 
+    // TODO: Re-enable this rule soon
+    // stylelint-disable scss/selector-no-redundant-nesting-selector
     & > *,
     & > *:before,
     & > *:after {
       box-sizing: inherit;
     }
+    // stylelint-enable scss/selector-no-redundant-nesting-selector
   }
 }
 
@@ -111,6 +114,7 @@
     }
 
     // Chrome 62 fix
+    // stylelint-disable selector-no-qualifying-type
     button,
     input[type='button'],
     input[type='submit'],
@@ -118,7 +122,9 @@
     input[type='file'] {
       border-radius: 0;
     }
+    // stylelint-enable selector-no-qualifying-type
 
+    // stylelint-disable-next-line selector-no-qualifying-type
     input[type='text']::-ms-clear {
       display: none;
     }

@@ -37,6 +37,8 @@ $grid-gutter-breakpoints: (
       margin: 0 auto;
     }
 
+    // TODO: Re-enable this rule soon
+    // stylelint-disable-next-line selector-nested-pattern
     &.max {
       max-width: $max-width;
     }
@@ -93,6 +95,8 @@ $grid-gutter-breakpoints: (
   }
 
   // deprecated
+  // TODO: Re-enable this rule soon
+  // stylelint-disable-next-line order/order
   $gutter-size: 10px;
 
   .#{$prefix}--col-xs,

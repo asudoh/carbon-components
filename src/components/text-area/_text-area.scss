@@ -28,6 +28,8 @@
     resize: vertical;
     border-bottom: 1px solid transparent;
 
+    // TODO: Re-enable this rule soon
+    // stylelint-disable-next-line scss/selector-no-redundant-nesting-selector
     & ~ .#{$prefix}--label {
       order: 1;
     }
@@ -50,6 +52,8 @@
       border: $input-border;
     }
 
+    // TODO: Re-enable this rule soon
+    // stylelint-disable-next-line selector-nested-pattern
     &[data-invalid],
     &[data-invalid]:focus {
       box-shadow: 0 2px 0 0 $support-01;
@@ -63,6 +67,8 @@
       color: $support-01;
     }
 
+    // TODO: Re-enable this rule soon
+    // stylelint-disable-next-line scss/selector-no-redundant-nesting-selector
     & ~ .#{$prefix}--form-requirement {
       order: 3;
       color: $support-01;
@@ -84,6 +90,7 @@
     @include skeleton;
     height: rem(100px);
 
+    // stylelint-disable-next-line selector-no-vendor-prefix
     &::-webkit-input-placeholder {
       color: transparent;
     }
@@ -94,6 +101,7 @@
     @include skeleton;
     height: rem(100px);
 
+    // stylelint-disable-next-line selector-no-vendor-prefix
     &::-webkit-input-placeholder {
       color: transparent;
     }
@@ -104,6 +112,7 @@
     @include skeleton;
     height: rem(100px);
 
+    // stylelint-disable-next-line selector-no-vendor-prefix
     &::-webkit-input-placeholder {
       color: transparent;
     }

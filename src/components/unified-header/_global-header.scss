@@ -5,6 +5,9 @@
 @import '../../globals/scss/layer';
 @import '../../globals/scss/css--typography';
 
+// TODO: Remove this file soon
+// stylelint-disable selector-nested-pattern, scss/selector-no-redundant-nesting-selector
+
 @include exports('global-header') {
   .#{$prefix}--global-header {
     @include layer('sticky-nav');

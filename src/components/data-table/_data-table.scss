@@ -25,6 +25,8 @@
     border-spacing: 0;
     border: 2px solid $ui-03;
 
+    // TODO: Re-enable this rule soon
+    // stylelint-disable-next-line selector-nested-pattern
     td {
       @include reset;
       @include typescale('zeta');
@@ -33,10 +35,14 @@
       color: $text-01;
     }
 
+    // TODO: Re-enable this rule soon
+    // stylelint-disable-next-line selector-nested-pattern
     td p {
       @include typescale('zeta');
     }
 
+    // TODO: Re-enable this rule soon
+    // stylelint-disable-next-line selector-nested-pattern
     th {
       @include reset;
       @include typescale('omega');
@@ -48,17 +54,25 @@
       &:focus {
         outline: 1px solid transparent;
 
+        // TODO: Re-enable this rule soon
+        // stylelint-disable-next-line selector-nested-pattern
         span {
           @include focus-outline('border');
         }
       }
     }
 
+    // TODO: Re-enable this rule soon
+    // stylelint-disable-next-line selector-nested-pattern
     table {
       @include reset;
     }
 
+    // TODO: Re-enable this rule soon
+    // stylelint-disable-next-line selector-nested-pattern
     &--tall {
+      // TODO: Re-enable this rule soon
+      // stylelint-disable-next-line selector-nested-pattern
       td,
       th {
         padding-top: rem(15px);
@@ -66,12 +80,16 @@
       }
     }
 
+    // TODO: Re-enable this rule soon
+    // stylelint-disable-next-line selector-nested-pattern
     &--static-size {
       @include reset;
       border-collapse: collapse;
       width: auto;
       border: 2px solid $ui-03;
 
+      // TODO: Re-enable this rule soon
+      // stylelint-disable-next-line selector-nested-pattern
       tr td:first-child,
       tr th:first-child {
         padding-left: 1.5rem;
@@ -80,6 +98,8 @@
   }
 
   .#{$prefix}--responsive-table--tall {
+    // TODO: Re-enable this rule soon
+    // stylelint-disable-next-line selector-nested-pattern
     td,
     th {
       padding-top: rem(10px);
@@ -113,13 +133,19 @@
     > .#{$prefix}--parent-row {
       background-color: $ui-01;
 
+      // TODO: Re-enable this rule soon
+      // stylelint-disable-next-line scss/selector-no-redundant-nesting-selector
       & + .#{$prefix}--expandable-row {
         background-color: $ui-01;
       }
 
+      // TODO: Re-enable this rule soon
+      // stylelint-disable-next-line selector-nested-pattern
       &--even {
         background-color: $ui-02;
 
+        // TODO: Re-enable this rule soon
+        // stylelint-disable-next-line scss/selector-no-redundant-nesting-selector
         & + .#{$prefix}--expandable-row {
           background-color: $ui-02;
         }
@@ -145,11 +171,15 @@
 
   // expandable styles
   .#{$prefix}--expandable-row {
+    // TODO: Re-enable this rule soon
+    // stylelint-disable-next-line selector-nested-pattern
     > td {
       border-left: 4px solid $brand-01;
       padding: 2rem;
     }
 
+    // TODO: Re-enable this rule soon
+    // stylelint-disable-next-line selector-nested-pattern
     &--hidden {
       visibility: hidden;
     }
@@ -166,6 +196,8 @@
     &:focus {
       outline: 1px solid transparent;
 
+      // TODO: Re-enable this rule soon
+      // stylelint-disable-next-line selector-nested-pattern
       svg {
         @include focus-outline('border');
       }

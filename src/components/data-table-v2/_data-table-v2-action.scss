@@ -15,6 +15,8 @@
       position: relative;
 
       &:focus {
+        // TODO: Re-enable this rule soon
+        // stylelint-disable-next-line length-zero-no-unit
         box-shadow: inset 0px 0px 0px 1px $brand-01;
         outline: 0;
       }
@@ -130,6 +132,9 @@
 
   .#{$prefix}--action-icons {
     margin-left: auto;
+
+    // TODO: Re-enable this rule soon
+    // stylelint-disable-next-line selector-nested-pattern
     svg {
       padding: 0 $spacing-sm;
       fill: $ui-01;

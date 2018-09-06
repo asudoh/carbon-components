@@ -17,6 +17,8 @@
     padding: 0 1rem;
   }
 
+  // TODO: Consider re-enabling this in future
+  // stylelint-disable-next-line selector-no-qualifying-type
   .bx--multi-select.bx--combo-box input[role='combobox'] {
     padding: 0;
     outline: none;

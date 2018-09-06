@@ -38,6 +38,8 @@
     &:focus {
       outline: 0;
 
+      // TODO: Re-enable this rule soon
+      // stylelint-disable-next-line selector-nested-pattern
       svg {
         opacity: 1;
         outline: 1px solid $brand-01;

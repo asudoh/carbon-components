@@ -5,6 +5,9 @@
 @import 'typography';
 @include plex-font-face;
 
+// TODO: Re-enable this rule soon
+// stylelint-disable selector-nested-pattern
+
 body {
   font-family: 'ibm-plex-sans', Helvetica Neue, Arial, sans serif;
   background-color: $color__white;
@@ -27,6 +30,8 @@ body {
   position: relative;
 }
 
+// TODO: Re-enable this rule soon
+// stylelint-disable-next-line selector-max-id
 #maincontent {
   padding-bottom: 23rem;
   min-height: 100vh;

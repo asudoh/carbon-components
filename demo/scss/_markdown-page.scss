@@ -1,3 +1,11 @@
+// Disabling some rules as the code is from `design-system-website`
+// stylelint-disable selector-class-pattern
+// stylelint-disable selector-max-id
+// stylelint-disable selector-max-compound-selectors
+// stylelint-disable selector-nested-pattern
+// stylelint-disable selector-no-qualifying-type
+// stylelint-disable scss/selector-no-redundant-nesting-selector
+
 .page_md {
   > p + #contribution-model-process {
     margin-top: 2rem;

@@ -12,6 +12,8 @@
   animation-iteration-count: infinite;
 
   // Animate the stroke
+  // TODO: Re-enable this rule soon
+  // stylelint-disable-next-line scss/selector-no-redundant-nesting-selector
   & svg circle {
     animation-name: init-stroke;
     animation-duration: 1000ms;
@@ -24,6 +26,8 @@
   animation: rotate-end-p1 700ms $carbon--ease-out forwards, rotate-end-p2 700ms $carbon--ease-out 700ms forwards;
 
   // Animate the stroke
+  // TODO: Re-enable this rule soon
+  // stylelint-disable-next-line scss/selector-no-redundant-nesting-selector
   & svg circle {
     animation-name: stroke-end;
     animation-duration: 700ms;
