@@ -6,6 +6,7 @@ const autoprefixer = require('autoprefixer');
 
 module.exports = {
   devtool: 'source-maps',
+  mode: 'development',
   entry: ['webpack-hot-middleware/client?reload=true', path.resolve(__dirname, '../demo/index')],
   output: {
     path: path.resolve(__dirname, '../demo'),
@@ -17,7 +18,7 @@ module.exports = {
     libraryTarget: 'var',
   },
   module: {
-    loaders: [
+    rules: [
       {
         test: /\.js$/,
         exclude: /node_modules/,
