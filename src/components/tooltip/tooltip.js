@@ -118,21 +118,26 @@ class Tooltip extends mixin(createComponent, initComponentByEvent, eventedShowHi
   _hookOn(element) {
     const hasFocusin = 'onfocusin' in window;
     const focusinEventName = hasFocusin ? 'focusin' : 'focus';
-    [focusinEventName, 'blur', 'touchleave', 'touchcancel'].forEach(name => {
+    [focusinEventName, 'blur', 'touchleave', 'touchcancel', 'keydown'].forEach(name => {
       this.manage(
         on(
           element,
           name,
           event => {
-            const { relatedTarget, type } = event;
-            const hadContextMenu = this._hasContextMenu;
-            this._hasContextMenu = type === 'contextmenu';
-            this._debouncedHandleClick({
-              relatedTarget,
-              type: type === 'focusin' ? 'focus' : type,
-              hadContextMenu,
-              details: getLaunchingDetails(event),
-            });
+            const { relatedTarget, type, which } = event;
+            if (name !== 'keydown' || which === 13 || which === 32) {
+              const hadContextMenu = this._hasContextMenu;
+              this._hasContextMenu = type === 'contextmenu';
+              this._debouncedHandleClick({
+                relatedTarget,
+                type: type === 'focusin' ? 'focus' : type,
+                hadContextMenu,
+                details: getLaunchingDetails(event),
+              });
+              if (name === 'keydown' && which === 32) {
+                event.preventDefault(); // Prevent scroll-to-focus behavior
+              }
+            }
           },
           name === focusinEventName && !hasFocusin
         )
@@ -155,6 +160,7 @@ class Tooltip extends mixin(createComponent, initComponentByEvent, eventedShowHi
       blur: 'hidden',
       touchleave: 'hidden',
       touchcancel: 'hidden',
+      keydown: !this.tooltip || !this.tooltip.element.classList.contains(this.tooltip.options.classShown) ? 'shown' : 'hidden',
     }[type];
 
     let shouldPreventClose;
