@@ -185,8 +185,106 @@
     outline: 2px solid $support-01;
     outline-offset: -2px;
     box-shadow: none;
-    // THIS SHOULD BE MOVED TO AN INLINE SVG IN THE HTML IN NEXT MAJOR RELEASE
-    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' width='16' height='16' class='ibm-icons ibm-icons--warning--filled' fill='%23da1e28'%3e%3cpath d='M16 2a14 14 0 1 0 14 14A14 14 0 0 0 16 2zm-1 6h2v11h-2zm1 17a1.5 1.5 0 1 1 1.5-1.5A1.5 1.5 0 0 1 16 25z'/%3e%3c/svg%3e ");
+  }
+
+  .#{$prefix}--text-input-wrapper {
+    position: relative;
+  }
+
+  .#{$prefix}--form-requirement:after {
+    content: attr(aria-label);
+  }
+
+  .#{$prefix}--form-requirement--tooltip {
+    @include font-family;
+    @include reset;
+    position: absolute;
+    top: rem(28px);
+    right: rem(8px);
+    display: inline-flex;
+    align-items: center;
+    margin-top: 0;
+    cursor: pointer;
+    overflow: visible;
+    line-height: 1;
+    z-index: 1;
+
+    path {
+      fill: $support-01;
+    }
+
+    &:before,
+    &:after {
+      @include font-family;
+      position: absolute;
+      display: flex;
+      align-items: center;
+      background-color: $support-01;
+    }
+
+    &:before {
+      right: 0;
+      left: 0;
+      width: 0.6rem;
+      height: 0.6rem;
+      margin: 0 auto;
+      content: '';
+      margin-top: 1px;
+      margin-left: 50%;
+    }
+
+    &:after {
+      @include typescale('zeta');
+      @include layer('overlay');
+      min-width: rem(32px);
+      max-width: rem(208px);
+      height: rem(32px);
+      margin-left: 50%;
+      padding: 0 1rem;
+      border-radius: rem(2px);
+      color: $inverse-01;
+      font-weight: 400;
+      content: attr(aria-label);
+      transform: translateX(-50%);
+      white-space: nowrap;
+      pointer-events: none;
+      margin-left: 50%;
+    }
+  }
+
+  // Tooltip Icon caret - bottom position
+  .#{$prefix}--form-requirement--tooltip {
+    &:before {
+      bottom: 0;
+      transform: translate(-50%, calc(100% + 10px)) rotate(135deg);
+    }
+
+    &:after {
+      bottom: 0;
+      transform: translate(-50%, calc(100% + 10px));
+    }
+  }
+
+  // Tooltip position - icon only
+  .#{$prefix}--form-requirement--tooltip {
+    .#{$prefix}--tooltip__trigger {
+      svg {
+        margin-left: 0;
+      }
+    }
+  }
+
+  .#{$prefix}--form-requirement__icon {
+    position: absolute;
+    top: rem(28px);
+    right: rem(8px);
+    fill: $support-01;
+  }
+
+  .#{$prefix}--form-requirement--tooltip .#{$prefix}--form-requirement__icon {
+    position: static;
+    top: auto;
+    right: auto;
   }
 }
 
