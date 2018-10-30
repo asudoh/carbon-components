@@ -70,18 +70,28 @@ function navRoute(req, res, next) {
   } else {
     templates.cache
       .get()
-      .then(({ componentSource, docSource, contents }) => {
-        res.setHeader('Content-Type', 'text/html');
-        res.end(
-          contents.get('demo-nav')({
-            yield: contents.get('demo-nav-data')({
-              componentSource,
-              docSource,
+      .then(({ componentSource, docSource }) =>
+        componentSource
+          .find('@demo-nav-data')
+          .render(
+            {
+              // The auto-generated component data from templates in non-src directory causes parser error
+              componentItems: componentSource
+                .filter(
+                  item => !item.viewDir || path.relative(path.resolve(__dirname, 'src'), item.viewDir).substr(0, 2) !== '..'
+                )
+                .toArray(),
+              docItems: docSource.toArray(),
               portSassBuild: process.env.PORT_SASS_DEV_BUILD,
-            }),
+            },
+            undefined,
+            { preview: '@demo-nav' }
+          )
+          .then(rendered => {
+            res.setHeader('Content-Type', 'text/html');
+            res.end(rendered);
           })
-        );
-      })
+      )
       .catch(err => {
         console.error(err.stack); // eslint-disable-line no-console
         res.writeHead(500);
@@ -98,16 +108,27 @@ function componentRoute(req, res, next) {
     res.writeHead(404);
     res.end();
   } else {
-    templates
-      .render({ layout: 'preview', concat: true }, name)
-      .then(rendered => {
-        // eslint-disable-next-line eqeqeq
-        if (rendered == null) {
+    templates.cache
+      .get()
+      .then(({ componentSource }) => {
+        const entity = componentSource.find(`@${name}`);
+        return (
+          entity &&
+          Promise.all(
+            (!entity.isComponent ? [entity] : entity.variants().toArray()).map(item =>
+              item.render(item.context, undefined, { preview: true })
+            )
+          )
+        );
+      })
+      .then(renderedItems => {
+        if (!renderedItems) {
           res.writeHead(404);
           res.end();
+        } else {
+          res.setHeader('Content-Type', 'text/html');
+          res.end(renderedItems.join(''));
         }
-        res.setHeader('Content-Type', 'text/html');
-        res.end(rendered);
       })
       .catch(error => {
         console.error(error.stack); // eslint-disable-line no-console
@@ -125,15 +146,30 @@ function codeRoute(req, res, next) {
     res.writeHead(404);
     res.end();
   } else {
-    templates
-      .render({ layout: false }, name)
-      .then(renderedItems => {
+    templates.cache
+      .get()
+      .then(({ componentSource }) => {
+        const entity = componentSource.find(`@${name}`);
         const o = {};
-        renderedItems.forEach((rendered, item) => {
-          o[item.handle] = rendered.trim();
-        });
-        res.setHeader('Content-Type', 'application/json');
-        res.end(JSON.stringify(o));
+        return (
+          entity &&
+          Promise.all(
+            (!entity.isComponent ? [entity] : entity.variants().toArray()).map(item =>
+              item.render(item.context).then(rendered => {
+                o[item.handle] = rendered.trim();
+              })
+            )
+          ).then(() => o)
+        );
+      })
+      .then(o => {
+        if (!o) {
+          res.writeHead(404);
+          res.end();
+        } else {
+          res.setHeader('Content-Type', 'application/json');
+          res.end(JSON.stringify(o));
+        }
       })
       .catch(error => {
         console.error(error.stack); // eslint-disable-line no-console

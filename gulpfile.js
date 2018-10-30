@@ -327,38 +327,51 @@ gulp.task('sass:source', () => {
 
 gulp.task('html:dev', ['scripts:dev:feature-flags'], () =>
   Promise.all([mkdirp(path.resolve(__dirname, 'demo/code')), mkdirp(path.resolve(__dirname, 'demo/component'))]).then(() =>
-    templates.cache.get().then(({ componentSource, docSource, contents }) =>
+    templates.cache.get().then(({ componentSource, docSource }) =>
       Promise.all([
-        writeFile(
-          path.resolve(__dirname, 'demo/index.html'),
-          contents.get('demo-nav')({
-            yield: contents.get('demo-nav-data')({
-              componentSource,
-              docSource,
+        componentSource
+          .find('@demo-nav-data')
+          .render(
+            {
+              // The auto-generated component data from templates in non-src directory causes parser error
+              componentItems: componentSource
+                .filter(
+                  item => !item.viewDir || path.relative(path.resolve(__dirname, 'src'), item.viewDir).substr(0, 2) !== '..'
+                )
+                .toArray(),
+              docItems: docSource.toArray(),
               routeWithQueryArgs: true,
               useStaticFullRenderPage: true,
-            }),
-          })
-        ),
-        ...componentSource
-          .map(({ handle }) =>
-            templates.render({ layout: false }, handle).then(renderedItems => {
-              const o = {};
-              renderedItems.forEach((rendered, item) => {
-                o[item.handle] = rendered.trim();
-              });
-              return writeFile(path.resolve(__dirname, 'demo/code', handle), JSON.stringify(o));
-            })
+            },
+            undefined,
+            { preview: '@demo-nav' }
           )
+          .then(rendered => writeFile(path.resolve(__dirname, 'demo/index.html'), rendered)),
+        ...componentSource
+          .components()
+          .map(entity => {
+            const o = {};
+            return (
+              entity &&
+              Promise.all(
+                (!entity.isComponent ? [entity] : entity.variants().toArray()).map(item =>
+                  item.render(item.context).then(rendered => {
+                    o[item.handle] = rendered.trim();
+                  })
+                )
+              ).then(() => writeFile(path.resolve(__dirname, 'demo/code', entity.handle), JSON.stringify(o)))
+            );
+          })
           .toArray(),
-        templates
-          .render({ layout: 'preview' })
-          .then(table =>
-            Promise.all(
-              Array.from(table.entries()).map(([{ handle }, value]) =>
-                writeFile(path.resolve(__dirname, 'demo/component', `${handle}.html`), value)
-              )
-            )
+        ...componentSource
+          .components()
+          .filter(item => !item.viewDir || path.relative(path.resolve(__dirname, 'src'), item.viewDir).substr(0, 2) !== '..')
+          .toArray()
+          .reduce((a, item) => [...a, ...item.variants().toArray()], [])
+          .map(item =>
+            item
+              .render(item.context, undefined, { preview: true })
+              .then(rendered => writeFile(path.resolve(__dirname, 'demo/component', `${item.handle}.html`), rendered))
           ),
       ])
     )
@@ -370,15 +383,22 @@ gulp.task('html:source', ['scripts:dev:feature-flags'], () => {
     'notification--default': 'inline-notification',
     'notification--toast': 'toast-notification',
   };
-  return templates.render({ layout: false }).then(renderedItems => {
-    const promises = [];
-    renderedItems.forEach((rendered, item) => {
-      const dirname = path.dirname(path.resolve(__dirname, 'html', item.relViewPath));
-      const filename = `${names[item.handle] || item.handle.replace(/--default$/, '')}.html`;
-      promises.push(mkdirp(dirname).then(() => writeFile(path.resolve(dirname, filename), rendered)));
-    });
-    return Promise.all(promises);
-  });
+  return templates.cache.get().then(({ componentSource }) =>
+    Promise.all(
+      componentSource
+        .components()
+        .filter(item => !item.viewDir || path.relative(path.resolve(__dirname, 'src'), item.viewDir).substr(0, 2) !== '..')
+        .toArray()
+        .reduce((a, item) => [...a, ...item.variants().toArray()], [])
+        .map(item =>
+          item.render(item.context).then(rendered => {
+            const dirname = path.dirname(path.resolve(__dirname, 'html', item.relViewPath));
+            const filename = `${names[item.handle] || item.handle.replace(/--default$/, '')}.html`;
+            return mkdirp(dirname).then(() => writeFile(path.resolve(dirname, filename), rendered));
+          })
+        )
+    )
+  );
 });
 
 /**

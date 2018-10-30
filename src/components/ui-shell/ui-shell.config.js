@@ -218,7 +218,7 @@ const switcher = {
 };
 
 module.exports = {
-  preview: 'ui-shell-preview',
+  preview: '@ui-shell-preview',
   meta: {
     xVersionOnly: true,
     linkOnly: true,
