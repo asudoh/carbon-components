@@ -332,7 +332,7 @@ gulp.task('html:dev', ['scripts:dev:feature-flags'], () =>
         writeFile(
           path.resolve(__dirname, 'demo/index.html'),
           contents.get('demo-nav')({
-            yield: contents.get('demo-nav-data')({
+            yield: contents.get('_demo-nav-data')({
               componentSource,
               docSource,
               routeWithQueryArgs: true,

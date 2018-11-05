@@ -74,7 +74,7 @@ function navRoute(req, res, next) {
         res.setHeader('Content-Type', 'text/html');
         res.end(
           contents.get('demo-nav')({
-            yield: contents.get('demo-nav-data')({
+            yield: contents.get('_demo-nav-data')({
               componentSource,
               docSource,
               portSassBuild: process.env.PORT_SASS_DEV_BUILD,
