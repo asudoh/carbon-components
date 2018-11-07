@@ -3,11 +3,12 @@ import mixin from '../../globals/js/misc/mixin';
 import createComponent from '../../globals/js/mixins/create-component';
 import initComponentBySearch from '../../globals/js/mixins/init-component-by-search';
 import handles from '../../globals/js/mixins/handles';
+import trackBlur from '../../globals/js/mixins/track-blur';
 import on from '../../globals/js/misc/on';
 
 const forEach = Array.prototype.forEach;
 
-class HeaderSubmenu extends mixin(createComponent, initComponentBySearch, handles) {
+class HeaderSubmenu extends mixin(createComponent, initComponentBySearch, handles, trackBlur) {
   constructor(element, options) {
     super(element, options);
     this.manage(on(this.element.ownerDocument, 'click', this._toggle));
@@ -31,6 +32,16 @@ class HeaderSubmenu extends mixin(createComponent, initComponentBySearch, handle
       }
     }
   };
+
+  /**
+   * Closes the menu if this component loses focus.
+   */
+  handleBlur() {
+    const trigger = this.element.querySelector(this.options.selectorTrigger);
+    if (trigger) {
+      trigger.setAttribute(this.options.attribExpanded, String(false));
+    }
+  }
 
   /**
    * The map associating DOM element and copy button UI instance.
