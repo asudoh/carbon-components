@@ -5,6 +5,8 @@ import initComponentBySearch from '../../globals/js/mixins/init-component-by-sea
 import handles from '../../globals/js/mixins/handles';
 import on from '../../globals/js/misc/on';
 
+const forEach = Array.prototype.forEach;
+
 class HeaderSubmenu extends mixin(createComponent, initComponentBySearch, handles) {
   constructor(element, options) {
     super(element, options);
@@ -23,6 +25,9 @@ class HeaderSubmenu extends mixin(createComponent, initComponentBySearch, handle
       const shouldBeExpanded = isOfSelf && !expanded;
       if (expanded !== shouldBeExpanded) {
         trigger.setAttribute(this.options.attribExpanded, String(shouldBeExpanded));
+        forEach.call(this.element.querySelectorAll(this.options.selectorItem), item => {
+          item.tabIndex = shouldBeExpanded ? 0 : -1;
+        });
       }
     }
   };
