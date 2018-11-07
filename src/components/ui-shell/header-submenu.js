@@ -19,7 +19,8 @@ class HeaderSubmenu extends mixin(createComponent, initComponentBySearch, handle
   _handleClick = evt => {
     const trigger = eventMatches(evt, this.options.selectorTrigger);
     if (trigger) {
-      console.log('Trigger button clicked!'); // eslint-disable-line no-console
+      const expanded = trigger.getAttribute(this.options.attribExpanded) === 'true';
+      trigger.setAttribute(this.options.attribExpanded, String(!expanded));
     }
   };
 
@@ -44,6 +45,7 @@ class HeaderSubmenu extends mixin(createComponent, initComponentBySearch, handle
     return {
       selectorInit: '[data-header-submenu]',
       selectorTrigger: `.${prefix}--header__menu-title`,
+      attribExpanded: 'aria-expanded',
     };
   }
 }
