@@ -3,24 +3,27 @@ import mixin from '../../globals/js/misc/mixin';
 import createComponent from '../../globals/js/mixins/create-component';
 import initComponentBySearch from '../../globals/js/mixins/init-component-by-search';
 import handles from '../../globals/js/mixins/handles';
-import eventMatches from '../../globals/js/misc/event-matches';
 import on from '../../globals/js/misc/on';
 
 class HeaderSubmenu extends mixin(createComponent, initComponentBySearch, handles) {
   constructor(element, options) {
     super(element, options);
-    this.manage(on(this.element, 'click', this._handleClick));
+    this.manage(on(this.element.ownerDocument, 'click', this._toggle));
   }
 
   /**
-   * Handles click button.
+   * Opens and closes the menu.
    * @param {Event} evt The event triggering this action.
    */
-  _handleClick = evt => {
-    const trigger = eventMatches(evt, this.options.selectorTrigger);
+  _toggle = evt => {
+    const trigger = this.element.querySelector(this.options.selectorTrigger);
     if (trigger) {
+      const isOfSelf = this.element.contains(evt.target);
       const expanded = trigger.getAttribute(this.options.attribExpanded) === 'true';
-      trigger.setAttribute(this.options.attribExpanded, String(!expanded));
+      const shouldBeExpanded = isOfSelf && !expanded;
+      if (expanded !== shouldBeExpanded) {
+        trigger.setAttribute(this.options.attribExpanded, String(shouldBeExpanded));
+      }
     }
   };
 
@@ -45,6 +48,7 @@ class HeaderSubmenu extends mixin(createComponent, initComponentBySearch, handle
     return {
       selectorInit: '[data-header-submenu]',
       selectorTrigger: `.${prefix}--header__menu-title`,
+      selectorItem: `.${prefix}--header__menu-item`,
       attribExpanded: 'aria-expanded',
     };
   }
