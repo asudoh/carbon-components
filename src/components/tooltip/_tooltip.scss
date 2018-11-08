@@ -9,6 +9,81 @@
 @import '../../globals/scss/css--reset';
 @import '../../globals/scss/css--typography';
 
+@mixin tooltip--hint {
+  position: relative;
+  overflow: visible;
+
+  // Tooltip - renders as a combo of :before and :after elements
+  &:before,
+  &:after {
+    @include font-family;
+    position: absolute;
+    display: none;
+    background-color: $inverse-02;
+  }
+
+  &:before {
+    right: 0;
+    left: 0;
+    width: 0.6rem;
+    height: 0.6rem;
+    margin: 0 auto;
+    content: '';
+    margin-top: 1px;
+    margin-left: 50%;
+  }
+
+  &:after {
+    @include typescale('omega');
+    @include layer('overlay');
+    max-width: rem(176px);
+    margin-left: 50%;
+    padding: $spacing-2xs;
+    border-radius: 4px;
+    color: $inverse-01;
+    font-weight: 400;
+    content: attr(aria-label);
+    transform: translateX(-50%);
+    white-space: nowrap;
+    pointer-events: none;
+  }
+
+  &:hover,
+  &:focus {
+    &:before,
+    &:after {
+      position: absolute;
+      display: block;
+    }
+  }
+}
+
+// Tooltip hint caret - top position
+@mixin tooltip--hint--top {
+  &:before {
+    top: 0;
+    transform: translate(-50%, calc(-100% - 10px)) rotate(45deg);
+  }
+
+  &:after {
+    top: 0;
+    transform: translate(-50%, calc(-100% - 10px));
+  }
+}
+
+// Tooltip hint caret - bottom position
+@mixin tooltip--hint--bottom {
+  &:before {
+    bottom: 0;
+    transform: translate(-50%, calc(100% + 10px)) rotate(135deg);
+  }
+
+  &:after {
+    bottom: 0;
+    transform: translate(-50%, calc(100% + 10px));
+  }
+}
+
 @mixin tooltip {
   .#{$prefix}--tooltip--icon {
     display: flex;
@@ -224,64 +299,22 @@
   // Icon CSS only tooltip
   .#{$prefix}--tooltip--icon__top,
   .#{$prefix}--tooltip--icon__bottom {
+    @include tooltip--hint;
     @include font-family;
     @include reset;
-    position: relative;
+
     display: inline-flex;
     align-items: center;
     cursor: pointer;
-    overflow: visible;
 
     path {
       fill: $brand-01;
-    }
-
-    // Tooltip - renders as a combo of :before and :after elements
-    &:before,
-    &:after {
-      @include font-family;
-      position: absolute;
-      display: none;
-      background-color: $inverse-02;
-    }
-
-    &:before {
-      right: 0;
-      left: 0;
-      width: 0.6rem;
-      height: 0.6rem;
-      margin: 0 auto;
-      content: '';
-      margin-top: 1px;
-      margin-left: 50%;
-    }
-
-    &:after {
-      @include typescale('omega');
-      @include layer('overlay');
-      max-width: rem(176px);
-      margin-left: 50%;
-      padding: $spacing-2xs;
-      border-radius: 4px;
-      color: $inverse-01;
-      font-weight: 400;
-      content: attr(aria-label);
-      transform: translateX(-50%);
-      white-space: nowrap;
-      pointer-events: none;
-      margin-left: 50%;
     }
 
     &:hover,
     &:focus {
       path {
         fill: $hover-primary;
-      }
-
-      &:before,
-      &:after {
-        position: absolute;
-        display: block;
       }
     }
 
@@ -294,30 +327,21 @@
     }
   }
 
-  // Tooltip Icon caret - top position
-  .#{$prefix}--tooltip--icon__top {
-    &:before {
-      top: 0;
-      transform: translate(-50%, calc(-100% - 10px)) rotate(45deg);
-    }
+  .#{$prefix}--tooltip--hint__top,
+  .#{$prefix}--tooltip--hint__bottom {
+    @include tooltip--hint;
+  }
 
-    &:after {
-      top: 0;
-      transform: translate(-50%, calc(-100% - 10px));
-    }
+  // Tooltip Icon caret - top position
+  .#{$prefix}--tooltip--hint__top,
+  .#{$prefix}--tooltip--icon__top {
+    @include tooltip--hint--top;
   }
 
   // Tooltip Icon caret - bottom position
+  .#{$prefix}--tooltip--hint__bottom,
   .#{$prefix}--tooltip--icon__bottom {
-    &:before {
-      bottom: 0;
-      transform: translate(-50%, calc(100% + 10px)) rotate(135deg);
-    }
-
-    &:after {
-      bottom: 0;
-      transform: translate(-50%, calc(100% + 10px));
-    }
+    @include tooltip--hint--bottom;
   }
 
   // Tooltip position - icon only
