@@ -127,4 +127,43 @@ describe('HeaderSubmenu', function() {
       document.body.removeChild(element);
     });
   });
+
+  describe('Close on blur', function() {
+    let headerSubmenu;
+    let element;
+    let triggerNode;
+    let input;
+
+    beforeAll(function() {
+      element = document.createElement('li');
+      triggerNode = document.createElement('a');
+      triggerNode.className = 'bx--header__menu-title';
+      element.appendChild(triggerNode);
+
+      headerSubmenu = new HeaderSubmenu(element);
+      document.body.appendChild(element);
+
+      input = document.createElement('input');
+      input.type = 'text';
+      document.body.appendChild(input);
+    });
+
+    beforeEach(function() {
+      triggerNode.setAttribute('aria-expanded', 'true');
+      triggerNode.focus();
+    });
+
+    it('Should close when dropdown loses focus', function() {
+      input.focus();
+      expect(triggerNode.getAttribute('aria-expanded')).toBe('false');
+    });
+
+    afterAll(function() {
+      if (document.body.contains(input)) {
+        document.body.removeChild(input);
+      }
+      headerSubmenu.release();
+      document.body.removeChild(element);
+    });
+  });
 });
