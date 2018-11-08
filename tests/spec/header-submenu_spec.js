@@ -70,4 +70,61 @@ describe('HeaderSubmenu', function() {
       }
     });
   });
+
+  describe('Toggle', function() {
+    let headerSubmenu;
+    let element;
+    let triggerNode;
+    let itemLinkNode;
+
+    beforeAll(function() {
+      element = document.createElement('li');
+      triggerNode = document.createElement('a');
+      triggerNode.className = 'bx--header__menu-title';
+      element.appendChild(triggerNode);
+      const itemsContainerNode = document.createElement('bx--header__menu');
+      itemsContainerNode.className = 'bx--header__menu';
+      const itemNode = document.createElement('li');
+      itemLinkNode = document.createElement('a');
+      itemLinkNode.className = 'bx--header__menu-item';
+      itemNode.appendChild(itemLinkNode);
+      itemsContainerNode.appendChild(itemNode);
+      element.appendChild(itemsContainerNode);
+      headerSubmenu = new HeaderSubmenu(element);
+      document.body.appendChild(element);
+    });
+
+    it('Should add "open" stateful modifier class', function() {
+      element.dispatchEvent(new CustomEvent('click', { bubbles: true }));
+      expect(triggerNode.getAttribute('aria-expanded')).toBe('true');
+    });
+
+    it('Should remove "open" stateful modifier class (closed default state)', function() {
+      triggerNode.setAttribute('aria-expanded', 'true');
+      element.dispatchEvent(new CustomEvent('click', { bubbles: true }));
+      expect(triggerNode.getAttribute('aria-expanded')).toBe('false');
+    });
+
+    it('Should always close dropdown when clicking document', function() {
+      triggerNode.setAttribute('aria-expanded', 'true');
+      document.dispatchEvent(new CustomEvent('click', { bubbles: true }));
+      expect(triggerNode.getAttribute('aria-expanded')).toBe('false');
+    });
+
+    it('Should close dropdown when clicking on an item', function() {
+      triggerNode.setAttribute('aria-expanded', 'true');
+      element.classList.add('bx--dropdown--open');
+      itemLinkNode.dispatchEvent(new CustomEvent('click', { bubbles: true }));
+      expect(triggerNode.getAttribute('aria-expanded')).toBe('false');
+    });
+
+    afterEach(function() {
+      triggerNode.setAttribute('aria-expanded', 'false');
+    });
+
+    afterAll(function() {
+      headerSubmenu.release();
+      document.body.removeChild(element);
+    });
+  });
 });
