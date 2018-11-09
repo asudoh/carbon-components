@@ -1,8 +1,9 @@
 @import 'colors';
 @import 'spacing';
 @import 'theme-tokens';
+@import 'functions';
 
-$prefix: 'bx' !default;
+$prefix: if(feature-flag-enabled('components-x'), 'ibm', 'bx') !default;
 
 $carbon--ease-in: cubic-bezier(0.25, 0, 1, 1); // Used primarily for removing elements from the screen.
 $carbon--ease-out: cubic-bezier(
