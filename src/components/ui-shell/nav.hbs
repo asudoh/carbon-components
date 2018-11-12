@@ -1,5 +1,5 @@
-{{#if nav.state.expanded}}
-<div class="bx--navigation">
+
+<div id="popup-nav-{{nav.idSuffix}}" class="bx--navigation" data-popup-nav{{#unless nav.state.expanded}} hidden{{/unless}}>
   {{#each nav.sections}}
   <div class="bx--navigation-section">
     <ul class="bx--navigation-items">
@@ -72,4 +72,3 @@
   </div>
   {{/each}}
 </div>
-{{/if}}

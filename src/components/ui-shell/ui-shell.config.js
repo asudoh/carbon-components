@@ -121,13 +121,13 @@ const nav = {
         {
           type: 'link',
           title: 'Item link',
-          href: '/component/ui-shell--platform-navigation-expanded',
+          href: 'javascript:void(0)',
           hasIcon: true,
         },
         {
           type: 'link',
           title: 'Item link',
-          href: '/component/ui-shell--platform-navigation-expanded',
+          href: 'javascript:void(0)',
           hasIcon: true,
         },
       ],
@@ -137,20 +137,20 @@ const nav = {
         {
           type: 'link',
           title: 'Item link',
-          href: '/component/ui-shell--platform-navigation-expanded',
+          href: 'javascript:void(0)',
           hasIcon: true,
           active: true,
         },
         {
           type: 'link',
           title: 'Item link',
-          href: '/component/ui-shell--platform-navigation-expanded',
+          href: 'javascript:void(0)',
           hasIcon: true,
         },
         {
           type: 'link',
           title: 'Item link',
-          href: '/component/ui-shell--platform-navigation-expanded',
+          href: 'javascript:void(0)',
           hasIcon: true,
         },
         {
@@ -160,16 +160,16 @@ const nav = {
           links: [
             {
               title: 'Nested link',
-              href: '/component/ui-shell--platform-navigation-expanded',
+              href: 'javascript:void(0)',
             },
             {
               title: 'Nested link',
-              href: '/component/ui-shell--platform-navigation-expanded',
+              href: 'javascript:void(0)',
               active: true,
             },
             {
               title: 'Nested link',
-              href: '/component/ui-shell--platform-navigation-expanded',
+              href: 'javascript:void(0)',
             },
           ],
         },
@@ -254,12 +254,12 @@ module.exports = {
       },
     },
     {
-      name: 'Navigation expanded',
+      name: 'Navigation',
       context: {
         nav: {
-          state: {
-            expanded: true,
-          },
+          idSuffix: Math.random()
+            .toString(36)
+            .substr(2),
         },
       },
     },
@@ -267,6 +267,9 @@ module.exports = {
       name: 'Navigation category expanded',
       context: {
         nav: {
+          idSuffix: Math.random()
+            .toString(36)
+            .substr(2),
           state: {
             expanded: true,
             category: true,
