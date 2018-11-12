@@ -48,6 +48,14 @@ describe('Test content switcher', function() {
       expect(buttons[0].classList.contains(instance.options.classActive)).toBe(false);
     });
 
+    it('Should avoid updating active item to disabled one', function() {
+      const event = new CustomEvent('click', { bubbles: true });
+      buttons[1].setAttribute('disabled', '');
+      buttons[1].dispatchEvent(event);
+      expect(buttons[0].classList.contains(instance.options.classActive)).toBe(true);
+      expect(buttons[1].classList.contains(instance.options.classActive)).toBe(false);
+    });
+
     it('Should update aria-selected upon clicking', function() {
       const event = new CustomEvent('click', { bubbles: true });
       buttons[1].dispatchEvent(event);
