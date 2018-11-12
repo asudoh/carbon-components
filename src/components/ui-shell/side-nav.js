@@ -26,9 +26,13 @@ class SideNav extends mixin(createComponent, initComponentBySearch, handles) {
    * @param {Event} event The event triggering this method.
    */
   _handleClick = event => {
-    const button = eventMatches(event, this.options.selectorToggle);
-    if (button) {
+    const buttonNode = eventMatches(event, this.options.selectorToggle);
+    const itemToggleNode = eventMatches(event, this.options.selectorItemToggle);
+    if (buttonNode) {
       this.changeState(!this.isExpanded() ? 'expanded' : 'collapsed');
+    }
+    if (itemToggleNode) {
+      itemToggleNode.setAttribute('aria-expanded', itemToggleNode.getAttribute('aria-expanded') !== 'true');
     }
   };
 
@@ -70,6 +74,7 @@ class SideNav extends mixin(createComponent, initComponentBySearch, handles) {
       selectorNavExpanded: `.${prefix}--side-nav--expanded`,
       selectorToggle: `.${prefix}--side-nav__toggle`,
       selectorToggleIcon: `.${prefix}--side-nav__icon > svg`,
+      selectorItemToggle: `.${prefix}--side-nav__submenu`,
       classNavExpanded: `${prefix}--side-nav--expanded`,
     };
   }
