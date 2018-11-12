@@ -231,17 +231,6 @@ module.exports = {
   },
   variants: [
     {
-      name: 'Side-nav expanded',
-      context: {
-        sidenav: {
-          state: {
-            hasIcons: true,
-            expanded: true,
-          },
-        },
-      },
-    },
-    {
       name: 'Side-nav fixed',
       context: {
         sidenav: {
