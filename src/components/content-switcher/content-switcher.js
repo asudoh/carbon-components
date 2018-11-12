@@ -41,7 +41,7 @@ class ContentSwitcher extends mixin(createComponent, initComponentBySearch, even
   _handleClick(event) {
     const button = eventMatches(event, this.options.selectorButton);
 
-    if (button) {
+    if (button && !button.hasAttribute('disabled')) {
       this.changeState({
         group: 'selected',
         item: button,
