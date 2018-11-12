@@ -6,6 +6,8 @@ import handles from '../../globals/js/mixins/handles';
 import eventMatches from '../../globals/js/misc/event-matches';
 import on from '../../globals/js/misc/on';
 
+const forEach = Array.prototype.forEach;
+
 class SideNav extends mixin(createComponent, initComponentBySearch, handles) {
   /**
    * Side nav.
@@ -27,12 +29,20 @@ class SideNav extends mixin(createComponent, initComponentBySearch, handles) {
    */
   _handleClick = event => {
     const buttonNode = eventMatches(event, this.options.selectorToggle);
+    const linkNode = eventMatches(event, this.options.selectorItemLink);
     const itemToggleNode = eventMatches(event, this.options.selectorItemToggle);
     if (buttonNode) {
       this.changeState(!this.isExpanded() ? 'expanded' : 'collapsed');
     }
     if (itemToggleNode) {
       itemToggleNode.setAttribute('aria-expanded', itemToggleNode.getAttribute('aria-expanded') !== 'true');
+    }
+    if (linkNode) {
+      forEach.call(this.element.querySelectorAll(this.options.selectorItemCurrent), elem => {
+        elem.removeAttribute('aria-current');
+        elem.classList.remove(this.options.classItemCurrent);
+      });
+      linkNode.classList.add(this.options.classItemCurrent);
     }
   };
 
@@ -74,8 +84,11 @@ class SideNav extends mixin(createComponent, initComponentBySearch, handles) {
       selectorNavExpanded: `.${prefix}--side-nav--expanded`,
       selectorToggle: `.${prefix}--side-nav__toggle`,
       selectorToggleIcon: `.${prefix}--side-nav__icon > svg`,
+      selectorItemLink: `.${prefix}--side-nav__link`,
       selectorItemToggle: `.${prefix}--side-nav__submenu`,
+      selectorItemCurrent: `[aria-current="page"],.${prefix}--side-nav__link--current`,
       classNavExpanded: `${prefix}--side-nav--expanded`,
+      classItemCurrent: `${prefix}--side-nav__link--current`,
     };
   }
 }
