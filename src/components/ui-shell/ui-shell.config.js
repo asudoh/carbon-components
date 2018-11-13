@@ -113,7 +113,7 @@ const sidenav = {
   ],
 };
 
-const nav = {
+const popupNav = {
   state: {
     expanded: false,
   },
@@ -123,13 +123,15 @@ const nav = {
         {
           type: 'link',
           title: 'Item link',
-          href: '/component/ui-shell--platform-navigation-expanded',
+          href: 'javascript:void(0)',
+          // href: '/component/ui-shell--platform-navigation-expanded',
           hasIcon: true,
         },
         {
           type: 'link',
           title: 'Item link',
-          href: '/component/ui-shell--platform-navigation-expanded',
+          href: 'javascript:void(0)',
+          // href: '/component/ui-shell--platform-navigation-expanded',
           hasIcon: true,
         },
       ],
@@ -139,20 +141,23 @@ const nav = {
         {
           type: 'link',
           title: 'Item link',
-          href: '/component/ui-shell--platform-navigation-expanded',
+          href: 'javascript:void(0)',
+          // href: '/component/ui-shell--platform-navigation-expanded',
           hasIcon: true,
           active: true,
         },
         {
           type: 'link',
           title: 'Item link',
-          href: '/component/ui-shell--platform-navigation-expanded',
+          href: 'javascript:void(0)',
+          // href: '/component/ui-shell--platform-navigation-expanded',
           hasIcon: true,
         },
         {
           type: 'link',
           title: 'Item link',
-          href: '/component/ui-shell--platform-navigation-expanded',
+          href: 'javascript:void(0)',
+          // href: '/component/ui-shell--platform-navigation-expanded',
           hasIcon: true,
         },
         {
@@ -162,16 +167,19 @@ const nav = {
           links: [
             {
               title: 'Nested link',
-              href: '/component/ui-shell--platform-navigation-expanded',
+              href: 'javascript:void(0)',
+              // href: '/component/ui-shell--platform-navigation-expanded',
             },
             {
               title: 'Nested link',
-              href: '/component/ui-shell--platform-navigation-expanded',
+              href: 'javascript:void(0)',
+              // href: '/component/ui-shell--platform-navigation-expanded',
               active: true,
             },
             {
               title: 'Nested link',
-              href: '/component/ui-shell--platform-navigation-expanded',
+              href: 'javascript:void(0)',
+              // href: '/component/ui-shell--platform-navigation-expanded',
             },
           ],
         },
@@ -228,23 +236,12 @@ module.exports = {
   context: {
     prefix,
     header,
-    nav,
+    popupNav,
     sidenav,
     switcher,
     content: Array.from({ length: 10 }),
   },
   variants: [
-    {
-      name: 'Side-nav expanded',
-      context: {
-        sidenav: {
-          state: {
-            hasIcons: true,
-            expanded: true,
-          },
-        },
-      },
-    },
     {
       name: 'Side-nav fixed',
       context: {
@@ -253,27 +250,6 @@ module.exports = {
             hasIcons: false,
             expanded: true,
             fixed: true,
-          },
-        },
-      },
-    },
-    {
-      name: 'Navigation expanded',
-      context: {
-        nav: {
-          state: {
-            expanded: true,
-          },
-        },
-      },
-    },
-    {
-      name: 'Navigation category expanded',
-      context: {
-        nav: {
-          state: {
-            expanded: true,
-            category: true,
           },
         },
       },
@@ -303,17 +279,20 @@ module.exports = {
     {
       name: 'Navigation with no icons',
       context: {
-        nav: {
+        popupNav: {
           state: {
             expanded: true,
             category: true,
           },
-          sections: nav.sections.map(section => ({
+          sections: popupNav.sections.map(section => ({
             items: section.items.map(item => ({
               ...item,
               hasIcon: false,
             })),
           })),
+          idSuffix: Math.random()
+            .toString(36)
+            .substr(2),
         },
       },
     },
