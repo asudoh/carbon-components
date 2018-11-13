@@ -30,7 +30,7 @@ describe('Side Nav', function() {
       element.className = 'bx--side-nav';
       element.setAttribute('data-side-nav', 'true');
       toggleNode = document.createElement('button');
-      toggleNode.className = 'bx--side-nav__submenu';
+      toggleNode.className = 'bx--side-nav__submenu bx--side-nav__toggle';
       navLinkNode1 = document.createElement('li');
       navLinkNode1.className = 'bx--side-nav__item';
       navLinkNode2 = document.createElement('li');
@@ -57,13 +57,13 @@ describe('Side Nav', function() {
     describe('Click toggle', function() {
       it('should open the side nav on toggle click', function() {
         toggleNode.dispatchEvent(new CustomEvent('click', { bubbles: true }));
-        expect(toggleNode.getAttribute('aria-expanded')).toBe('true');
+        expect(element.classList.contains('bx--side-nav--expanded')).toBe(true);
       });
 
       it('should close the open side nav on toggle click', function() {
         toggleNode.setAttribute('aria-expanded', 'true');
         toggleNode.dispatchEvent(new CustomEvent('click', { bubbles: true }));
-        expect(toggleNode.getAttribute('aria-expanded')).toBe('false');
+        expect(element.classList.contains('bx--side-nav--expanded')).toBe(false);
       });
     });
 
