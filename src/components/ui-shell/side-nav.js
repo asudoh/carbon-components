@@ -48,7 +48,8 @@ class SideNav extends mixin(createComponent, initComponentBySearch, handles) {
   _handleClick = evt => {
     const matchesToggle = eventMatches(evt, this.options.selectorSideNavToggle);
     const matchesNavSubmenu = eventMatches(evt, this.options.selectorSideNavSubmenu);
-    if (!matchesToggle && !matchesNavSubmenu) {
+    const matchesSideNavLink = eventMatches(evt, this.options.selectorSideNavLink);
+    if (!matchesToggle && !matchesNavSubmenu && !matchesSideNavLink) {
       return;
     }
     if (matchesToggle) {
@@ -58,6 +59,18 @@ class SideNav extends mixin(createComponent, initComponentBySearch, handles) {
     if (matchesNavSubmenu) {
       const isSubmenuExpanded = matchesNavSubmenu.getAttribute('aria-expanded') === 'true';
       matchesNavSubmenu.setAttribute('aria-expanded', `${!isSubmenuExpanded}`);
+      return;
+    }
+    if (matchesSideNavLink) {
+      [...this.element.querySelectorAll(this.options.selectorSideNavLinkCurrent)].forEach(el => {
+        el.classList.remove(this.options.classSideNavItemActive, this.options.classSideNavLinkCurrent);
+        el.removeAttribute('aria-current');
+      });
+      matchesSideNavLink.classList.add(this.options.classSideNavLinkCurrent);
+      const closestSideNavItem = matchesSideNavLink.closest(this.options.selectorSideNavItem);
+      if (closestSideNavItem) {
+        closestSideNavItem.classList.add(this.options.classSideNavItemActive);
+      }
     }
   };
 
@@ -75,7 +88,12 @@ class SideNav extends mixin(createComponent, initComponentBySearch, handles) {
       selectorInit: '[data-side-nav]',
       selectorSideNavToggle: `.${prefix}--side-nav__toggle`,
       selectorSideNavSubmenu: `.${prefix}--side-nav__submenu`,
+      selectorSideNavItem: `.${prefix}--side-nav__item`,
+      selectorSideNavLink: `.${prefix}--side-nav__link`,
+      selectorSideNavLinkCurrent: `[aria-current="page"],.${prefix}--side-nav__link--current,.${prefix}--side-nav__item--active`,
       classSideNavExpanded: `${prefix}--side-nav--expanded`,
+      classSideNavItemActive: `${prefix}--side-nav__item--active`,
+      classSideNavLinkCurrent: `${prefix}--side-nav__link--current`,
     };
   }
 }
