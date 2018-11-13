@@ -40,6 +40,19 @@ describe('Side Nav', function() {
       document.body.appendChild(element);
     });
 
+    describe('Click toggle', function() {
+      it('should open the side nav on toggle click', function() {
+        toggleNode.dispatchEvent(new CustomEvent('click', { bubbles: true }));
+        expect(toggleNode.getAttribute('aria-expanded')).toBe('true');
+      });
+
+      it('should close the open side nav on toggle click', function() {
+        toggleNode.setAttribute('aria-expanded', 'true');
+        toggleNode.dispatchEvent(new CustomEvent('click', { bubbles: true }));
+        expect(toggleNode.getAttribute('aria-expanded')).toBe('false');
+      });
+    });
+
     afterEach(function() {
       toggleNode.setAttribute('aria-expanded', 'false');
       navSubmenuTriggerNode.setAttribute('aria-expanded', 'false');
