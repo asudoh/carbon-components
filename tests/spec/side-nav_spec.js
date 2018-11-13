@@ -17,23 +17,37 @@ describe('Side Nav', function() {
   describe('Click handler', function() {
     let element;
     let toggleNode;
-    let navLinkNode;
+    let navLinkNode1;
+    let navLinkTriggerNode1;
+    let navLinkNode2;
+    let navLinkTriggerNode2;
     let navSubmenuNode;
     let navSubmenuTriggerNode;
     let sideNav;
 
     beforeAll(function() {
       element = document.createElement('aside');
+      element.className = 'bx--side-nav';
+      element.setAttribute('data-side-nav', 'true');
       toggleNode = document.createElement('button');
       toggleNode.className = 'bx--side-nav__submenu';
-      navLinkNode = document.createElement('li');
-      navLinkNode.className = 'bx--side-nav__item';
+      navLinkNode1 = document.createElement('li');
+      navLinkNode1.className = 'bx--side-nav__item';
+      navLinkNode2 = document.createElement('li');
+      navLinkNode2.className = 'bx--side-nav__item';
+      navLinkTriggerNode1 = document.createElement('a');
+      navLinkTriggerNode1.className = 'bx--side-nav__link';
+      navLinkTriggerNode2 = document.createElement('a');
+      navLinkTriggerNode2.className = 'bx--side-nav__link';
       navSubmenuNode = document.createElement('li');
       navSubmenuNode.className = 'bx--side-nav__item';
       navSubmenuTriggerNode = document.createElement('button');
       navSubmenuTriggerNode.className = 'bx--side-nav__submenu';
       navSubmenuNode.appendChild(navSubmenuTriggerNode);
-      element.appendChild(navLinkNode);
+      navLinkNode1.appendChild(navLinkTriggerNode1);
+      navLinkNode2.appendChild(navLinkTriggerNode2);
+      element.appendChild(navLinkNode1);
+      element.appendChild(navLinkNode2);
       element.appendChild(navSubmenuNode);
       element.appendChild(toggleNode);
       sideNav = new SideNav(element);
@@ -50,6 +64,22 @@ describe('Side Nav', function() {
         toggleNode.setAttribute('aria-expanded', 'true');
         toggleNode.dispatchEvent(new CustomEvent('click', { bubbles: true }));
         expect(toggleNode.getAttribute('aria-expanded')).toBe('false');
+      });
+    });
+
+    describe('Click side nav link', function() {
+      it('should attach CSS classes on click', function() {
+        navLinkTriggerNode1.dispatchEvent(new CustomEvent('click', { bubbles: true }));
+        expect(navLinkTriggerNode1.classList.contains('bx--side-nav__link--current')).toBe(true);
+        expect(navLinkNode1.classList.contains('bx--side-nav__item--active')).toBe(true);
+      });
+      it('should detach CSS classes from previously active links when nav link is active', function() {
+        navLinkTriggerNode1.dispatchEvent(new CustomEvent('click', { bubbles: true }));
+        navLinkTriggerNode2.dispatchEvent(new CustomEvent('click', { bubbles: true }));
+        expect(navLinkTriggerNode1.classList.contains('bx--side-nav__link--current')).toBe(false);
+        expect(navLinkNode1.classList.contains('bx--side-nav__item--active')).toBe(false);
+        expect(navLinkTriggerNode2.classList.contains('bx--side-nav__link--current')).toBe(true);
+        expect(navLinkNode2.classList.contains('bx--side-nav__item--active')).toBe(true);
       });
     });
 
