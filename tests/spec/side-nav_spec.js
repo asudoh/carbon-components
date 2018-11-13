@@ -53,6 +53,19 @@ describe('Side Nav', function() {
       });
     });
 
+    describe('Click nav submenu', function() {
+      it('should open the submenu on click', function() {
+        navSubmenuTriggerNode.dispatchEvent(new CustomEvent('click', { bubbles: true }));
+        expect(navSubmenuTriggerNode.getAttribute('aria-expanded')).toBe('true');
+      });
+
+      it('should close the open submenu on click', function() {
+        navSubmenuTriggerNode.setAttribute('aria-expanded', 'true');
+        navSubmenuTriggerNode.dispatchEvent(new CustomEvent('click', { bubbles: true }));
+        expect(navSubmenuTriggerNode.getAttribute('aria-expanded')).toBe('false');
+      });
+    });
+
     afterEach(function() {
       toggleNode.setAttribute('aria-expanded', 'false');
       navSubmenuTriggerNode.setAttribute('aria-expanded', 'false');
