@@ -33,6 +33,7 @@ class FileUploader extends mixin(createComponent, initComponentBySearch, evented
     this.inputId = this.input.getAttribute('id');
     this.manage(on(this.input, 'change', () => this._displayFilenames()));
     this.manage(on(this.container, 'click', this._handleDeleteButton));
+    this.manage(on(this.element, 'keydown', this._handleKeydown));
   }
 
   _filenamesHTML(name, id) {
@@ -139,6 +140,17 @@ class FileUploader extends mixin(createComponent, initComponentBySearch, evented
     }
   };
 
+  /**
+   * Handles `keydown` event.
+   * @param {Event} evt The event triggering this action.
+   * @private
+   */
+  _handleKeydown = evt => {
+    if (eventMatches(evt, this.options.selectorLabel) && [13, 32].indexOf(evt.which) >= 0) {
+      this.input.click();
+    }
+  };
+
   setState(state, selectIndex) {
     const stateContainers = this._getStateContainers();
 
@@ -169,6 +181,7 @@ class FileUploader extends mixin(createComponent, initComponentBySearch, evented
       selectorInput: `input[type="file"].${prefix}--file-input`,
       selectorContainer: '[data-file-container]',
       selectorCloseButton: `.${prefix}--file-close`,
+      selectorLabel: `.${prefix}--file-btn`,
       classLoading: `${prefix}--loading`,
       classLoadingSvg: `${prefix}--loading__svg`,
       classFileName: `${prefix}--file-filename`,
