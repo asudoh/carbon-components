@@ -13,4 +13,41 @@ describe('Side Nav', function() {
       );
     });
   });
+
+  describe('Click handler', function() {
+    let element;
+    let toggleNode;
+    let navLinkNode;
+    let navSubmenuNode;
+    let navSubmenuTriggerNode;
+    let sideNav;
+
+    beforeAll(function() {
+      element = document.createElement('aside');
+      toggleNode = document.createElement('button');
+      toggleNode.className = 'bx--side-nav__submenu';
+      navLinkNode = document.createElement('li');
+      navLinkNode.className = 'bx--side-nav__item';
+      navSubmenuNode = document.createElement('li');
+      navSubmenuNode.className = 'bx--side-nav__item';
+      navSubmenuTriggerNode = document.createElement('button');
+      navSubmenuTriggerNode.className = 'bx--side-nav__submenu';
+      navSubmenuNode.appendChild(navSubmenuTriggerNode);
+      element.appendChild(navLinkNode);
+      element.appendChild(navSubmenuNode);
+      element.appendChild(toggleNode);
+      sideNav = new SideNav(element);
+      document.body.appendChild(element);
+    });
+
+    afterEach(function() {
+      toggleNode.setAttribute('aria-expanded', 'false');
+      navSubmenuTriggerNode.setAttribute('aria-expanded', 'false');
+    });
+
+    afterAll(function() {
+      sideNav.release();
+      document.body.removeChild(element);
+    });
+  });
 });
