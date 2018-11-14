@@ -27,6 +27,10 @@
     width: mini-units(6);
     height: mini-units(6);
     border: mini-units(0.5) solid transparent;
+
+    svg[hidden] {
+      display: none;
+    }
   }
 
   .#{$prefix}--header__action:hover {

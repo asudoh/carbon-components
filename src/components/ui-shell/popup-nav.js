@@ -43,11 +43,24 @@ export default class PopupNav extends mixin(
     }
   };
 
-  createdByLauncher() {
+  createdByLauncher = event => {
     const isExpanded = !this.element.hasAttribute('hidden');
     const newState = isExpanded ? 'collapsed' : 'expanded';
+    const triggerButton = event.delegateTarget;
+    const expandIcon = triggerButton.querySelector(this.options.selectorExpandPopupNavIcon);
+    const collapseIcon = triggerButton.querySelector(this.options.selectorCollapsePopupNavIcon);
     this.changeState(newState);
-  }
+    const iconToBeShown = newState === 'expanded' ? collapseIcon : expandIcon;
+    const iconToBeHidden = newState === 'expanded' ? expandIcon : collapseIcon;
+    const label = `${newState === 'expanded' ? 'Close' : 'Open'} menu`;
+    triggerButton.classList.toggle(this.options.classPopupNavHeaderActionActive);
+    iconToBeShown.removeAttribute('hidden');
+    iconToBeShown.removeAttribute('aria-hidden');
+    iconToBeHidden.setAttribute('hidden', '');
+    iconToBeHidden.setAttribute('aria-hidden', 'true');
+    triggerButton.setAttribute('aria-label', label);
+    triggerButton.setAttribute('title', label);
+  };
 
   /**
    *
@@ -98,10 +111,13 @@ export default class PopupNav extends mixin(
       selectorShellNavLink: `.${prefix}--navigation-link`,
       selectorShellNavLinkCurrent: `.${prefix}--navigation-item--active,.${prefix}--navigation__category-item--active`,
       selectorShellNavItem: `.${prefix}--navigation-item`,
+      selectorShellNavCategory: `.${prefix}--navigation__category`,
+      selectorExpandPopupNavIcon: `.${prefix}--header__action--expand`,
+      selectorCollapsePopupNavIcon: `.${prefix}--header__action--collapse`,
       classShellNavItemActive: `${prefix}--navigation-item--active`,
       classShellNavLinkCurrent: `${prefix}--navigation__category-item--active`,
-      selectorShellNavCategory: `.${prefix}--navigation__category`,
       classShellNavCategoryExpanded: `${prefix}--navigation__category--expanded`,
+      classPopupNavHeaderActionActive: `${prefix}--header__action--active`,
     };
   }
 }
