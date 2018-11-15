@@ -266,17 +266,6 @@ module.exports = {
       },
     },
     {
-      name: 'Switcher All Products',
-      context: {
-        switcher: {
-          state: {
-            expanded: true,
-            showAll: true,
-          },
-        },
-      },
-    },
-    {
       name: 'Navigation with no icons',
       context: {
         popupNav: {
