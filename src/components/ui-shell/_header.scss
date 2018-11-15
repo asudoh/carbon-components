@@ -27,10 +27,15 @@
     width: mini-units(6);
     height: mini-units(6);
     border: mini-units(0.5) solid transparent;
+  }
 
-    svg[hidden] {
-      display: none;
-    }
+  .#{$prefix}--header__action > svg[data-popup-nav-collapse-icon],
+  .#{$prefix}--header__action--active > svg[data-popup-nav-expand-icon] {
+    display: none;
+  }
+
+  .#{$prefix}--header__action--active > svg[data-popup-nav-collapse-icon] {
+    display: inline;
   }
 
   .#{$prefix}--header__action:hover {

@@ -46,20 +46,8 @@ export default class PopupNav extends mixin(
   createdByLauncher = event => {
     const isExpanded = !this.element.hasAttribute('hidden');
     const newState = isExpanded ? 'collapsed' : 'expanded';
-    const triggerButton = event.delegateTarget;
-    const expandIcon = triggerButton.querySelector(this.options.selectorExpandPopupNavIcon);
-    const collapseIcon = triggerButton.querySelector(this.options.selectorCollapsePopupNavIcon);
+    this.triggerButton = event.delegateTarget;
     this.changeState(newState);
-    const iconToBeShown = newState === 'expanded' ? collapseIcon : expandIcon;
-    const iconToBeHidden = newState === 'expanded' ? expandIcon : collapseIcon;
-    const label = `${newState === 'expanded' ? 'Close' : 'Open'} menu`;
-    triggerButton.classList.toggle(this.options.classPopupNavHeaderActionActive);
-    iconToBeShown.removeAttribute('hidden');
-    iconToBeShown.removeAttribute('aria-hidden');
-    iconToBeHidden.setAttribute('hidden', '');
-    iconToBeHidden.setAttribute('aria-hidden', 'true');
-    triggerButton.setAttribute('aria-label', label);
-    triggerButton.setAttribute('title', label);
   };
 
   /**
@@ -77,6 +65,12 @@ export default class PopupNav extends mixin(
    */
   _changeState = (state, callback) => {
     toggleAttribute(this.element, 'hidden', state !== 'expanded');
+    if (this.triggerButton) {
+      const label = `${state === 'expanded' ? 'Close' : 'Open'} menu`;
+      this.triggerButton.classList.toggle(this.options.classPopupNavHeaderActionActive, state === 'expanded');
+      this.triggerButton.setAttribute('aria-label', label);
+      this.triggerButton.setAttribute('title', label);
+    }
     callback();
   };
 
@@ -112,8 +106,6 @@ export default class PopupNav extends mixin(
       selectorShellNavLinkCurrent: `.${prefix}--navigation-item--active,.${prefix}--navigation__category-item--active`,
       selectorShellNavItem: `.${prefix}--navigation-item`,
       selectorShellNavCategory: `.${prefix}--navigation__category`,
-      selectorExpandPopupNavIcon: `.${prefix}--header__action--expand`,
-      selectorCollapsePopupNavIcon: `.${prefix}--header__action--collapse`,
       classShellNavItemActive: `${prefix}--navigation-item--active`,
       classShellNavLinkCurrent: `${prefix}--navigation__category-item--active`,
       classShellNavCategoryExpanded: `${prefix}--navigation__category--expanded`,
