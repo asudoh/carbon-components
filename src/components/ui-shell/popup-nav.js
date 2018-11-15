@@ -32,6 +32,8 @@ export default class PopupNav extends mixin(
       if (!shellNavCategory) {
         return;
       }
+      const isExpanded = matchesNavSubmenu.getAttribute('aria-expanded') === 'true';
+      matchesNavSubmenu.setAttribute('aria-expanded', !isExpanded);
       shellNavCategory.classList.toggle(this.options.classShellNavCategoryExpanded);
       return;
     }
