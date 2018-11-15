@@ -186,6 +186,9 @@ const popupNav = {
       ],
     },
   ],
+  idSuffix: Math.random()
+    .toString(36)
+    .substr(2),
 };
 
 const switcher = {
