@@ -29,12 +29,12 @@
     border: mini-units(0.5) solid transparent;
   }
 
-  .#{$prefix}--header__action > svg[data-popup-nav-panel-collapse-icon],
-  .#{$prefix}--header__action--active > svg[data-popup-nav-panel-expand-icon] {
+  .#{$prefix}--header__action > svg[data-navigation-menu-panel-collapse-icon],
+  .#{$prefix}--header__action--active > svg[data-navigation-menu-panel-expand-icon] {
     display: none;
   }
 
-  .#{$prefix}--header__action--active > svg[data-popup-nav-panel-collapse-icon] {
+  .#{$prefix}--header__action--active > svg[data-navigation-menu-panel-collapse-icon] {
     display: inline;
   }
 

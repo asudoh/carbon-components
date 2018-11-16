@@ -1,76 +1,76 @@
-import PopupNav from '../../src/components/ui-shell/popup-nav';
+import NavigationMenu from '../../src/components/ui-shell/navigation-menu';
 import UiShellHtml from '../../html/ui-shell/ui-shell.html';
 
 describe('Popup Nav', function() {
   describe('Constructor', function() {
-    let popupNav;
+    let navigationMenu;
 
     it('Should throw if root element is not given', function() {
       expect(() => {
-        popupNav = new PopupNav();
+        navigationMenu = new NavigationMenu();
       }).toThrowError(TypeError, 'DOM element should be given to initialize this widget.');
     });
 
     it('Should throw if root element is not a DOM element', function() {
       expect(() => {
-        popupNav = new PopupNav(document.createTextNode(''));
+        navigationMenu = new NavigationMenu(document.createTextNode(''));
       }).toThrowError(TypeError, 'DOM element should be given to initialize this widget.');
     });
 
     afterEach(function() {
-      if (popupNav) {
-        popupNav = popupNav.release();
+      if (navigationMenu) {
+        navigationMenu = navigationMenu.release();
       }
     });
   });
 
   describe('Init Component by Launch functionality', function() {
     let button;
-    let popupNav;
+    let navigationMenu;
     let context;
 
     beforeAll(function() {
       const range = document.createRange();
-      button = range.createContextualFragment(UiShellHtml).querySelector('[data-popup-nav-target]');
-      popupNav = range.createContextualFragment(UiShellHtml).querySelector('[data-popup-nav]');
+      button = range.createContextualFragment(UiShellHtml).querySelector('[data-navigation-menu-target]');
+      navigationMenu = range.createContextualFragment(UiShellHtml).querySelector('[data-navigation-menu]');
       document.body.appendChild(button);
-      document.body.appendChild(popupNav);
-      context = PopupNav.init();
+      document.body.appendChild(navigationMenu);
+      context = NavigationMenu.init();
     });
 
     beforeEach(function() {
       button.classList.remove('bx--header__action--active');
-      popupNav.setAttribute('hidden', '');
+      navigationMenu.setAttribute('hidden', '');
     });
 
     it('Should open the popup nav on button click', function() {
       button.dispatchEvent(new CustomEvent('click', { bubbles: true }));
       expect(button.classList.contains('bx--header__action--active')).toBe(true);
-      expect(popupNav.hasAttribute('hidden')).toBe(false);
+      expect(navigationMenu.hasAttribute('hidden')).toBe(false);
     });
 
     it('Should close an open popup nav on button click', function() {
-      popupNav.removeAttribute('hidden');
+      navigationMenu.removeAttribute('hidden');
       button.dispatchEvent(new CustomEvent('click', { bubbles: true }));
       expect(button.classList.contains('bx--header__action--active')).toBe(false);
-      expect(popupNav.hasAttribute('hidden')).toBe(true);
+      expect(navigationMenu.hasAttribute('hidden')).toBe(true);
     });
 
     afterAll(function() {
       document.body.removeChild(button);
-      document.body.removeChild(popupNav);
+      document.body.removeChild(navigationMenu);
       context.release();
     });
   });
 
   describe('Click handler', function() {
     let element;
-    let popupNav;
+    let navigationMenu;
 
     beforeAll(function() {
       const range = document.createRange();
-      element = range.createContextualFragment(UiShellHtml).querySelector('[data-popup-nav]');
-      popupNav = new PopupNav(element);
+      element = range.createContextualFragment(UiShellHtml).querySelector('[data-navigation-menu]');
+      navigationMenu = new NavigationMenu(element);
     });
 
     describe('Submenu', function() {
@@ -105,7 +105,7 @@ describe('Popup Nav', function() {
     });
 
     afterAll(function() {
-      popupNav.release();
+      navigationMenu.release();
     });
   });
 });

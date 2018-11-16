@@ -1,6 +1,6 @@
 const { prefix } = require('../../globals/js/settings');
 
-const popupNav = {
+const navigationMenu = {
   state: {
     expanded: false,
   },
@@ -266,7 +266,7 @@ module.exports = {
   context: {
     prefix,
     header,
-    popupNav,
+    navigationMenu,
     sidenav,
     switcher,
     content: Array.from({ length: 10 }),
@@ -287,12 +287,12 @@ module.exports = {
     {
       name: 'Navigation with no icons',
       context: {
-        popupNav: {
+        navigationMenu: {
           state: {
             expanded: true,
             category: true,
           },
-          sections: popupNav.sections.map(section => ({
+          sections: navigationMenu.sections.map(section => ({
             items: section.items.map(item => ({
               ...item,
               hasIcon: false,

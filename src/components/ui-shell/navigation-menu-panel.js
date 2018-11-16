@@ -7,7 +7,7 @@ import eventedState from '../../globals/js/mixins/evented-state';
 import toggleAttribute from '../../globals/js/misc/toggle-attribute';
 import settings from '../../globals/js/settings';
 
-export default class PopupNavPanel extends mixin(
+export default class NavigationMenuPanel extends mixin(
   createComponent,
   initComponentByLauncher,
   eventedShowHideState,
@@ -41,7 +41,7 @@ export default class PopupNavPanel extends mixin(
         state === 'expanded'
           ? this.triggerButton.getAttribute(this.options.attribLabelCollapse)
           : this.triggerButton.getAttribute(this.options.attribLabelExpand);
-      this.triggerButton.classList.toggle(this.options.classPopupNavPanelHeaderActionActive, state === 'expanded');
+      this.triggerButton.classList.toggle(this.options.classNavigationMenuPanelHeaderActionActive, state === 'expanded');
       this.triggerButton.setAttribute('aria-label', label);
       this.triggerButton.setAttribute('title', label);
     }
@@ -49,8 +49,8 @@ export default class PopupNavPanel extends mixin(
   };
 
   /**
-   * The map associating DOM element and PopupNavPanel instance.
-   * @member PopupNavPanel.components
+   * The map associating DOM element and NavigationMenuPanel instance.
+   * @member NavigationMenuPanel.components
    * @type {WeakMap}
    */
   static components = new WeakMap();
@@ -58,11 +58,11 @@ export default class PopupNavPanel extends mixin(
   /**
    * The component options.
    * If `options` is specified in the constructor,
-   * {@linkcode PopupNavPanel.create .create()}, or
-   * {@linkcode PopupNavPanel.init .init()},
+   * {@linkcode NavigationMenuPanel.create .create()}, or
+   * {@linkcode NavigationMenuPanel.init .init()},
    * properties in this object are overriden for the instance being create and
-   * how {@linkcode PopupNavPanel.init .init()} works.
-   * @member PopupNavPanel.options
+   * how {@linkcode NavigationMenuPanel.init .init()} works.
+   * @member NavigationMenuPanel.options
    * @type {Object}
    * @property {string} selectorInit The CSS class to find popup navs.
    * @property {string} attribInitTarget The attribute name in the launcher buttons to find target popup nav.
@@ -72,13 +72,13 @@ export default class PopupNavPanel extends mixin(
     const { prefix } = settings;
     return {
       initEventNames: ['click'],
-      eventBeforeExpanded: 'popup-nav-being-expanded',
-      eventAfterExpanded: 'popup-nav-expanded',
-      eventBeforeCollapsed: 'popup-nav-being-collapsed',
-      eventAfterCollapsed: 'popup-nav-collapsed',
-      classPopupNavPanelHeaderActionActive: `${prefix}--header__action--active`,
-      attribLabelExpand: 'data-popup-nav-panel-label-expand',
-      attribLabelCollapse: 'data-popup-nav-panel-label-collapse',
+      eventBeforeExpanded: 'navigation-menu-being-expanded',
+      eventAfterExpanded: 'navigation-menu-expanded',
+      eventBeforeCollapsed: 'navigation-menu-being-collapsed',
+      eventAfterCollapsed: 'navigation-menu-collapsed',
+      classNavigationMenuPanelHeaderActionActive: `${prefix}--header__action--active`,
+      attribLabelExpand: 'data-navigation-menu-panel-label-expand',
+      attribLabelCollapse: 'data-navigation-menu-panel-label-collapse',
     };
   }
 }

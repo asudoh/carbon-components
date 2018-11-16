@@ -1,9 +1,9 @@
-import PopupNavPanel from './popup-nav-panel';
+import NavigationMenuPanel from './navigation-menu-panel';
 import on from '../../globals/js/misc/on';
 import eventMatches from '../../globals/js/misc/event-matches';
 import settings from '../../globals/js/settings';
 
-export default class PopupNav extends PopupNavPanel {
+export default class NavigationMenu extends NavigationMenuPanel {
   constructor(element, options) {
     super(element, options);
     this.manage(on(element, 'click', this._handleClick));
@@ -34,8 +34,8 @@ export default class PopupNav extends PopupNavPanel {
   };
 
   /**
-   * The map associating DOM element and PopupNav instance.
-   * @member PopupNav.components
+   * The map associating DOM element and NavigationMenu instance.
+   * @member NavigationMenu.components
    * @type {WeakMap}
    */
   static components = new WeakMap();
@@ -43,11 +43,11 @@ export default class PopupNav extends PopupNavPanel {
   /**
    * The component options.
    * If `options` is specified in the constructor,
-   * {@linkcode PopupNav.create .create()}, or
-   * {@linkcode PopupNav.init .init()},
+   * {@linkcode NavigationMenu.create .create()}, or
+   * {@linkcode NavigationMenu.init .init()},
    * properties in this object are overriden for the instance being create and
-   * how {@linkcode PopupNav.init .init()} works.
-   * @member PopupNav.options
+   * how {@linkcode NavigationMenu.init .init()} works.
+   * @member NavigationMenu.options
    * @type {Object}
    * @property {string} selectorInit The CSS class to find popup navs.
    * @property {string} attribInitTarget The attribute name in the
@@ -57,9 +57,9 @@ export default class PopupNav extends PopupNavPanel {
    */
   static get options() {
     const { prefix } = settings;
-    return Object.assign(Object.create(PopupNavPanel.options), {
-      selectorInit: '[data-popup-nav]',
-      attribInitTarget: 'data-popup-nav-target',
+    return Object.assign(Object.create(NavigationMenuPanel.options), {
+      selectorInit: '[data-navigation-menu]',
+      attribInitTarget: 'data-navigation-menu-target',
       selectorShellNavSubmenu: `.${prefix}--navigation__category-toggle`,
       selectorShellNavLink: `.${prefix}--navigation-link`,
       selectorShellNavLinkCurrent: `.${prefix}--navigation-item--active,.${prefix}--navigation__category-item--active`,

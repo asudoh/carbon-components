@@ -1,7 +1,7 @@
-import PopupNavPanel from './popup-nav-panel';
+import NavigationMenuPanel from './navigation-menu-panel';
 import settings from '../../globals/js/settings';
 
-export default class ProductSwitcher extends PopupNavPanel {
+export default class ProductSwitcher extends NavigationMenuPanel {
   createdByLauncher = event => {
     const isExpanded = this.element.classList.contains(this.options.classProductSwitcherExpanded);
     const newState = isExpanded ? 'collapsed' : 'expanded';
@@ -30,7 +30,7 @@ export default class ProductSwitcher extends PopupNavPanel {
         state === 'expanded'
           ? this.triggerButton.getAttribute(this.options.attribLabelCollapse)
           : this.triggerButton.getAttribute(this.options.attribLabelExpand);
-      this.triggerButton.classList.toggle(this.options.classPopupNavPanelHeaderActionActive, state === 'expanded');
+      this.triggerButton.classList.toggle(this.options.classNavigationMenuPanelHeaderActionActive, state === 'expanded');
       this.triggerButton.setAttribute('aria-label', label);
       this.triggerButton.setAttribute('title', label);
     }
@@ -61,7 +61,7 @@ export default class ProductSwitcher extends PopupNavPanel {
    */
   static get options() {
     const { prefix } = settings;
-    return Object.assign(Object.create(PopupNavPanel.options), {
+    return Object.assign(Object.create(NavigationMenuPanel.options), {
       selectorInit: '[data-product-switcher]',
       attribInitTarget: 'data-product-switcher-target',
       classProductSwitcherExpanded: `${prefix}--panel--expanded`,

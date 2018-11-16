@@ -1,6 +1,6 @@
-<div class="bx--navigation" id="popup-nav-{{popupNav.idSuffix}}" {{#unless popupNav.state.expanded}} hidden{{/unless}}
-  data-popup-nav>
-  {{#each popupNav.sections}} <div class="bx--navigation-section">
+<div class="bx--navigation" id="navigation-menu-{{navigationMenu.idSuffix}}" {{#unless navigationMenu.state.expanded}}
+  hidden{{/unless}} data-navigation-menu>
+  {{#each navigationMenu.sections}} <div class="bx--navigation-section">
     <ul class="bx--navigation-items">
       {{#each this.items}}
       {{#if this.active}}
@@ -29,7 +29,7 @@
         </a>
         {{/eq}}
         {{#eq this.type "category"}}
-        {{#if ../../popupNav.state.category}}
+        {{#if ../../navigationMenu.state.category}}
         <div class="bx--navigation__category bx--navigation__category--expanded">
           {{else}}
           <div class="bx--navigation__category">
