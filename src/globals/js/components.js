@@ -32,3 +32,4 @@ export { default as CodeSnippet } from '../../components/code-snippet/code-snipp
 export { default as TextInput } from '../../components/text-input/text-input';
 export { default as SideNav } from '../../components/ui-shell/side-nav';
 export { default as PopupNav } from '../../components/ui-shell/popup-nav';
+export { default as ProductSwitcher } from '../../components/ui-shell/product-switcher';
