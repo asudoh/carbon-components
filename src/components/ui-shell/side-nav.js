@@ -23,8 +23,8 @@ class SideNav extends mixin(createComponent, initComponentBySearch, handles) {
    * @readonly
    * @member SideNav.state
    * @type {Object}
-   * @property {number} EXPANDED Opening/visible
-   * @property {number} COLLAPSED Closing/hidden
+   * @property {string} EXPANDED Opening/visible
+   * @property {string} COLLAPSED Closing/hidden
    */
   static state = {
     EXPANDED: 'expanded',
