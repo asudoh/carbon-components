@@ -1,21 +1,9 @@
-import mixin from '../../globals/js/misc/mixin';
-import createComponent from '../../globals/js/mixins/create-component';
-import initComponentByLauncher from '../../globals/js/mixins/init-component-by-launcher';
-import eventedShowHideState from '../../globals/js/mixins/evented-show-hide-state';
-import handles from '../../globals/js/mixins/handles';
-import eventedState from '../../globals/js/mixins/evented-state';
-import toggleAttribute from '../../globals/js/misc/toggle-attribute';
+import PopupNavPanel from './popup-nav-panel';
 import on from '../../globals/js/misc/on';
 import eventMatches from '../../globals/js/misc/event-matches';
 import settings from '../../globals/js/settings';
 
-export default class PopupNav extends mixin(
-  createComponent,
-  initComponentByLauncher,
-  eventedShowHideState,
-  handles,
-  eventedState
-) {
+export default class PopupNav extends PopupNavPanel {
   constructor(element, options) {
     super(element, options);
     this.manage(on(element, 'click', this._handleClick));
@@ -45,64 +33,33 @@ export default class PopupNav extends mixin(
     }
   };
 
-  createdByLauncher = event => {
-    const isExpanded = !this.element.hasAttribute('hidden');
-    const newState = isExpanded ? 'collapsed' : 'expanded';
-    this.triggerButton = event.delegateTarget;
-    this.changeState(newState);
-  };
-
   /**
-   *
-   * @param {string} state
-   * @returns {boolean} true if given state is different from current state
-   */
-  shouldStateBeChanged = state => (state === 'expanded') === this.element.hasAttribute('hidden');
-
-  /**
-   * Changes the expanded/collapsed state.
-   * @private
-   * @param {string} state The new state.
-   * @param {Function} callback Callback called when change in state completes.
-   */
-  _changeState = (state, callback) => {
-    toggleAttribute(this.element, 'hidden', state !== 'expanded');
-    if (this.triggerButton) {
-      const label = `${state === 'expanded' ? 'Close' : 'Open'} menu`;
-      this.triggerButton.classList.toggle(this.options.classPopupNavHeaderActionActive, state === 'expanded');
-      this.triggerButton.setAttribute('aria-label', label);
-      this.triggerButton.setAttribute('title', label);
-    }
-    callback();
-  };
-
-  /**
-   * The map associating DOM element and modal instance.
-   * @member Modal.components
+   * The map associating DOM element and PopupNav instance.
+   * @member PopupNav.components
    * @type {WeakMap}
    */
   static components = new WeakMap();
 
   /**
    * The component options.
-   * If `options` is specified in the constructor, {@linkcode Modal.create .create()}, or {@linkcode Modal.init .init()},
-   * properties in this object are overriden for the instance being create and how {@linkcode Modal.init .init()} works.
-   * @member Modal.options
+   * If `options` is specified in the constructor,
+   * {@linkcode PopupNav.create .create()}, or
+   * {@linkcode PopupNav.init .init()},
+   * properties in this object are overriden for the instance being create and
+   * how {@linkcode PopupNav.init .init()} works.
+   * @member PopupNav.options
    * @type {Object}
    * @property {string} selectorInit The CSS class to find popup navs.
-   * @property {string} attribInitTarget The attribute name in the launcher buttons to find target popup nav.
-   * @property {string[]} initEventNames The events that the component will handles
+   * @property {string} attribInitTarget The attribute name in the
+   * launcher buttons to find target popup nav.
+   * @property {string[]} initEventNames The events that the component
+   * will handles
    */
   static get options() {
     const { prefix } = settings;
-    return {
+    return Object.assign(Object.create(PopupNavPanel.options), {
       selectorInit: '[data-popup-nav]',
       attribInitTarget: 'data-popup-nav-target',
-      initEventNames: ['click'],
-      eventBeforeExpanded: 'popup-nav-being-expanded',
-      eventAfterExpanded: 'popup-nav-expanded',
-      eventBeforeCollapsed: 'popup-nav-being-collapsed',
-      eventAfterCollapsed: 'popup-nav-collapsed',
       selectorShellNavSubmenu: `.${prefix}--navigation__category-toggle`,
       selectorShellNavLink: `.${prefix}--navigation-link`,
       selectorShellNavLinkCurrent: `.${prefix}--navigation-item--active,.${prefix}--navigation__category-item--active`,
@@ -111,7 +68,6 @@ export default class PopupNav extends mixin(
       classShellNavItemActive: `${prefix}--navigation-item--active`,
       classShellNavLinkCurrent: `${prefix}--navigation__category-item--active`,
       classShellNavCategoryExpanded: `${prefix}--navigation__category--expanded`,
-      classPopupNavHeaderActionActive: `${prefix}--header__action--active`,
-    };
+    });
   }
 }
