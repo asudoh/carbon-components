@@ -20,6 +20,11 @@
     color: $ibm-colors__gray--10;
   }
 
+  .#{$prefix}--navigation--right {
+    left: unset;
+    right: 0;
+  }
+
   .#{$prefix}--navigation svg {
     fill: $ibm-colors__gray--10;
   }
