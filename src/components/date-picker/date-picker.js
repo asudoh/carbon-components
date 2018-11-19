@@ -1,4 +1,5 @@
 import Flatpickr from 'flatpickr';
+import RangePlugin from 'flatpickr/dist/plugins/rangePlugin';
 import settings from '../../globals/js/settings';
 import mixin from '../../globals/js/misc/mixin';
 import createComponent from '../../globals/js/mixins/create-component';
@@ -50,74 +51,25 @@ class DatePicker extends mixin(createComponent, initComponentBySearch, handles) 
         }
       })
     );
-    this.manage(
-      on(this.calendar.calendarContainer, 'keydown', e => {
-        if (e.which === 9 && type === 'range') {
-          this._updateClassNames(this.calendar);
-          this.element.querySelector(this.options.selectorDatePickerInputFrom).focus();
-        }
-      })
-    );
   }
 
-  /**
-   * Opens the date picker dropdown when this component gets focus.
-   * Used only for range mode for now.
-   * @private
-   */
-  _handleFocus = () => {
-    if (this.calendar) {
-      this.calendar.open();
-    }
-  };
-
-  /**
-   * Closes the date picker dropdown when this component loses focus.
-   * Used only for range mode for now.
-   * @private
-   */
-  _handleBlur = event => {
-    if (this.calendar) {
-      const focusTo = event.relatedTarget;
-      if (!focusTo || (!this.element.contains(focusTo) && !this.calendar.calendarContainer.contains(focusTo))) {
-        this.calendar.close();
-      }
-    }
-  };
-
   _initDatePicker = type => {
-    if (type === 'range') {
-      // Given FlatPickr assumes one `<input>` even in range mode,
-      // use a hidden `<input>` for such purpose, separate from our from/to `<input>`s
-      const doc = this.element.ownerDocument;
-      const rangeInput = doc.createElement('input');
-      rangeInput.className = this.options.classVisuallyHidden;
-      rangeInput.setAttribute('aria-hidden', 'true');
-      doc.body.appendChild(rangeInput);
-      this._rangeInput = rangeInput;
-
-      // An attempt to open the date picker dropdown when this component gets focus,
-      // and close the date picker dropdown when this component loses focus
-      const w = doc.defaultView;
-      const hasFocusin = 'onfocusin' in w;
-      const hasFocusout = 'onfocusout' in w;
-      const focusinEventName = hasFocusin ? 'focusin' : 'focus';
-      const focusoutEventName = hasFocusout ? 'focusout' : 'blur';
-      this.manage(on(this.element, focusinEventName, this._handleFocus, !hasFocusin));
-      this.manage(on(this.element, focusoutEventName, this._handleBlur, !hasFocusout));
-      this.manage(
-        on(this.element.querySelector(this.options.selectorDatePickerIcon), focusoutEventName, this._handleBlur, !hasFocusout)
-      );
-    }
     const self = this;
-    const date = type === 'range' ? this._rangeInput : this.element.querySelector(this.options.selectorDatePickerInput);
+    const date =
+      type === 'range'
+        ? this.element.querySelector(this.options.selectorDatePickerInputFrom)
+        : this.element.querySelector(this.options.selectorDatePickerInput);
     const { onClose, onChange, onMonthChange, onYearChange, onOpen, onValueUpdate } = this.options;
     const calendar = new Flatpickr(
       date,
       Object.assign(flattenOptions(this.options), {
         allowInput: true,
         mode: type,
-        positionElement: type === 'range' && this.element.querySelector(this.options.selectorDatePickerInputFrom),
+        plugins: type === 'range' && [
+          RangePlugin({
+            input: this.element.querySelector(this.options.selectorDatePickerInputTo),
+          }),
+        ],
         onClose(selectedDates, ...remainder) {
           // An attempt to disable Flatpickr's focus tracking system,
           // which has adverse effect with our old set up with two `<input>`s or our latest setup with a hidden `<input>`
@@ -153,12 +105,6 @@ class DatePicker extends mixin(createComponent, initComponentBySearch, handles) 
           }
         },
         onOpen(...args) {
-          // An attempt to disable Flatpickr's focus tracking system,
-          // which has adverse effect with our old set up with two `<input>`s or our latest setup with a hidden `<input>`
-          self.shouldForceOpen = true;
-          setTimeout(() => {
-            self.shouldForceOpen = false;
-          }, 0);
           if (!onOpen || onOpen.call(this, ...args) !== false) {
             self._updateClassNames(calendar);
           }
@@ -172,6 +118,12 @@ class DatePicker extends mixin(createComponent, initComponentBySearch, handles) 
         prevArrow: this._leftArrowHTML(),
       })
     );
+    const origOpen = calendar.open;
+    calendar.open = function openFlatpickr(element) {
+      // Ignores 2nd arg, which is positonElement
+      // We put dropdown under the 1st input even when 2nd input gets focus
+      origOpen.call(this, element);
+    };
     if (type === 'range') {
       this._addInputLogic(this.element.querySelector(this.options.selectorDatePickerInputFrom), 0);
       this._addInputLogic(this.element.querySelector(this.options.selectorDatePickerInputTo), 1);
@@ -222,17 +174,6 @@ class DatePicker extends mixin(createComponent, initComponentBySearch, handles) 
           }
         }
         this._updateClassNames(this.calendar);
-      })
-    );
-    // An attempt to temporarily set the `<input>` being edited as the one FlatPicker manages,
-    // as FlatPicker attempts to take over `keydown` event handler on `document` to run on the date picker dropdown.
-    this.manage(
-      on(inputField, 'keydown', evt => {
-        const origInput = this.calendar._input;
-        this.calendar._input = evt.target;
-        setTimeout(() => {
-          this.calendar._input = origInput;
-        });
       })
     );
   };
