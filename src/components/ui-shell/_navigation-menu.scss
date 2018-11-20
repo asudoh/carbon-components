@@ -9,7 +9,7 @@
   // Navigation
   //----------------------------------------------------------------------------
   .#{$prefix}--navigation {
-    position: absolute;
+    position: fixed;
     top: mini-units(6);
     bottom: 0;
     left: 0;
