@@ -144,39 +144,19 @@ const header = {
   actions: [
     {
       title: 'Action 1',
-      switcher: {
-        ...switcher,
-        idSuffix: Math.random()
-          .toString(36)
-          .substr(2),
-      },
+      switcher,
     },
     {
       title: 'Action 2',
-      switcher: {
-        ...switcher,
-        idSuffix: Math.random()
-          .toString(36)
-          .substr(2),
-      },
+      switcher,
     },
     {
       title: 'Action 3',
-      switcher: {
-        ...switcher,
-        idSuffix: Math.random()
-          .toString(36)
-          .substr(2),
-      },
+      switcher,
     },
     {
       title: 'Action 4',
-      switcher: {
-        ...switcher,
-        idSuffix: Math.random()
-          .toString(36)
-          .substr(2),
-      },
+      switcher,
     },
   ],
   navLinks: [

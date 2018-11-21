@@ -2,40 +2,69 @@ import NavigationMenuPanel from './navigation-menu-panel';
 import settings from '../../globals/js/settings';
 
 export default class ProductSwitcher extends NavigationMenuPanel {
+  /**
+   * The list of the IDs of the trigger buttons that have been used.
+   * @type {Set}
+   */
+  triggerButtonIds = new Set();
+
   createdByLauncher = event => {
     const isExpanded = this.element.classList.contains(this.options.classProductSwitcherExpanded);
-    const newState = isExpanded ? 'collapsed' : 'expanded';
-    this.triggerButton = event.delegateTarget;
-    this.changeState(newState);
+    const launcher = event.delegateTarget;
+    if (!launcher.id) {
+      launcher.id = `__carbon-product-switcher-launcher-${Math.random()
+        .toString(36)
+        .substr(2)}`;
+    }
+    const current = launcher.id;
+    this.changeState(isExpanded && this.current === current ? this.constructor.SELECT_NONE : current);
   };
 
   /**
-   *
-   * @param {string} state
-   * @returns {boolean} true if given state is different from current state
+   * @param {Element} current The trigger button of the switcher to be activated. `null` for deactivating.
+   * @returns {boolean} true if given state is different from current state.
    */
-  shouldStateBeChanged = state =>
-    (state === 'expanded') !== this.element.classList.contains(this.options.classProductSwitcherExpanded);
+  shouldStateBeChanged = current => this.current !== current;
 
   /**
    * Changes the expanded/collapsed state.
    * @private
-   * @param {string} state The new state.
+   * @param {string} current The new state.
    * @param {Function} callback Callback called when change in state completes.
    */
-  _changeState = (state, callback) => {
-    this.element.classList.toggle(this.options.classProductSwitcherExpanded, state === 'expanded');
-    if (this.triggerButton) {
-      const label =
-        state === 'expanded'
-          ? this.triggerButton.getAttribute(this.options.attribLabelCollapse)
-          : this.triggerButton.getAttribute(this.options.attribLabelExpand);
-      this.triggerButton.classList.toggle(this.options.classNavigationMenuPanelHeaderActionActive, state === 'expanded');
-      this.triggerButton.setAttribute('aria-label', label);
-      this.triggerButton.setAttribute('title', label);
+  _changeState = (current, callback) => {
+    this.current = current;
+    if (this.current !== this.constructor.SELECT_NONE) {
+      this.triggerButtonIds.add(this.current);
     }
+    this.triggerButtonIds.forEach(id => {
+      const button = this.element.ownerDocument.getElementById(id);
+      const label = button.getAttribute(this.options.attribLabelExpand);
+      button.classList.remove(this.options.classNavigationMenuPanelHeaderActionActive);
+      button.setAttribute('aria-label', label);
+      button.setAttribute('title', label);
+    });
+    if (this.current !== this.constructor.SELECT_NONE) {
+      const button = this.element.ownerDocument.getElementById(this.current);
+      const label = button.getAttribute(this.options.attribLabelCollapse);
+      button.classList.add(this.options.classNavigationMenuPanelHeaderActionActive);
+      button.setAttribute('aria-label', label);
+      button.setAttribute('title', label);
+    }
+    this.element.classList.toggle(this.options.classProductSwitcherExpanded, current !== this.constructor.SELECT_NONE);
     callback();
   };
+
+  release() {
+    this.triggerButtonIds.clear();
+    return super.release();
+  }
+
+  /**
+   * A magic string indicting that no product switcher should be selected.
+   * @param {string}
+   */
+  static SELECT_NONE = '__carbon-product-switcher-launcher-NONE';
 
   /**
    * The map associating DOM element and ProductSwitcher instance.
