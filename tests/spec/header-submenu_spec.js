@@ -349,6 +349,7 @@ describe('Header Submenu', function() {
 
     beforeEach(function() {
       triggerNode.dispatchEvent(unknownEvent);
+      triggerNode.setAttribute('aria-expanded', 'false');
     });
 
     it('should gracefully ignore unknown events', function() {
