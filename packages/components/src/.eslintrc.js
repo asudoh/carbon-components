@@ -55,6 +55,12 @@ module.exports = {
       },
     },
     {
+      files: ['**/*-story.js'],
+      rules: {
+        'import/no-extraneous-dependencies': [2, { devDependencies: true }],
+      },
+    },
+    {
       files: ['**/__tests__/**'],
       env: {
         jest: true,
