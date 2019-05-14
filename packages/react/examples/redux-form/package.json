@@ -1,0 +1,25 @@
+{
+  "name": "redux-form-field-level-validation",
+  "description": "Field-level validation in Redux Form.",
+  "version": "0.0.27",
+  "dependencies": {
+    "@carbon/icons-react": "^10.1.0",
+    "carbon-components": "^10.2.0",
+    "carbon-components-react": "^7.2.0",
+    "redux-form-website-template": "0.0.41",
+    "redux-form": "7.0.4",
+    "redux": "3.7.2",
+    "react-redux": "5.0.6",
+    "react-dom": "^16.8.2",
+    "react": "^16.8.2"
+  },
+  "devDependencies": {
+    "react-scripts": "^1.0.0"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  }
+}
