@@ -256,7 +256,9 @@
 
   // Tooltip Icon
   // Icon CSS only tooltip
+  .#{$prefix}--tooltip--icon__left,
   .#{$prefix}--tooltip--icon__top,
+  .#{$prefix}--tooltip--icon__right,
   .#{$prefix}--tooltip--icon__bottom {
     @include tooltip--icon;
 
@@ -276,9 +278,19 @@
     }
   }
 
+  // Tooltip Icon caret - left position
+  .#{$prefix}--tooltip--icon__left {
+    @include tooltip--icon-placement('left');
+  }
+
   // Tooltip Icon caret - top position
   .#{$prefix}--tooltip--icon__top {
     @include tooltip--icon-placement('top');
+  }
+
+  // Tooltip Icon caret - right position
+  .#{$prefix}--tooltip--icon__right {
+    @include tooltip--icon-placement('right');
   }
 
   // Tooltip Icon caret - bottom position
