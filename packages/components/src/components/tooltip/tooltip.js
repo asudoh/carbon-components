@@ -78,12 +78,13 @@ const getMenuOffset = (menuBody, menuDirection) => {
   return undefined;
 };
 
-class Tooltip extends mixin(
-  createComponent,
-  initComponentByEvent,
-  eventedShowHideState,
-  handles
-) {
+class Tooltip
+  /*#__PURE__*/ extends mixin(
+    createComponent,
+    initComponentByEvent,
+    eventedShowHideState,
+    handles
+  ) {
   /**
    * Tooltip.
    * @extends CreateComponent
