@@ -9,10 +9,9 @@ import Close20 from '@carbon/icons-react/lib/close/20';
 import Menu20 from '@carbon/icons-react/lib//menu/20';
 import { settings } from 'carbon-components';
 import cx from 'classnames';
-import React, { useContext } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import { AriaLabelPropType } from '../../prop-types/AriaPropTypes';
-import { HandleMenuButtonClickContext } from './Header';
 
 const { prefix } = settings;
 
@@ -24,15 +23,11 @@ const HeaderMenuButton = ({
   isActive,
   ...rest
 }) => {
-  const handleMenuButtonClickContext = useContext(HandleMenuButtonClickContext);
-
-  let activeState = handleMenuButtonClickContext.state;
-
   const className = cx({
     [customClassName]: !!customClassName,
     [`${prefix}--header__action`]: true,
     [`${prefix}--header__menu-trigger`]: true,
-    [`${prefix}--header__action--active`]: activeState || isActive,
+    [`${prefix}--header__action--active`]: isActive,
     [`${prefix}--header__menu-toggle`]: true,
   });
   const accessibilityLabel = {
@@ -47,8 +42,8 @@ const HeaderMenuButton = ({
       className={className}
       title={ariaLabel}
       type="button"
-      onClick={onClick ? onClick : handleMenuButtonClickContext.function}>
-      {activeState || isActive ? <Close20 /> : <Menu20 />}
+      onClick={onClick}>
+      {isActive ? <Close20 /> : <Menu20 />}
     </button>
   );
 };

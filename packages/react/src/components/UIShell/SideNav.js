@@ -5,20 +5,19 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-import React, { useState, useRef, useContext } from 'react';
+import React, { useState, useCallback } from 'react';
 import { settings } from 'carbon-components';
 import cx from 'classnames';
 import PropTypes from 'prop-types';
 import { AriaLabelPropType } from '../../prop-types/AriaPropTypes';
 import SideNavFooter from './SideNavFooter';
-import { HandleMenuButtonClickContext } from './Header';
 
 const { prefix } = settings;
 
 const SideNav = React.forwardRef(function SideNav(props, ref) {
   const {
-    expanded: expandedProp,
-    defaultExpanded,
+    isExpanded: isExpandedProp,
+    defaultIsExpanded,
     isChildOfHeader,
     'aria-label': ariaLabel,
     'aria-labelledby': ariaLabelledBy,
@@ -28,34 +27,50 @@ const SideNav = React.forwardRef(function SideNav(props, ref) {
     translateById: t,
   } = props;
 
-  const handleMenuButtonClickContext = useContext(HandleMenuButtonClickContext);
+  const [isExpandedState, setIsExpandedState] = useState(defaultIsExpanded);
+  const handleToggle = useCallback(
+    (
+      evt,
+      {
+        isExpanded = typeof isExpandedProp === 'undefined'
+          ? !isExpandedState
+          : !isExpandedProp,
+      } = {}
+    ) => {
+      if (typeof isExpandedProp === 'undefined') {
+        setIsExpandedState(isExpanded);
+      }
+      if (onToggle) {
+        onToggle(evt, { isExpanded: isExpanded });
+      }
+    },
+    [isExpandedState, setIsExpandedState, isExpandedProp, onToggle]
+  );
 
-  let sideNavExpandedState = handleMenuButtonClickContext.state;
+  const handleOnFocus = useCallback(
+    evt => handleToggle(evt, { isExpanded: true }),
+    [isExpandedState, setIsExpandedState, isExpandedProp, onToggle]
+  );
+  const handleOnBlur = useCallback(
+    evt => handleToggle(evt, { isExpanded: false }),
+    [isExpandedState, setIsExpandedState, isExpandedProp, onToggle]
+  );
 
-  const { current: controlled } = useRef(expandedProp !== undefined);
-  const [expandedState, setExpandedState] = useState(defaultExpanded);
-  const expanded = controlled ? expandedProp : expandedState;
-  const handleToggle = (event, value = !expanded) => {
-    if (!controlled) {
-      setExpandedState(value);
-    }
-    if (onToggle) {
-      onToggle(event, value);
-    }
-  };
+  const isExpanded =
+    typeof isExpandedProp === 'undefined' ? isExpandedState : isExpandedProp;
 
   const accessibilityLabel = {
     'aria-label': ariaLabel,
     'aria-labelledby': ariaLabelledBy,
   };
 
-  const assistiveText = expanded
+  const assistiveText = isExpanded
     ? t('carbon.sidenav.state.open')
     : t('carbon.sidenav.state.closed');
 
   const className = cx({
     [`${prefix}--side-nav`]: true,
-    [`${prefix}--side-nav--expanded`]: expanded || sideNavExpandedState,
+    [`${prefix}--side-nav--expanded`]: isExpanded,
     [customClassName]: !!customClassName,
     [`${prefix}--side-nav--ux`]: isChildOfHeader,
   });
@@ -65,12 +80,12 @@ const SideNav = React.forwardRef(function SideNav(props, ref) {
       ref={ref}
       className={`${prefix}--side-nav__navigation ${className}`}
       {...accessibilityLabel}
-      onFocus={event => handleToggle(event, true)}
-      onBlur={event => handleToggle(event, false)}>
+      onFocus={handleOnFocus}
+      onBlur={handleOnBlur}>
       {children}
       <SideNavFooter
         assistiveText={assistiveText}
-        expanded={expanded}
+        isExpanded={isExpanded}
         onToggle={handleToggle}
       />
     </nav>
@@ -85,7 +100,7 @@ SideNav.defaultProps = {
     };
     return translations[id];
   },
-  defaultExpanded: false,
+  defaultIsExpanded: false,
   isChildOfHeader: true,
 };
 
@@ -94,12 +109,12 @@ SideNav.propTypes = {
    * If `true`, the SideNav will be expanded, otherwise it will be collapsed.
    * Using this prop causes SideNav to become a controled component.
    */
-  expanded: PropTypes.bool,
+  isExpanded: PropTypes.bool,
 
   /**
    * If `true`, the SideNav will be open on initial render.
    */
-  defaultExpanded: PropTypes.bool,
+  defaultIsExpanded: PropTypes.bool,
 
   /**
    * An optional listener that is called when an event that would cause

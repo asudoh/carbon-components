@@ -8,41 +8,18 @@
 import { settings } from 'carbon-components';
 import cx from 'classnames';
 import PropTypes from 'prop-types';
-import React, { useState } from 'react';
+import React from 'react';
 import { AriaLabelPropType } from '../../prop-types/AriaPropTypes';
 
 const { prefix } = settings;
 
 export const HandleMenuButtonClickContext = React.createContext();
 
-const Header = ({
-  className: customClassName,
-  children,
-  isSideNavExpanded,
-  ...rest
-}) => {
+const Header = ({ className: customClassName, children, ...rest }) => {
   const className = cx(`${prefix}--header`, customClassName);
-
-  const [isSideNavExpandedState, setIsSideNavExpandedState] = useState(
-    isSideNavExpanded
-  );
-
-  const handleHeaderMenuButtonClick = () => {
-    const newSideNavExpandedState = !isSideNavExpandedState;
-    setIsSideNavExpandedState(newSideNavExpandedState);
-    return newSideNavExpandedState;
-  };
-
-  const childrenProps = {
-    function: handleHeaderMenuButtonClick,
-    state: isSideNavExpandedState,
-  };
-
   return (
     <header {...rest} className={className} role="banner">
-      <HandleMenuButtonClickContext.Provider value={childrenProps}>
-        {children}
-      </HandleMenuButtonClickContext.Provider>
+      {children}
     </header>
   );
 };
