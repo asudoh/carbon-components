@@ -27,8 +27,10 @@ import {
   HeaderGlobalBar,
   HeaderGlobalAction,
   HeaderPanel,
+  HeaderSideNavItems,
   SkipToContent,
   SideNav,
+  SideNavItems,
   // Temporarily comment these out until they are needed again
   // SideNavHeader,
   // SideNavDetails,
@@ -200,7 +202,12 @@ storiesOf('UI Shell', module)
     'Header Base w/ Navigation and Actions',
     withReadme(readme, () => (
       <HeaderContainer
-        render={({ isSideNavExpanded, onClickSideNavExpand, headerNavRef }) => (
+        render={({
+          isSideNavExpanded,
+          navItems,
+          onClickSideNavExpand,
+          onNavChildrenUpdate,
+        }) => (
           <>
             <Header aria-label="IBM Platform Name">
               <SkipToContent />
@@ -214,7 +221,7 @@ storiesOf('UI Shell', module)
               </HeaderName>
               <HeaderNavigation
                 aria-label="IBM [Platform]"
-                navRef={headerNavRef}>
+                onChildrenUpdate={onNavChildrenUpdate}>
                 <HeaderMenuItem href="#">Link 1</HeaderMenuItem>
                 <HeaderMenuItem href="#">Link 2</HeaderMenuItem>
                 <HeaderMenuItem href="#">Link 3</HeaderMenuItem>
@@ -243,11 +250,42 @@ storiesOf('UI Shell', module)
               </HeaderGlobalBar>
               <SideNav
                 aria-label="Side navigation"
-                expanded={isSideNavExpanded}
-                headerNavigationRef={headerNavRef}
-                hasHeaderItems={true}
-                isPersistent={false}
-              />
+                expanded={isSideNavExpanded}>
+                <HeaderSideNavItems>
+                  {navItems &&
+                    navItems.map(({ content, items, ...rest }) => {
+                      if (items) {
+                        return (
+                          <SideNavMenu {...rest} title={content}>
+                            {items.map(({ content, ...rest }) => (
+                              <SideNavMenuItem {...rest}>
+                                {content}
+                              </SideNavMenuItem>
+                            ))}
+                          </SideNavMenu>
+                        );
+                      }
+                      return (
+                        <SideNavMenuItem {...rest}>{content}</SideNavMenuItem>
+                      );
+                    })}
+                </HeaderSideNavItems>
+                <SideNavItems>
+                  <SideNavMenu renderIcon={Fade16} title="Category title">
+                    <SideNavMenuItem href="javascript:void(0)">
+                      Link
+                    </SideNavMenuItem>
+                    <SideNavMenuItem
+                      aria-current="page"
+                      href="javascript:void(0)">
+                      Link
+                    </SideNavMenuItem>
+                    <SideNavMenuItem href="javascript:void(0)">
+                      Link
+                    </SideNavMenuItem>
+                  </SideNavMenu>
+                </SideNavItems>
+              </SideNav>
             </Header>
           </>
         )}

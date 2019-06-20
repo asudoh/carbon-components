@@ -30,7 +30,11 @@ export default class HeaderNavigation extends React.Component {
      * or `HeaderMenu`
      */
     children: PropTypes.node,
-    navRef: PropTypes.object,
+
+    /**
+     * Optionally provide a callback for updating children
+     */
+    onChildrenUpdate: PropTypes.func,
   };
 
   constructor(props) {
@@ -49,12 +53,25 @@ export default class HeaderNavigation extends React.Component {
     this.items[index] = node;
   };
 
+  componentDidMount() {
+    const { children, onChildrenUpdate } = this.props;
+    if (onChildrenUpdate) {
+      onChildrenUpdate(children);
+    }
+  }
+
+  componentDidUpdate() {
+    const { children, onChildrenUpdate } = this.props;
+    if (onChildrenUpdate) {
+      onChildrenUpdate(children);
+    }
+  }
+
   render() {
     const {
       'aria-label': ariaLabel,
       'aria-labelledby': ariaLabelledBy,
       children,
-      navRef,
       className: customClassName,
       ...rest
     } = this.props;
@@ -69,7 +86,6 @@ export default class HeaderNavigation extends React.Component {
     return (
       <nav {...rest} {...accessibilityLabel} className={className}>
         <ul
-          ref={navRef}
           {...accessibilityLabel}
           className={`${prefix}--header__menu-bar`}
           role="menubar">
