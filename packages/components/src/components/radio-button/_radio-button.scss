@@ -30,6 +30,7 @@
   .#{$prefix}--radio-button-group--vertical {
     flex-direction: column;
     align-items: flex-start;
+    margin-top: 0;
 
     &.#{$prefix}--radio-button-group--label-left {
       align-items: flex-end;
@@ -37,6 +38,7 @@
 
     .#{$prefix}--radio-button__label {
       margin-right: 0;
+      line-height: 1.25rem;
     }
 
     .#{$prefix}--radio-button__label:not(:last-of-type) {
