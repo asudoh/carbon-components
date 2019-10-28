@@ -34,6 +34,10 @@ const themeSwitcherItems = [
     id: 'g100',
     text: 'Gray 100',
   },
+  {
+    id: 'v9',
+    text: 'V9 Compat',
+  },
 ];
 
 /**
@@ -46,6 +50,21 @@ const excludeDeprecated = theme =>
       deprecatedTokens.indexOf(key) >= 0 ? acc : { ...acc, [key]: theme[key] },
     {}
   );
+
+/**
+ * @param {object} theme A theme data.
+ * @returns {object} A version of the given theme data excluding non-color ones.
+ */
+const excludeNonColor = theme =>
+  Object.keys(theme)
+    .filter(key => typeof theme[key] === 'string')
+    .reduce(
+      (acc, key) => ({
+        ...acc,
+        [key]: theme[key],
+      }),
+      {}
+    );
 
 /**
  * @param {object} theme A theme data.
@@ -146,7 +165,7 @@ export default class ThemeSidebar extends Component {
   render() {
     const { open, onClose } = this.props;
     const { themeId, theme, edited } = this.state;
-    const categories = categorize(excludeDeprecated(theme));
+    const categories = categorize(excludeDeprecated(excludeNonColor(theme)));
 
     const className = classNames('sidebar', {
       'sidebar--open': open,

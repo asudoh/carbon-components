@@ -133,6 +133,17 @@ $deprecations--message: 'Deprecated code was found, this code will be removed be
   );
 }
 
+:root.demo--theme--v9 .demo--container,
+:root.demo--theme--v9 .component-example__live,
+:root.demo--theme--v9 .bx--date-picker__calendar.open,
+:root.demo--theme--v9 .bx--tooltip,
+:root.demo--theme--v9 .bx--overflow-menu-options {
+  @include carbon--theme(
+    $theme: $carbon--theme--v9,
+    $emit-custom-properties: true
+  );
+}
+
 .demo--container.demo--container--list-box > .demo--container__panel,
 .demo--container.demo--container--multi-select > .demo--container__panel,
 .component-example__live--rendered.list-box > div,
