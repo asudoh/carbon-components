@@ -1,7 +1,8 @@
 ---
 applications:
-- name: carbon-dev-environment
+- name: carbon-sandbox
   memory: 64M
   buildpack: https://github.com/cloudfoundry/staticfile-buildpack.git
-routes:
-  - route: vanilla.carbondesignsystem.com
+  routes:
+    - route: themes.carbondesignsystem.com
+    - route: carbon-sandbox.mybluemix.net
