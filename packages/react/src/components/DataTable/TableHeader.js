@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
 /**
  * Copyright IBM Corp. 2016, 2018
  *
@@ -14,6 +15,7 @@ import {
   ArrowsVertical20 as Arrows,
 } from '@carbon/icons-react';
 import { sortStates } from './state/sorting';
+import TableColumnResizer from './TableColumnResizer';
 
 const { prefix } = settings;
 
@@ -54,6 +56,7 @@ const TableHeader = React.forwardRef(function TableHeader(
     colSpan,
     isSortable,
     isSortHeader,
+    isResizable,
     onClick,
     scope,
     sortDirection,
@@ -62,6 +65,17 @@ const TableHeader = React.forwardRef(function TableHeader(
   },
   ref
 ) {
+  if (isResizable) {
+    return (
+      <th className={headerClassName} colSpan={colSpan} ref={ref} scope={scope}>
+        <div className={`${prefix}--table-header-resizable`} {...rest}>
+          <span className={`${prefix}--table-header-label`}>{children}</span>
+          <TableColumnResizer headerRef={ref} />
+        </div>
+      </th>
+    );
+  }
+
   if (!isSortable) {
     return (
       <th
@@ -168,6 +182,16 @@ TableHeader.propTypes = {
    * this component.
    */
   translateWithId: PropTypes.func,
+
+  /**
+   * key for the column as defined in the header data
+   */
+  colKey: PropTypes.string.isRequired,
+
+  /**
+   * Specify whether the column of this header can be resized
+   */
+  isResizable: PropTypes.bool,
 };
 
 TableHeader.defaultProps = {
