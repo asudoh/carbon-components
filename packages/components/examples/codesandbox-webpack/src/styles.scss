@@ -1,0 +1,17 @@
+//
+// Copyright IBM Corp. 2020
+//
+// This source code is licensed under the Apache-2.0 license found in the
+// LICENSE file in the root directory of this source tree.
+//
+
+@import '@carbon/themes/scss/themes.scss';
+@import 'carbon-components/scss/globals/scss/styles.scss';
+
+body {
+  font-family: 'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif;
+}
+
+#app {
+  width: 300px;
+}
