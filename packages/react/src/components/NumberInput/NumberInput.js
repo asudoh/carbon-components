@@ -157,7 +157,7 @@ class NumberInput extends Component {
   };
 
   static getDerivedStateFromProps({ min, max, value = 0 }, state) {
-    const { prevValue } = state;
+    const { prevValue } = state || {};
 
     if (useControlledStateWithValue && value === '' && prevValue !== '') {
       return {
@@ -220,7 +220,9 @@ class NumberInput extends Component {
 
   handleArrowClick = (evt, direction) => {
     let value =
-      typeof this.state.value === 'string'
+      useControlledStateWithValue && this.isControlled
+        ? this.props.value
+        : typeof this.state.value === 'string'
         ? Number(this.state.value)
         : this.state.value;
     const { disabled, min, max, step, onChange, onClick } = this.props;
@@ -327,13 +329,10 @@ class NumberInput extends Component {
     } else {
       // Otherwise, if we don't allow an empty value then we check to see
       // if the value is empty, or if it is out of range
-      if (!allowEmpty && this.state.value === '') {
+      if (!allowEmpty && props.value === '') {
         isInputInvalid = true;
       } else {
-        if (
-          this.state.value !== '' &&
-          (this.state.value > max || this.state.value < min)
-        ) {
+        if (props.value !== '' && (props.value > max || props.value < min)) {
           isInputInvalid = true;
         }
       }
