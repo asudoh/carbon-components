@@ -2,7 +2,7 @@ import { camelCase, paramCase } from 'change-case';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import React, { Component } from 'react';
-import { Button, Dropdown, DropdownItem } from 'carbon-components-react';
+import { Button, Dropdown } from 'carbon-components-react';
 import { Close20 } from '@carbon/icons-react';
 import { themes } from '@carbon/themes';
 import generateThemeContent from './generate-theme-content';
@@ -20,23 +20,23 @@ const deprecatedTokens = [
 const themeSwitcherItems = [
   {
     id: 'white',
-    text: 'White',
+    label: 'White',
   },
   {
     id: 'g10',
-    text: 'Gray 10',
+    label: 'Gray 10',
   },
   {
     id: 'g90',
-    text: 'Gray 90',
+    label: 'Gray 90',
   },
   {
     id: 'g100',
-    text: 'Gray 100',
+    label: 'Gray 100',
   },
   {
     id: 'v9',
-    text: 'V9 Compat',
+    label: 'V9 Compat',
   },
 ];
 
@@ -130,7 +130,8 @@ export default class ThemeSidebar extends Component {
    * @param {object} evt
    * @param {object} evt.value The id of the selected dropdown item.
    */
-  handleThemeChange = ({ value } = {}) => {
+  handleThemeChange = ({ selectedItem } = {}) => {
+    const value = selectedItem.id;
     this.setState(
       ({ themeId: oldThemeId }) => {
         const themeId = value || oldThemeId;
@@ -183,12 +184,10 @@ export default class ThemeSidebar extends Component {
           </h1>
           <Dropdown
             ariaLabel="dropdown for theme switcher"
-            value={themeId}
-            onChange={this.handleThemeChange}>
-            {themeSwitcherItems.map(({ id, text }) => (
-              <DropdownItem key={id} itemText={text} value={id} />
-            ))}
-          </Dropdown>
+            items={themeSwitcherItems}
+            selectedItem={themeSwitcherItems.find(({ id }) => id === themeId)}
+            onChange={this.handleThemeChange}
+          />
         </header>
 
         <div className="variables">

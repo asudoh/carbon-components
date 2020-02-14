@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import CopyToClipboard from 'react-copy-to-clipboard';
 import classnames from 'classnames';
-import { Icon } from 'carbon-components-react';
+import { ChevronDown16, Copy16 } from '@carbon/icons-react';
 import ReactGA from 'react-ga';
 
 class CodeExample extends Component {
@@ -112,11 +112,7 @@ class CodeExample extends Component {
             className="bx--snippet-button code-example__copy-btn"
             onClick={() => this.handleClick()}>
             Copy
-            <Icon
-              className="code-example__copy-btn--icon bx--snippet__icon"
-              name="copy"
-              description="Copy code icon"
-            />
+            <Copy16 className="code-example__copy-btn--icon bx--snippet__icon" />
             <div className={copyBtnClass} data-feedback="Copied!" />
           </button>
         </CopyToClipboard>
@@ -125,11 +121,7 @@ class CodeExample extends Component {
           className={expandBtnClass}
           onClick={this.expandCode}>
           <span>{expandCodeBtnText}</span>
-          <Icon
-            className={expandBtnIconClass}
-            name="chevron--down"
-            description="Expand code icon"
-          />
+          <ChevronDown16 className={expandBtnIconClass} />
         </button>
       </div>
     );

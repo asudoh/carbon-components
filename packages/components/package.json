@@ -98,7 +98,7 @@
     "browser-sync": "^2.26.3",
     "browserslist-config-carbon": "10.4.0",
     "carbon-components": "^9.0.0",
-    "carbon-components-react": "^6.0.0",
+    "carbon-components-react": "^7.0.0",
     "change-case": "^3.0.2",
     "chokidar": "^2.0.0",
     "classnames": "^2.2.0",
