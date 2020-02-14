@@ -14,7 +14,7 @@ const ThemeEmitter = ({ theme }) =>
         ${Object.keys(theme)
           .map(
             key =>
-              `--${paramCase(key).replace(/(\d+)$/, '-$1')}: ${theme[key]};`
+              `--cds-${paramCase(key).replace(/(\d+)$/, '-$1')}: ${theme[key]};`
           )
           .join('\n')}
       }`}
