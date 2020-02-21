@@ -18,9 +18,10 @@ const { prefix } = settings;
  * class into a single component. It is also being used to validate given
  * `children` components.
  */
-const ListBoxMenu = ({ children, id, ...rest }) => (
+const ListBoxMenu = ({ children, id, innerRef, ...rest }) => (
   <div
     id={`${id}__menu`}
+    ref={innerRef}
     className={`${prefix}--list-box__menu`}
     role="listbox"
     {...rest}>
@@ -33,10 +34,17 @@ ListBoxMenu.propTypes = {
    * Provide the contents of your ListBoxMenu
    */
   children: childrenOfType(ListBoxMenuItem),
+
   /**
    * Specify a custom `id`
    */
   id: PropTypes.string.isRequired,
+
+  /**
+   * `innerRef` hook used for libraries like Downshift that require a reference
+   * on a container node when it is not a native element
+   */
+  innerRef: PropTypes.func.isRequired,
 };
 
 export default ListBoxMenu;
