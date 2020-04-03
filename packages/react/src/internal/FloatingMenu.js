@@ -77,6 +77,7 @@ const hasChangeInOffset = (oldMenuOffset = {}, menuOffset = {}) => {
 const getFloatingPosition = ({
   menuSize,
   refPosition,
+  containerPosition = {},
   offset = {},
   direction = DIRECTION_BOTTOM,
   scrollX = 0,
@@ -88,6 +89,7 @@ const getFloatingPosition = ({
     right: refRight = 0,
     bottom: refBottom = 0,
   } = refPosition;
+  const { left: containerLeft = 0, top: containerTop = 0 } = containerPosition;
 
   const { width, height } = menuSize;
   const { top = 0, left = 0 } = offset;
@@ -96,20 +98,20 @@ const getFloatingPosition = ({
 
   return {
     [DIRECTION_LEFT]: () => ({
-      left: refLeft - width + scrollX - left,
-      top: refCenterVertical - height / 2 + scrollY + top - 9,
+      left: refLeft - containerLeft - width + scrollX - left,
+      top: refCenterVertical - containerTop - height / 2 + scrollY + top - 9,
     }),
     [DIRECTION_TOP]: () => ({
-      left: refCenterHorizontal - width / 2 + scrollX + left,
-      top: refTop - height + scrollY - top,
+      left: refCenterHorizontal - containerLeft - width / 2 + scrollX + left,
+      top: refTop - containerTop - height + scrollY - top,
     }),
     [DIRECTION_RIGHT]: () => ({
-      left: refRight + scrollX + left,
-      top: refCenterVertical - height / 2 + scrollY + top + 3,
+      left: refRight - containerLeft + scrollX + left,
+      top: refCenterVertical - containerTop - height / 2 + scrollY + top + 3,
     }),
     [DIRECTION_BOTTOM]: () => ({
-      left: refCenterHorizontal - width / 2 + scrollX + left,
-      top: refBottom + scrollY + top,
+      left: refCenterHorizontal - containerLeft - width / 2 + scrollX + left,
+      top: refBottom - containerTop + scrollY + top,
     }),
   }[direction]();
 };
@@ -251,6 +253,15 @@ class FloatingMenu extends React.Component {
       hasChangeInOffset(oldMenuOffset, menuOffset) ||
       oldMenuDirection !== menuDirection
     ) {
+      const { target } = this.props;
+      const targetNode = target && target();
+      const containerPosition =
+        !targetNode ||
+        targetNode.ownerDocument.defaultView
+          .getComputedStyle(targetNode)
+          .getPropertyValue('position') === 'static'
+          ? undefined
+          : targetNode.getBoundingClientRect();
       const menuSize = menuBody.getBoundingClientRect();
       const { menuEl, flipped } = this.props;
       const offset =
@@ -265,10 +276,11 @@ class FloatingMenu extends React.Component {
           floatingPosition: getFloatingPosition({
             menuSize,
             refPosition,
+            containerPosition,
             direction: menuDirection,
             offset,
-            scrollX: window.pageXOffset,
-            scrollY: window.pageYOffset,
+            scrollX: containerPosition ? 0 : window.pageXOffset,
+            scrollY: containerPosition ? 0 : window.pageYOffset,
           }),
         });
       }
