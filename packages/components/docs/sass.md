@@ -4617,6 +4617,7 @@ $spacing-02: $carbon--spacing-02;
 - **Alias**: `carbon--spacing-02`
 - **Used by**:
   - [carbon--theme [mixin]](#carbon--theme-mixin)
+  - [accordion [mixin]](#accordion-mixin)
   - [modal [mixin]](#modal-mixin)
 
 ### ✅spacing-03 [variable]
@@ -16104,7 +16105,7 @@ Accordion styles
     align-items: flex-start;
     justify-content: $accordion-justify-content;
     cursor: pointer;
-    padding: rem(6px) 0;
+    padding: #{$spacing-02 + $spacing-03 / 2} 0;
     flex-direction: $accordion-flex-direction;
     position: relative;
     width: 100%;
@@ -16136,11 +16137,6 @@ Accordion styles
 
   .#{$prefix}--accordion__arrow {
     @include focus-outline('reset');
-    // Without flex basis and flex shrink being set here, our icon width can go
-    // <16px and cause the icon to render in the incorrect artboard size
-    flex: 0 0 1rem;
-    width: 1rem;
-    height: 1rem;
     margin: $accordion-arrow-margin;
     fill: $ui-05;
     // TODO: RTL rotate(180deg);
@@ -16271,13 +16267,14 @@ Accordion styles
   - [prefix [variable]](#prefix-variable)
   - [ui-03 [variable]](#ui-03-variable)
   - [text-01 [variable]](#text-01-variable)
+  - [spacing-02 [variable]](#spacing-02-variable)
+  - [spacing-03 [variable]](#spacing-03-variable)
   - [hover-ui [variable]](#hover-ui-variable)
   - [ui-05 [variable]](#ui-05-variable)
   - [carbon--spacing-05 [variable]](#carbon--spacing-05-variable)
   - [carbon--spacing-09 [variable]](#carbon--spacing-09-variable)
   - [carbon--spacing-03 [variable]](#carbon--spacing-03-variable)
   - [carbon--spacing-06 [variable]](#carbon--spacing-06-variable)
-  - [spacing-03 [variable]](#spacing-03-variable)
   - [spacing-05 [variable]](#spacing-05-variable)
 
 ## breadcrumb
