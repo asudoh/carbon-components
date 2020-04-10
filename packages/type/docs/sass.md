@@ -30,22 +30,45 @@
   - [✅carbon--font-face-serif [mixin]](#carbon--font-face-serif-mixin)
   - [✅carbon--font-display [variable]](#carbon--font-display-variable)
   - [✅caption-01 [variable]](#caption-01-variable)
+  - [✅productive-caption-01 [variable]](#productive-caption-01-variable)
+  - [✅expressive-caption-01 [variable]](#expressive-caption-01-variable)
   - [✅label-01 [variable]](#label-01-variable)
+  - [✅productive-label-01 [variable]](#productive-label-01-variable)
+  - [✅expressive-label-01 [variable]](#expressive-label-01-variable)
   - [✅helper-text-01 [variable]](#helper-text-01-variable)
+  - [✅productive-helper-text-01 [variable]](#productive-helper-text-01-variable)
+  - [✅expressive-helper-text-01 [variable]](#expressive-helper-text-01-variable)
   - [✅body-short-01 [variable]](#body-short-01-variable)
+  - [✅productive-body-short-01 [variable]](#productive-body-short-01-variable)
+  - [✅expressive-body-short-01 [variable]](#expressive-body-short-01-variable)
   - [✅body-long-01 [variable]](#body-long-01-variable)
+  - [✅productive-body-long-01 [variable]](#productive-body-long-01-variable)
+  - [✅expressive-body-long-01 [variable]](#expressive-body-long-01-variable)
   - [✅body-short-02 [variable]](#body-short-02-variable)
+  - [✅productive-body-short-02 [variable]](#productive-body-short-02-variable)
+  - [✅expressive-body-short-02 [variable]](#expressive-body-short-02-variable)
   - [✅body-long-02 [variable]](#body-long-02-variable)
+  - [✅productive-body-long-02 [variable]](#productive-body-long-02-variable)
+  - [✅expressive-body-long-02 [variable]](#expressive-body-long-02-variable)
   - [✅code-01 [variable]](#code-01-variable)
+  - [✅productive-code-01 [variable]](#productive-code-01-variable)
+  - [✅expressive-code-01 [variable]](#expressive-code-01-variable)
   - [✅code-02 [variable]](#code-02-variable)
+  - [✅productive-code-02 [variable]](#productive-code-02-variable)
+  - [✅expressive-code-02 [variable]](#expressive-code-02-variable)
   - [✅heading-01 [variable]](#heading-01-variable)
   - [✅productive-heading-01 [variable]](#productive-heading-01-variable)
   - [✅heading-02 [variable]](#heading-02-variable)
   - [✅productive-heading-02 [variable]](#productive-heading-02-variable)
+  - [✅heading-03 [variable]](#heading-03-variable)
   - [✅productive-heading-03 [variable]](#productive-heading-03-variable)
+  - [✅heading-04 [variable]](#heading-04-variable)
   - [✅productive-heading-04 [variable]](#productive-heading-04-variable)
+  - [✅heading-05 [variable]](#heading-05-variable)
   - [✅productive-heading-05 [variable]](#productive-heading-05-variable)
+  - [✅heading-06 [variable]](#heading-06-variable)
   - [✅productive-heading-06 [variable]](#productive-heading-06-variable)
+  - [✅heading-07 [variable]](#heading-07-variable)
   - [✅productive-heading-07 [variable]](#productive-heading-07-variable)
   - [✅expressive-heading-01 [variable]](#expressive-heading-01-variable)
   - [✅expressive-heading-02 [variable]](#expressive-heading-02-variable)
@@ -61,12 +84,15 @@
   - [✅display-03 [variable]](#display-03-variable)
   - [✅display-04 [variable]](#display-04-variable)
   - [✅tokens [variable]](#tokens-variable)
+  - [✅carbon--type-style--productive-tokens [variable]](#carbon--type-style--productive-tokens-variable)
+  - [✅carbon--type-style--expressive-tokens [variable]](#carbon--type-style--expressive-tokens-variable)
   - [✅properties [mixin]](#properties-mixin)
   - [✅strip-unit [function]](#strip-unit-function)
   - [✅fluid-type [mixin]](#fluid-type-mixin)
   - [✅fluid-type-size [mixin]](#fluid-type-size-mixin)
   - [❌custom-property-prefix [variable]](#custom-property-prefix-variable)
   - [❌custom-properties [mixin]](#custom-properties-mixin)
+  - [✅carbon--type-style--group [variable]](#carbon--type-style--group-variable)
   - [✅carbon--type-style [mixin]](#carbon--type-style-mixin)
 
 <!-- tocstop -->
@@ -791,27 +817,27 @@ Include default type styles
 ```scss
 @mixin carbon--default-type() {
   h1 {
-    @include carbon--type-style('productive-heading-06');
+    @include carbon--type-style('heading-06');
   }
 
   h2 {
-    @include carbon--type-style('productive-heading-05');
+    @include carbon--type-style('heading-05');
   }
 
   h3 {
-    @include carbon--type-style('productive-heading-04');
+    @include carbon--type-style('heading-04');
   }
 
   h4 {
-    @include carbon--type-style('productive-heading-03');
+    @include carbon--type-style('heading-03');
   }
 
   h5 {
-    @include carbon--type-style('productive-heading-02');
+    @include carbon--type-style('heading-02');
   }
 
   h6 {
-    @include carbon--type-style('productive-heading-01');
+    @include carbon--type-style('heading-01');
   }
 
   p {
@@ -2283,6 +2309,41 @@ $caption-01: (
 - **Group**: [@carbon/type](#carbontype)
 - **Type**: `Map`
 
+### ✅productive-caption-01 [variable]
+
+<details>
+<summary>Source code</summary>
+
+```scss
+$productive-caption-01: $caption-01;
+```
+
+</details>
+
+- **Group**: [@carbon/type](#carbontype)
+- **Type**: `Map`
+
+### ✅expressive-caption-01 [variable]
+
+<details>
+<summary>Source code</summary>
+
+```scss
+$expressive-caption-01: map-merge(
+  $caption-01,
+  (
+    font-size: carbon--type-scale(2),
+    line-height: carbon--rem(18px),
+    letter-spacing: 0.16px,
+  )
+);
+```
+
+</details>
+
+- **Group**: [@carbon/type](#carbontype)
+- **Type**: `Map`
+
 ### ✅label-01 [variable]
 
 <details>
@@ -2302,6 +2363,41 @@ $label-01: (
 - **Group**: [@carbon/type](#carbontype)
 - **Type**: `Map`
 
+### ✅productive-label-01 [variable]
+
+<details>
+<summary>Source code</summary>
+
+```scss
+$productive-label-01: $label-01;
+```
+
+</details>
+
+- **Group**: [@carbon/type](#carbontype)
+- **Type**: `Map`
+
+### ✅expressive-label-01 [variable]
+
+<details>
+<summary>Source code</summary>
+
+```scss
+$expressive-label-01: map-merge(
+  $label-01,
+  (
+    font-size: carbon--type-scale(2),
+    line-height: carbon--rem(18px),
+    letter-spacing: 0.16px,
+  )
+);
+```
+
+</details>
+
+- **Group**: [@carbon/type](#carbontype)
+- **Type**: `Map`
+
 ### ✅helper-text-01 [variable]
 
 <details>
@@ -2312,6 +2408,41 @@ $helper-text-01: (
   font-size: carbon--type-scale(1),
   line-height: carbon--rem(16px),
   letter-spacing: 0.32px,
+);
+```
+
+</details>
+
+- **Group**: [@carbon/type](#carbontype)
+- **Type**: `Map`
+
+### ✅productive-helper-text-01 [variable]
+
+<details>
+<summary>Source code</summary>
+
+```scss
+$productive-helper-text-01: $helper-text-01;
+```
+
+</details>
+
+- **Group**: [@carbon/type](#carbontype)
+- **Type**: `Map`
+
+### ✅expressive-helper-text-01 [variable]
+
+<details>
+<summary>Source code</summary>
+
+```scss
+$expressive-helper-text-01: map-merge(
+  $helper-text-01,
+  (
+    font-size: carbon--type-scale(2),
+    line-height: carbon--rem(18px),
+    letter-spacing: 0.16px,
+  )
 );
 ```
 
@@ -2339,6 +2470,41 @@ $body-short-01: (
 - **Group**: [@carbon/type](#carbontype)
 - **Type**: `Map`
 
+### ✅productive-body-short-01 [variable]
+
+<details>
+<summary>Source code</summary>
+
+```scss
+$productive-body-short-01: $body-short-01;
+```
+
+</details>
+
+- **Group**: [@carbon/type](#carbontype)
+- **Type**: `Map`
+
+### ✅expressive-body-short-01 [variable]
+
+<details>
+<summary>Source code</summary>
+
+```scss
+$expressive-body-short-01: map-merge(
+  $body-short-01,
+  (
+    font-size: carbon--type-scale(3),
+    line-height: carbon--rem(22px),
+    letter-spacing: 0,
+  )
+);
+```
+
+</details>
+
+- **Group**: [@carbon/type](#carbontype)
+- **Type**: `Map`
+
 ### ✅body-long-01 [variable]
 
 <details>
@@ -2350,6 +2516,41 @@ $body-long-01: (
   font-weight: carbon--font-weight('regular'),
   line-height: carbon--rem(20px),
   letter-spacing: 0.16px,
+);
+```
+
+</details>
+
+- **Group**: [@carbon/type](#carbontype)
+- **Type**: `Map`
+
+### ✅productive-body-long-01 [variable]
+
+<details>
+<summary>Source code</summary>
+
+```scss
+$productive-body-long-01: $body-long-01;
+```
+
+</details>
+
+- **Group**: [@carbon/type](#carbontype)
+- **Type**: `Map`
+
+### ✅expressive-body-long-01 [variable]
+
+<details>
+<summary>Source code</summary>
+
+```scss
+$expressive-body-long-01: map-merge(
+  $body-long-01,
+  (
+    font-size: carbon--type-scale(3),
+    line-height: carbon--rem(24px),
+    letter-spacing: 0,
+  )
 );
 ```
 
@@ -2377,6 +2578,34 @@ $body-short-02: (
 - **Group**: [@carbon/type](#carbontype)
 - **Type**: `Map`
 
+### ✅productive-body-short-02 [variable]
+
+<details>
+<summary>Source code</summary>
+
+```scss
+$productive-body-short-02: $body-short-02;
+```
+
+</details>
+
+- **Group**: [@carbon/type](#carbontype)
+- **Type**: `Map`
+
+### ✅expressive-body-short-02 [variable]
+
+<details>
+<summary>Source code</summary>
+
+```scss
+$expressive-body-short-02: $body-short-02;
+```
+
+</details>
+
+- **Group**: [@carbon/type](#carbontype)
+- **Type**: `Map`
+
 ### ✅body-long-02 [variable]
 
 <details>
@@ -2389,6 +2618,34 @@ $body-long-02: (
   line-height: carbon--rem(24px),
   letter-spacing: 0,
 );
+```
+
+</details>
+
+- **Group**: [@carbon/type](#carbontype)
+- **Type**: `Map`
+
+### ✅productive-body-long-02 [variable]
+
+<details>
+<summary>Source code</summary>
+
+```scss
+$productive-body-long-02: $body-long-02;
+```
+
+</details>
+
+- **Group**: [@carbon/type](#carbontype)
+- **Type**: `Map`
+
+### ✅expressive-body-long-02 [variable]
+
+<details>
+<summary>Source code</summary>
+
+```scss
+$expressive-body-long-02: $body-long-02;
 ```
 
 </details>
@@ -2416,6 +2673,41 @@ $code-01: (
 - **Group**: [@carbon/type](#carbontype)
 - **Type**: `Map`
 
+### ✅productive-code-01 [variable]
+
+<details>
+<summary>Source code</summary>
+
+```scss
+$productive-code-01: $code-01;
+```
+
+</details>
+
+- **Group**: [@carbon/type](#carbontype)
+- **Type**: `Map`
+
+### ✅expressive-code-01 [variable]
+
+<details>
+<summary>Source code</summary>
+
+```scss
+$expressive-code-01: map-merge(
+  $code-01,
+  (
+    font-size: carbon--type-scale(2),
+    line-height: carbon--rem(20px),
+    letter-spacing: 0,
+  )
+);
+```
+
+</details>
+
+- **Group**: [@carbon/type](#carbontype)
+- **Type**: `Map`
+
 ### ✅code-02 [variable]
 
 <details>
@@ -2428,6 +2720,41 @@ $code-02: (
   font-weight: carbon--font-weight('regular'),
   line-height: carbon--rem(20px),
   letter-spacing: 0.32px,
+);
+```
+
+</details>
+
+- **Group**: [@carbon/type](#carbontype)
+- **Type**: `Map`
+
+### ✅productive-code-02 [variable]
+
+<details>
+<summary>Source code</summary>
+
+```scss
+$productive-code-02: $code-02;
+```
+
+</details>
+
+- **Group**: [@carbon/type](#carbontype)
+- **Type**: `Map`
+
+### ✅expressive-code-02 [variable]
+
+<details>
+<summary>Source code</summary>
+
+```scss
+$expressive-code-02: map-merge(
+  $code-02,
+  (
+    font-size: carbon--type-scale(3),
+    line-height: carbon--rem(24px),
+    letter-spacing: 0,
+  )
 );
 ```
 
@@ -2502,16 +2829,49 @@ $productive-heading-02: $heading-02;
 - **Group**: [@carbon/type](#carbontype)
 - **Type**: `Map`
 
+### ✅heading-03 [variable]
+
+<details>
+<summary>Source code</summary>
+
+```scss
+$heading-03: (
+  font-size: carbon--type-scale(5),
+  font-weight: carbon--font-weight('regular'),
+  line-height: carbon--rem(26px),
+  letter-spacing: 0,
+);
+```
+
+</details>
+
+- **Group**: [@carbon/type](#carbontype)
+- **Type**: `Map`
+
 ### ✅productive-heading-03 [variable]
 
 <details>
 <summary>Source code</summary>
 
 ```scss
-$productive-heading-03: (
-  font-size: carbon--type-scale(5),
+$productive-heading-03: $heading-03;
+```
+
+</details>
+
+- **Group**: [@carbon/type](#carbontype)
+- **Type**: `Map`
+
+### ✅heading-04 [variable]
+
+<details>
+<summary>Source code</summary>
+
+```scss
+$heading-04: (
+  font-size: carbon--type-scale(7),
   font-weight: carbon--font-weight('regular'),
-  line-height: carbon--rem(26px),
+  line-height: carbon--rem(36px),
   letter-spacing: 0,
 );
 ```
@@ -2527,10 +2887,24 @@ $productive-heading-03: (
 <summary>Source code</summary>
 
 ```scss
-$productive-heading-04: (
-  font-size: carbon--type-scale(7),
+$productive-heading-04: $heading-04;
+```
+
+</details>
+
+- **Group**: [@carbon/type](#carbontype)
+- **Type**: `Map`
+
+### ✅heading-05 [variable]
+
+<details>
+<summary>Source code</summary>
+
+```scss
+$heading-05: (
+  font-size: carbon--type-scale(8),
   font-weight: carbon--font-weight('regular'),
-  line-height: carbon--rem(36px),
+  line-height: carbon--rem(40px),
   letter-spacing: 0,
 );
 ```
@@ -2546,10 +2920,24 @@ $productive-heading-04: (
 <summary>Source code</summary>
 
 ```scss
-$productive-heading-05: (
-  font-size: carbon--type-scale(8),
-  font-weight: carbon--font-weight('regular'),
-  line-height: carbon--rem(40px),
+$productive-heading-05: $heading-05;
+```
+
+</details>
+
+- **Group**: [@carbon/type](#carbontype)
+- **Type**: `Map`
+
+### ✅heading-06 [variable]
+
+<details>
+<summary>Source code</summary>
+
+```scss
+$heading-06: (
+  font-size: carbon--type-scale(10),
+  font-weight: carbon--font-weight('light'),
+  line-height: carbon--rem(50px),
   letter-spacing: 0,
 );
 ```
@@ -2565,10 +2953,24 @@ $productive-heading-05: (
 <summary>Source code</summary>
 
 ```scss
-$productive-heading-06: (
-  font-size: carbon--type-scale(8),
+$productive-heading-06: $heading-06;
+```
+
+</details>
+
+- **Group**: [@carbon/type](#carbontype)
+- **Type**: `Map`
+
+### ✅heading-07 [variable]
+
+<details>
+<summary>Source code</summary>
+
+```scss
+$heading-07: (
+  font-size: carbon--type-scale(12),
   font-weight: carbon--font-weight('light'),
-  line-height: carbon--rem(50px),
+  line-height: carbon--rem(64px),
   letter-spacing: 0,
 );
 ```
@@ -2584,12 +2986,7 @@ $productive-heading-06: (
 <summary>Source code</summary>
 
 ```scss
-$productive-heading-07: (
-  font-size: carbon--type-scale(10),
-  font-weight: carbon--font-weight('light'),
-  line-height: carbon--rem(64px),
-  letter-spacing: 0,
-);
+$productive-heading-07: $heading-07;
 ```
 
 </details>
@@ -2606,7 +3003,9 @@ $productive-heading-07: (
 $expressive-heading-01: map-merge(
   $heading-01,
   (
+    font-size: carbon--type-scale(2),
     line-height: carbon--rem(20px),
+    letter-spacing: 0.16px,
   )
 );
 ```
@@ -3025,16 +3424,39 @@ $display-04: (
 ```scss
 $tokens: (
   caption-01: $caption-01,
+  productive-caption-01: $productive-caption-01,
+  expressive-caption-01: $expressive-caption-01,
   label-01: $label-01,
+  productive-label-01: $productive-label-01,
+  expressive-label-01: $expressive-label-01,
   helper-text-01: $helper-text-01,
+  productive-helper-text-01: $productive-helper-text-01,
+  expressive-helper-text-01: $expressive-helper-text-01,
   body-short-01: $body-short-01,
+  productive-body-short-01: $productive-body-short-01,
+  expressive-body-short-01: $expressive-body-short-01,
   body-short-02: $body-short-02,
+  productive-body-short-02: $productive-body-short-02,
+  expressive-body-short-02: $expressive-body-short-02,
   body-long-01: $body-long-01,
+  productive-body-long-01: $productive-body-long-01,
+  expressive-body-long-01: $expressive-body-long-01,
   body-long-02: $body-long-02,
+  productive-body-long-02: $productive-body-long-02,
+  expressive-body-long-02: $expressive-body-long-02,
   code-01: $code-01,
+  productive-code-01: $productive-code-01,
+  expressive-code-01: $expressive-code-01,
   code-02: $code-02,
+  productive-code-02: $productive-code-02,
+  expressive-code-02: $expressive-code-02,
   heading-01: $heading-01,
   heading-02: $heading-02,
+  heading-03: $heading-03,
+  heading-04: $heading-04,
+  heading-05: $heading-05,
+  heading-06: $heading-06,
+  heading-07: $heading-07,
   productive-heading-01: $productive-heading-01,
   productive-heading-02: $productive-heading-02,
   productive-heading-03: $productive-heading-03,
@@ -3042,6 +3464,7 @@ $tokens: (
   productive-heading-05: $productive-heading-05,
   productive-heading-06: $productive-heading-06,
   productive-heading-07: $productive-heading-07,
+  paragraph-01: $expressive-paragraph-01,
   expressive-paragraph-01: $expressive-paragraph-01,
   expressive-heading-01: $expressive-heading-01,
   expressive-heading-02: $expressive-heading-02,
@@ -3065,6 +3488,80 @@ $tokens: (
 - **Used by**:
   - [carbon--type-classes [mixin]](#carbon--type-classes-mixin)
   - [carbon--type-style [mixin]](#carbon--type-style-mixin)
+
+### ✅carbon--type-style--productive-tokens [variable]
+
+<details>
+<summary>Source code</summary>
+
+```scss
+$carbon--type-style--productive-tokens: (
+  caption-01: $productive-caption-01,
+  label-01: $productive-label-01,
+  helper-text-01: $productive-helper-text-01,
+  body-short-01: $productive-body-short-01,
+  body-short-02: $productive-body-short-02,
+  body-long-01: $productive-body-long-01,
+  body-long-02: $productive-body-long-02,
+  code-01: $productive-code-01,
+  code-02: $productive-code-02,
+  heading-01: $productive-heading-01,
+  heading-02: $productive-heading-02,
+  heading-03: $productive-heading-03,
+  heading-04: $productive-heading-04,
+  heading-05: $productive-heading-05,
+  heading-06: $productive-heading-06,
+  heading-07: $productive-heading-07,
+  quotation-01: $quotation-01,
+  quotation-02: $quotation-02,
+  display-01: $display-01,
+  display-02: $display-02,
+  display-03: $display-03,
+  display-04: $display-04,
+);
+```
+
+</details>
+
+- **Group**: [@carbon/type](#carbontype)
+- **Type**: `Map`
+
+### ✅carbon--type-style--expressive-tokens [variable]
+
+<details>
+<summary>Source code</summary>
+
+```scss
+$carbon--type-style--expressive-tokens: (
+  caption-01: $expressive-caption-01,
+  label-01: $expressive-label-01,
+  helper-text-01: $expressive-helper-text-01,
+  body-short-01: $expressive-body-short-01,
+  body-short-02: $expressive-body-short-02,
+  body-long-01: $expressive-body-long-01,
+  body-long-02: $expressive-body-long-02,
+  code-01: $expressive-code-01,
+  code-02: $expressive-code-02,
+  heading-01: $expressive-heading-01,
+  heading-02: $expressive-heading-02,
+  heading-03: $expressive-heading-03,
+  heading-04: $expressive-heading-04,
+  heading-05: $expressive-heading-05,
+  heading-06: $expressive-heading-06,
+  paragraph-01: $expressive-paragraph-01,
+  quotation-01: $quotation-01,
+  quotation-02: $quotation-02,
+  display-01: $display-01,
+  display-02: $display-02,
+  display-03: $display-03,
+  display-04: $display-04,
+);
+```
+
+</details>
+
+- **Group**: [@carbon/type](#carbontype)
+- **Type**: `Map`
 
 ### ✅properties [mixin]
 
@@ -3310,6 +3807,19 @@ $custom-property-prefix: 'cds';
 - **Used by**:
   - [carbon--type-style [mixin]](#carbon--type-style-mixin)
 
+### ✅carbon--type-style--group [variable]
+
+<details>
+<summary>Source code</summary>
+
+```scss
+$carbon--type-style--group: $carbon--type-style--productive-tokens;
+```
+
+</details>
+
+- **Group**: [@carbon/type](#carbontype)
+
 ### ✅carbon--type-style [mixin]
 
 Helper mixin to include the styles for a given token in any selector in your
@@ -3325,13 +3835,14 @@ fixed contexts.
 @mixin carbon--type-style(
   $name,
   $fluid: false,
-  $breakpoints: $carbon--grid-breakpoints
+  $breakpoints: $carbon--grid-breakpoints,
+  $group: $carbon--type-style--group
 ) {
   @if not map-has-key($tokens, $name) {
     @error 'Unable to find a token with the name: `#{$name}`';
   }
 
-  $token: map-get($tokens, $name);
+  $token: map-get(if(map-has-key($group, $name), $group, $tokens), $name);
 
   // If $fluid is set to true and the token has breakpoints defined for fluid
   // styles, delegate to the fluid-type helper for the given token
@@ -3355,11 +3866,12 @@ fixed contexts.
 
 - **Parameters**:
 
-| Name           | Description                                     | Type      | Default value               |
-| -------------- | ----------------------------------------------- | --------- | --------------------------- |
-| `$name`        | The name of the token to get the styles for     | `String`  | —                           |
-| `$fluid`       | Specify whether to include fluid styles for the | `Boolean` | `false`                     |
-| `$breakpoints` | Provide a custom breakpoint map to use          | `Map`     | `$carbon--grid-breakpoints` |
+| Name           | Description                                     | Type      | Default value                |
+| -------------- | ----------------------------------------------- | --------- | ---------------------------- |
+| `$name`        | The name of the token to get the styles for     | `String`  | —                            |
+| `$fluid`       | Specify whether to include fluid styles for the | `Boolean` | `false`                      |
+| `$breakpoints` | Provide a custom breakpoint map to use          | `Map`     | `$carbon--grid-breakpoints`  |
+| `$group`       | Provide a custom tokens map to use              | `Map`     | `$carbon--type-style--group` |
 
 - **Group**: [@carbon/type](#carbontype)
 - **Requires**:

@@ -17,6 +17,15 @@ export const caption01 = {
   letterSpacing: px(0.32),
 };
 
+export const productiveCaption01 = caption01;
+
+export const expressiveCaption01 = {
+  ...caption01,
+  fontSize: rem(scale[1]),
+  lineHeight: rem(18),
+  letterSpacing: px(0.16),
+};
+
 export const label01 = {
   fontSize: rem(scale[0]),
   fontWeight: fontWeights.regular,
@@ -24,10 +33,28 @@ export const label01 = {
   letterSpacing: px(0.32),
 };
 
+export const productiveLabel01 = label01;
+
+export const expressiveLabel01 = {
+  ...label01,
+  fontSize: rem(scale[1]),
+  lineHeight: rem(18),
+  letterSpacing: px(0.16),
+};
+
 export const helperText01 = {
   fontSize: rem(scale[0]),
   lineHeight: rem(16),
   letterSpacing: px(0.32),
+};
+
+export const productiveHelperText01 = helperText01;
+
+export const expressiveHelperText01 = {
+  ...helperText01,
+  fontSize: rem(scale[1]),
+  lineHeight: rem(18),
+  letterSpacing: px(0.16),
 };
 
 export const bodyShort01 = {
@@ -37,11 +64,29 @@ export const bodyShort01 = {
   letterSpacing: px(0.16),
 };
 
+export const productiveBodyShort01 = bodyShort01;
+
+export const expressiveBodyShort01 = {
+  ...bodyShort01,
+  fontSize: rem(scale[2]),
+  lineHeight: rem(22),
+  letterSpacing: 0,
+};
+
 export const bodyLong01 = {
   fontSize: rem(scale[1]),
   fontWeight: fontWeights.regular,
   lineHeight: rem(20),
   letterSpacing: px(0.16),
+};
+
+export const productiveBodyLong01 = bodyLong01;
+
+export const expressiveBodyLong01 = {
+  ...bodyLong01,
+  fontSize: rem(scale[2]),
+  lineHeight: rem(24),
+  letterSpacing: 0,
 };
 
 export const bodyShort02 = {
@@ -51,12 +96,18 @@ export const bodyShort02 = {
   letterSpacing: 0,
 };
 
+export const productiveBodyShort02 = bodyShort02;
+export const expressiveBodyShort02 = bodyShort02;
+
 export const bodyLong02 = {
   fontSize: rem(scale[2]),
   fontWeight: fontWeights.regular,
   lineHeight: rem(24),
   letterSpacing: 0,
 };
+
+export const productiveBodyLong02 = bodyLong02;
+export const expressiveBodyLong02 = bodyLong02;
 
 export const code01 = {
   fontFamily: fontFamilies.mono,
@@ -66,12 +117,30 @@ export const code01 = {
   letterSpacing: px(0.32),
 };
 
+export const productiveCode01 = code01;
+
+export const expressiveCode01 = {
+  ...code01,
+  fontSize: rem(scale[1]),
+  lineHeight: rem(20),
+  letterSpacing: 0,
+};
+
 export const code02 = {
   fontFamily: fontFamilies.mono,
   fontSize: rem(scale[1]),
   fontWeight: fontWeights.regular,
   lineHeight: rem(20),
   letterSpacing: px(0.32),
+};
+
+export const productiveCode02 = code02;
+
+export const expressiveCode02 = {
+  ...code02,
+  fontSize: rem(scale[2]),
+  lineHeight: rem(24),
+  letterSpacing: 0,
 };
 
 export const heading01 = {
@@ -92,44 +161,56 @@ export const heading02 = {
 
 export const productiveHeading02 = heading02;
 
-export const productiveHeading03 = {
+export const heading03 = {
   fontSize: rem(scale[4]),
   fontWeight: fontWeights.regular,
   lineHeight: rem(26),
   letterSpacing: 0,
 };
 
-export const productiveHeading04 = {
+export const productiveHeading03 = heading03;
+
+export const heading04 = {
   fontSize: rem(scale[6]),
   fontWeight: fontWeights.regular,
   lineHeight: rem(36),
   letterSpacing: 0,
 };
 
-export const productiveHeading05 = {
+export const productiveHeading04 = heading04;
+
+export const heading05 = {
   fontSize: rem(scale[7]),
   fontWeight: fontWeights.regular,
   lineHeight: rem(40),
   letterSpacing: 0,
 };
 
-export const productiveHeading06 = {
+export const productiveHeading05 = heading05;
+
+export const heading06 = {
   fontSize: rem(scale[9]),
   fontWeight: fontWeights.light,
   lineHeight: rem(50),
   letterSpacing: 0,
 };
 
-export const productiveHeading07 = {
+export const productiveHeading06 = heading06;
+
+export const heading07 = {
   fontSize: rem(scale[11]),
   fontWeight: fontWeights.light,
   lineHeight: rem(64),
   letterSpacing: 0,
 };
 
+export const productiveHeading07 = heading07;
+
 export const expressiveHeading01 = {
   ...heading01,
+  fontSize: rem(scale[1]),
   lineHeight: rem(20),
+  letterSpacing: px(0.16),
 };
 
 export const expressiveHeading02 = {

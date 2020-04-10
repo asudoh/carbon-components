@@ -180,7 +180,7 @@
   }
 
   .#{$prefix}--inline-notification__title {
-    @include type-style('productive-heading-01');
+    @include type-style('heading-01');
     margin: 0 $carbon--spacing-02 0 0;
   }
 

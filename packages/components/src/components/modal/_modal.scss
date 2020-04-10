@@ -238,7 +238,7 @@
   }
 
   .#{$prefix}--modal-header__heading {
-    @include type-style('productive-heading-03');
+    @include type-style('heading-03');
 
     color: $text-01;
   }

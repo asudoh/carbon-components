@@ -22,6 +22,23 @@ $caption-01: (
 /// @type Map
 /// @access public
 /// @group @carbon/type
+$productive-caption-01: $caption-01;
+
+/// @type Map
+/// @access public
+/// @group @carbon/type
+$expressive-caption-01: map-merge(
+  $caption-01,
+  (
+    font-size: carbon--type-scale(2),
+    line-height: carbon--rem(18px),
+    letter-spacing: 0.16px,
+  )
+) !default;
+
+/// @type Map
+/// @access public
+/// @group @carbon/type
 $label-01: (
   font-size: carbon--type-scale(1),
   font-weight: carbon--font-weight('regular'),
@@ -32,10 +49,44 @@ $label-01: (
 /// @type Map
 /// @access public
 /// @group @carbon/type
+$productive-label-01: $label-01;
+
+/// @type Map
+/// @access public
+/// @group @carbon/type
+$expressive-label-01: map-merge(
+  $label-01,
+  (
+    font-size: carbon--type-scale(2),
+    line-height: carbon--rem(18px),
+    letter-spacing: 0.16px,
+  )
+) !default;
+
+/// @type Map
+/// @access public
+/// @group @carbon/type
 $helper-text-01: (
   font-size: carbon--type-scale(1),
   line-height: carbon--rem(16px),
   letter-spacing: 0.32px,
+) !default;
+
+/// @type Map
+/// @access public
+/// @group @carbon/type
+$productive-helper-text-01: $helper-text-01;
+
+/// @type Map
+/// @access public
+/// @group @carbon/type
+$expressive-helper-text-01: map-merge(
+  $helper-text-01,
+  (
+    font-size: carbon--type-scale(2),
+    line-height: carbon--rem(18px),
+    letter-spacing: 0.16px,
+  )
 ) !default;
 
 /// @type Map
@@ -51,11 +102,45 @@ $body-short-01: (
 /// @type Map
 /// @access public
 /// @group @carbon/type
+$productive-body-short-01: $body-short-01;
+
+/// @type Map
+/// @access public
+/// @group @carbon/type
+$expressive-body-short-01: map-merge(
+  $body-short-01,
+  (
+    font-size: carbon--type-scale(3),
+    line-height: carbon--rem(22px),
+    letter-spacing: 0,
+  )
+) !default;
+
+/// @type Map
+/// @access public
+/// @group @carbon/type
 $body-long-01: (
   font-size: carbon--type-scale(2),
   font-weight: carbon--font-weight('regular'),
   line-height: carbon--rem(20px),
   letter-spacing: 0.16px,
+) !default;
+
+/// @type Map
+/// @access public
+/// @group @carbon/type
+$productive-body-long-01: $body-long-01;
+
+/// @type Map
+/// @access public
+/// @group @carbon/type
+$expressive-body-long-01: map-merge(
+  $body-long-01,
+  (
+    font-size: carbon--type-scale(3),
+    line-height: carbon--rem(24px),
+    letter-spacing: 0,
+  )
 ) !default;
 
 /// @type Map
@@ -71,12 +156,32 @@ $body-short-02: (
 /// @type Map
 /// @access public
 /// @group @carbon/type
+$productive-body-short-02: $body-short-02;
+
+/// @type Map
+/// @access public
+/// @group @carbon/type
+$expressive-body-short-02: $body-short-02;
+
+/// @type Map
+/// @access public
+/// @group @carbon/type
 $body-long-02: (
   font-size: carbon--type-scale(3),
   font-weight: carbon--font-weight('regular'),
   line-height: carbon--rem(24px),
   letter-spacing: 0,
 ) !default;
+
+/// @type Map
+/// @access public
+/// @group @carbon/type
+$productive-body-long-02: $body-long-02;
+
+/// @type Map
+/// @access public
+/// @group @carbon/type
+$expressive-body-long-02: $body-long-02;
 
 /// @type Map
 /// @access public
@@ -92,12 +197,46 @@ $code-01: (
 /// @type Map
 /// @access public
 /// @group @carbon/type
+$productive-code-01: $code-01;
+
+/// @type Map
+/// @access public
+/// @group @carbon/type
+$expressive-code-01: map-merge(
+  $code-01,
+  (
+    font-size: carbon--type-scale(2),
+    line-height: carbon--rem(20px),
+    letter-spacing: 0,
+  )
+) !default;
+
+/// @type Map
+/// @access public
+/// @group @carbon/type
 $code-02: (
   font-family: carbon--font-family('mono'),
   font-size: carbon--type-scale(2),
   font-weight: carbon--font-weight('regular'),
   line-height: carbon--rem(20px),
   letter-spacing: 0.32px,
+) !default;
+
+/// @type Map
+/// @access public
+/// @group @carbon/type
+$productive-code-02: $code-02;
+
+/// @type Map
+/// @access public
+/// @group @carbon/type
+$expressive-code-02: map-merge(
+  $code-02,
+  (
+    font-size: carbon--type-scale(3),
+    line-height: carbon--rem(24px),
+    letter-spacing: 0,
+  )
 ) !default;
 
 /// @type Map
@@ -133,7 +272,7 @@ $productive-heading-02: $heading-02 !default;
 /// @type Map
 /// @access public
 /// @group @carbon/type
-$productive-heading-03: (
+$heading-03: (
   font-size: carbon--type-scale(5),
   font-weight: carbon--font-weight('regular'),
   line-height: carbon--rem(26px),
@@ -143,7 +282,12 @@ $productive-heading-03: (
 /// @type Map
 /// @access public
 /// @group @carbon/type
-$productive-heading-04: (
+$productive-heading-03: $heading-03 !default;
+
+/// @type Map
+/// @access public
+/// @group @carbon/type
+$heading-04: (
   font-size: carbon--type-scale(7),
   font-weight: carbon--font-weight('regular'),
   line-height: carbon--rem(36px),
@@ -153,7 +297,12 @@ $productive-heading-04: (
 /// @type Map
 /// @access public
 /// @group @carbon/type
-$productive-heading-05: (
+$productive-heading-04: $heading-04 !default;
+
+/// @type Map
+/// @access public
+/// @group @carbon/type
+$heading-05: (
   font-size: carbon--type-scale(8),
   font-weight: carbon--font-weight('regular'),
   line-height: carbon--rem(40px),
@@ -163,8 +312,13 @@ $productive-heading-05: (
 /// @type Map
 /// @access public
 /// @group @carbon/type
-$productive-heading-06: (
-  font-size: carbon--type-scale(8),
+$productive-heading-05: $heading-05 !default;
+
+/// @type Map
+/// @access public
+/// @group @carbon/type
+$heading-06: (
+  font-size: carbon--type-scale(10),
   font-weight: carbon--font-weight('light'),
   line-height: carbon--rem(50px),
   letter-spacing: 0,
@@ -173,8 +327,13 @@ $productive-heading-06: (
 /// @type Map
 /// @access public
 /// @group @carbon/type
-$productive-heading-07: (
-  font-size: carbon--type-scale(10),
+$productive-heading-06: $heading-06 !default;
+
+/// @type Map
+/// @access public
+/// @group @carbon/type
+$heading-07: (
+  font-size: carbon--type-scale(12),
   font-weight: carbon--font-weight('light'),
   line-height: carbon--rem(64px),
   letter-spacing: 0,
@@ -183,10 +342,17 @@ $productive-heading-07: (
 /// @type Map
 /// @access public
 /// @group @carbon/type
+$productive-heading-07: $heading-07 !default;
+
+/// @type Map
+/// @access public
+/// @group @carbon/type
 $expressive-heading-01: map-merge(
   $heading-01,
   (
+    font-size: carbon--type-scale(2),
     line-height: carbon--rem(20px),
+    letter-spacing: 0.16px,
   )
 ) !default;
 
@@ -488,16 +654,39 @@ $display-04: (
 /// @group @carbon/type
 $tokens: (
   caption-01: $caption-01,
+  productive-caption-01: $productive-caption-01,
+  expressive-caption-01: $expressive-caption-01,
   label-01: $label-01,
+  productive-label-01: $productive-label-01,
+  expressive-label-01: $expressive-label-01,
   helper-text-01: $helper-text-01,
+  productive-helper-text-01: $productive-helper-text-01,
+  expressive-helper-text-01: $expressive-helper-text-01,
   body-short-01: $body-short-01,
+  productive-body-short-01: $productive-body-short-01,
+  expressive-body-short-01: $expressive-body-short-01,
   body-short-02: $body-short-02,
+  productive-body-short-02: $productive-body-short-02,
+  expressive-body-short-02: $expressive-body-short-02,
   body-long-01: $body-long-01,
+  productive-body-long-01: $productive-body-long-01,
+  expressive-body-long-01: $expressive-body-long-01,
   body-long-02: $body-long-02,
+  productive-body-long-02: $productive-body-long-02,
+  expressive-body-long-02: $expressive-body-long-02,
   code-01: $code-01,
+  productive-code-01: $productive-code-01,
+  expressive-code-01: $expressive-code-01,
   code-02: $code-02,
+  productive-code-02: $productive-code-02,
+  expressive-code-02: $expressive-code-02,
   heading-01: $heading-01,
   heading-02: $heading-02,
+  heading-03: $heading-03,
+  heading-04: $heading-04,
+  heading-05: $heading-05,
+  heading-06: $heading-06,
+  heading-07: $heading-07,
   productive-heading-01: $productive-heading-01,
   productive-heading-02: $productive-heading-02,
   productive-heading-03: $productive-heading-03,
@@ -505,6 +694,7 @@ $tokens: (
   productive-heading-05: $productive-heading-05,
   productive-heading-06: $productive-heading-06,
   productive-heading-07: $productive-heading-07,
+  paragraph-01: $expressive-paragraph-01,
   expressive-paragraph-01: $expressive-paragraph-01,
   expressive-heading-01: $expressive-heading-01,
   expressive-heading-02: $expressive-heading-02,
@@ -512,6 +702,63 @@ $tokens: (
   expressive-heading-04: $expressive-heading-04,
   expressive-heading-05: $expressive-heading-05,
   expressive-heading-06: $expressive-heading-06,
+  quotation-01: $quotation-01,
+  quotation-02: $quotation-02,
+  display-01: $display-01,
+  display-02: $display-02,
+  display-03: $display-03,
+  display-04: $display-04,
+);
+
+// `$paragraph-01` has no productive version
+/// @type Map
+/// @access public
+/// @group @carbon/type
+$carbon--type-style--productive-tokens: (
+  caption-01: $productive-caption-01,
+  label-01: $productive-label-01,
+  helper-text-01: $productive-helper-text-01,
+  body-short-01: $productive-body-short-01,
+  body-short-02: $productive-body-short-02,
+  body-long-01: $productive-body-long-01,
+  body-long-02: $productive-body-long-02,
+  code-01: $productive-code-01,
+  code-02: $productive-code-02,
+  heading-01: $productive-heading-01,
+  heading-02: $productive-heading-02,
+  heading-03: $productive-heading-03,
+  heading-04: $productive-heading-04,
+  heading-05: $productive-heading-05,
+  heading-06: $productive-heading-06,
+  heading-07: $productive-heading-07,
+  quotation-01: $quotation-01,
+  quotation-02: $quotation-02,
+  display-01: $display-01,
+  display-02: $display-02,
+  display-03: $display-03,
+  display-04: $display-04,
+);
+
+/// @type Map
+/// @access public
+/// @group @carbon/type
+$carbon--type-style--expressive-tokens: (
+  caption-01: $expressive-caption-01,
+  label-01: $expressive-label-01,
+  helper-text-01: $expressive-helper-text-01,
+  body-short-01: $expressive-body-short-01,
+  body-short-02: $expressive-body-short-02,
+  body-long-01: $expressive-body-long-01,
+  body-long-02: $expressive-body-long-02,
+  code-01: $expressive-code-01,
+  code-02: $expressive-code-02,
+  heading-01: $expressive-heading-01,
+  heading-02: $expressive-heading-02,
+  heading-03: $expressive-heading-03,
+  heading-04: $expressive-heading-04,
+  heading-05: $expressive-heading-05,
+  heading-06: $expressive-heading-06,
+  paragraph-01: $expressive-paragraph-01,
   quotation-01: $quotation-01,
   quotation-02: $quotation-02,
   display-01: $display-01,
@@ -673,6 +920,10 @@ $custom-property-prefix: 'cds' !default;
   }
 }
 
+/// @access public
+/// @group @carbon/type
+$carbon--type-style--group: $carbon--type-style--productive-tokens !default;
+
 /// Helper mixin to include the styles for a given token in any selector in your
 /// project. Also includes an optional fluid option that will enable fluid
 /// styles for the token if they are defined. Fluid styles will cause the
@@ -681,18 +932,20 @@ $custom-property-prefix: 'cds' !default;
 /// @param {String} $name - The name of the token to get the styles for
 /// @param {Boolean} $fluid [false] - Specify whether to include fluid styles for the
 /// @param {Map} $breakpoints [$carbon--grid-breakpoints] - Provide a custom breakpoint map to use
+/// @param {Map} $group [$carbon--type-style--group] - Provide a custom tokens map to use
 /// @access public
 /// @group @carbon/type
 @mixin carbon--type-style(
   $name,
   $fluid: false,
-  $breakpoints: $carbon--grid-breakpoints
+  $breakpoints: $carbon--grid-breakpoints,
+  $group: $carbon--type-style--group
 ) {
   @if not map-has-key($tokens, $name) {
     @error 'Unable to find a token with the name: `#{$name}`';
   }
 
-  $token: map-get($tokens, $name);
+  $token: map-get(if(map-has-key($group, $name), $group, $tokens), $name);
 
   // If $fluid is set to true and the token has breakpoints defined for fluid
   // styles, delegate to the fluid-type helper for the given token

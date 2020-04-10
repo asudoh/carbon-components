@@ -213,8 +213,13 @@
   - [✅code-01 [variable]](#code-01-variable)
   - [✅code-02 [variable]](#code-02-variable)
   - [✅heading-01 [variable]](#heading-01-variable)
-  - [✅productive-heading-01 [variable]](#productive-heading-01-variable)
   - [✅heading-02 [variable]](#heading-02-variable)
+  - [✅heading-03 [variable]](#heading-03-variable)
+  - [✅heading-04 [variable]](#heading-04-variable)
+  - [✅heading-05 [variable]](#heading-05-variable)
+  - [✅heading-06 [variable]](#heading-06-variable)
+  - [✅heading-07 [variable]](#heading-07-variable)
+  - [✅productive-heading-01 [variable]](#productive-heading-01-variable)
   - [✅productive-heading-02 [variable]](#productive-heading-02-variable)
   - [✅productive-heading-03 [variable]](#productive-heading-03-variable)
   - [✅productive-heading-04 [variable]](#productive-heading-04-variable)
@@ -286,22 +291,45 @@
   - [✅carbon--font-face-serif [mixin]](#carbon--font-face-serif-mixin)
   - [✅carbon--font-display [variable]](#carbon--font-display-variable)
   - [✅caption-01 [variable]](#caption-01-variable)
+  - [✅productive-caption-01 [variable]](#productive-caption-01-variable)
+  - [✅expressive-caption-01 [variable]](#expressive-caption-01-variable)
   - [✅label-01 [variable]](#label-01-variable)
+  - [✅productive-label-01 [variable]](#productive-label-01-variable)
+  - [✅expressive-label-01 [variable]](#expressive-label-01-variable)
   - [✅helper-text-01 [variable]](#helper-text-01-variable)
+  - [✅productive-helper-text-01 [variable]](#productive-helper-text-01-variable)
+  - [✅expressive-helper-text-01 [variable]](#expressive-helper-text-01-variable)
   - [✅body-short-01 [variable]](#body-short-01-variable)
+  - [✅productive-body-short-01 [variable]](#productive-body-short-01-variable)
+  - [✅expressive-body-short-01 [variable]](#expressive-body-short-01-variable)
   - [✅body-long-01 [variable]](#body-long-01-variable)
+  - [✅productive-body-long-01 [variable]](#productive-body-long-01-variable)
+  - [✅expressive-body-long-01 [variable]](#expressive-body-long-01-variable)
   - [✅body-short-02 [variable]](#body-short-02-variable)
+  - [✅productive-body-short-02 [variable]](#productive-body-short-02-variable)
+  - [✅expressive-body-short-02 [variable]](#expressive-body-short-02-variable)
   - [✅body-long-02 [variable]](#body-long-02-variable)
+  - [✅productive-body-long-02 [variable]](#productive-body-long-02-variable)
+  - [✅expressive-body-long-02 [variable]](#expressive-body-long-02-variable)
   - [✅code-01 [variable]](#code-01-variable)
+  - [✅productive-code-01 [variable]](#productive-code-01-variable)
+  - [✅expressive-code-01 [variable]](#expressive-code-01-variable)
   - [✅code-02 [variable]](#code-02-variable)
+  - [✅productive-code-02 [variable]](#productive-code-02-variable)
+  - [✅expressive-code-02 [variable]](#expressive-code-02-variable)
   - [✅heading-01 [variable]](#heading-01-variable)
   - [✅productive-heading-01 [variable]](#productive-heading-01-variable)
   - [✅heading-02 [variable]](#heading-02-variable)
   - [✅productive-heading-02 [variable]](#productive-heading-02-variable)
+  - [✅heading-03 [variable]](#heading-03-variable)
   - [✅productive-heading-03 [variable]](#productive-heading-03-variable)
+  - [✅heading-04 [variable]](#heading-04-variable)
   - [✅productive-heading-04 [variable]](#productive-heading-04-variable)
+  - [✅heading-05 [variable]](#heading-05-variable)
   - [✅productive-heading-05 [variable]](#productive-heading-05-variable)
+  - [✅heading-06 [variable]](#heading-06-variable)
   - [✅productive-heading-06 [variable]](#productive-heading-06-variable)
+  - [✅heading-07 [variable]](#heading-07-variable)
   - [✅productive-heading-07 [variable]](#productive-heading-07-variable)
   - [✅expressive-heading-01 [variable]](#expressive-heading-01-variable)
   - [✅expressive-heading-02 [variable]](#expressive-heading-02-variable)
@@ -317,12 +345,15 @@
   - [✅display-03 [variable]](#display-03-variable)
   - [✅display-04 [variable]](#display-04-variable)
   - [✅tokens [variable]](#tokens-variable)
+  - [✅carbon--type-style--productive-tokens [variable]](#carbon--type-style--productive-tokens-variable)
+  - [✅carbon--type-style--expressive-tokens [variable]](#carbon--type-style--expressive-tokens-variable)
   - [✅properties [mixin]](#properties-mixin)
   - [✅strip-unit [function]](#strip-unit-function)
   - [✅fluid-type [mixin]](#fluid-type-mixin)
   - [✅fluid-type-size [mixin]](#fluid-type-size-mixin)
   - [❌custom-property-prefix [variable]](#custom-property-prefix-variable)
   - [❌custom-properties [mixin]](#custom-properties-mixin)
+  - [✅carbon--type-style--group [variable]](#carbon--type-style--group-variable)
   - [✅carbon--type-style [mixin]](#carbon--type-style-mixin)
 - [accordion](#accordion)
   - [❌accordion [mixin]](#accordion-mixin)
@@ -4210,8 +4241,13 @@ Define theme variables from a map of tokens
   $code-01: map-get($theme, 'code-01') !global;
   $code-02: map-get($theme, 'code-02') !global;
   $heading-01: map-get($theme, 'heading-01') !global;
-  $productive-heading-01: map-get($theme, 'productive-heading-01') !global;
   $heading-02: map-get($theme, 'heading-02') !global;
+  $heading-03: map-get($theme, 'heading-03') !global;
+  $heading-04: map-get($theme, 'heading-04') !global;
+  $heading-05: map-get($theme, 'heading-05') !global;
+  $heading-06: map-get($theme, 'heading-06') !global;
+  $heading-07: map-get($theme, 'heading-07') !global;
+  $productive-heading-01: map-get($theme, 'productive-heading-01') !global;
   $productive-heading-02: map-get($theme, 'productive-heading-02') !global;
   $productive-heading-03: map-get($theme, 'productive-heading-03') !global;
   $productive-heading-04: map-get($theme, 'productive-heading-04') !global;
@@ -5326,6 +5362,66 @@ Define theme variables from a map of tokens
     @if should-emit(
       $theme,
       $parent-carbon-theme,
+      'heading-02',
+      $emit-difference
+    )
+    {
+      @include custom-property('heading-02', map-get($theme, 'heading-02'));
+    }
+
+    @if should-emit(
+      $theme,
+      $parent-carbon-theme,
+      'heading-03',
+      $emit-difference
+    )
+    {
+      @include custom-property('heading-03', map-get($theme, 'heading-03'));
+    }
+
+    @if should-emit(
+      $theme,
+      $parent-carbon-theme,
+      'heading-04',
+      $emit-difference
+    )
+    {
+      @include custom-property('heading-04', map-get($theme, 'heading-04'));
+    }
+
+    @if should-emit(
+      $theme,
+      $parent-carbon-theme,
+      'heading-05',
+      $emit-difference
+    )
+    {
+      @include custom-property('heading-05', map-get($theme, 'heading-05'));
+    }
+
+    @if should-emit(
+      $theme,
+      $parent-carbon-theme,
+      'heading-06',
+      $emit-difference
+    )
+    {
+      @include custom-property('heading-06', map-get($theme, 'heading-06'));
+    }
+
+    @if should-emit(
+      $theme,
+      $parent-carbon-theme,
+      'heading-07',
+      $emit-difference
+    )
+    {
+      @include custom-property('heading-07', map-get($theme, 'heading-07'));
+    }
+
+    @if should-emit(
+      $theme,
+      $parent-carbon-theme,
       'productive-heading-01',
       $emit-difference
     )
@@ -5334,16 +5430,6 @@ Define theme variables from a map of tokens
         'productive-heading-01',
         map-get($theme, 'productive-heading-01')
       );
-    }
-
-    @if should-emit(
-      $theme,
-      $parent-carbon-theme,
-      'heading-02',
-      $emit-difference
-    )
-    {
-      @include custom-property('heading-02', map-get($theme, 'heading-02'));
     }
 
     @if should-emit(
@@ -5980,8 +6066,13 @@ Define theme variables from a map of tokens
   - [code-01 [variable]](#code-01-variable)
   - [code-02 [variable]](#code-02-variable)
   - [heading-01 [variable]](#heading-01-variable)
-  - [productive-heading-01 [variable]](#productive-heading-01-variable)
   - [heading-02 [variable]](#heading-02-variable)
+  - [heading-03 [variable]](#heading-03-variable)
+  - [heading-04 [variable]](#heading-04-variable)
+  - [heading-05 [variable]](#heading-05-variable)
+  - [heading-06 [variable]](#heading-06-variable)
+  - [heading-07 [variable]](#heading-07-variable)
+  - [productive-heading-01 [variable]](#productive-heading-01-variable)
   - [productive-heading-02 [variable]](#productive-heading-02-variable)
   - [productive-heading-03 [variable]](#productive-heading-03-variable)
   - [productive-heading-04 [variable]](#productive-heading-04-variable)
@@ -6424,8 +6515,13 @@ $carbon--theme: (
   code-01: if(global-variable-exists('code-01'), $code-01, map-get($carbon--theme--white, 'code-01')),
   code-02: if(global-variable-exists('code-02'), $code-02, map-get($carbon--theme--white, 'code-02')),
   heading-01: if(global-variable-exists('heading-01'), $heading-01, map-get($carbon--theme--white, 'heading-01')),
-  productive-heading-01: if(global-variable-exists('productive-heading-01'), $productive-heading-01, map-get($carbon--theme--white, 'productive-heading-01')),
   heading-02: if(global-variable-exists('heading-02'), $heading-02, map-get($carbon--theme--white, 'heading-02')),
+  heading-03: if(global-variable-exists('heading-03'), $heading-03, map-get($carbon--theme--white, 'heading-03')),
+  heading-04: if(global-variable-exists('heading-04'), $heading-04, map-get($carbon--theme--white, 'heading-04')),
+  heading-05: if(global-variable-exists('heading-05'), $heading-05, map-get($carbon--theme--white, 'heading-05')),
+  heading-06: if(global-variable-exists('heading-06'), $heading-06, map-get($carbon--theme--white, 'heading-06')),
+  heading-07: if(global-variable-exists('heading-07'), $heading-07, map-get($carbon--theme--white, 'heading-07')),
+  productive-heading-01: if(global-variable-exists('productive-heading-01'), $productive-heading-01, map-get($carbon--theme--white, 'productive-heading-01')),
   productive-heading-02: if(global-variable-exists('productive-heading-02'), $productive-heading-02, map-get($carbon--theme--white, 'productive-heading-02')),
   productive-heading-03: if(global-variable-exists('productive-heading-03'), $productive-heading-03, map-get($carbon--theme--white, 'productive-heading-03')),
   productive-heading-04: if(global-variable-exists('productive-heading-04'), $productive-heading-04, map-get($carbon--theme--white, 'productive-heading-04')),
@@ -8747,34 +8843,6 @@ $heading-01: if(
 - **Used by**:
   - [carbon--theme [mixin]](#carbon--theme-mixin)
 
-### ✅productive-heading-01 [variable]
-
-<details>
-<summary>Source code</summary>
-
-```scss
-$productive-heading-01: if(
-  global-variable-exists('carbon--theme') and map-has-key(
-      $carbon--theme,
-      'productive-heading-01'
-    ),
-  map-get($carbon--theme, 'productive-heading-01'),
-  (
-    font-size: 0.875rem,
-    font-weight: 600,
-    line-height: 1.125rem,
-    letter-spacing: 0.16px,
-  )
-);
-```
-
-</details>
-
-- **Group**: [@carbon/themes](#carbonthemes)
-- **Type**: `{Number}`
-- **Used by**:
-  - [carbon--theme [mixin]](#carbon--theme-mixin)
-
 ### ✅heading-02 [variable]
 
 <details>
@@ -8792,6 +8860,174 @@ $heading-02: if(
     font-weight: 600,
     line-height: 1.375rem,
     letter-spacing: 0,
+  )
+);
+```
+
+</details>
+
+- **Group**: [@carbon/themes](#carbonthemes)
+- **Type**: `{Number}`
+- **Used by**:
+  - [carbon--theme [mixin]](#carbon--theme-mixin)
+
+### ✅heading-03 [variable]
+
+<details>
+<summary>Source code</summary>
+
+```scss
+$heading-03: if(
+  global-variable-exists('carbon--theme') and map-has-key(
+      $carbon--theme,
+      'heading-03'
+    ),
+  map-get($carbon--theme, 'heading-03'),
+  (
+    font-size: 1.25rem,
+    font-weight: 400,
+    line-height: 1.625rem,
+    letter-spacing: 0,
+  )
+);
+```
+
+</details>
+
+- **Group**: [@carbon/themes](#carbonthemes)
+- **Type**: `{Number}`
+- **Used by**:
+  - [carbon--theme [mixin]](#carbon--theme-mixin)
+
+### ✅heading-04 [variable]
+
+<details>
+<summary>Source code</summary>
+
+```scss
+$heading-04: if(
+  global-variable-exists('carbon--theme') and map-has-key(
+      $carbon--theme,
+      'heading-04'
+    ),
+  map-get($carbon--theme, 'heading-04'),
+  (
+    font-size: 1.75rem,
+    font-weight: 400,
+    line-height: 2.25rem,
+    letter-spacing: 0,
+  )
+);
+```
+
+</details>
+
+- **Group**: [@carbon/themes](#carbonthemes)
+- **Type**: `{Number}`
+- **Used by**:
+  - [carbon--theme [mixin]](#carbon--theme-mixin)
+
+### ✅heading-05 [variable]
+
+<details>
+<summary>Source code</summary>
+
+```scss
+$heading-05: if(
+  global-variable-exists('carbon--theme') and map-has-key(
+      $carbon--theme,
+      'heading-05'
+    ),
+  map-get($carbon--theme, 'heading-05'),
+  (
+    font-size: 2rem,
+    font-weight: 400,
+    line-height: 2.5rem,
+    letter-spacing: 0,
+  )
+);
+```
+
+</details>
+
+- **Group**: [@carbon/themes](#carbonthemes)
+- **Type**: `{Number}`
+- **Used by**:
+  - [carbon--theme [mixin]](#carbon--theme-mixin)
+
+### ✅heading-06 [variable]
+
+<details>
+<summary>Source code</summary>
+
+```scss
+$heading-06: if(
+  global-variable-exists('carbon--theme') and map-has-key(
+      $carbon--theme,
+      'heading-06'
+    ),
+  map-get($carbon--theme, 'heading-06'),
+  (
+    font-size: 2.625rem,
+    font-weight: 300,
+    line-height: 3.125rem,
+    letter-spacing: 0,
+  )
+);
+```
+
+</details>
+
+- **Group**: [@carbon/themes](#carbonthemes)
+- **Type**: `{Number}`
+- **Used by**:
+  - [carbon--theme [mixin]](#carbon--theme-mixin)
+
+### ✅heading-07 [variable]
+
+<details>
+<summary>Source code</summary>
+
+```scss
+$heading-07: if(
+  global-variable-exists('carbon--theme') and map-has-key(
+      $carbon--theme,
+      'heading-07'
+    ),
+  map-get($carbon--theme, 'heading-07'),
+  (
+    font-size: 3.375rem,
+    font-weight: 300,
+    line-height: 4rem,
+    letter-spacing: 0,
+  )
+);
+```
+
+</details>
+
+- **Group**: [@carbon/themes](#carbonthemes)
+- **Type**: `{Number}`
+- **Used by**:
+  - [carbon--theme [mixin]](#carbon--theme-mixin)
+
+### ✅productive-heading-01 [variable]
+
+<details>
+<summary>Source code</summary>
+
+```scss
+$productive-heading-01: if(
+  global-variable-exists('carbon--theme') and map-has-key(
+      $carbon--theme,
+      'productive-heading-01'
+    ),
+  map-get($carbon--theme, 'productive-heading-01'),
+  (
+    font-size: 0.875rem,
+    font-weight: 600,
+    line-height: 1.125rem,
+    letter-spacing: 0.16px,
   )
 );
 ```
@@ -10880,27 +11116,27 @@ Include default type styles
 ```scss
 @mixin carbon--default-type() {
   h1 {
-    @include carbon--type-style('productive-heading-06');
+    @include carbon--type-style('heading-06');
   }
 
   h2 {
-    @include carbon--type-style('productive-heading-05');
+    @include carbon--type-style('heading-05');
   }
 
   h3 {
-    @include carbon--type-style('productive-heading-04');
+    @include carbon--type-style('heading-04');
   }
 
   h4 {
-    @include carbon--type-style('productive-heading-03');
+    @include carbon--type-style('heading-03');
   }
 
   h5 {
-    @include carbon--type-style('productive-heading-02');
+    @include carbon--type-style('heading-02');
   }
 
   h6 {
-    @include carbon--type-style('productive-heading-01');
+    @include carbon--type-style('heading-01');
   }
 
   p {
@@ -12372,6 +12608,41 @@ $caption-01: (
 - **Group**: [@carbon/type](#carbontype)
 - **Type**: `Map`
 
+### ✅productive-caption-01 [variable]
+
+<details>
+<summary>Source code</summary>
+
+```scss
+$productive-caption-01: $caption-01;
+```
+
+</details>
+
+- **Group**: [@carbon/type](#carbontype)
+- **Type**: `Map`
+
+### ✅expressive-caption-01 [variable]
+
+<details>
+<summary>Source code</summary>
+
+```scss
+$expressive-caption-01: map-merge(
+  $caption-01,
+  (
+    font-size: carbon--type-scale(2),
+    line-height: carbon--rem(18px),
+    letter-spacing: 0.16px,
+  )
+);
+```
+
+</details>
+
+- **Group**: [@carbon/type](#carbontype)
+- **Type**: `Map`
+
 ### ✅label-01 [variable]
 
 <details>
@@ -12391,6 +12662,41 @@ $label-01: (
 - **Group**: [@carbon/type](#carbontype)
 - **Type**: `Map`
 
+### ✅productive-label-01 [variable]
+
+<details>
+<summary>Source code</summary>
+
+```scss
+$productive-label-01: $label-01;
+```
+
+</details>
+
+- **Group**: [@carbon/type](#carbontype)
+- **Type**: `Map`
+
+### ✅expressive-label-01 [variable]
+
+<details>
+<summary>Source code</summary>
+
+```scss
+$expressive-label-01: map-merge(
+  $label-01,
+  (
+    font-size: carbon--type-scale(2),
+    line-height: carbon--rem(18px),
+    letter-spacing: 0.16px,
+  )
+);
+```
+
+</details>
+
+- **Group**: [@carbon/type](#carbontype)
+- **Type**: `Map`
+
 ### ✅helper-text-01 [variable]
 
 <details>
@@ -12401,6 +12707,41 @@ $helper-text-01: (
   font-size: carbon--type-scale(1),
   line-height: carbon--rem(16px),
   letter-spacing: 0.32px,
+);
+```
+
+</details>
+
+- **Group**: [@carbon/type](#carbontype)
+- **Type**: `Map`
+
+### ✅productive-helper-text-01 [variable]
+
+<details>
+<summary>Source code</summary>
+
+```scss
+$productive-helper-text-01: $helper-text-01;
+```
+
+</details>
+
+- **Group**: [@carbon/type](#carbontype)
+- **Type**: `Map`
+
+### ✅expressive-helper-text-01 [variable]
+
+<details>
+<summary>Source code</summary>
+
+```scss
+$expressive-helper-text-01: map-merge(
+  $helper-text-01,
+  (
+    font-size: carbon--type-scale(2),
+    line-height: carbon--rem(18px),
+    letter-spacing: 0.16px,
+  )
 );
 ```
 
@@ -12428,6 +12769,41 @@ $body-short-01: (
 - **Group**: [@carbon/type](#carbontype)
 - **Type**: `Map`
 
+### ✅productive-body-short-01 [variable]
+
+<details>
+<summary>Source code</summary>
+
+```scss
+$productive-body-short-01: $body-short-01;
+```
+
+</details>
+
+- **Group**: [@carbon/type](#carbontype)
+- **Type**: `Map`
+
+### ✅expressive-body-short-01 [variable]
+
+<details>
+<summary>Source code</summary>
+
+```scss
+$expressive-body-short-01: map-merge(
+  $body-short-01,
+  (
+    font-size: carbon--type-scale(3),
+    line-height: carbon--rem(22px),
+    letter-spacing: 0,
+  )
+);
+```
+
+</details>
+
+- **Group**: [@carbon/type](#carbontype)
+- **Type**: `Map`
+
 ### ✅body-long-01 [variable]
 
 <details>
@@ -12439,6 +12815,41 @@ $body-long-01: (
   font-weight: carbon--font-weight('regular'),
   line-height: carbon--rem(20px),
   letter-spacing: 0.16px,
+);
+```
+
+</details>
+
+- **Group**: [@carbon/type](#carbontype)
+- **Type**: `Map`
+
+### ✅productive-body-long-01 [variable]
+
+<details>
+<summary>Source code</summary>
+
+```scss
+$productive-body-long-01: $body-long-01;
+```
+
+</details>
+
+- **Group**: [@carbon/type](#carbontype)
+- **Type**: `Map`
+
+### ✅expressive-body-long-01 [variable]
+
+<details>
+<summary>Source code</summary>
+
+```scss
+$expressive-body-long-01: map-merge(
+  $body-long-01,
+  (
+    font-size: carbon--type-scale(3),
+    line-height: carbon--rem(24px),
+    letter-spacing: 0,
+  )
 );
 ```
 
@@ -12466,6 +12877,34 @@ $body-short-02: (
 - **Group**: [@carbon/type](#carbontype)
 - **Type**: `Map`
 
+### ✅productive-body-short-02 [variable]
+
+<details>
+<summary>Source code</summary>
+
+```scss
+$productive-body-short-02: $body-short-02;
+```
+
+</details>
+
+- **Group**: [@carbon/type](#carbontype)
+- **Type**: `Map`
+
+### ✅expressive-body-short-02 [variable]
+
+<details>
+<summary>Source code</summary>
+
+```scss
+$expressive-body-short-02: $body-short-02;
+```
+
+</details>
+
+- **Group**: [@carbon/type](#carbontype)
+- **Type**: `Map`
+
 ### ✅body-long-02 [variable]
 
 <details>
@@ -12478,6 +12917,34 @@ $body-long-02: (
   line-height: carbon--rem(24px),
   letter-spacing: 0,
 );
+```
+
+</details>
+
+- **Group**: [@carbon/type](#carbontype)
+- **Type**: `Map`
+
+### ✅productive-body-long-02 [variable]
+
+<details>
+<summary>Source code</summary>
+
+```scss
+$productive-body-long-02: $body-long-02;
+```
+
+</details>
+
+- **Group**: [@carbon/type](#carbontype)
+- **Type**: `Map`
+
+### ✅expressive-body-long-02 [variable]
+
+<details>
+<summary>Source code</summary>
+
+```scss
+$expressive-body-long-02: $body-long-02;
 ```
 
 </details>
@@ -12505,6 +12972,41 @@ $code-01: (
 - **Group**: [@carbon/type](#carbontype)
 - **Type**: `Map`
 
+### ✅productive-code-01 [variable]
+
+<details>
+<summary>Source code</summary>
+
+```scss
+$productive-code-01: $code-01;
+```
+
+</details>
+
+- **Group**: [@carbon/type](#carbontype)
+- **Type**: `Map`
+
+### ✅expressive-code-01 [variable]
+
+<details>
+<summary>Source code</summary>
+
+```scss
+$expressive-code-01: map-merge(
+  $code-01,
+  (
+    font-size: carbon--type-scale(2),
+    line-height: carbon--rem(20px),
+    letter-spacing: 0,
+  )
+);
+```
+
+</details>
+
+- **Group**: [@carbon/type](#carbontype)
+- **Type**: `Map`
+
 ### ✅code-02 [variable]
 
 <details>
@@ -12517,6 +13019,41 @@ $code-02: (
   font-weight: carbon--font-weight('regular'),
   line-height: carbon--rem(20px),
   letter-spacing: 0.32px,
+);
+```
+
+</details>
+
+- **Group**: [@carbon/type](#carbontype)
+- **Type**: `Map`
+
+### ✅productive-code-02 [variable]
+
+<details>
+<summary>Source code</summary>
+
+```scss
+$productive-code-02: $code-02;
+```
+
+</details>
+
+- **Group**: [@carbon/type](#carbontype)
+- **Type**: `Map`
+
+### ✅expressive-code-02 [variable]
+
+<details>
+<summary>Source code</summary>
+
+```scss
+$expressive-code-02: map-merge(
+  $code-02,
+  (
+    font-size: carbon--type-scale(3),
+    line-height: carbon--rem(24px),
+    letter-spacing: 0,
+  )
 );
 ```
 
@@ -12591,16 +13128,49 @@ $productive-heading-02: $heading-02;
 - **Group**: [@carbon/type](#carbontype)
 - **Type**: `Map`
 
+### ✅heading-03 [variable]
+
+<details>
+<summary>Source code</summary>
+
+```scss
+$heading-03: (
+  font-size: carbon--type-scale(5),
+  font-weight: carbon--font-weight('regular'),
+  line-height: carbon--rem(26px),
+  letter-spacing: 0,
+);
+```
+
+</details>
+
+- **Group**: [@carbon/type](#carbontype)
+- **Type**: `Map`
+
 ### ✅productive-heading-03 [variable]
 
 <details>
 <summary>Source code</summary>
 
 ```scss
-$productive-heading-03: (
-  font-size: carbon--type-scale(5),
+$productive-heading-03: $heading-03;
+```
+
+</details>
+
+- **Group**: [@carbon/type](#carbontype)
+- **Type**: `Map`
+
+### ✅heading-04 [variable]
+
+<details>
+<summary>Source code</summary>
+
+```scss
+$heading-04: (
+  font-size: carbon--type-scale(7),
   font-weight: carbon--font-weight('regular'),
-  line-height: carbon--rem(26px),
+  line-height: carbon--rem(36px),
   letter-spacing: 0,
 );
 ```
@@ -12616,10 +13186,24 @@ $productive-heading-03: (
 <summary>Source code</summary>
 
 ```scss
-$productive-heading-04: (
-  font-size: carbon--type-scale(7),
+$productive-heading-04: $heading-04;
+```
+
+</details>
+
+- **Group**: [@carbon/type](#carbontype)
+- **Type**: `Map`
+
+### ✅heading-05 [variable]
+
+<details>
+<summary>Source code</summary>
+
+```scss
+$heading-05: (
+  font-size: carbon--type-scale(8),
   font-weight: carbon--font-weight('regular'),
-  line-height: carbon--rem(36px),
+  line-height: carbon--rem(40px),
   letter-spacing: 0,
 );
 ```
@@ -12635,10 +13219,24 @@ $productive-heading-04: (
 <summary>Source code</summary>
 
 ```scss
-$productive-heading-05: (
-  font-size: carbon--type-scale(8),
-  font-weight: carbon--font-weight('regular'),
-  line-height: carbon--rem(40px),
+$productive-heading-05: $heading-05;
+```
+
+</details>
+
+- **Group**: [@carbon/type](#carbontype)
+- **Type**: `Map`
+
+### ✅heading-06 [variable]
+
+<details>
+<summary>Source code</summary>
+
+```scss
+$heading-06: (
+  font-size: carbon--type-scale(10),
+  font-weight: carbon--font-weight('light'),
+  line-height: carbon--rem(50px),
   letter-spacing: 0,
 );
 ```
@@ -12654,10 +13252,24 @@ $productive-heading-05: (
 <summary>Source code</summary>
 
 ```scss
-$productive-heading-06: (
-  font-size: carbon--type-scale(8),
+$productive-heading-06: $heading-06;
+```
+
+</details>
+
+- **Group**: [@carbon/type](#carbontype)
+- **Type**: `Map`
+
+### ✅heading-07 [variable]
+
+<details>
+<summary>Source code</summary>
+
+```scss
+$heading-07: (
+  font-size: carbon--type-scale(12),
   font-weight: carbon--font-weight('light'),
-  line-height: carbon--rem(50px),
+  line-height: carbon--rem(64px),
   letter-spacing: 0,
 );
 ```
@@ -12673,12 +13285,7 @@ $productive-heading-06: (
 <summary>Source code</summary>
 
 ```scss
-$productive-heading-07: (
-  font-size: carbon--type-scale(10),
-  font-weight: carbon--font-weight('light'),
-  line-height: carbon--rem(64px),
-  letter-spacing: 0,
-);
+$productive-heading-07: $heading-07;
 ```
 
 </details>
@@ -12695,7 +13302,9 @@ $productive-heading-07: (
 $expressive-heading-01: map-merge(
   $heading-01,
   (
+    font-size: carbon--type-scale(2),
     line-height: carbon--rem(20px),
+    letter-spacing: 0.16px,
   )
 );
 ```
@@ -13114,16 +13723,39 @@ $display-04: (
 ```scss
 $tokens: (
   caption-01: $caption-01,
+  productive-caption-01: $productive-caption-01,
+  expressive-caption-01: $expressive-caption-01,
   label-01: $label-01,
+  productive-label-01: $productive-label-01,
+  expressive-label-01: $expressive-label-01,
   helper-text-01: $helper-text-01,
+  productive-helper-text-01: $productive-helper-text-01,
+  expressive-helper-text-01: $expressive-helper-text-01,
   body-short-01: $body-short-01,
+  productive-body-short-01: $productive-body-short-01,
+  expressive-body-short-01: $expressive-body-short-01,
   body-short-02: $body-short-02,
+  productive-body-short-02: $productive-body-short-02,
+  expressive-body-short-02: $expressive-body-short-02,
   body-long-01: $body-long-01,
+  productive-body-long-01: $productive-body-long-01,
+  expressive-body-long-01: $expressive-body-long-01,
   body-long-02: $body-long-02,
+  productive-body-long-02: $productive-body-long-02,
+  expressive-body-long-02: $expressive-body-long-02,
   code-01: $code-01,
+  productive-code-01: $productive-code-01,
+  expressive-code-01: $expressive-code-01,
   code-02: $code-02,
+  productive-code-02: $productive-code-02,
+  expressive-code-02: $expressive-code-02,
   heading-01: $heading-01,
   heading-02: $heading-02,
+  heading-03: $heading-03,
+  heading-04: $heading-04,
+  heading-05: $heading-05,
+  heading-06: $heading-06,
+  heading-07: $heading-07,
   productive-heading-01: $productive-heading-01,
   productive-heading-02: $productive-heading-02,
   productive-heading-03: $productive-heading-03,
@@ -13131,6 +13763,7 @@ $tokens: (
   productive-heading-05: $productive-heading-05,
   productive-heading-06: $productive-heading-06,
   productive-heading-07: $productive-heading-07,
+  paragraph-01: $expressive-paragraph-01,
   expressive-paragraph-01: $expressive-paragraph-01,
   expressive-heading-01: $expressive-heading-01,
   expressive-heading-02: $expressive-heading-02,
@@ -13155,6 +13788,80 @@ $tokens: (
   - [emit-component-tokens [mixin]](#emit-component-tokens-mixin)
   - [carbon--type-classes [mixin]](#carbon--type-classes-mixin)
   - [carbon--type-style [mixin]](#carbon--type-style-mixin)
+
+### ✅carbon--type-style--productive-tokens [variable]
+
+<details>
+<summary>Source code</summary>
+
+```scss
+$carbon--type-style--productive-tokens: (
+  caption-01: $productive-caption-01,
+  label-01: $productive-label-01,
+  helper-text-01: $productive-helper-text-01,
+  body-short-01: $productive-body-short-01,
+  body-short-02: $productive-body-short-02,
+  body-long-01: $productive-body-long-01,
+  body-long-02: $productive-body-long-02,
+  code-01: $productive-code-01,
+  code-02: $productive-code-02,
+  heading-01: $productive-heading-01,
+  heading-02: $productive-heading-02,
+  heading-03: $productive-heading-03,
+  heading-04: $productive-heading-04,
+  heading-05: $productive-heading-05,
+  heading-06: $productive-heading-06,
+  heading-07: $productive-heading-07,
+  quotation-01: $quotation-01,
+  quotation-02: $quotation-02,
+  display-01: $display-01,
+  display-02: $display-02,
+  display-03: $display-03,
+  display-04: $display-04,
+);
+```
+
+</details>
+
+- **Group**: [@carbon/type](#carbontype)
+- **Type**: `Map`
+
+### ✅carbon--type-style--expressive-tokens [variable]
+
+<details>
+<summary>Source code</summary>
+
+```scss
+$carbon--type-style--expressive-tokens: (
+  caption-01: $expressive-caption-01,
+  label-01: $expressive-label-01,
+  helper-text-01: $expressive-helper-text-01,
+  body-short-01: $expressive-body-short-01,
+  body-short-02: $expressive-body-short-02,
+  body-long-01: $expressive-body-long-01,
+  body-long-02: $expressive-body-long-02,
+  code-01: $expressive-code-01,
+  code-02: $expressive-code-02,
+  heading-01: $expressive-heading-01,
+  heading-02: $expressive-heading-02,
+  heading-03: $expressive-heading-03,
+  heading-04: $expressive-heading-04,
+  heading-05: $expressive-heading-05,
+  heading-06: $expressive-heading-06,
+  paragraph-01: $expressive-paragraph-01,
+  quotation-01: $quotation-01,
+  quotation-02: $quotation-02,
+  display-01: $display-01,
+  display-02: $display-02,
+  display-03: $display-03,
+  display-04: $display-04,
+);
+```
+
+</details>
+
+- **Group**: [@carbon/type](#carbontype)
+- **Type**: `Map`
 
 ### ✅properties [mixin]
 
@@ -13400,6 +14107,19 @@ $custom-property-prefix: 'cds';
 - **Used by**:
   - [carbon--type-style [mixin]](#carbon--type-style-mixin)
 
+### ✅carbon--type-style--group [variable]
+
+<details>
+<summary>Source code</summary>
+
+```scss
+$carbon--type-style--group: $carbon--type-style--productive-tokens;
+```
+
+</details>
+
+- **Group**: [@carbon/type](#carbontype)
+
 ### ✅carbon--type-style [mixin]
 
 Helper mixin to include the styles for a given token in any selector in your
@@ -13415,13 +14135,14 @@ fixed contexts.
 @mixin carbon--type-style(
   $name,
   $fluid: false,
-  $breakpoints: $carbon--grid-breakpoints
+  $breakpoints: $carbon--grid-breakpoints,
+  $group: $carbon--type-style--group
 ) {
   @if not map-has-key($tokens, $name) {
     @error 'Unable to find a token with the name: `#{$name}`';
   }
 
-  $token: map-get($tokens, $name);
+  $token: map-get(if(map-has-key($group, $name), $group, $tokens), $name);
 
   // If $fluid is set to true and the token has breakpoints defined for fluid
   // styles, delegate to the fluid-type helper for the given token
@@ -13445,11 +14166,12 @@ fixed contexts.
 
 - **Parameters**:
 
-| Name           | Description                                     | Type      | Default value               |
-| -------------- | ----------------------------------------------- | --------- | --------------------------- |
-| `$name`        | The name of the token to get the styles for     | `String`  | —                           |
-| `$fluid`       | Specify whether to include fluid styles for the | `Boolean` | `false`                     |
-| `$breakpoints` | Provide a custom breakpoint map to use          | `Map`     | `$carbon--grid-breakpoints` |
+| Name           | Description                                     | Type      | Default value                |
+| -------------- | ----------------------------------------------- | --------- | ---------------------------- |
+| `$name`        | The name of the token to get the styles for     | `String`  | —                            |
+| `$fluid`       | Specify whether to include fluid styles for the | `Boolean` | `false`                      |
+| `$breakpoints` | Provide a custom breakpoint map to use          | `Map`     | `$carbon--grid-breakpoints`  |
+| `$group`       | Provide a custom tokens map to use              | `Map`     | `$carbon--type-style--group` |
 
 - **Group**: [@carbon/type](#carbontype)
 - **Requires**:
@@ -15729,7 +16451,7 @@ Data table core styles
   }
 
   .#{$prefix}--data-table-header__title {
-    @include type-style('productive-heading-03');
+    @include type-style('heading-03');
     color: $text-01;
   }
 
@@ -15748,7 +16470,7 @@ Data table core styles
   }
 
   .#{$prefix}--data-table thead {
-    @include type-style('productive-heading-01');
+    @include type-style('heading-01');
     background-color: $ui-03;
   }
 
@@ -17016,7 +17738,7 @@ Date picker styles
 
   .#{$prefix}--date-picker__month .flatpickr-current-month,
   .flatpickr-month .flatpickr-current-month {
-    @include type-style('productive-heading-01');
+    @include type-style('heading-01');
     padding: 0;
   }
 
@@ -17789,7 +18511,7 @@ File uploader styles
   // TODO: sync with type
   .#{$prefix}--file--label {
     @include reset;
-    @include type-style('productive-heading-01');
+    @include type-style('heading-01');
     color: $text-01;
     margin-bottom: $carbon--spacing-03;
   }
@@ -19664,7 +20386,7 @@ Modal styles
   }
 
   .#{$prefix}--modal-header__heading {
-    @include type-style('productive-heading-03');
+    @include type-style('heading-03');
 
     color: $text-01;
   }
@@ -20035,7 +20757,7 @@ Inline notification styles
   }
 
   .#{$prefix}--inline-notification__title {
-    @include type-style('productive-heading-01');
+    @include type-style('heading-01');
     margin: 0 $carbon--spacing-02 0 0;
   }
 
@@ -20384,7 +21106,7 @@ Toast notification styles
   }
 
   .#{$prefix}--toast-notification__title {
-    @include type-style('productive-heading-01');
+    @include type-style('heading-01');
     font-weight: 600;
     margin-top: $carbon--spacing-05;
     word-break: break-word;
@@ -23029,7 +23751,7 @@ Tabs styles
       .#{$prefix}--tabs__nav-link,
       .#{$prefix}--tabs__nav-link:focus,
       .#{$prefix}--tabs__nav-link:active {
-        @include type-style('productive-heading-01');
+        @include type-style('heading-01');
         color: $text-01;
         border-bottom: 2px solid $interactive-04;
       }
@@ -25184,7 +25906,7 @@ Tooltip styles
   }
 
   .#{$prefix}--tooltip__heading {
-    @include carbon--type-style('productive-heading-01');
+    @include carbon--type-style('heading-01');
     margin-bottom: $spacing-03;
   }
 
@@ -26638,7 +27360,7 @@ UI shell side nav
   //----------------------------------------------------------------------------
   .#{$prefix}--side-nav__submenu[aria-haspopup='true'] {
     @include button-reset($width: true);
-    @include type-style('productive-heading-01');
+    @include type-style('heading-01');
     @include focus-outline('reset');
     padding: 0 mini-units(2);
     display: flex;
@@ -26757,7 +27479,7 @@ UI shell side nav
     .#{$prefix}--header__menu-title[aria-expanded='true']
     + .#{$prefix}--header__menu {
     @include focus-outline('reset');
-    @include type-style('productive-heading-01');
+    @include type-style('heading-01');
     position: relative;
     display: flex;
     align-items: center;
@@ -27009,7 +27731,7 @@ UI shell side nav
   }
 
   .#{$prefix}--switcher__item-link {
-    @include carbon--type-style('productive-heading-01');
+    @include carbon--type-style('heading-01');
     display: block;
     height: $spacing-07;
     text-decoration: none;

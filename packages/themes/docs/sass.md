@@ -95,8 +95,13 @@
   - [✅code-01 [variable]](#code-01-variable)
   - [✅code-02 [variable]](#code-02-variable)
   - [✅heading-01 [variable]](#heading-01-variable)
-  - [✅productive-heading-01 [variable]](#productive-heading-01-variable)
   - [✅heading-02 [variable]](#heading-02-variable)
+  - [✅heading-03 [variable]](#heading-03-variable)
+  - [✅heading-04 [variable]](#heading-04-variable)
+  - [✅heading-05 [variable]](#heading-05-variable)
+  - [✅heading-06 [variable]](#heading-06-variable)
+  - [✅heading-07 [variable]](#heading-07-variable)
+  - [✅productive-heading-01 [variable]](#productive-heading-01-variable)
   - [✅productive-heading-02 [variable]](#productive-heading-02-variable)
   - [✅productive-heading-03 [variable]](#productive-heading-03-variable)
   - [✅productive-heading-04 [variable]](#productive-heading-04-variable)
@@ -301,8 +306,13 @@ Define theme variables from a map of tokens
   $code-01: map-get($theme, 'code-01') !global;
   $code-02: map-get($theme, 'code-02') !global;
   $heading-01: map-get($theme, 'heading-01') !global;
-  $productive-heading-01: map-get($theme, 'productive-heading-01') !global;
   $heading-02: map-get($theme, 'heading-02') !global;
+  $heading-03: map-get($theme, 'heading-03') !global;
+  $heading-04: map-get($theme, 'heading-04') !global;
+  $heading-05: map-get($theme, 'heading-05') !global;
+  $heading-06: map-get($theme, 'heading-06') !global;
+  $heading-07: map-get($theme, 'heading-07') !global;
+  $productive-heading-01: map-get($theme, 'productive-heading-01') !global;
   $productive-heading-02: map-get($theme, 'productive-heading-02') !global;
   $productive-heading-03: map-get($theme, 'productive-heading-03') !global;
   $productive-heading-04: map-get($theme, 'productive-heading-04') !global;
@@ -1417,6 +1427,66 @@ Define theme variables from a map of tokens
     @if should-emit(
       $theme,
       $parent-carbon-theme,
+      'heading-02',
+      $emit-difference
+    )
+    {
+      @include custom-property('heading-02', map-get($theme, 'heading-02'));
+    }
+
+    @if should-emit(
+      $theme,
+      $parent-carbon-theme,
+      'heading-03',
+      $emit-difference
+    )
+    {
+      @include custom-property('heading-03', map-get($theme, 'heading-03'));
+    }
+
+    @if should-emit(
+      $theme,
+      $parent-carbon-theme,
+      'heading-04',
+      $emit-difference
+    )
+    {
+      @include custom-property('heading-04', map-get($theme, 'heading-04'));
+    }
+
+    @if should-emit(
+      $theme,
+      $parent-carbon-theme,
+      'heading-05',
+      $emit-difference
+    )
+    {
+      @include custom-property('heading-05', map-get($theme, 'heading-05'));
+    }
+
+    @if should-emit(
+      $theme,
+      $parent-carbon-theme,
+      'heading-06',
+      $emit-difference
+    )
+    {
+      @include custom-property('heading-06', map-get($theme, 'heading-06'));
+    }
+
+    @if should-emit(
+      $theme,
+      $parent-carbon-theme,
+      'heading-07',
+      $emit-difference
+    )
+    {
+      @include custom-property('heading-07', map-get($theme, 'heading-07'));
+    }
+
+    @if should-emit(
+      $theme,
+      $parent-carbon-theme,
       'productive-heading-01',
       $emit-difference
     )
@@ -1425,16 +1495,6 @@ Define theme variables from a map of tokens
         'productive-heading-01',
         map-get($theme, 'productive-heading-01')
       );
-    }
-
-    @if should-emit(
-      $theme,
-      $parent-carbon-theme,
-      'heading-02',
-      $emit-difference
-    )
-    {
-      @include custom-property('heading-02', map-get($theme, 'heading-02'));
     }
 
     @if should-emit(
@@ -2071,8 +2131,13 @@ Define theme variables from a map of tokens
   - [code-01 [variable]](#code-01-variable)
   - [code-02 [variable]](#code-02-variable)
   - [heading-01 [variable]](#heading-01-variable)
-  - [productive-heading-01 [variable]](#productive-heading-01-variable)
   - [heading-02 [variable]](#heading-02-variable)
+  - [heading-03 [variable]](#heading-03-variable)
+  - [heading-04 [variable]](#heading-04-variable)
+  - [heading-05 [variable]](#heading-05-variable)
+  - [heading-06 [variable]](#heading-06-variable)
+  - [heading-07 [variable]](#heading-07-variable)
+  - [productive-heading-01 [variable]](#productive-heading-01-variable)
   - [productive-heading-02 [variable]](#productive-heading-02-variable)
   - [productive-heading-03 [variable]](#productive-heading-03-variable)
   - [productive-heading-04 [variable]](#productive-heading-04-variable)
@@ -2514,8 +2579,13 @@ $carbon--theme: (
   code-01: if(global-variable-exists('code-01'), $code-01, map-get($carbon--theme--white, 'code-01')),
   code-02: if(global-variable-exists('code-02'), $code-02, map-get($carbon--theme--white, 'code-02')),
   heading-01: if(global-variable-exists('heading-01'), $heading-01, map-get($carbon--theme--white, 'heading-01')),
-  productive-heading-01: if(global-variable-exists('productive-heading-01'), $productive-heading-01, map-get($carbon--theme--white, 'productive-heading-01')),
   heading-02: if(global-variable-exists('heading-02'), $heading-02, map-get($carbon--theme--white, 'heading-02')),
+  heading-03: if(global-variable-exists('heading-03'), $heading-03, map-get($carbon--theme--white, 'heading-03')),
+  heading-04: if(global-variable-exists('heading-04'), $heading-04, map-get($carbon--theme--white, 'heading-04')),
+  heading-05: if(global-variable-exists('heading-05'), $heading-05, map-get($carbon--theme--white, 'heading-05')),
+  heading-06: if(global-variable-exists('heading-06'), $heading-06, map-get($carbon--theme--white, 'heading-06')),
+  heading-07: if(global-variable-exists('heading-07'), $heading-07, map-get($carbon--theme--white, 'heading-07')),
+  productive-heading-01: if(global-variable-exists('productive-heading-01'), $productive-heading-01, map-get($carbon--theme--white, 'productive-heading-01')),
   productive-heading-02: if(global-variable-exists('productive-heading-02'), $productive-heading-02, map-get($carbon--theme--white, 'productive-heading-02')),
   productive-heading-03: if(global-variable-exists('productive-heading-03'), $productive-heading-03, map-get($carbon--theme--white, 'productive-heading-03')),
   productive-heading-04: if(global-variable-exists('productive-heading-04'), $productive-heading-04, map-get($carbon--theme--white, 'productive-heading-04')),
@@ -4502,34 +4572,6 @@ $heading-01: if(
 - **Used by**:
   - [carbon--theme [mixin]](#carbon--theme-mixin)
 
-### ✅productive-heading-01 [variable]
-
-<details>
-<summary>Source code</summary>
-
-```scss
-$productive-heading-01: if(
-  global-variable-exists('carbon--theme') and map-has-key(
-      $carbon--theme,
-      'productive-heading-01'
-    ),
-  map-get($carbon--theme, 'productive-heading-01'),
-  (
-    font-size: 0.875rem,
-    font-weight: 600,
-    line-height: 1.125rem,
-    letter-spacing: 0.16px,
-  )
-);
-```
-
-</details>
-
-- **Group**: [@carbon/themes](#carbonthemes)
-- **Type**: `{Number}`
-- **Used by**:
-  - [carbon--theme [mixin]](#carbon--theme-mixin)
-
 ### ✅heading-02 [variable]
 
 <details>
@@ -4547,6 +4589,174 @@ $heading-02: if(
     font-weight: 600,
     line-height: 1.375rem,
     letter-spacing: 0,
+  )
+);
+```
+
+</details>
+
+- **Group**: [@carbon/themes](#carbonthemes)
+- **Type**: `{Number}`
+- **Used by**:
+  - [carbon--theme [mixin]](#carbon--theme-mixin)
+
+### ✅heading-03 [variable]
+
+<details>
+<summary>Source code</summary>
+
+```scss
+$heading-03: if(
+  global-variable-exists('carbon--theme') and map-has-key(
+      $carbon--theme,
+      'heading-03'
+    ),
+  map-get($carbon--theme, 'heading-03'),
+  (
+    font-size: 1.25rem,
+    font-weight: 400,
+    line-height: 1.625rem,
+    letter-spacing: 0,
+  )
+);
+```
+
+</details>
+
+- **Group**: [@carbon/themes](#carbonthemes)
+- **Type**: `{Number}`
+- **Used by**:
+  - [carbon--theme [mixin]](#carbon--theme-mixin)
+
+### ✅heading-04 [variable]
+
+<details>
+<summary>Source code</summary>
+
+```scss
+$heading-04: if(
+  global-variable-exists('carbon--theme') and map-has-key(
+      $carbon--theme,
+      'heading-04'
+    ),
+  map-get($carbon--theme, 'heading-04'),
+  (
+    font-size: 1.75rem,
+    font-weight: 400,
+    line-height: 2.25rem,
+    letter-spacing: 0,
+  )
+);
+```
+
+</details>
+
+- **Group**: [@carbon/themes](#carbonthemes)
+- **Type**: `{Number}`
+- **Used by**:
+  - [carbon--theme [mixin]](#carbon--theme-mixin)
+
+### ✅heading-05 [variable]
+
+<details>
+<summary>Source code</summary>
+
+```scss
+$heading-05: if(
+  global-variable-exists('carbon--theme') and map-has-key(
+      $carbon--theme,
+      'heading-05'
+    ),
+  map-get($carbon--theme, 'heading-05'),
+  (
+    font-size: 2rem,
+    font-weight: 400,
+    line-height: 2.5rem,
+    letter-spacing: 0,
+  )
+);
+```
+
+</details>
+
+- **Group**: [@carbon/themes](#carbonthemes)
+- **Type**: `{Number}`
+- **Used by**:
+  - [carbon--theme [mixin]](#carbon--theme-mixin)
+
+### ✅heading-06 [variable]
+
+<details>
+<summary>Source code</summary>
+
+```scss
+$heading-06: if(
+  global-variable-exists('carbon--theme') and map-has-key(
+      $carbon--theme,
+      'heading-06'
+    ),
+  map-get($carbon--theme, 'heading-06'),
+  (
+    font-size: 2.625rem,
+    font-weight: 300,
+    line-height: 3.125rem,
+    letter-spacing: 0,
+  )
+);
+```
+
+</details>
+
+- **Group**: [@carbon/themes](#carbonthemes)
+- **Type**: `{Number}`
+- **Used by**:
+  - [carbon--theme [mixin]](#carbon--theme-mixin)
+
+### ✅heading-07 [variable]
+
+<details>
+<summary>Source code</summary>
+
+```scss
+$heading-07: if(
+  global-variable-exists('carbon--theme') and map-has-key(
+      $carbon--theme,
+      'heading-07'
+    ),
+  map-get($carbon--theme, 'heading-07'),
+  (
+    font-size: 3.375rem,
+    font-weight: 300,
+    line-height: 4rem,
+    letter-spacing: 0,
+  )
+);
+```
+
+</details>
+
+- **Group**: [@carbon/themes](#carbonthemes)
+- **Type**: `{Number}`
+- **Used by**:
+  - [carbon--theme [mixin]](#carbon--theme-mixin)
+
+### ✅productive-heading-01 [variable]
+
+<details>
+<summary>Source code</summary>
+
+```scss
+$productive-heading-01: if(
+  global-variable-exists('carbon--theme') and map-has-key(
+      $carbon--theme,
+      'productive-heading-01'
+    ),
+  map-get($carbon--theme, 'productive-heading-01'),
+  (
+    font-size: 0.875rem,
+    font-weight: 600,
+    line-height: 1.125rem,
+    letter-spacing: 0.16px,
   )
 );
 ```
