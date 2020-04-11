@@ -9,7 +9,9 @@
 @import 'theme';
 @import 'feature-flags';
 
-$enable-css-custom-properties: feature-flag-enabled('enable-css-custom-properties');
+$enable-css-custom-properties: feature-flag-enabled(
+  'enable-css-custom-properties'
+);
 
 /// Get a component token value.
 /// @access public
@@ -25,19 +27,29 @@ $enable-css-custom-properties: feature-flag-enabled('enable-css-custom-propertie
     @each $option in $options {
       $theme: map-get($option, 'theme');
 
-      @if $theme == $carbon--theme {
+      // Takes the list entry in one of the following conditions:
+      // a) Theme ref matches to the current theme
+      // b) Theme name matches to the current theme
+      // c) Current theme does not have a name (implies that it's a default theme),
+      //    and the list entry is for the default theme
+      @if $theme ==
+        $carbon--theme or
+        unquote($theme) ==
+        map-get($carbon--theme, 'name') or
+        (not map-has-key($carbon--theme, 'name') and $theme == 'default')
+      {
         $value: map-get($option, 'value');
 
         @return if(
           $enable-css-custom-properties == true,
           var(--#{$custom-property-prefix}-#{$name}, #{$value}),
           $value
-        )
+        );
       }
-
-      @error 'Unable to find value for theme';
     }
+
+    @error 'Unable to find component token #{$name} in the current theme.';
   }
 
-  @error 'Unable to find list';
+  @error 'Unable to find component token #{$name}.';
 }

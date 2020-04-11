@@ -6095,6 +6095,7 @@ Carbon's g10 color theme
 $carbon--theme--g10: map-merge(
   $carbon--theme--white,
   (
+    name: unquote('g10'),
     ui-background: #f4f4f4,
     ui-01: #ffffff,
     ui-02: #f4f4f4,
@@ -6121,6 +6122,7 @@ Carbon's g90 color theme
 $carbon--theme--g90: map-merge(
   $carbon--theme--white,
   (
+    name: unquote('g90'),
     interactive-02: #6f6f6f,
     interactive-03: #ffffff,
     interactive-04: #4589ff,
@@ -6195,6 +6197,7 @@ Carbon's g100 color theme
 $carbon--theme--g100: map-merge(
   $carbon--theme--white,
   (
+    name: unquote('g100'),
     interactive-02: #6f6f6f,
     interactive-03: #ffffff,
     interactive-04: #4589ff,
@@ -6269,6 +6272,7 @@ Carbon's v9 color theme
 $carbon--theme--v9: map-merge(
   $carbon--theme--white,
   (
+    name: unquote('v9'),
     interactive-01: #3d70b2,
     interactive-02: #4d5358,
     interactive-03: #3d70b2,
