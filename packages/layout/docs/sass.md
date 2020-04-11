@@ -36,6 +36,31 @@
   - [✅carbon--base-font-size [variable]](#carbon--base-font-size-variable)
   - [✅carbon--rem [function]](#carbon--rem-function)
   - [✅carbon--em [function]](#carbon--em-function)
+  - [✅carbon--expressive-spacing-01 [variable]](#carbon--expressive-spacing-01-variable)
+  - [✅carbon--expressive-spacing-02 [variable]](#carbon--expressive-spacing-02-variable)
+  - [✅carbon--expressive-spacing-03 [variable]](#carbon--expressive-spacing-03-variable)
+  - [✅carbon--expressive-spacing-04 [variable]](#carbon--expressive-spacing-04-variable)
+  - [✅carbon--expressive-spacing-05 [variable]](#carbon--expressive-spacing-05-variable)
+  - [✅carbon--expressive-spacing-06 [variable]](#carbon--expressive-spacing-06-variable)
+  - [✅carbon--expressive-spacing-07 [variable]](#carbon--expressive-spacing-07-variable)
+  - [✅carbon--expressive-spacing-08 [variable]](#carbon--expressive-spacing-08-variable)
+  - [✅carbon--expressive-spacing-09 [variable]](#carbon--expressive-spacing-09-variable)
+  - [✅carbon--expressive-spacing-10 [variable]](#carbon--expressive-spacing-10-variable)
+  - [✅carbon--expressive-spacing-11 [variable]](#carbon--expressive-spacing-11-variable)
+  - [✅carbon--expressive-spacing-12 [variable]](#carbon--expressive-spacing-12-variable)
+  - [✅carbon--expressive-spacing [variable]](#carbon--expressive-spacing-variable)
+  - [✅expressive-spacing-01 [variable]](#expressive-spacing-01-variable)
+  - [✅expressive-spacing-02 [variable]](#expressive-spacing-02-variable)
+  - [✅expressive-spacing-03 [variable]](#expressive-spacing-03-variable)
+  - [✅expressive-spacing-04 [variable]](#expressive-spacing-04-variable)
+  - [✅expressive-spacing-05 [variable]](#expressive-spacing-05-variable)
+  - [✅expressive-spacing-06 [variable]](#expressive-spacing-06-variable)
+  - [✅expressive-spacing-07 [variable]](#expressive-spacing-07-variable)
+  - [✅expressive-spacing-08 [variable]](#expressive-spacing-08-variable)
+  - [✅expressive-spacing-09 [variable]](#expressive-spacing-09-variable)
+  - [✅expressive-spacing-10 [variable]](#expressive-spacing-10-variable)
+  - [✅expressive-spacing-11 [variable]](#expressive-spacing-11-variable)
+  - [✅expressive-spacing-12 [variable]](#expressive-spacing-12-variable)
   - [✅carbon--fluid-spacing-01 [variable]](#carbon--fluid-spacing-01-variable)
   - [✅carbon--fluid-spacing-02 [variable]](#carbon--fluid-spacing-02-variable)
   - [✅carbon--fluid-spacing-03 [variable]](#carbon--fluid-spacing-03-variable)
@@ -70,6 +95,31 @@
   - [✅layout-07 [variable]](#layout-07-variable)
   - [✅carbon--mini-unit-size [variable]](#carbon--mini-unit-size-variable)
   - [✅carbon--mini-units [function]](#carbon--mini-units-function)
+  - [✅carbon--productive-spacing-01 [variable]](#carbon--productive-spacing-01-variable)
+  - [✅carbon--productive-spacing-02 [variable]](#carbon--productive-spacing-02-variable)
+  - [✅carbon--productive-spacing-03 [variable]](#carbon--productive-spacing-03-variable)
+  - [✅carbon--productive-spacing-04 [variable]](#carbon--productive-spacing-04-variable)
+  - [✅carbon--productive-spacing-05 [variable]](#carbon--productive-spacing-05-variable)
+  - [✅carbon--productive-spacing-06 [variable]](#carbon--productive-spacing-06-variable)
+  - [✅carbon--productive-spacing-07 [variable]](#carbon--productive-spacing-07-variable)
+  - [✅carbon--productive-spacing-08 [variable]](#carbon--productive-spacing-08-variable)
+  - [✅carbon--productive-spacing-09 [variable]](#carbon--productive-spacing-09-variable)
+  - [✅carbon--productive-spacing-10 [variable]](#carbon--productive-spacing-10-variable)
+  - [✅carbon--productive-spacing-11 [variable]](#carbon--productive-spacing-11-variable)
+  - [✅carbon--productive-spacing-12 [variable]](#carbon--productive-spacing-12-variable)
+  - [✅carbon--productive-spacing [variable]](#carbon--productive-spacing-variable)
+  - [✅productive-spacing-01 [variable]](#productive-spacing-01-variable)
+  - [✅productive-spacing-02 [variable]](#productive-spacing-02-variable)
+  - [✅productive-spacing-03 [variable]](#productive-spacing-03-variable)
+  - [✅productive-spacing-04 [variable]](#productive-spacing-04-variable)
+  - [✅productive-spacing-05 [variable]](#productive-spacing-05-variable)
+  - [✅productive-spacing-06 [variable]](#productive-spacing-06-variable)
+  - [✅productive-spacing-07 [variable]](#productive-spacing-07-variable)
+  - [✅productive-spacing-08 [variable]](#productive-spacing-08-variable)
+  - [✅productive-spacing-09 [variable]](#productive-spacing-09-variable)
+  - [✅productive-spacing-10 [variable]](#productive-spacing-10-variable)
+  - [✅productive-spacing-11 [variable]](#productive-spacing-11-variable)
+  - [✅productive-spacing-12 [variable]](#productive-spacing-12-variable)
   - [✅carbon--spacing-01 [variable]](#carbon--spacing-01-variable)
   - [✅carbon--spacing-02 [variable]](#carbon--spacing-02-variable)
   - [✅carbon--spacing-03 [variable]](#carbon--spacing-03-variable)
@@ -786,6 +836,405 @@ Convert a given px unit to a em unit
 - **Requires**:
   - [carbon--base-font-size [variable]](#carbon--base-font-size-variable)
 
+### ✅carbon--expressive-spacing-01 [variable]
+
+<details>
+<summary>Source code</summary>
+
+```scss
+$carbon--expressive-spacing-01: 0.1875rem;
+```
+
+</details>
+
+- **Group**: [@carbon/layout](#carbonlayout)
+- **Type**: `Number`
+- **Aliased**:
+  - `expressive-spacing-01`
+
+### ✅carbon--expressive-spacing-02 [variable]
+
+<details>
+<summary>Source code</summary>
+
+```scss
+$carbon--expressive-spacing-02: 0.375rem;
+```
+
+</details>
+
+- **Group**: [@carbon/layout](#carbonlayout)
+- **Type**: `Number`
+- **Aliased**:
+  - `expressive-spacing-02`
+
+### ✅carbon--expressive-spacing-03 [variable]
+
+<details>
+<summary>Source code</summary>
+
+```scss
+$carbon--expressive-spacing-03: 0.75rem;
+```
+
+</details>
+
+- **Group**: [@carbon/layout](#carbonlayout)
+- **Type**: `Number`
+- **Aliased**:
+  - `expressive-spacing-03`
+
+### ✅carbon--expressive-spacing-04 [variable]
+
+<details>
+<summary>Source code</summary>
+
+```scss
+$carbon--expressive-spacing-04: 1.125rem;
+```
+
+</details>
+
+- **Group**: [@carbon/layout](#carbonlayout)
+- **Type**: `Number`
+- **Aliased**:
+  - `expressive-spacing-04`
+
+### ✅carbon--expressive-spacing-05 [variable]
+
+<details>
+<summary>Source code</summary>
+
+```scss
+$carbon--expressive-spacing-05: 1.5rem;
+```
+
+</details>
+
+- **Group**: [@carbon/layout](#carbonlayout)
+- **Type**: `Number`
+- **Aliased**:
+  - `expressive-spacing-05`
+
+### ✅carbon--expressive-spacing-06 [variable]
+
+<details>
+<summary>Source code</summary>
+
+```scss
+$carbon--expressive-spacing-06: 2.25rem;
+```
+
+</details>
+
+- **Group**: [@carbon/layout](#carbonlayout)
+- **Type**: `Number`
+- **Aliased**:
+  - `expressive-spacing-06`
+
+### ✅carbon--expressive-spacing-07 [variable]
+
+<details>
+<summary>Source code</summary>
+
+```scss
+$carbon--expressive-spacing-07: 3rem;
+```
+
+</details>
+
+- **Group**: [@carbon/layout](#carbonlayout)
+- **Type**: `Number`
+- **Aliased**:
+  - `expressive-spacing-07`
+
+### ✅carbon--expressive-spacing-08 [variable]
+
+<details>
+<summary>Source code</summary>
+
+```scss
+$carbon--expressive-spacing-08: 3.75rem;
+```
+
+</details>
+
+- **Group**: [@carbon/layout](#carbonlayout)
+- **Type**: `Number`
+- **Aliased**:
+  - `expressive-spacing-08`
+
+### ✅carbon--expressive-spacing-09 [variable]
+
+<details>
+<summary>Source code</summary>
+
+```scss
+$carbon--expressive-spacing-09: 4.5rem;
+```
+
+</details>
+
+- **Group**: [@carbon/layout](#carbonlayout)
+- **Type**: `Number`
+- **Aliased**:
+  - `expressive-spacing-09`
+
+### ✅carbon--expressive-spacing-10 [variable]
+
+<details>
+<summary>Source code</summary>
+
+```scss
+$carbon--expressive-spacing-10: 6rem;
+```
+
+</details>
+
+- **Group**: [@carbon/layout](#carbonlayout)
+- **Type**: `Number`
+- **Aliased**:
+  - `expressive-spacing-10`
+
+### ✅carbon--expressive-spacing-11 [variable]
+
+<details>
+<summary>Source code</summary>
+
+```scss
+$carbon--expressive-spacing-11: 7.5rem;
+```
+
+</details>
+
+- **Group**: [@carbon/layout](#carbonlayout)
+- **Type**: `Number`
+- **Aliased**:
+  - `expressive-spacing-11`
+
+### ✅carbon--expressive-spacing-12 [variable]
+
+<details>
+<summary>Source code</summary>
+
+```scss
+$carbon--expressive-spacing-12: 9rem;
+```
+
+</details>
+
+- **Group**: [@carbon/layout](#carbonlayout)
+- **Type**: `Number`
+- **Aliased**:
+  - `expressive-spacing-12`
+
+### ✅carbon--expressive-spacing [variable]
+
+<details>
+<summary>Source code</summary>
+
+```scss
+$carbon--expressive-spacing: (
+  $carbon--expressive-spacing-01,
+  $carbon--expressive-spacing-02,
+  $carbon--expressive-spacing-03,
+  $carbon--expressive-spacing-04,
+  $carbon--expressive-spacing-05,
+  $carbon--expressive-spacing-06,
+  $carbon--expressive-spacing-07,
+  $carbon--expressive-spacing-08,
+  $carbon--expressive-spacing-09,
+  $carbon--expressive-spacing-10,
+  $carbon--expressive-spacing-11,
+  $carbon--expressive-spacing-12
+);
+```
+
+</details>
+
+- **Group**: [@carbon/layout](#carbonlayout)
+- **Type**: `List`
+
+### ✅expressive-spacing-01 [variable]
+
+<details>
+<summary>Source code</summary>
+
+```scss
+$expressive-spacing-01: $carbon--expressive-spacing-01;
+```
+
+</details>
+
+- **Group**: [@carbon/layout](#carbonlayout)
+- **Type**: `Number`
+- **Alias**: `carbon--expressive-spacing-01`
+
+### ✅expressive-spacing-02 [variable]
+
+<details>
+<summary>Source code</summary>
+
+```scss
+$expressive-spacing-02: $carbon--expressive-spacing-02;
+```
+
+</details>
+
+- **Group**: [@carbon/layout](#carbonlayout)
+- **Type**: `Number`
+- **Alias**: `carbon--expressive-spacing-02`
+
+### ✅expressive-spacing-03 [variable]
+
+<details>
+<summary>Source code</summary>
+
+```scss
+$expressive-spacing-03: $carbon--expressive-spacing-03;
+```
+
+</details>
+
+- **Group**: [@carbon/layout](#carbonlayout)
+- **Type**: `Number`
+- **Alias**: `carbon--expressive-spacing-03`
+
+### ✅expressive-spacing-04 [variable]
+
+<details>
+<summary>Source code</summary>
+
+```scss
+$expressive-spacing-04: $carbon--expressive-spacing-04;
+```
+
+</details>
+
+- **Group**: [@carbon/layout](#carbonlayout)
+- **Type**: `Number`
+- **Alias**: `carbon--expressive-spacing-04`
+
+### ✅expressive-spacing-05 [variable]
+
+<details>
+<summary>Source code</summary>
+
+```scss
+$expressive-spacing-05: $carbon--expressive-spacing-05;
+```
+
+</details>
+
+- **Group**: [@carbon/layout](#carbonlayout)
+- **Type**: `Number`
+- **Alias**: `carbon--expressive-spacing-05`
+
+### ✅expressive-spacing-06 [variable]
+
+<details>
+<summary>Source code</summary>
+
+```scss
+$expressive-spacing-06: $carbon--expressive-spacing-06;
+```
+
+</details>
+
+- **Group**: [@carbon/layout](#carbonlayout)
+- **Type**: `Number`
+- **Alias**: `carbon--expressive-spacing-06`
+
+### ✅expressive-spacing-07 [variable]
+
+<details>
+<summary>Source code</summary>
+
+```scss
+$expressive-spacing-07: $carbon--expressive-spacing-07;
+```
+
+</details>
+
+- **Group**: [@carbon/layout](#carbonlayout)
+- **Type**: `Number`
+- **Alias**: `carbon--expressive-spacing-07`
+
+### ✅expressive-spacing-08 [variable]
+
+<details>
+<summary>Source code</summary>
+
+```scss
+$expressive-spacing-08: $carbon--expressive-spacing-08;
+```
+
+</details>
+
+- **Group**: [@carbon/layout](#carbonlayout)
+- **Type**: `Number`
+- **Alias**: `carbon--expressive-spacing-08`
+
+### ✅expressive-spacing-09 [variable]
+
+<details>
+<summary>Source code</summary>
+
+```scss
+$expressive-spacing-09: $carbon--expressive-spacing-09;
+```
+
+</details>
+
+- **Group**: [@carbon/layout](#carbonlayout)
+- **Type**: `Number`
+- **Alias**: `carbon--expressive-spacing-09`
+
+### ✅expressive-spacing-10 [variable]
+
+<details>
+<summary>Source code</summary>
+
+```scss
+$expressive-spacing-10: $carbon--expressive-spacing-10;
+```
+
+</details>
+
+- **Group**: [@carbon/layout](#carbonlayout)
+- **Type**: `Number`
+- **Alias**: `carbon--expressive-spacing-10`
+
+### ✅expressive-spacing-11 [variable]
+
+<details>
+<summary>Source code</summary>
+
+```scss
+$expressive-spacing-11: $carbon--expressive-spacing-11;
+```
+
+</details>
+
+- **Group**: [@carbon/layout](#carbonlayout)
+- **Type**: `Number`
+- **Alias**: `carbon--expressive-spacing-11`
+
+### ✅expressive-spacing-12 [variable]
+
+<details>
+<summary>Source code</summary>
+
+```scss
+$expressive-spacing-12: $carbon--expressive-spacing-12;
+```
+
+</details>
+
+- **Group**: [@carbon/layout](#carbonlayout)
+- **Type**: `Number`
+- **Alias**: `carbon--expressive-spacing-12`
+
 ### ✅carbon--fluid-spacing-01 [variable]
 
 <details>
@@ -1419,6 +1868,405 @@ Get the value of the corresponding number of units
 - **Requires**:
   - [carbon--rem [function]](#carbon--rem-function)
   - [carbon--mini-unit-size [variable]](#carbon--mini-unit-size-variable)
+
+### ✅carbon--productive-spacing-01 [variable]
+
+<details>
+<summary>Source code</summary>
+
+```scss
+$carbon--productive-spacing-01: 0.125rem;
+```
+
+</details>
+
+- **Group**: [@carbon/layout](#carbonlayout)
+- **Type**: `Number`
+- **Aliased**:
+  - `productive-spacing-01`
+
+### ✅carbon--productive-spacing-02 [variable]
+
+<details>
+<summary>Source code</summary>
+
+```scss
+$carbon--productive-spacing-02: 0.25rem;
+```
+
+</details>
+
+- **Group**: [@carbon/layout](#carbonlayout)
+- **Type**: `Number`
+- **Aliased**:
+  - `productive-spacing-02`
+
+### ✅carbon--productive-spacing-03 [variable]
+
+<details>
+<summary>Source code</summary>
+
+```scss
+$carbon--productive-spacing-03: 0.5rem;
+```
+
+</details>
+
+- **Group**: [@carbon/layout](#carbonlayout)
+- **Type**: `Number`
+- **Aliased**:
+  - `productive-spacing-03`
+
+### ✅carbon--productive-spacing-04 [variable]
+
+<details>
+<summary>Source code</summary>
+
+```scss
+$carbon--productive-spacing-04: 0.75rem;
+```
+
+</details>
+
+- **Group**: [@carbon/layout](#carbonlayout)
+- **Type**: `Number`
+- **Aliased**:
+  - `productive-spacing-04`
+
+### ✅carbon--productive-spacing-05 [variable]
+
+<details>
+<summary>Source code</summary>
+
+```scss
+$carbon--productive-spacing-05: 1rem;
+```
+
+</details>
+
+- **Group**: [@carbon/layout](#carbonlayout)
+- **Type**: `Number`
+- **Aliased**:
+  - `productive-spacing-05`
+
+### ✅carbon--productive-spacing-06 [variable]
+
+<details>
+<summary>Source code</summary>
+
+```scss
+$carbon--productive-spacing-06: 1.5rem;
+```
+
+</details>
+
+- **Group**: [@carbon/layout](#carbonlayout)
+- **Type**: `Number`
+- **Aliased**:
+  - `productive-spacing-06`
+
+### ✅carbon--productive-spacing-07 [variable]
+
+<details>
+<summary>Source code</summary>
+
+```scss
+$carbon--productive-spacing-07: 2rem;
+```
+
+</details>
+
+- **Group**: [@carbon/layout](#carbonlayout)
+- **Type**: `Number`
+- **Aliased**:
+  - `productive-spacing-07`
+
+### ✅carbon--productive-spacing-08 [variable]
+
+<details>
+<summary>Source code</summary>
+
+```scss
+$carbon--productive-spacing-08: 2.5rem;
+```
+
+</details>
+
+- **Group**: [@carbon/layout](#carbonlayout)
+- **Type**: `Number`
+- **Aliased**:
+  - `productive-spacing-08`
+
+### ✅carbon--productive-spacing-09 [variable]
+
+<details>
+<summary>Source code</summary>
+
+```scss
+$carbon--productive-spacing-09: 3rem;
+```
+
+</details>
+
+- **Group**: [@carbon/layout](#carbonlayout)
+- **Type**: `Number`
+- **Aliased**:
+  - `productive-spacing-09`
+
+### ✅carbon--productive-spacing-10 [variable]
+
+<details>
+<summary>Source code</summary>
+
+```scss
+$carbon--productive-spacing-10: 4rem;
+```
+
+</details>
+
+- **Group**: [@carbon/layout](#carbonlayout)
+- **Type**: `Number`
+- **Aliased**:
+  - `productive-spacing-10`
+
+### ✅carbon--productive-spacing-11 [variable]
+
+<details>
+<summary>Source code</summary>
+
+```scss
+$carbon--productive-spacing-11: 5rem;
+```
+
+</details>
+
+- **Group**: [@carbon/layout](#carbonlayout)
+- **Type**: `Number`
+- **Aliased**:
+  - `productive-spacing-11`
+
+### ✅carbon--productive-spacing-12 [variable]
+
+<details>
+<summary>Source code</summary>
+
+```scss
+$carbon--productive-spacing-12: 6rem;
+```
+
+</details>
+
+- **Group**: [@carbon/layout](#carbonlayout)
+- **Type**: `Number`
+- **Aliased**:
+  - `productive-spacing-12`
+
+### ✅carbon--productive-spacing [variable]
+
+<details>
+<summary>Source code</summary>
+
+```scss
+$carbon--productive-spacing: (
+  $carbon--productive-spacing-01,
+  $carbon--productive-spacing-02,
+  $carbon--productive-spacing-03,
+  $carbon--productive-spacing-04,
+  $carbon--productive-spacing-05,
+  $carbon--productive-spacing-06,
+  $carbon--productive-spacing-07,
+  $carbon--productive-spacing-08,
+  $carbon--productive-spacing-09,
+  $carbon--productive-spacing-10,
+  $carbon--productive-spacing-11,
+  $carbon--productive-spacing-12
+);
+```
+
+</details>
+
+- **Group**: [@carbon/layout](#carbonlayout)
+- **Type**: `List`
+
+### ✅productive-spacing-01 [variable]
+
+<details>
+<summary>Source code</summary>
+
+```scss
+$productive-spacing-01: $carbon--productive-spacing-01;
+```
+
+</details>
+
+- **Group**: [@carbon/layout](#carbonlayout)
+- **Type**: `Number`
+- **Alias**: `carbon--productive-spacing-01`
+
+### ✅productive-spacing-02 [variable]
+
+<details>
+<summary>Source code</summary>
+
+```scss
+$productive-spacing-02: $carbon--productive-spacing-02;
+```
+
+</details>
+
+- **Group**: [@carbon/layout](#carbonlayout)
+- **Type**: `Number`
+- **Alias**: `carbon--productive-spacing-02`
+
+### ✅productive-spacing-03 [variable]
+
+<details>
+<summary>Source code</summary>
+
+```scss
+$productive-spacing-03: $carbon--productive-spacing-03;
+```
+
+</details>
+
+- **Group**: [@carbon/layout](#carbonlayout)
+- **Type**: `Number`
+- **Alias**: `carbon--productive-spacing-03`
+
+### ✅productive-spacing-04 [variable]
+
+<details>
+<summary>Source code</summary>
+
+```scss
+$productive-spacing-04: $carbon--productive-spacing-04;
+```
+
+</details>
+
+- **Group**: [@carbon/layout](#carbonlayout)
+- **Type**: `Number`
+- **Alias**: `carbon--productive-spacing-04`
+
+### ✅productive-spacing-05 [variable]
+
+<details>
+<summary>Source code</summary>
+
+```scss
+$productive-spacing-05: $carbon--productive-spacing-05;
+```
+
+</details>
+
+- **Group**: [@carbon/layout](#carbonlayout)
+- **Type**: `Number`
+- **Alias**: `carbon--productive-spacing-05`
+
+### ✅productive-spacing-06 [variable]
+
+<details>
+<summary>Source code</summary>
+
+```scss
+$productive-spacing-06: $carbon--productive-spacing-06;
+```
+
+</details>
+
+- **Group**: [@carbon/layout](#carbonlayout)
+- **Type**: `Number`
+- **Alias**: `carbon--productive-spacing-06`
+
+### ✅productive-spacing-07 [variable]
+
+<details>
+<summary>Source code</summary>
+
+```scss
+$productive-spacing-07: $carbon--productive-spacing-07;
+```
+
+</details>
+
+- **Group**: [@carbon/layout](#carbonlayout)
+- **Type**: `Number`
+- **Alias**: `carbon--productive-spacing-07`
+
+### ✅productive-spacing-08 [variable]
+
+<details>
+<summary>Source code</summary>
+
+```scss
+$productive-spacing-08: $carbon--productive-spacing-08;
+```
+
+</details>
+
+- **Group**: [@carbon/layout](#carbonlayout)
+- **Type**: `Number`
+- **Alias**: `carbon--productive-spacing-08`
+
+### ✅productive-spacing-09 [variable]
+
+<details>
+<summary>Source code</summary>
+
+```scss
+$productive-spacing-09: $carbon--productive-spacing-09;
+```
+
+</details>
+
+- **Group**: [@carbon/layout](#carbonlayout)
+- **Type**: `Number`
+- **Alias**: `carbon--productive-spacing-09`
+
+### ✅productive-spacing-10 [variable]
+
+<details>
+<summary>Source code</summary>
+
+```scss
+$productive-spacing-10: $carbon--productive-spacing-10;
+```
+
+</details>
+
+- **Group**: [@carbon/layout](#carbonlayout)
+- **Type**: `Number`
+- **Alias**: `carbon--productive-spacing-10`
+
+### ✅productive-spacing-11 [variable]
+
+<details>
+<summary>Source code</summary>
+
+```scss
+$productive-spacing-11: $carbon--productive-spacing-11;
+```
+
+</details>
+
+- **Group**: [@carbon/layout](#carbonlayout)
+- **Type**: `Number`
+- **Alias**: `carbon--productive-spacing-11`
+
+### ✅productive-spacing-12 [variable]
+
+<details>
+<summary>Source code</summary>
+
+```scss
+$productive-spacing-12: $carbon--productive-spacing-12;
+```
+
+</details>
+
+- **Group**: [@carbon/layout](#carbonlayout)
+- **Type**: `Number`
+- **Alias**: `carbon--productive-spacing-12`
 
 ### ✅carbon--spacing-01 [variable]
 

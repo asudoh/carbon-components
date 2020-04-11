@@ -19,6 +19,8 @@ const {
   container,
   iconSize,
   spacing,
+  productiveSpacing,
+  expressiveSpacing,
   layout,
   fluidSpacing,
 } = require('../lib');
@@ -32,6 +34,18 @@ async function build() {
       filepath: path.join(SCSS_DIR, '_spacing.scss'),
       builder() {
         return buildTokenFile(spacing, 'spacing');
+      },
+    },
+    {
+      filepath: path.join(SCSS_DIR, '_productive-spacing.scss'),
+      builder() {
+        return buildTokenFile(productiveSpacing, 'productive-spacing');
+      },
+    },
+    {
+      filepath: path.join(SCSS_DIR, '_expressive-spacing.scss'),
+      builder() {
+        return buildTokenFile(expressiveSpacing, 'expressive-spacing');
       },
     },
     {

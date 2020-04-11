@@ -84,9 +84,11 @@ export function breakpoint(...args) {
 
 // Mini-unit
 export const miniUnit = 8;
+export const productiveMiniUnit = miniUnit;
+export const expressiveMiniUnit = 12;
 
-export function miniUnits(count) {
-  return rem(miniUnit * count);
+export function miniUnits(count, unit = miniUnit) {
+  return rem(unit * count);
 }
 
 // Spacing
@@ -115,6 +117,60 @@ export const spacing = [
   spacing10,
   spacing11,
   spacing12,
+];
+
+export const productiveSpacing01 = spacing01;
+export const productiveSpacing02 = spacing02;
+export const productiveSpacing03 = spacing03;
+export const productiveSpacing04 = spacing04;
+export const productiveSpacing05 = spacing05;
+export const productiveSpacing06 = spacing06;
+export const productiveSpacing07 = spacing07;
+export const productiveSpacing08 = spacing08;
+export const productiveSpacing09 = spacing09;
+export const productiveSpacing10 = spacing10;
+export const productiveSpacing11 = spacing11;
+export const productiveSpacing12 = spacing12;
+export const productiveSpacing = [
+  productiveSpacing01,
+  productiveSpacing02,
+  productiveSpacing03,
+  productiveSpacing04,
+  productiveSpacing05,
+  productiveSpacing06,
+  productiveSpacing07,
+  productiveSpacing08,
+  productiveSpacing09,
+  productiveSpacing10,
+  productiveSpacing11,
+  productiveSpacing12,
+];
+
+export const expressiveSpacing01 = miniUnits(0.25, expressiveMiniUnit);
+export const expressiveSpacing02 = miniUnits(0.5, expressiveMiniUnit);
+export const expressiveSpacing03 = miniUnits(1, expressiveMiniUnit);
+export const expressiveSpacing04 = miniUnits(1.5, expressiveMiniUnit);
+export const expressiveSpacing05 = miniUnits(2, expressiveMiniUnit);
+export const expressiveSpacing06 = miniUnits(3, expressiveMiniUnit);
+export const expressiveSpacing07 = miniUnits(4, expressiveMiniUnit);
+export const expressiveSpacing08 = miniUnits(5, expressiveMiniUnit);
+export const expressiveSpacing09 = miniUnits(6, expressiveMiniUnit);
+export const expressiveSpacing10 = miniUnits(8, expressiveMiniUnit);
+export const expressiveSpacing11 = miniUnits(10, expressiveMiniUnit);
+export const expressiveSpacing12 = miniUnits(12, expressiveMiniUnit);
+export const expressiveSpacing = [
+  expressiveSpacing01,
+  expressiveSpacing02,
+  expressiveSpacing03,
+  expressiveSpacing04,
+  expressiveSpacing05,
+  expressiveSpacing06,
+  expressiveSpacing07,
+  expressiveSpacing08,
+  expressiveSpacing09,
+  expressiveSpacing10,
+  expressiveSpacing11,
+  expressiveSpacing12,
 ];
 
 // Fluid spacing

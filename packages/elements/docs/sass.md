@@ -60,6 +60,31 @@
   - [✅carbon--base-font-size [variable]](#carbon--base-font-size-variable)
   - [✅carbon--rem [function]](#carbon--rem-function)
   - [✅carbon--em [function]](#carbon--em-function)
+  - [✅carbon--expressive-spacing-01 [variable]](#carbon--expressive-spacing-01-variable)
+  - [✅carbon--expressive-spacing-02 [variable]](#carbon--expressive-spacing-02-variable)
+  - [✅carbon--expressive-spacing-03 [variable]](#carbon--expressive-spacing-03-variable)
+  - [✅carbon--expressive-spacing-04 [variable]](#carbon--expressive-spacing-04-variable)
+  - [✅carbon--expressive-spacing-05 [variable]](#carbon--expressive-spacing-05-variable)
+  - [✅carbon--expressive-spacing-06 [variable]](#carbon--expressive-spacing-06-variable)
+  - [✅carbon--expressive-spacing-07 [variable]](#carbon--expressive-spacing-07-variable)
+  - [✅carbon--expressive-spacing-08 [variable]](#carbon--expressive-spacing-08-variable)
+  - [✅carbon--expressive-spacing-09 [variable]](#carbon--expressive-spacing-09-variable)
+  - [✅carbon--expressive-spacing-10 [variable]](#carbon--expressive-spacing-10-variable)
+  - [✅carbon--expressive-spacing-11 [variable]](#carbon--expressive-spacing-11-variable)
+  - [✅carbon--expressive-spacing-12 [variable]](#carbon--expressive-spacing-12-variable)
+  - [✅carbon--expressive-spacing [variable]](#carbon--expressive-spacing-variable)
+  - [✅expressive-spacing-01 [variable]](#expressive-spacing-01-variable)
+  - [✅expressive-spacing-02 [variable]](#expressive-spacing-02-variable)
+  - [✅expressive-spacing-03 [variable]](#expressive-spacing-03-variable)
+  - [✅expressive-spacing-04 [variable]](#expressive-spacing-04-variable)
+  - [✅expressive-spacing-05 [variable]](#expressive-spacing-05-variable)
+  - [✅expressive-spacing-06 [variable]](#expressive-spacing-06-variable)
+  - [✅expressive-spacing-07 [variable]](#expressive-spacing-07-variable)
+  - [✅expressive-spacing-08 [variable]](#expressive-spacing-08-variable)
+  - [✅expressive-spacing-09 [variable]](#expressive-spacing-09-variable)
+  - [✅expressive-spacing-10 [variable]](#expressive-spacing-10-variable)
+  - [✅expressive-spacing-11 [variable]](#expressive-spacing-11-variable)
+  - [✅expressive-spacing-12 [variable]](#expressive-spacing-12-variable)
   - [✅carbon--fluid-spacing-01 [variable]](#carbon--fluid-spacing-01-variable)
   - [✅carbon--fluid-spacing-02 [variable]](#carbon--fluid-spacing-02-variable)
   - [✅carbon--fluid-spacing-03 [variable]](#carbon--fluid-spacing-03-variable)
@@ -94,6 +119,31 @@
   - [✅layout-07 [variable]](#layout-07-variable)
   - [✅carbon--mini-unit-size [variable]](#carbon--mini-unit-size-variable)
   - [✅carbon--mini-units [function]](#carbon--mini-units-function)
+  - [✅carbon--productive-spacing-01 [variable]](#carbon--productive-spacing-01-variable)
+  - [✅carbon--productive-spacing-02 [variable]](#carbon--productive-spacing-02-variable)
+  - [✅carbon--productive-spacing-03 [variable]](#carbon--productive-spacing-03-variable)
+  - [✅carbon--productive-spacing-04 [variable]](#carbon--productive-spacing-04-variable)
+  - [✅carbon--productive-spacing-05 [variable]](#carbon--productive-spacing-05-variable)
+  - [✅carbon--productive-spacing-06 [variable]](#carbon--productive-spacing-06-variable)
+  - [✅carbon--productive-spacing-07 [variable]](#carbon--productive-spacing-07-variable)
+  - [✅carbon--productive-spacing-08 [variable]](#carbon--productive-spacing-08-variable)
+  - [✅carbon--productive-spacing-09 [variable]](#carbon--productive-spacing-09-variable)
+  - [✅carbon--productive-spacing-10 [variable]](#carbon--productive-spacing-10-variable)
+  - [✅carbon--productive-spacing-11 [variable]](#carbon--productive-spacing-11-variable)
+  - [✅carbon--productive-spacing-12 [variable]](#carbon--productive-spacing-12-variable)
+  - [✅carbon--productive-spacing [variable]](#carbon--productive-spacing-variable)
+  - [✅productive-spacing-01 [variable]](#productive-spacing-01-variable)
+  - [✅productive-spacing-02 [variable]](#productive-spacing-02-variable)
+  - [✅productive-spacing-03 [variable]](#productive-spacing-03-variable)
+  - [✅productive-spacing-04 [variable]](#productive-spacing-04-variable)
+  - [✅productive-spacing-05 [variable]](#productive-spacing-05-variable)
+  - [✅productive-spacing-06 [variable]](#productive-spacing-06-variable)
+  - [✅productive-spacing-07 [variable]](#productive-spacing-07-variable)
+  - [✅productive-spacing-08 [variable]](#productive-spacing-08-variable)
+  - [✅productive-spacing-09 [variable]](#productive-spacing-09-variable)
+  - [✅productive-spacing-10 [variable]](#productive-spacing-10-variable)
+  - [✅productive-spacing-11 [variable]](#productive-spacing-11-variable)
+  - [✅productive-spacing-12 [variable]](#productive-spacing-12-variable)
   - [✅carbon--spacing-01 [variable]](#carbon--spacing-01-variable)
   - [✅carbon--spacing-02 [variable]](#carbon--spacing-02-variable)
   - [✅carbon--spacing-03 [variable]](#carbon--spacing-03-variable)
@@ -251,6 +301,30 @@
   - [✅spacing-10 [variable]](#spacing-10-variable)
   - [✅spacing-11 [variable]](#spacing-11-variable)
   - [✅spacing-12 [variable]](#spacing-12-variable)
+  - [✅productive-spacing-01 [variable]](#productive-spacing-01-variable)
+  - [✅productive-spacing-02 [variable]](#productive-spacing-02-variable)
+  - [✅productive-spacing-03 [variable]](#productive-spacing-03-variable)
+  - [✅productive-spacing-04 [variable]](#productive-spacing-04-variable)
+  - [✅productive-spacing-05 [variable]](#productive-spacing-05-variable)
+  - [✅productive-spacing-06 [variable]](#productive-spacing-06-variable)
+  - [✅productive-spacing-07 [variable]](#productive-spacing-07-variable)
+  - [✅productive-spacing-08 [variable]](#productive-spacing-08-variable)
+  - [✅productive-spacing-09 [variable]](#productive-spacing-09-variable)
+  - [✅productive-spacing-10 [variable]](#productive-spacing-10-variable)
+  - [✅productive-spacing-11 [variable]](#productive-spacing-11-variable)
+  - [✅productive-spacing-12 [variable]](#productive-spacing-12-variable)
+  - [✅expressive-spacing-01 [variable]](#expressive-spacing-01-variable)
+  - [✅expressive-spacing-02 [variable]](#expressive-spacing-02-variable)
+  - [✅expressive-spacing-03 [variable]](#expressive-spacing-03-variable)
+  - [✅expressive-spacing-04 [variable]](#expressive-spacing-04-variable)
+  - [✅expressive-spacing-05 [variable]](#expressive-spacing-05-variable)
+  - [✅expressive-spacing-06 [variable]](#expressive-spacing-06-variable)
+  - [✅expressive-spacing-07 [variable]](#expressive-spacing-07-variable)
+  - [✅expressive-spacing-08 [variable]](#expressive-spacing-08-variable)
+  - [✅expressive-spacing-09 [variable]](#expressive-spacing-09-variable)
+  - [✅expressive-spacing-10 [variable]](#expressive-spacing-10-variable)
+  - [✅expressive-spacing-11 [variable]](#expressive-spacing-11-variable)
+  - [✅expressive-spacing-12 [variable]](#expressive-spacing-12-variable)
   - [✅fluid-spacing-01 [variable]](#fluid-spacing-01-variable)
   - [✅fluid-spacing-02 [variable]](#fluid-spacing-02-variable)
   - [✅fluid-spacing-03 [variable]](#fluid-spacing-03-variable)
@@ -2451,6 +2525,429 @@ Convert a given px unit to a em unit
 - **Requires**:
   - [carbon--base-font-size [variable]](#carbon--base-font-size-variable)
 
+### ✅carbon--expressive-spacing-01 [variable]
+
+<details>
+<summary>Source code</summary>
+
+```scss
+$carbon--expressive-spacing-01: 0.1875rem;
+```
+
+</details>
+
+- **Group**: [@carbon/layout](#carbonlayout)
+- **Type**: `Number`
+- **Aliased**:
+  - `expressive-spacing-01`
+
+### ✅carbon--expressive-spacing-02 [variable]
+
+<details>
+<summary>Source code</summary>
+
+```scss
+$carbon--expressive-spacing-02: 0.375rem;
+```
+
+</details>
+
+- **Group**: [@carbon/layout](#carbonlayout)
+- **Type**: `Number`
+- **Aliased**:
+  - `expressive-spacing-02`
+
+### ✅carbon--expressive-spacing-03 [variable]
+
+<details>
+<summary>Source code</summary>
+
+```scss
+$carbon--expressive-spacing-03: 0.75rem;
+```
+
+</details>
+
+- **Group**: [@carbon/layout](#carbonlayout)
+- **Type**: `Number`
+- **Aliased**:
+  - `expressive-spacing-03`
+
+### ✅carbon--expressive-spacing-04 [variable]
+
+<details>
+<summary>Source code</summary>
+
+```scss
+$carbon--expressive-spacing-04: 1.125rem;
+```
+
+</details>
+
+- **Group**: [@carbon/layout](#carbonlayout)
+- **Type**: `Number`
+- **Aliased**:
+  - `expressive-spacing-04`
+
+### ✅carbon--expressive-spacing-05 [variable]
+
+<details>
+<summary>Source code</summary>
+
+```scss
+$carbon--expressive-spacing-05: 1.5rem;
+```
+
+</details>
+
+- **Group**: [@carbon/layout](#carbonlayout)
+- **Type**: `Number`
+- **Aliased**:
+  - `expressive-spacing-05`
+
+### ✅carbon--expressive-spacing-06 [variable]
+
+<details>
+<summary>Source code</summary>
+
+```scss
+$carbon--expressive-spacing-06: 2.25rem;
+```
+
+</details>
+
+- **Group**: [@carbon/layout](#carbonlayout)
+- **Type**: `Number`
+- **Aliased**:
+  - `expressive-spacing-06`
+
+### ✅carbon--expressive-spacing-07 [variable]
+
+<details>
+<summary>Source code</summary>
+
+```scss
+$carbon--expressive-spacing-07: 3rem;
+```
+
+</details>
+
+- **Group**: [@carbon/layout](#carbonlayout)
+- **Type**: `Number`
+- **Aliased**:
+  - `expressive-spacing-07`
+
+### ✅carbon--expressive-spacing-08 [variable]
+
+<details>
+<summary>Source code</summary>
+
+```scss
+$carbon--expressive-spacing-08: 3.75rem;
+```
+
+</details>
+
+- **Group**: [@carbon/layout](#carbonlayout)
+- **Type**: `Number`
+- **Aliased**:
+  - `expressive-spacing-08`
+
+### ✅carbon--expressive-spacing-09 [variable]
+
+<details>
+<summary>Source code</summary>
+
+```scss
+$carbon--expressive-spacing-09: 4.5rem;
+```
+
+</details>
+
+- **Group**: [@carbon/layout](#carbonlayout)
+- **Type**: `Number`
+- **Aliased**:
+  - `expressive-spacing-09`
+
+### ✅carbon--expressive-spacing-10 [variable]
+
+<details>
+<summary>Source code</summary>
+
+```scss
+$carbon--expressive-spacing-10: 6rem;
+```
+
+</details>
+
+- **Group**: [@carbon/layout](#carbonlayout)
+- **Type**: `Number`
+- **Aliased**:
+  - `expressive-spacing-10`
+
+### ✅carbon--expressive-spacing-11 [variable]
+
+<details>
+<summary>Source code</summary>
+
+```scss
+$carbon--expressive-spacing-11: 7.5rem;
+```
+
+</details>
+
+- **Group**: [@carbon/layout](#carbonlayout)
+- **Type**: `Number`
+- **Aliased**:
+  - `expressive-spacing-11`
+
+### ✅carbon--expressive-spacing-12 [variable]
+
+<details>
+<summary>Source code</summary>
+
+```scss
+$carbon--expressive-spacing-12: 9rem;
+```
+
+</details>
+
+- **Group**: [@carbon/layout](#carbonlayout)
+- **Type**: `Number`
+- **Aliased**:
+  - `expressive-spacing-12`
+
+### ✅carbon--expressive-spacing [variable]
+
+<details>
+<summary>Source code</summary>
+
+```scss
+$carbon--expressive-spacing: (
+  $carbon--expressive-spacing-01,
+  $carbon--expressive-spacing-02,
+  $carbon--expressive-spacing-03,
+  $carbon--expressive-spacing-04,
+  $carbon--expressive-spacing-05,
+  $carbon--expressive-spacing-06,
+  $carbon--expressive-spacing-07,
+  $carbon--expressive-spacing-08,
+  $carbon--expressive-spacing-09,
+  $carbon--expressive-spacing-10,
+  $carbon--expressive-spacing-11,
+  $carbon--expressive-spacing-12
+);
+```
+
+</details>
+
+- **Group**: [@carbon/layout](#carbonlayout)
+- **Type**: `List`
+
+### ✅expressive-spacing-01 [variable]
+
+<details>
+<summary>Source code</summary>
+
+```scss
+$expressive-spacing-01: $carbon--expressive-spacing-01;
+```
+
+</details>
+
+- **Group**: [@carbon/layout](#carbonlayout)
+- **Type**: `Number`
+- **Alias**: `carbon--expressive-spacing-01`
+- **Used by**:
+  - [carbon--theme [mixin]](#carbon--theme-mixin)
+
+### ✅expressive-spacing-02 [variable]
+
+<details>
+<summary>Source code</summary>
+
+```scss
+$expressive-spacing-02: $carbon--expressive-spacing-02;
+```
+
+</details>
+
+- **Group**: [@carbon/layout](#carbonlayout)
+- **Type**: `Number`
+- **Alias**: `carbon--expressive-spacing-02`
+- **Used by**:
+  - [carbon--theme [mixin]](#carbon--theme-mixin)
+
+### ✅expressive-spacing-03 [variable]
+
+<details>
+<summary>Source code</summary>
+
+```scss
+$expressive-spacing-03: $carbon--expressive-spacing-03;
+```
+
+</details>
+
+- **Group**: [@carbon/layout](#carbonlayout)
+- **Type**: `Number`
+- **Alias**: `carbon--expressive-spacing-03`
+- **Used by**:
+  - [carbon--theme [mixin]](#carbon--theme-mixin)
+
+### ✅expressive-spacing-04 [variable]
+
+<details>
+<summary>Source code</summary>
+
+```scss
+$expressive-spacing-04: $carbon--expressive-spacing-04;
+```
+
+</details>
+
+- **Group**: [@carbon/layout](#carbonlayout)
+- **Type**: `Number`
+- **Alias**: `carbon--expressive-spacing-04`
+- **Used by**:
+  - [carbon--theme [mixin]](#carbon--theme-mixin)
+
+### ✅expressive-spacing-05 [variable]
+
+<details>
+<summary>Source code</summary>
+
+```scss
+$expressive-spacing-05: $carbon--expressive-spacing-05;
+```
+
+</details>
+
+- **Group**: [@carbon/layout](#carbonlayout)
+- **Type**: `Number`
+- **Alias**: `carbon--expressive-spacing-05`
+- **Used by**:
+  - [carbon--theme [mixin]](#carbon--theme-mixin)
+
+### ✅expressive-spacing-06 [variable]
+
+<details>
+<summary>Source code</summary>
+
+```scss
+$expressive-spacing-06: $carbon--expressive-spacing-06;
+```
+
+</details>
+
+- **Group**: [@carbon/layout](#carbonlayout)
+- **Type**: `Number`
+- **Alias**: `carbon--expressive-spacing-06`
+- **Used by**:
+  - [carbon--theme [mixin]](#carbon--theme-mixin)
+
+### ✅expressive-spacing-07 [variable]
+
+<details>
+<summary>Source code</summary>
+
+```scss
+$expressive-spacing-07: $carbon--expressive-spacing-07;
+```
+
+</details>
+
+- **Group**: [@carbon/layout](#carbonlayout)
+- **Type**: `Number`
+- **Alias**: `carbon--expressive-spacing-07`
+- **Used by**:
+  - [carbon--theme [mixin]](#carbon--theme-mixin)
+
+### ✅expressive-spacing-08 [variable]
+
+<details>
+<summary>Source code</summary>
+
+```scss
+$expressive-spacing-08: $carbon--expressive-spacing-08;
+```
+
+</details>
+
+- **Group**: [@carbon/layout](#carbonlayout)
+- **Type**: `Number`
+- **Alias**: `carbon--expressive-spacing-08`
+- **Used by**:
+  - [carbon--theme [mixin]](#carbon--theme-mixin)
+
+### ✅expressive-spacing-09 [variable]
+
+<details>
+<summary>Source code</summary>
+
+```scss
+$expressive-spacing-09: $carbon--expressive-spacing-09;
+```
+
+</details>
+
+- **Group**: [@carbon/layout](#carbonlayout)
+- **Type**: `Number`
+- **Alias**: `carbon--expressive-spacing-09`
+- **Used by**:
+  - [carbon--theme [mixin]](#carbon--theme-mixin)
+
+### ✅expressive-spacing-10 [variable]
+
+<details>
+<summary>Source code</summary>
+
+```scss
+$expressive-spacing-10: $carbon--expressive-spacing-10;
+```
+
+</details>
+
+- **Group**: [@carbon/layout](#carbonlayout)
+- **Type**: `Number`
+- **Alias**: `carbon--expressive-spacing-10`
+- **Used by**:
+  - [carbon--theme [mixin]](#carbon--theme-mixin)
+
+### ✅expressive-spacing-11 [variable]
+
+<details>
+<summary>Source code</summary>
+
+```scss
+$expressive-spacing-11: $carbon--expressive-spacing-11;
+```
+
+</details>
+
+- **Group**: [@carbon/layout](#carbonlayout)
+- **Type**: `Number`
+- **Alias**: `carbon--expressive-spacing-11`
+- **Used by**:
+  - [carbon--theme [mixin]](#carbon--theme-mixin)
+
+### ✅expressive-spacing-12 [variable]
+
+<details>
+<summary>Source code</summary>
+
+```scss
+$expressive-spacing-12: $carbon--expressive-spacing-12;
+```
+
+</details>
+
+- **Group**: [@carbon/layout](#carbonlayout)
+- **Type**: `Number`
+- **Alias**: `carbon--expressive-spacing-12`
+- **Used by**:
+  - [carbon--theme [mixin]](#carbon--theme-mixin)
+
 ### ✅carbon--fluid-spacing-01 [variable]
 
 <details>
@@ -3110,6 +3607,429 @@ Get the value of the corresponding number of units
 - **Requires**:
   - [carbon--rem [function]](#carbon--rem-function)
   - [carbon--mini-unit-size [variable]](#carbon--mini-unit-size-variable)
+
+### ✅carbon--productive-spacing-01 [variable]
+
+<details>
+<summary>Source code</summary>
+
+```scss
+$carbon--productive-spacing-01: 0.125rem;
+```
+
+</details>
+
+- **Group**: [@carbon/layout](#carbonlayout)
+- **Type**: `Number`
+- **Aliased**:
+  - `productive-spacing-01`
+
+### ✅carbon--productive-spacing-02 [variable]
+
+<details>
+<summary>Source code</summary>
+
+```scss
+$carbon--productive-spacing-02: 0.25rem;
+```
+
+</details>
+
+- **Group**: [@carbon/layout](#carbonlayout)
+- **Type**: `Number`
+- **Aliased**:
+  - `productive-spacing-02`
+
+### ✅carbon--productive-spacing-03 [variable]
+
+<details>
+<summary>Source code</summary>
+
+```scss
+$carbon--productive-spacing-03: 0.5rem;
+```
+
+</details>
+
+- **Group**: [@carbon/layout](#carbonlayout)
+- **Type**: `Number`
+- **Aliased**:
+  - `productive-spacing-03`
+
+### ✅carbon--productive-spacing-04 [variable]
+
+<details>
+<summary>Source code</summary>
+
+```scss
+$carbon--productive-spacing-04: 0.75rem;
+```
+
+</details>
+
+- **Group**: [@carbon/layout](#carbonlayout)
+- **Type**: `Number`
+- **Aliased**:
+  - `productive-spacing-04`
+
+### ✅carbon--productive-spacing-05 [variable]
+
+<details>
+<summary>Source code</summary>
+
+```scss
+$carbon--productive-spacing-05: 1rem;
+```
+
+</details>
+
+- **Group**: [@carbon/layout](#carbonlayout)
+- **Type**: `Number`
+- **Aliased**:
+  - `productive-spacing-05`
+
+### ✅carbon--productive-spacing-06 [variable]
+
+<details>
+<summary>Source code</summary>
+
+```scss
+$carbon--productive-spacing-06: 1.5rem;
+```
+
+</details>
+
+- **Group**: [@carbon/layout](#carbonlayout)
+- **Type**: `Number`
+- **Aliased**:
+  - `productive-spacing-06`
+
+### ✅carbon--productive-spacing-07 [variable]
+
+<details>
+<summary>Source code</summary>
+
+```scss
+$carbon--productive-spacing-07: 2rem;
+```
+
+</details>
+
+- **Group**: [@carbon/layout](#carbonlayout)
+- **Type**: `Number`
+- **Aliased**:
+  - `productive-spacing-07`
+
+### ✅carbon--productive-spacing-08 [variable]
+
+<details>
+<summary>Source code</summary>
+
+```scss
+$carbon--productive-spacing-08: 2.5rem;
+```
+
+</details>
+
+- **Group**: [@carbon/layout](#carbonlayout)
+- **Type**: `Number`
+- **Aliased**:
+  - `productive-spacing-08`
+
+### ✅carbon--productive-spacing-09 [variable]
+
+<details>
+<summary>Source code</summary>
+
+```scss
+$carbon--productive-spacing-09: 3rem;
+```
+
+</details>
+
+- **Group**: [@carbon/layout](#carbonlayout)
+- **Type**: `Number`
+- **Aliased**:
+  - `productive-spacing-09`
+
+### ✅carbon--productive-spacing-10 [variable]
+
+<details>
+<summary>Source code</summary>
+
+```scss
+$carbon--productive-spacing-10: 4rem;
+```
+
+</details>
+
+- **Group**: [@carbon/layout](#carbonlayout)
+- **Type**: `Number`
+- **Aliased**:
+  - `productive-spacing-10`
+
+### ✅carbon--productive-spacing-11 [variable]
+
+<details>
+<summary>Source code</summary>
+
+```scss
+$carbon--productive-spacing-11: 5rem;
+```
+
+</details>
+
+- **Group**: [@carbon/layout](#carbonlayout)
+- **Type**: `Number`
+- **Aliased**:
+  - `productive-spacing-11`
+
+### ✅carbon--productive-spacing-12 [variable]
+
+<details>
+<summary>Source code</summary>
+
+```scss
+$carbon--productive-spacing-12: 6rem;
+```
+
+</details>
+
+- **Group**: [@carbon/layout](#carbonlayout)
+- **Type**: `Number`
+- **Aliased**:
+  - `productive-spacing-12`
+
+### ✅carbon--productive-spacing [variable]
+
+<details>
+<summary>Source code</summary>
+
+```scss
+$carbon--productive-spacing: (
+  $carbon--productive-spacing-01,
+  $carbon--productive-spacing-02,
+  $carbon--productive-spacing-03,
+  $carbon--productive-spacing-04,
+  $carbon--productive-spacing-05,
+  $carbon--productive-spacing-06,
+  $carbon--productive-spacing-07,
+  $carbon--productive-spacing-08,
+  $carbon--productive-spacing-09,
+  $carbon--productive-spacing-10,
+  $carbon--productive-spacing-11,
+  $carbon--productive-spacing-12
+);
+```
+
+</details>
+
+- **Group**: [@carbon/layout](#carbonlayout)
+- **Type**: `List`
+
+### ✅productive-spacing-01 [variable]
+
+<details>
+<summary>Source code</summary>
+
+```scss
+$productive-spacing-01: $carbon--productive-spacing-01;
+```
+
+</details>
+
+- **Group**: [@carbon/layout](#carbonlayout)
+- **Type**: `Number`
+- **Alias**: `carbon--productive-spacing-01`
+- **Used by**:
+  - [carbon--theme [mixin]](#carbon--theme-mixin)
+
+### ✅productive-spacing-02 [variable]
+
+<details>
+<summary>Source code</summary>
+
+```scss
+$productive-spacing-02: $carbon--productive-spacing-02;
+```
+
+</details>
+
+- **Group**: [@carbon/layout](#carbonlayout)
+- **Type**: `Number`
+- **Alias**: `carbon--productive-spacing-02`
+- **Used by**:
+  - [carbon--theme [mixin]](#carbon--theme-mixin)
+
+### ✅productive-spacing-03 [variable]
+
+<details>
+<summary>Source code</summary>
+
+```scss
+$productive-spacing-03: $carbon--productive-spacing-03;
+```
+
+</details>
+
+- **Group**: [@carbon/layout](#carbonlayout)
+- **Type**: `Number`
+- **Alias**: `carbon--productive-spacing-03`
+- **Used by**:
+  - [carbon--theme [mixin]](#carbon--theme-mixin)
+
+### ✅productive-spacing-04 [variable]
+
+<details>
+<summary>Source code</summary>
+
+```scss
+$productive-spacing-04: $carbon--productive-spacing-04;
+```
+
+</details>
+
+- **Group**: [@carbon/layout](#carbonlayout)
+- **Type**: `Number`
+- **Alias**: `carbon--productive-spacing-04`
+- **Used by**:
+  - [carbon--theme [mixin]](#carbon--theme-mixin)
+
+### ✅productive-spacing-05 [variable]
+
+<details>
+<summary>Source code</summary>
+
+```scss
+$productive-spacing-05: $carbon--productive-spacing-05;
+```
+
+</details>
+
+- **Group**: [@carbon/layout](#carbonlayout)
+- **Type**: `Number`
+- **Alias**: `carbon--productive-spacing-05`
+- **Used by**:
+  - [carbon--theme [mixin]](#carbon--theme-mixin)
+
+### ✅productive-spacing-06 [variable]
+
+<details>
+<summary>Source code</summary>
+
+```scss
+$productive-spacing-06: $carbon--productive-spacing-06;
+```
+
+</details>
+
+- **Group**: [@carbon/layout](#carbonlayout)
+- **Type**: `Number`
+- **Alias**: `carbon--productive-spacing-06`
+- **Used by**:
+  - [carbon--theme [mixin]](#carbon--theme-mixin)
+
+### ✅productive-spacing-07 [variable]
+
+<details>
+<summary>Source code</summary>
+
+```scss
+$productive-spacing-07: $carbon--productive-spacing-07;
+```
+
+</details>
+
+- **Group**: [@carbon/layout](#carbonlayout)
+- **Type**: `Number`
+- **Alias**: `carbon--productive-spacing-07`
+- **Used by**:
+  - [carbon--theme [mixin]](#carbon--theme-mixin)
+
+### ✅productive-spacing-08 [variable]
+
+<details>
+<summary>Source code</summary>
+
+```scss
+$productive-spacing-08: $carbon--productive-spacing-08;
+```
+
+</details>
+
+- **Group**: [@carbon/layout](#carbonlayout)
+- **Type**: `Number`
+- **Alias**: `carbon--productive-spacing-08`
+- **Used by**:
+  - [carbon--theme [mixin]](#carbon--theme-mixin)
+
+### ✅productive-spacing-09 [variable]
+
+<details>
+<summary>Source code</summary>
+
+```scss
+$productive-spacing-09: $carbon--productive-spacing-09;
+```
+
+</details>
+
+- **Group**: [@carbon/layout](#carbonlayout)
+- **Type**: `Number`
+- **Alias**: `carbon--productive-spacing-09`
+- **Used by**:
+  - [carbon--theme [mixin]](#carbon--theme-mixin)
+
+### ✅productive-spacing-10 [variable]
+
+<details>
+<summary>Source code</summary>
+
+```scss
+$productive-spacing-10: $carbon--productive-spacing-10;
+```
+
+</details>
+
+- **Group**: [@carbon/layout](#carbonlayout)
+- **Type**: `Number`
+- **Alias**: `carbon--productive-spacing-10`
+- **Used by**:
+  - [carbon--theme [mixin]](#carbon--theme-mixin)
+
+### ✅productive-spacing-11 [variable]
+
+<details>
+<summary>Source code</summary>
+
+```scss
+$productive-spacing-11: $carbon--productive-spacing-11;
+```
+
+</details>
+
+- **Group**: [@carbon/layout](#carbonlayout)
+- **Type**: `Number`
+- **Alias**: `carbon--productive-spacing-11`
+- **Used by**:
+  - [carbon--theme [mixin]](#carbon--theme-mixin)
+
+### ✅productive-spacing-12 [variable]
+
+<details>
+<summary>Source code</summary>
+
+```scss
+$productive-spacing-12: $carbon--productive-spacing-12;
+```
+
+</details>
+
+- **Group**: [@carbon/layout](#carbonlayout)
+- **Type**: `Number`
+- **Alias**: `carbon--productive-spacing-12`
+- **Used by**:
+  - [carbon--theme [mixin]](#carbon--theme-mixin)
 
 ### ✅carbon--spacing-01 [variable]
 
@@ -3907,6 +4827,30 @@ Define theme variables from a map of tokens
   $spacing-10: map-get($theme, 'spacing-10') !global;
   $spacing-11: map-get($theme, 'spacing-11') !global;
   $spacing-12: map-get($theme, 'spacing-12') !global;
+  $productive-spacing-01: map-get($theme, 'productive-spacing-01') !global;
+  $productive-spacing-02: map-get($theme, 'productive-spacing-02') !global;
+  $productive-spacing-03: map-get($theme, 'productive-spacing-03') !global;
+  $productive-spacing-04: map-get($theme, 'productive-spacing-04') !global;
+  $productive-spacing-05: map-get($theme, 'productive-spacing-05') !global;
+  $productive-spacing-06: map-get($theme, 'productive-spacing-06') !global;
+  $productive-spacing-07: map-get($theme, 'productive-spacing-07') !global;
+  $productive-spacing-08: map-get($theme, 'productive-spacing-08') !global;
+  $productive-spacing-09: map-get($theme, 'productive-spacing-09') !global;
+  $productive-spacing-10: map-get($theme, 'productive-spacing-10') !global;
+  $productive-spacing-11: map-get($theme, 'productive-spacing-11') !global;
+  $productive-spacing-12: map-get($theme, 'productive-spacing-12') !global;
+  $expressive-spacing-01: map-get($theme, 'expressive-spacing-01') !global;
+  $expressive-spacing-02: map-get($theme, 'expressive-spacing-02') !global;
+  $expressive-spacing-03: map-get($theme, 'expressive-spacing-03') !global;
+  $expressive-spacing-04: map-get($theme, 'expressive-spacing-04') !global;
+  $expressive-spacing-05: map-get($theme, 'expressive-spacing-05') !global;
+  $expressive-spacing-06: map-get($theme, 'expressive-spacing-06') !global;
+  $expressive-spacing-07: map-get($theme, 'expressive-spacing-07') !global;
+  $expressive-spacing-08: map-get($theme, 'expressive-spacing-08') !global;
+  $expressive-spacing-09: map-get($theme, 'expressive-spacing-09') !global;
+  $expressive-spacing-10: map-get($theme, 'expressive-spacing-10') !global;
+  $expressive-spacing-11: map-get($theme, 'expressive-spacing-11') !global;
+  $expressive-spacing-12: map-get($theme, 'expressive-spacing-12') !global;
   $fluid-spacing-01: map-get($theme, 'fluid-spacing-01') !global;
   $fluid-spacing-02: map-get($theme, 'fluid-spacing-02') !global;
   $fluid-spacing-03: map-get($theme, 'fluid-spacing-03') !global;
@@ -4240,6 +5184,102 @@ Define theme variables from a map of tokens
     $spacing-12: var(
       --#{$custom-property-prefix}-spacing-12,
       map-get($theme, 'spacing-12')
+    ) !global;
+    $productive-spacing-01: var(
+      --#{$custom-property-prefix}-productive-spacing-01,
+      map-get($theme, 'productive-spacing-01')
+    ) !global;
+    $productive-spacing-02: var(
+      --#{$custom-property-prefix}-productive-spacing-02,
+      map-get($theme, 'productive-spacing-02')
+    ) !global;
+    $productive-spacing-03: var(
+      --#{$custom-property-prefix}-productive-spacing-03,
+      map-get($theme, 'productive-spacing-03')
+    ) !global;
+    $productive-spacing-04: var(
+      --#{$custom-property-prefix}-productive-spacing-04,
+      map-get($theme, 'productive-spacing-04')
+    ) !global;
+    $productive-spacing-05: var(
+      --#{$custom-property-prefix}-productive-spacing-05,
+      map-get($theme, 'productive-spacing-05')
+    ) !global;
+    $productive-spacing-06: var(
+      --#{$custom-property-prefix}-productive-spacing-06,
+      map-get($theme, 'productive-spacing-06')
+    ) !global;
+    $productive-spacing-07: var(
+      --#{$custom-property-prefix}-productive-spacing-07,
+      map-get($theme, 'productive-spacing-07')
+    ) !global;
+    $productive-spacing-08: var(
+      --#{$custom-property-prefix}-productive-spacing-08,
+      map-get($theme, 'productive-spacing-08')
+    ) !global;
+    $productive-spacing-09: var(
+      --#{$custom-property-prefix}-productive-spacing-09,
+      map-get($theme, 'productive-spacing-09')
+    ) !global;
+    $productive-spacing-10: var(
+      --#{$custom-property-prefix}-productive-spacing-10,
+      map-get($theme, 'productive-spacing-10')
+    ) !global;
+    $productive-spacing-11: var(
+      --#{$custom-property-prefix}-productive-spacing-11,
+      map-get($theme, 'productive-spacing-11')
+    ) !global;
+    $productive-spacing-12: var(
+      --#{$custom-property-prefix}-productive-spacing-12,
+      map-get($theme, 'productive-spacing-12')
+    ) !global;
+    $expressive-spacing-01: var(
+      --#{$custom-property-prefix}-expressive-spacing-01,
+      map-get($theme, 'expressive-spacing-01')
+    ) !global;
+    $expressive-spacing-02: var(
+      --#{$custom-property-prefix}-expressive-spacing-02,
+      map-get($theme, 'expressive-spacing-02')
+    ) !global;
+    $expressive-spacing-03: var(
+      --#{$custom-property-prefix}-expressive-spacing-03,
+      map-get($theme, 'expressive-spacing-03')
+    ) !global;
+    $expressive-spacing-04: var(
+      --#{$custom-property-prefix}-expressive-spacing-04,
+      map-get($theme, 'expressive-spacing-04')
+    ) !global;
+    $expressive-spacing-05: var(
+      --#{$custom-property-prefix}-expressive-spacing-05,
+      map-get($theme, 'expressive-spacing-05')
+    ) !global;
+    $expressive-spacing-06: var(
+      --#{$custom-property-prefix}-expressive-spacing-06,
+      map-get($theme, 'expressive-spacing-06')
+    ) !global;
+    $expressive-spacing-07: var(
+      --#{$custom-property-prefix}-expressive-spacing-07,
+      map-get($theme, 'expressive-spacing-07')
+    ) !global;
+    $expressive-spacing-08: var(
+      --#{$custom-property-prefix}-expressive-spacing-08,
+      map-get($theme, 'expressive-spacing-08')
+    ) !global;
+    $expressive-spacing-09: var(
+      --#{$custom-property-prefix}-expressive-spacing-09,
+      map-get($theme, 'expressive-spacing-09')
+    ) !global;
+    $expressive-spacing-10: var(
+      --#{$custom-property-prefix}-expressive-spacing-10,
+      map-get($theme, 'expressive-spacing-10')
+    ) !global;
+    $expressive-spacing-11: var(
+      --#{$custom-property-prefix}-expressive-spacing-11,
+      map-get($theme, 'expressive-spacing-11')
+    ) !global;
+    $expressive-spacing-12: var(
+      --#{$custom-property-prefix}-expressive-spacing-12,
+      map-get($theme, 'expressive-spacing-12')
     ) !global;
     $fluid-spacing-01: var(
       --#{$custom-property-prefix}-fluid-spacing-01,
@@ -5412,6 +6452,318 @@ Define theme variables from a map of tokens
     @if should-emit(
       $theme,
       $parent-carbon-theme,
+      'productive-spacing-01',
+      $emit-difference
+    )
+    {
+      @include custom-property(
+        'productive-spacing-01',
+        map-get($theme, 'productive-spacing-01')
+      );
+    }
+
+    @if should-emit(
+      $theme,
+      $parent-carbon-theme,
+      'productive-spacing-02',
+      $emit-difference
+    )
+    {
+      @include custom-property(
+        'productive-spacing-02',
+        map-get($theme, 'productive-spacing-02')
+      );
+    }
+
+    @if should-emit(
+      $theme,
+      $parent-carbon-theme,
+      'productive-spacing-03',
+      $emit-difference
+    )
+    {
+      @include custom-property(
+        'productive-spacing-03',
+        map-get($theme, 'productive-spacing-03')
+      );
+    }
+
+    @if should-emit(
+      $theme,
+      $parent-carbon-theme,
+      'productive-spacing-04',
+      $emit-difference
+    )
+    {
+      @include custom-property(
+        'productive-spacing-04',
+        map-get($theme, 'productive-spacing-04')
+      );
+    }
+
+    @if should-emit(
+      $theme,
+      $parent-carbon-theme,
+      'productive-spacing-05',
+      $emit-difference
+    )
+    {
+      @include custom-property(
+        'productive-spacing-05',
+        map-get($theme, 'productive-spacing-05')
+      );
+    }
+
+    @if should-emit(
+      $theme,
+      $parent-carbon-theme,
+      'productive-spacing-06',
+      $emit-difference
+    )
+    {
+      @include custom-property(
+        'productive-spacing-06',
+        map-get($theme, 'productive-spacing-06')
+      );
+    }
+
+    @if should-emit(
+      $theme,
+      $parent-carbon-theme,
+      'productive-spacing-07',
+      $emit-difference
+    )
+    {
+      @include custom-property(
+        'productive-spacing-07',
+        map-get($theme, 'productive-spacing-07')
+      );
+    }
+
+    @if should-emit(
+      $theme,
+      $parent-carbon-theme,
+      'productive-spacing-08',
+      $emit-difference
+    )
+    {
+      @include custom-property(
+        'productive-spacing-08',
+        map-get($theme, 'productive-spacing-08')
+      );
+    }
+
+    @if should-emit(
+      $theme,
+      $parent-carbon-theme,
+      'productive-spacing-09',
+      $emit-difference
+    )
+    {
+      @include custom-property(
+        'productive-spacing-09',
+        map-get($theme, 'productive-spacing-09')
+      );
+    }
+
+    @if should-emit(
+      $theme,
+      $parent-carbon-theme,
+      'productive-spacing-10',
+      $emit-difference
+    )
+    {
+      @include custom-property(
+        'productive-spacing-10',
+        map-get($theme, 'productive-spacing-10')
+      );
+    }
+
+    @if should-emit(
+      $theme,
+      $parent-carbon-theme,
+      'productive-spacing-11',
+      $emit-difference
+    )
+    {
+      @include custom-property(
+        'productive-spacing-11',
+        map-get($theme, 'productive-spacing-11')
+      );
+    }
+
+    @if should-emit(
+      $theme,
+      $parent-carbon-theme,
+      'productive-spacing-12',
+      $emit-difference
+    )
+    {
+      @include custom-property(
+        'productive-spacing-12',
+        map-get($theme, 'productive-spacing-12')
+      );
+    }
+
+    @if should-emit(
+      $theme,
+      $parent-carbon-theme,
+      'expressive-spacing-01',
+      $emit-difference
+    )
+    {
+      @include custom-property(
+        'expressive-spacing-01',
+        map-get($theme, 'expressive-spacing-01')
+      );
+    }
+
+    @if should-emit(
+      $theme,
+      $parent-carbon-theme,
+      'expressive-spacing-02',
+      $emit-difference
+    )
+    {
+      @include custom-property(
+        'expressive-spacing-02',
+        map-get($theme, 'expressive-spacing-02')
+      );
+    }
+
+    @if should-emit(
+      $theme,
+      $parent-carbon-theme,
+      'expressive-spacing-03',
+      $emit-difference
+    )
+    {
+      @include custom-property(
+        'expressive-spacing-03',
+        map-get($theme, 'expressive-spacing-03')
+      );
+    }
+
+    @if should-emit(
+      $theme,
+      $parent-carbon-theme,
+      'expressive-spacing-04',
+      $emit-difference
+    )
+    {
+      @include custom-property(
+        'expressive-spacing-04',
+        map-get($theme, 'expressive-spacing-04')
+      );
+    }
+
+    @if should-emit(
+      $theme,
+      $parent-carbon-theme,
+      'expressive-spacing-05',
+      $emit-difference
+    )
+    {
+      @include custom-property(
+        'expressive-spacing-05',
+        map-get($theme, 'expressive-spacing-05')
+      );
+    }
+
+    @if should-emit(
+      $theme,
+      $parent-carbon-theme,
+      'expressive-spacing-06',
+      $emit-difference
+    )
+    {
+      @include custom-property(
+        'expressive-spacing-06',
+        map-get($theme, 'expressive-spacing-06')
+      );
+    }
+
+    @if should-emit(
+      $theme,
+      $parent-carbon-theme,
+      'expressive-spacing-07',
+      $emit-difference
+    )
+    {
+      @include custom-property(
+        'expressive-spacing-07',
+        map-get($theme, 'expressive-spacing-07')
+      );
+    }
+
+    @if should-emit(
+      $theme,
+      $parent-carbon-theme,
+      'expressive-spacing-08',
+      $emit-difference
+    )
+    {
+      @include custom-property(
+        'expressive-spacing-08',
+        map-get($theme, 'expressive-spacing-08')
+      );
+    }
+
+    @if should-emit(
+      $theme,
+      $parent-carbon-theme,
+      'expressive-spacing-09',
+      $emit-difference
+    )
+    {
+      @include custom-property(
+        'expressive-spacing-09',
+        map-get($theme, 'expressive-spacing-09')
+      );
+    }
+
+    @if should-emit(
+      $theme,
+      $parent-carbon-theme,
+      'expressive-spacing-10',
+      $emit-difference
+    )
+    {
+      @include custom-property(
+        'expressive-spacing-10',
+        map-get($theme, 'expressive-spacing-10')
+      );
+    }
+
+    @if should-emit(
+      $theme,
+      $parent-carbon-theme,
+      'expressive-spacing-11',
+      $emit-difference
+    )
+    {
+      @include custom-property(
+        'expressive-spacing-11',
+        map-get($theme, 'expressive-spacing-11')
+      );
+    }
+
+    @if should-emit(
+      $theme,
+      $parent-carbon-theme,
+      'expressive-spacing-12',
+      $emit-difference
+    )
+    {
+      @include custom-property(
+        'expressive-spacing-12',
+        map-get($theme, 'expressive-spacing-12')
+      );
+    }
+
+    @if should-emit(
+      $theme,
+      $parent-carbon-theme,
       'fluid-spacing-01',
       $emit-difference
     )
@@ -5732,6 +7084,30 @@ Define theme variables from a map of tokens
   - [spacing-10 [variable]](#spacing-10-variable)
   - [spacing-11 [variable]](#spacing-11-variable)
   - [spacing-12 [variable]](#spacing-12-variable)
+  - [productive-spacing-01 [variable]](#productive-spacing-01-variable)
+  - [productive-spacing-02 [variable]](#productive-spacing-02-variable)
+  - [productive-spacing-03 [variable]](#productive-spacing-03-variable)
+  - [productive-spacing-04 [variable]](#productive-spacing-04-variable)
+  - [productive-spacing-05 [variable]](#productive-spacing-05-variable)
+  - [productive-spacing-06 [variable]](#productive-spacing-06-variable)
+  - [productive-spacing-07 [variable]](#productive-spacing-07-variable)
+  - [productive-spacing-08 [variable]](#productive-spacing-08-variable)
+  - [productive-spacing-09 [variable]](#productive-spacing-09-variable)
+  - [productive-spacing-10 [variable]](#productive-spacing-10-variable)
+  - [productive-spacing-11 [variable]](#productive-spacing-11-variable)
+  - [productive-spacing-12 [variable]](#productive-spacing-12-variable)
+  - [expressive-spacing-01 [variable]](#expressive-spacing-01-variable)
+  - [expressive-spacing-02 [variable]](#expressive-spacing-02-variable)
+  - [expressive-spacing-03 [variable]](#expressive-spacing-03-variable)
+  - [expressive-spacing-04 [variable]](#expressive-spacing-04-variable)
+  - [expressive-spacing-05 [variable]](#expressive-spacing-05-variable)
+  - [expressive-spacing-06 [variable]](#expressive-spacing-06-variable)
+  - [expressive-spacing-07 [variable]](#expressive-spacing-07-variable)
+  - [expressive-spacing-08 [variable]](#expressive-spacing-08-variable)
+  - [expressive-spacing-09 [variable]](#expressive-spacing-09-variable)
+  - [expressive-spacing-10 [variable]](#expressive-spacing-10-variable)
+  - [expressive-spacing-11 [variable]](#expressive-spacing-11-variable)
+  - [expressive-spacing-12 [variable]](#expressive-spacing-12-variable)
   - [fluid-spacing-01 [variable]](#fluid-spacing-01-variable)
   - [fluid-spacing-02 [variable]](#fluid-spacing-02-variable)
   - [fluid-spacing-03 [variable]](#fluid-spacing-03-variable)
@@ -6181,6 +7557,30 @@ $carbon--theme: (
   spacing-10: if(global-variable-exists('spacing-10'), $spacing-10, map-get($carbon--theme--white, 'spacing-10')),
   spacing-11: if(global-variable-exists('spacing-11'), $spacing-11, map-get($carbon--theme--white, 'spacing-11')),
   spacing-12: if(global-variable-exists('spacing-12'), $spacing-12, map-get($carbon--theme--white, 'spacing-12')),
+  productive-spacing-01: if(global-variable-exists('productive-spacing-01'), $productive-spacing-01, map-get($carbon--theme--white, 'productive-spacing-01')),
+  productive-spacing-02: if(global-variable-exists('productive-spacing-02'), $productive-spacing-02, map-get($carbon--theme--white, 'productive-spacing-02')),
+  productive-spacing-03: if(global-variable-exists('productive-spacing-03'), $productive-spacing-03, map-get($carbon--theme--white, 'productive-spacing-03')),
+  productive-spacing-04: if(global-variable-exists('productive-spacing-04'), $productive-spacing-04, map-get($carbon--theme--white, 'productive-spacing-04')),
+  productive-spacing-05: if(global-variable-exists('productive-spacing-05'), $productive-spacing-05, map-get($carbon--theme--white, 'productive-spacing-05')),
+  productive-spacing-06: if(global-variable-exists('productive-spacing-06'), $productive-spacing-06, map-get($carbon--theme--white, 'productive-spacing-06')),
+  productive-spacing-07: if(global-variable-exists('productive-spacing-07'), $productive-spacing-07, map-get($carbon--theme--white, 'productive-spacing-07')),
+  productive-spacing-08: if(global-variable-exists('productive-spacing-08'), $productive-spacing-08, map-get($carbon--theme--white, 'productive-spacing-08')),
+  productive-spacing-09: if(global-variable-exists('productive-spacing-09'), $productive-spacing-09, map-get($carbon--theme--white, 'productive-spacing-09')),
+  productive-spacing-10: if(global-variable-exists('productive-spacing-10'), $productive-spacing-10, map-get($carbon--theme--white, 'productive-spacing-10')),
+  productive-spacing-11: if(global-variable-exists('productive-spacing-11'), $productive-spacing-11, map-get($carbon--theme--white, 'productive-spacing-11')),
+  productive-spacing-12: if(global-variable-exists('productive-spacing-12'), $productive-spacing-12, map-get($carbon--theme--white, 'productive-spacing-12')),
+  expressive-spacing-01: if(global-variable-exists('expressive-spacing-01'), $expressive-spacing-01, map-get($carbon--theme--white, 'expressive-spacing-01')),
+  expressive-spacing-02: if(global-variable-exists('expressive-spacing-02'), $expressive-spacing-02, map-get($carbon--theme--white, 'expressive-spacing-02')),
+  expressive-spacing-03: if(global-variable-exists('expressive-spacing-03'), $expressive-spacing-03, map-get($carbon--theme--white, 'expressive-spacing-03')),
+  expressive-spacing-04: if(global-variable-exists('expressive-spacing-04'), $expressive-spacing-04, map-get($carbon--theme--white, 'expressive-spacing-04')),
+  expressive-spacing-05: if(global-variable-exists('expressive-spacing-05'), $expressive-spacing-05, map-get($carbon--theme--white, 'expressive-spacing-05')),
+  expressive-spacing-06: if(global-variable-exists('expressive-spacing-06'), $expressive-spacing-06, map-get($carbon--theme--white, 'expressive-spacing-06')),
+  expressive-spacing-07: if(global-variable-exists('expressive-spacing-07'), $expressive-spacing-07, map-get($carbon--theme--white, 'expressive-spacing-07')),
+  expressive-spacing-08: if(global-variable-exists('expressive-spacing-08'), $expressive-spacing-08, map-get($carbon--theme--white, 'expressive-spacing-08')),
+  expressive-spacing-09: if(global-variable-exists('expressive-spacing-09'), $expressive-spacing-09, map-get($carbon--theme--white, 'expressive-spacing-09')),
+  expressive-spacing-10: if(global-variable-exists('expressive-spacing-10'), $expressive-spacing-10, map-get($carbon--theme--white, 'expressive-spacing-10')),
+  expressive-spacing-11: if(global-variable-exists('expressive-spacing-11'), $expressive-spacing-11, map-get($carbon--theme--white, 'expressive-spacing-11')),
+  expressive-spacing-12: if(global-variable-exists('expressive-spacing-12'), $expressive-spacing-12, map-get($carbon--theme--white, 'expressive-spacing-12')),
   fluid-spacing-01: if(global-variable-exists('fluid-spacing-01'), $fluid-spacing-01, map-get($carbon--theme--white, 'fluid-spacing-01')),
   fluid-spacing-02: if(global-variable-exists('fluid-spacing-02'), $fluid-spacing-02, map-get($carbon--theme--white, 'fluid-spacing-02')),
   fluid-spacing-03: if(global-variable-exists('fluid-spacing-03'), $fluid-spacing-03, map-get($carbon--theme--white, 'fluid-spacing-03')),
@@ -9281,6 +10681,510 @@ $spacing-12: if(
     ),
   map-get($carbon--theme, 'spacing-12'),
   6rem
+);
+```
+
+</details>
+
+- **Group**: [@carbon/themes](#carbonthemes)
+- **Type**: `{Number}`
+
+### ✅productive-spacing-01 [variable]
+
+<details>
+<summary>Source code</summary>
+
+```scss
+$productive-spacing-01: if(
+  global-variable-exists('carbon--theme') and map-has-key(
+      $carbon--theme,
+      'productive-spacing-01'
+    ),
+  map-get($carbon--theme, 'productive-spacing-01'),
+  0.125rem
+);
+```
+
+</details>
+
+- **Group**: [@carbon/themes](#carbonthemes)
+- **Type**: `{Number}`
+
+### ✅productive-spacing-02 [variable]
+
+<details>
+<summary>Source code</summary>
+
+```scss
+$productive-spacing-02: if(
+  global-variable-exists('carbon--theme') and map-has-key(
+      $carbon--theme,
+      'productive-spacing-02'
+    ),
+  map-get($carbon--theme, 'productive-spacing-02'),
+  0.25rem
+);
+```
+
+</details>
+
+- **Group**: [@carbon/themes](#carbonthemes)
+- **Type**: `{Number}`
+
+### ✅productive-spacing-03 [variable]
+
+<details>
+<summary>Source code</summary>
+
+```scss
+$productive-spacing-03: if(
+  global-variable-exists('carbon--theme') and map-has-key(
+      $carbon--theme,
+      'productive-spacing-03'
+    ),
+  map-get($carbon--theme, 'productive-spacing-03'),
+  0.5rem
+);
+```
+
+</details>
+
+- **Group**: [@carbon/themes](#carbonthemes)
+- **Type**: `{Number}`
+
+### ✅productive-spacing-04 [variable]
+
+<details>
+<summary>Source code</summary>
+
+```scss
+$productive-spacing-04: if(
+  global-variable-exists('carbon--theme') and map-has-key(
+      $carbon--theme,
+      'productive-spacing-04'
+    ),
+  map-get($carbon--theme, 'productive-spacing-04'),
+  0.75rem
+);
+```
+
+</details>
+
+- **Group**: [@carbon/themes](#carbonthemes)
+- **Type**: `{Number}`
+
+### ✅productive-spacing-05 [variable]
+
+<details>
+<summary>Source code</summary>
+
+```scss
+$productive-spacing-05: if(
+  global-variable-exists('carbon--theme') and map-has-key(
+      $carbon--theme,
+      'productive-spacing-05'
+    ),
+  map-get($carbon--theme, 'productive-spacing-05'),
+  1rem
+);
+```
+
+</details>
+
+- **Group**: [@carbon/themes](#carbonthemes)
+- **Type**: `{Number}`
+
+### ✅productive-spacing-06 [variable]
+
+<details>
+<summary>Source code</summary>
+
+```scss
+$productive-spacing-06: if(
+  global-variable-exists('carbon--theme') and map-has-key(
+      $carbon--theme,
+      'productive-spacing-06'
+    ),
+  map-get($carbon--theme, 'productive-spacing-06'),
+  1.5rem
+);
+```
+
+</details>
+
+- **Group**: [@carbon/themes](#carbonthemes)
+- **Type**: `{Number}`
+
+### ✅productive-spacing-07 [variable]
+
+<details>
+<summary>Source code</summary>
+
+```scss
+$productive-spacing-07: if(
+  global-variable-exists('carbon--theme') and map-has-key(
+      $carbon--theme,
+      'productive-spacing-07'
+    ),
+  map-get($carbon--theme, 'productive-spacing-07'),
+  2rem
+);
+```
+
+</details>
+
+- **Group**: [@carbon/themes](#carbonthemes)
+- **Type**: `{Number}`
+
+### ✅productive-spacing-08 [variable]
+
+<details>
+<summary>Source code</summary>
+
+```scss
+$productive-spacing-08: if(
+  global-variable-exists('carbon--theme') and map-has-key(
+      $carbon--theme,
+      'productive-spacing-08'
+    ),
+  map-get($carbon--theme, 'productive-spacing-08'),
+  2.5rem
+);
+```
+
+</details>
+
+- **Group**: [@carbon/themes](#carbonthemes)
+- **Type**: `{Number}`
+
+### ✅productive-spacing-09 [variable]
+
+<details>
+<summary>Source code</summary>
+
+```scss
+$productive-spacing-09: if(
+  global-variable-exists('carbon--theme') and map-has-key(
+      $carbon--theme,
+      'productive-spacing-09'
+    ),
+  map-get($carbon--theme, 'productive-spacing-09'),
+  3rem
+);
+```
+
+</details>
+
+- **Group**: [@carbon/themes](#carbonthemes)
+- **Type**: `{Number}`
+
+### ✅productive-spacing-10 [variable]
+
+<details>
+<summary>Source code</summary>
+
+```scss
+$productive-spacing-10: if(
+  global-variable-exists('carbon--theme') and map-has-key(
+      $carbon--theme,
+      'productive-spacing-10'
+    ),
+  map-get($carbon--theme, 'productive-spacing-10'),
+  4rem
+);
+```
+
+</details>
+
+- **Group**: [@carbon/themes](#carbonthemes)
+- **Type**: `{Number}`
+
+### ✅productive-spacing-11 [variable]
+
+<details>
+<summary>Source code</summary>
+
+```scss
+$productive-spacing-11: if(
+  global-variable-exists('carbon--theme') and map-has-key(
+      $carbon--theme,
+      'productive-spacing-11'
+    ),
+  map-get($carbon--theme, 'productive-spacing-11'),
+  5rem
+);
+```
+
+</details>
+
+- **Group**: [@carbon/themes](#carbonthemes)
+- **Type**: `{Number}`
+
+### ✅productive-spacing-12 [variable]
+
+<details>
+<summary>Source code</summary>
+
+```scss
+$productive-spacing-12: if(
+  global-variable-exists('carbon--theme') and map-has-key(
+      $carbon--theme,
+      'productive-spacing-12'
+    ),
+  map-get($carbon--theme, 'productive-spacing-12'),
+  6rem
+);
+```
+
+</details>
+
+- **Group**: [@carbon/themes](#carbonthemes)
+- **Type**: `{Number}`
+
+### ✅expressive-spacing-01 [variable]
+
+<details>
+<summary>Source code</summary>
+
+```scss
+$expressive-spacing-01: if(
+  global-variable-exists('carbon--theme') and map-has-key(
+      $carbon--theme,
+      'expressive-spacing-01'
+    ),
+  map-get($carbon--theme, 'expressive-spacing-01'),
+  0.1875rem
+);
+```
+
+</details>
+
+- **Group**: [@carbon/themes](#carbonthemes)
+- **Type**: `{Number}`
+
+### ✅expressive-spacing-02 [variable]
+
+<details>
+<summary>Source code</summary>
+
+```scss
+$expressive-spacing-02: if(
+  global-variable-exists('carbon--theme') and map-has-key(
+      $carbon--theme,
+      'expressive-spacing-02'
+    ),
+  map-get($carbon--theme, 'expressive-spacing-02'),
+  0.375rem
+);
+```
+
+</details>
+
+- **Group**: [@carbon/themes](#carbonthemes)
+- **Type**: `{Number}`
+
+### ✅expressive-spacing-03 [variable]
+
+<details>
+<summary>Source code</summary>
+
+```scss
+$expressive-spacing-03: if(
+  global-variable-exists('carbon--theme') and map-has-key(
+      $carbon--theme,
+      'expressive-spacing-03'
+    ),
+  map-get($carbon--theme, 'expressive-spacing-03'),
+  0.75rem
+);
+```
+
+</details>
+
+- **Group**: [@carbon/themes](#carbonthemes)
+- **Type**: `{Number}`
+
+### ✅expressive-spacing-04 [variable]
+
+<details>
+<summary>Source code</summary>
+
+```scss
+$expressive-spacing-04: if(
+  global-variable-exists('carbon--theme') and map-has-key(
+      $carbon--theme,
+      'expressive-spacing-04'
+    ),
+  map-get($carbon--theme, 'expressive-spacing-04'),
+  1.125rem
+);
+```
+
+</details>
+
+- **Group**: [@carbon/themes](#carbonthemes)
+- **Type**: `{Number}`
+
+### ✅expressive-spacing-05 [variable]
+
+<details>
+<summary>Source code</summary>
+
+```scss
+$expressive-spacing-05: if(
+  global-variable-exists('carbon--theme') and map-has-key(
+      $carbon--theme,
+      'expressive-spacing-05'
+    ),
+  map-get($carbon--theme, 'expressive-spacing-05'),
+  1.5rem
+);
+```
+
+</details>
+
+- **Group**: [@carbon/themes](#carbonthemes)
+- **Type**: `{Number}`
+
+### ✅expressive-spacing-06 [variable]
+
+<details>
+<summary>Source code</summary>
+
+```scss
+$expressive-spacing-06: if(
+  global-variable-exists('carbon--theme') and map-has-key(
+      $carbon--theme,
+      'expressive-spacing-06'
+    ),
+  map-get($carbon--theme, 'expressive-spacing-06'),
+  2.25rem
+);
+```
+
+</details>
+
+- **Group**: [@carbon/themes](#carbonthemes)
+- **Type**: `{Number}`
+
+### ✅expressive-spacing-07 [variable]
+
+<details>
+<summary>Source code</summary>
+
+```scss
+$expressive-spacing-07: if(
+  global-variable-exists('carbon--theme') and map-has-key(
+      $carbon--theme,
+      'expressive-spacing-07'
+    ),
+  map-get($carbon--theme, 'expressive-spacing-07'),
+  3rem
+);
+```
+
+</details>
+
+- **Group**: [@carbon/themes](#carbonthemes)
+- **Type**: `{Number}`
+
+### ✅expressive-spacing-08 [variable]
+
+<details>
+<summary>Source code</summary>
+
+```scss
+$expressive-spacing-08: if(
+  global-variable-exists('carbon--theme') and map-has-key(
+      $carbon--theme,
+      'expressive-spacing-08'
+    ),
+  map-get($carbon--theme, 'expressive-spacing-08'),
+  3.75rem
+);
+```
+
+</details>
+
+- **Group**: [@carbon/themes](#carbonthemes)
+- **Type**: `{Number}`
+
+### ✅expressive-spacing-09 [variable]
+
+<details>
+<summary>Source code</summary>
+
+```scss
+$expressive-spacing-09: if(
+  global-variable-exists('carbon--theme') and map-has-key(
+      $carbon--theme,
+      'expressive-spacing-09'
+    ),
+  map-get($carbon--theme, 'expressive-spacing-09'),
+  4.5rem
+);
+```
+
+</details>
+
+- **Group**: [@carbon/themes](#carbonthemes)
+- **Type**: `{Number}`
+
+### ✅expressive-spacing-10 [variable]
+
+<details>
+<summary>Source code</summary>
+
+```scss
+$expressive-spacing-10: if(
+  global-variable-exists('carbon--theme') and map-has-key(
+      $carbon--theme,
+      'expressive-spacing-10'
+    ),
+  map-get($carbon--theme, 'expressive-spacing-10'),
+  6rem
+);
+```
+
+</details>
+
+- **Group**: [@carbon/themes](#carbonthemes)
+- **Type**: `{Number}`
+
+### ✅expressive-spacing-11 [variable]
+
+<details>
+<summary>Source code</summary>
+
+```scss
+$expressive-spacing-11: if(
+  global-variable-exists('carbon--theme') and map-has-key(
+      $carbon--theme,
+      'expressive-spacing-11'
+    ),
+  map-get($carbon--theme, 'expressive-spacing-11'),
+  7.5rem
+);
+```
+
+</details>
+
+- **Group**: [@carbon/themes](#carbonthemes)
+- **Type**: `{Number}`
+
+### ✅expressive-spacing-12 [variable]
+
+<details>
+<summary>Source code</summary>
+
+```scss
+$expressive-spacing-12: if(
+  global-variable-exists('carbon--theme') and map-has-key(
+      $carbon--theme,
+      'expressive-spacing-12'
+    ),
+  map-get($carbon--theme, 'expressive-spacing-12'),
+  9rem
 );
 ```
 
