@@ -5,6 +5,47 @@
  * LICENSE file in the root directory of this source tree.
  */
 
+// BEGIN TO BE REMOVED FROM PRODUCTION VERSION
+@import '~carbon-components/scss/globals/scss/vendor/@carbon/elements/scss/type/styles';
+$carbon--type-style--group: $carbon--type-style--expressive-tokens;
+
+@import '~carbon-components/scss/globals/scss/vendor/@carbon/elements/scss/layout/spacing';
+$spacing-01: $expressive-spacing-01;
+$spacing-02: $expressive-spacing-02;
+$spacing-03: $expressive-spacing-03;
+$spacing-04: $expressive-spacing-04;
+$spacing-05: $expressive-spacing-05;
+$spacing-06: $expressive-spacing-06;
+$spacing-07: $expressive-spacing-07;
+$spacing-08: $expressive-spacing-08;
+$spacing-09: $expressive-spacing-09;
+$spacing-10: $expressive-spacing-10;
+$spacing-11: $expressive-spacing-11;
+$spacing-12: $expressive-spacing-12;
+
+@import '~carbon-components/scss/globals/scss/vendor/@carbon/elements/scss/themes/themes';
+// Ensures `$carbon--theme` and `$carbon--theme--white` are in sync
+// to ensure the comparison in `@function get-token-value` works.
+// Ref: https://github.com/carbon-design-system/carbon/blob/v10.11.0/packages/components/src/globals/scss/_component-tokens.scss#L28
+$carbon--theme--white: map-merge(
+  $carbon--theme--white,
+  (
+    spacing-01: $expressive-spacing-01,
+    spacing-02: $expressive-spacing-02,
+    spacing-03: $expressive-spacing-03,
+    spacing-04: $expressive-spacing-04,
+    spacing-05: $expressive-spacing-05,
+    spacing-06: $expressive-spacing-06,
+    spacing-07: $expressive-spacing-07,
+    spacing-08: $expressive-spacing-08,
+    spacing-09: $expressive-spacing-09,
+    spacing-10: $expressive-spacing-10,
+    spacing-11: $expressive-spacing-11,
+    spacing-12: $expressive-spacing-12,
+  )
+);
+// END TO BE REMOVED FROM PRODUCTION VERSION
+
 $css--font-face: true;
 $css--reset: true;
 $prefix: 'bx';
