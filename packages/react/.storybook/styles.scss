@@ -5,6 +5,111 @@
  * LICENSE file in the root directory of this source tree.
  */
 
+// The minimum set of dependencies to define custom type tokens
+@import '~carbon-components/scss/globals/scss/vendor/@carbon/elements/scss/type/font-family';
+@import '~carbon-components/scss/globals/scss/vendor/@carbon/elements/scss/type/scale';
+
+$caption-01: (
+  font-size: carbon--type-scale(2),
+  font-weight: carbon--font-weight('regular'),
+  line-height: carbon--rem(18px),
+  letter-spacing: 0.16px,
+);
+
+$helper-text-01: (
+  font-size: carbon--type-scale(2),
+  line-height: carbon--rem(18px),
+  letter-spacing: 0.16px,
+);
+
+$body-short-01: (
+  font-size: carbon--type-scale(3),
+  font-weight: carbon--font-weight('regular'),
+  line-height: carbon--rem(22px),
+  letter-spacing: 0,
+);
+
+$body-long-01: (
+  font-size: carbon--type-scale(3),
+  font-weight: carbon--font-weight('regular'),
+  line-height: carbon--rem(24px),
+  letter-spacing: 0,
+);
+
+$code-01: (
+  font-family: carbon--font-family('mono'),
+  font-size: carbon--type-scale(2),
+  font-weight: carbon--font-weight('regular'),
+  line-height: carbon--rem(20px),
+  letter-spacing: 0,
+);
+
+$code-02: (
+  font-family: carbon--font-family('mono'),
+  font-size: carbon--type-scale(3),
+  font-weight: carbon--font-weight('regular'),
+  line-height: carbon--rem(24px),
+  letter-spacing: 0,
+);
+
+$heading-01: (
+  font-size: carbon--type-scale(3),
+  font-weight: carbon--font-weight('semibold'),
+  line-height: carbon--rem(22px),
+  letter-spacing: 0,
+);
+
+$expressive-heading-01: (
+  font-size: carbon--type-scale(2),
+  font-weight: carbon--font-weight('semibold'),
+  line-height: carbon--rem(20px),
+  letter-spacing: 0.16px,
+);
+
+@import '~carbon-components/scss/globals/scss/vendor/@carbon/elements/scss/layout/spacing';
+$spacing-01: 0.1875rem;
+$spacing-02: 0.375rem;
+$spacing-03: 0.75rem;
+$spacing-04: 1.125rem;
+$spacing-05: 1.5rem;
+$spacing-06: 2.25rem;
+$spacing-07: 3rem;
+$spacing-08: 3.75rem;
+$spacing-09: 4.5rem;
+$spacing-10: 6rem;
+$spacing-11: 7.5rem;
+$spacing-12: 9rem;
+
+@import '~carbon-components/scss/globals/scss/vendor/@carbon/elements/scss/themes/themes';
+// Ensures `$carbon--theme` and `$carbon--theme--white` are in sync
+// to ensure the comparison in `@function get-token-value` works.
+// Ref: https://github.com/carbon-design-system/carbon/blob/v10.11.0/packages/components/src/globals/scss/_component-tokens.scss#L28
+$carbon--theme--white: map-merge(
+  $carbon--theme--white,
+  (
+    caption-01: $caption-01,
+    helper-text-01: $helper-text-01,
+    body-short-01: $body-short-01,
+    body-long-01: $body-long-01,
+    code-01: $code-01,
+    code-02: $code-02,
+    heading-01: $heading-01,
+    expressive-heading-01: $expressive-heading-01,
+    spacing-01: $spacing-01,
+    spacing-02: $spacing-02,
+    spacing-03: $spacing-03,
+    spacing-04: $spacing-04,
+    spacing-05: $spacing-05,
+    spacing-06: $spacing-06,
+    spacing-07: $spacing-07,
+    spacing-08: $spacing-08,
+    spacing-09: $spacing-09,
+    spacing-10: $spacing-10,
+    spacing-11: $spacing-11,
+    spacing-12: $spacing-12,
+  )
+);
+
 $css--font-face: true;
 $css--reset: true;
 $prefix: 'bx';
