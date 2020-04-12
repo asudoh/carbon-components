@@ -9359,25 +9359,18 @@ $expressive-heading-05: if(
         font-size: 2.25rem,
         font-weight: 300,
         line-height: 122%,
-        letter-spacing: 0,
       ),
       lg: (
         font-size: 2.625rem,
-        font-weight: 300,
         line-height: 119%,
-        letter-spacing: 0,
       ),
       xlg: (
         font-size: 3rem,
-        font-weight: 300,
         line-height: 117%,
-        letter-spacing: 0,
       ),
       max: (
         font-size: 3.75rem,
-        font-weight: 300,
         line-height: 4.375rem,
-        letter-spacing: 0,
       ),
     ),
   )
@@ -9411,27 +9404,19 @@ $expressive-heading-06: if(
     breakpoints: (
       md: (
         font-size: 2.25rem,
-        font-weight: 600,
         line-height: 122%,
-        letter-spacing: 0,
       ),
       lg: (
         font-size: 2.625rem,
-        font-weight: 600,
         line-height: 119%,
-        letter-spacing: 0,
       ),
       xlg: (
         font-size: 3rem,
-        font-weight: 600,
         line-height: 117%,
-        letter-spacing: 0,
       ),
       max: (
         font-size: 3.75rem,
-        font-weight: 600,
         line-height: 4.375rem,
-        letter-spacing: 0,
       ),
     ),
   )
@@ -9462,13 +9447,15 @@ $expressive-paragraph-01: if(
     font-weight: 300,
     line-height: 125%,
     letter-spacing: 0,
-    lg: (
-      font-size: 1.75rem,
-      line-height: 129%,
-    ),
-    max: (
-      font-size: 2rem,
-      line-height: 125%,
+    breakpoints: (
+      lg: (
+        font-size: 1.75rem,
+        line-height: 129%,
+      ),
+      max: (
+        font-size: 2rem,
+        line-height: 125%,
+      ),
     ),
   )
 );
@@ -9501,26 +9488,18 @@ $quotation-01: if(
     breakpoints: (
       md: (
         font-size: 1.25rem,
-        font-weight: 400,
-        letter-spacing: 0,
       ),
       lg: (
         font-size: 1.5rem,
-        font-weight: 400,
         line-height: 125%,
-        letter-spacing: 0,
       ),
       xlg: (
         font-size: 1.75rem,
-        font-weight: 400,
         line-height: 129%,
-        letter-spacing: 0,
       ),
       max: (
         font-size: 2rem,
-        font-weight: 400,
         line-height: 125%,
-        letter-spacing: 0,
       ),
     ),
   )
@@ -9697,6 +9676,7 @@ $display-03: if(
       xlg: (
         font-size: 7.625rem,
         line-height: 107%,
+        letter-spacing: -0.64px,
       ),
       max: (
         font-size: 9.75rem,

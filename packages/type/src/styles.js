@@ -260,25 +260,18 @@ export const expressiveHeading05 = {
       fontSize: rem(scale[8]),
       fontWeight: fontWeights.light,
       lineHeight: '122%',
-      letterSpacing: 0,
     },
     lg: {
       fontSize: rem(scale[9]),
-      fontWeight: fontWeights.light,
       lineHeight: '119%',
-      letterSpacing: 0,
     },
     xlg: {
       fontSize: rem(scale[10]),
-      fontWeight: fontWeights.light,
       lineHeight: '117%',
-      letterSpacing: 0,
     },
     max: {
       fontSize: rem(scale[12]),
-      fontWeight: fontWeights.light,
       lineHeight: rem(70),
-      letterSpacing: 0,
     },
   },
 };
@@ -291,27 +284,19 @@ export const expressiveHeading06 = {
   breakpoints: {
     md: {
       fontSize: rem(scale[8]),
-      fontWeight: fontWeights.semibold,
       lineHeight: '122%',
-      letterSpacing: 0,
     },
     lg: {
       fontSize: rem(scale[9]),
-      fontWeight: fontWeights.semibold,
       lineHeight: '119%',
-      letterSpacing: 0,
     },
     xlg: {
       fontSize: rem(scale[10]),
-      fontWeight: fontWeights.semibold,
       lineHeight: '117%',
-      letterSpacing: 0,
     },
     max: {
       fontSize: rem(scale[12]),
-      fontWeight: fontWeights.semibold,
       lineHeight: rem(70),
-      letterSpacing: 0,
     },
   },
 };
@@ -321,13 +306,15 @@ export const expressiveParagraph01 = {
   fontWeight: fontWeights.light,
   lineHeight: '125%',
   letterSpacing: 0,
-  lg: {
-    fontSize: rem(scale[6]),
-    lineHeight: '129%',
-  },
-  max: {
-    fontSize: rem(scale[7]),
-    lineHeight: '125%',
+  breakpoints: {
+    lg: {
+      fontSize: rem(scale[6]),
+      lineHeight: '129%',
+    },
+    max: {
+      fontSize: rem(scale[7]),
+      lineHeight: '125%',
+    },
   },
 };
 
@@ -339,26 +326,18 @@ export const quotation01 = {
   breakpoints: {
     md: {
       fontSize: rem(scale[4]),
-      fontWeight: fontWeights.regular,
-      letterSpacing: 0,
     },
     lg: {
       fontSize: rem(scale[5]),
-      fontWeight: fontWeights.regular,
       lineHeight: '125%',
-      letterSpacing: 0,
     },
     xlg: {
       fontSize: rem(scale[6]),
-      fontWeight: fontWeights.regular,
       lineHeight: '129%',
-      letterSpacing: 0,
     },
     max: {
       fontSize: rem(scale[7]),
-      fontWeight: fontWeights.regular,
       lineHeight: '125%',
-      letterSpacing: 0,
     },
   },
 };
@@ -451,6 +430,7 @@ export const display03 = {
     xlg: {
       fontSize: rem(scale[19]),
       lineHeight: '107%',
+      letterSpacing: px(-0.64),
     },
     max: {
       fontSize: rem(scale[22]),
