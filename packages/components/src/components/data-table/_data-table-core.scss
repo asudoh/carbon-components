@@ -350,7 +350,7 @@
   .#{$prefix}--data-table--compact thead tr,
   .#{$prefix}--data-table--compact tbody tr,
   .#{$prefix}--data-table--compact tbody tr th {
-    height: rem(24px);
+    height: $data-table-compact-height;
   }
 
   .#{$prefix}--data-table--compact .#{$prefix}--table-header-label {
@@ -387,7 +387,7 @@
   .#{$prefix}--data-table--short thead tr,
   .#{$prefix}--data-table--short tbody tr,
   .#{$prefix}--data-table--short tbody tr th {
-    height: rem(32px);
+    height: $data-table-short-height;
   }
 
   .#{$prefix}--data-table--short .#{$prefix}--table-header-label {
@@ -416,7 +416,7 @@
   .#{$prefix}--data-table--tall thead tr,
   .#{$prefix}--data-table--tall tbody tr,
   .#{$prefix}--data-table--tall tbody tr th {
-    height: rem(64px);
+    height: $data-table-tall-height;
   }
 
   .#{$prefix}--data-table--tall .#{$prefix}--table-header-label {
