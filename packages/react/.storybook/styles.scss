@@ -79,6 +79,18 @@ $spacing-09: 4.5rem;
 $spacing-10: 6rem;
 $spacing-11: 7.5rem;
 $spacing-12: 9rem;
+$layout-01: 1.5rem;
+$layout-02: 2.25rem;
+$layout-03: 3rem;
+$layout-04: 4.5rem;
+$layout-05: 6rem;
+$layout-06: 9rem;
+$layout-07: 15rem;
+
+@import '~carbon-components/scss/globals/scss/typography';
+$data-table-compact-height: rem(32px);
+$data-table-short-height: rem(40px);
+$data-table-tall-height: rem(70px);
 
 @import '~carbon-components/scss/globals/scss/vendor/@carbon/elements/scss/themes/themes';
 // Ensures `$carbon--theme` and `$carbon--theme--white` are in sync
@@ -107,6 +119,13 @@ $carbon--theme--white: map-merge(
     spacing-10: $spacing-10,
     spacing-11: $spacing-11,
     spacing-12: $spacing-12,
+    layout-01: $layout-01,
+    layout-02: $layout-02,
+    layout-03: $layout-03,
+    layout-04: $layout-04,
+    layout-05: $layout-05,
+    layout-06: $layout-06,
+    layout-07: $layout-07,
   )
 );
 

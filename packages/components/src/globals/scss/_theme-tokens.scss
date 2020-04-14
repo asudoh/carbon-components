@@ -240,6 +240,21 @@ $data-table-zebra-color: $ui-02 !default;
 /// @group data-table
 $data-table-column-hover: $hover-selected-ui !default;
 
+/// @type Number
+/// @access public
+/// @group data-table
+$data-table-compact-height: rem(24px) !default;
+
+/// @type Number
+/// @access public
+/// @group data-table
+$data-table-short-height: rem(32px) !default;
+
+/// @type Number
+/// @access public
+/// @group data-table
+$data-table-tall-height: rem(64px) !default;
+
 // Date Picker
 
 /// @type Color
