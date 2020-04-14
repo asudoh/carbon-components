@@ -19,7 +19,6 @@
     display: flex;
     justify-content: space-evenly;
     width: 100%;
-    height: rem(40px);
   }
 
   .#{$prefix}--content-switcher--disabled {
@@ -36,7 +35,7 @@
     align-items: center;
     width: 100%;
     padding: $carbon--spacing-03 $carbon--spacing-05;
-    margin: 0;
+    margin: #{$spacing-01 * 1.5} 0;
     white-space: nowrap;
     overflow: hidden;
     text-align: left;
