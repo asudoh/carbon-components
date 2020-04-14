@@ -193,8 +193,6 @@
   //Copy Button
   .#{$prefix}--snippet__icon {
     fill: $icon-01;
-    height: rem(16px);
-    width: rem(16px);
     transition: all $duration--fast-01 motion(standard, productive);
   }
 
