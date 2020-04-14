@@ -483,11 +483,11 @@
   //SMALL TOOLBAR
   //-------------------------------------------------
   .#{$prefix}--table-toolbar--small {
-    height: rem(32px);
+    height: $data-table-toolbar-small-height;
 
     .#{$prefix}--toolbar-search-container-expandable,
     .#{$prefix}--toolbar-search-container-persistent {
-      height: rem(32px);
+      height: $data-table-toolbar-small-height;
     }
 
     .#{$prefix}--toolbar-search-container-expandable
@@ -496,7 +496,7 @@
     .#{$prefix}--toolbar-search-container-persistent
       .#{$prefix}--search
       .#{$prefix}--search-input {
-      height: rem(32px);
+      height: $data-table-toolbar-small-height;
     }
 
     .#{$prefix}--toolbar-search-container-expandable
@@ -505,8 +505,8 @@
     .#{$prefix}--toolbar-search-container-persistent
       .#{$prefix}--search
       .#{$prefix}--search-close {
-      height: rem(32px);
-      width: rem(32px);
+      height: $data-table-toolbar-small-height;
+      width: $data-table-toolbar-small-height;
     }
 
     .#{$prefix}--toolbar-search-container-expandable
@@ -515,14 +515,14 @@
     .#{$prefix}--toolbar-search-container-persistent
       .#{$prefix}--search
       .#{$prefix}--search-magnifier {
-      height: rem(32px);
-      width: rem(32px);
+      height: $data-table-toolbar-small-height;
+      width: $data-table-toolbar-small-height;
       padding: $spacing-03;
     }
 
     //hidden
     .#{$prefix}--toolbar-search-container-expandable {
-      width: rem(32px);
+      width: $data-table-toolbar-small-height;
     }
 
     .#{$prefix}--toolbar-search-container-expandable
@@ -579,19 +579,19 @@
   .#{$prefix}--table-toolbar--small
     .#{$prefix}--batch-actions
     .#{$prefix}--action-list {
-    height: rem(32px);
+    height: $data-table-toolbar-small-height;
   }
 
   .#{$prefix}--table-toolbar--small .#{$prefix}--toolbar-action {
-    height: rem(32px);
-    width: rem(32px);
+    height: $data-table-toolbar-small-height;
+    width: $data-table-toolbar-small-height;
     padding: $spacing-03 0;
   }
 
   .#{$prefix}--table-toolbar--small .#{$prefix}--btn--primary {
     padding-top: calc(0.375rem - 3px);
     padding-bottom: calc(0.375rem - 3px);
-    height: rem(32px);
+    height: $data-table-toolbar-small-height;
     min-height: auto;
   }
 
@@ -603,7 +603,7 @@
   .#{$prefix}--table-toolbar--small
     .#{$prefix}--toolbar-action
     ~ .#{$prefix}--btn {
-    height: rem(32px);
+    height: $data-table-toolbar-small-height;
     overflow: hidden;
   }
 }

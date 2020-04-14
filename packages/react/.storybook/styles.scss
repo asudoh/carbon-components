@@ -103,6 +103,7 @@ $carbon--spacing-12: $spacing-12;
 $data-table-compact-height: rem(32px);
 $data-table-short-height: rem(40px);
 $data-table-tall-height: rem(70px);
+$data-table-toolbar-small-height: rem(48px);
 
 @import '~carbon-components/scss/globals/scss/vendor/@carbon/elements/scss/themes/themes';
 // Ensures `$carbon--theme` and `$carbon--theme--white` are in sync
