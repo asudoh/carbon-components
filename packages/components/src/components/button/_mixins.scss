@@ -47,10 +47,10 @@
 
   .#{$prefix}--btn__icon {
     position: absolute;
-    right: rem(16px);
+    right: $button-icon-size;
     flex-shrink: 0;
-    width: rem(16px);
-    height: rem(16px);
+    width: $button-icon-size;
+    height: $button-icon-size;
   }
 }
 

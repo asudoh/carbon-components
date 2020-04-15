@@ -194,8 +194,8 @@
   }
 
   .#{$prefix}--btn--icon-only {
-    padding-left: rem(15px);
-    padding-right: rem(15px);
+    padding-left: calc(#{$carbon--spacing-05} - 1px);
+    padding-right: calc(#{$carbon--spacing-05} - 1px);
 
     .#{$prefix}--btn__icon {
       position: static;
@@ -235,13 +235,13 @@
   }
 
   .#{$prefix}--btn--field.#{$prefix}--btn--icon-only {
-    padding-left: rem(11px);
-    padding-right: rem(11px);
+    padding-left: calc(#{$carbon--spacing-04} - 1px);
+    padding-right: calc(#{$carbon--spacing-04} - 1px);
   }
 
   .#{$prefix}--btn--sm.#{$prefix}--btn--icon-only {
-    padding-left: rem(7px);
-    padding-right: rem(7px);
+    padding-left: calc(#{$carbon--spacing-03} - 1px);
+    padding-right: calc(#{$carbon--spacing-03} - 1px);
   }
 
   .#{$prefix}--btn--danger {
@@ -260,12 +260,12 @@
   }
 
   .#{$prefix}--btn--sm {
-    min-height: rem(32px);
+    min-height: $button-sm-height;
     padding: $button-padding-sm;
   }
 
   .#{$prefix}--btn--field {
-    min-height: rem(40px);
+    min-height: $button-field-height;
     padding: $button-padding-field;
   }
 

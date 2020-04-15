@@ -90,6 +90,16 @@ $button-border-radius: 0 !default;
 /// @group button
 $button-height: 48px !default;
 
+/// @type Number
+/// @access public
+/// @group button
+$button-sm-height: 32px !default;
+
+/// @type Number
+/// @access public
+/// @group button
+$button-field-height: 40px !default;
+
 /// @type Value
 /// @access public
 /// @group button
@@ -149,6 +159,11 @@ $button-outline-offset: -5px !default;
 /// @group button
 /// @deprecated
 $button-outline: 1px solid $ibm-color__white-0 !default;
+
+/// @type Value
+/// @access public
+/// @group button
+$button-icon-size: 1rem !default;
 
 // Accordion
 
