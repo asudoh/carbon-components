@@ -107,6 +107,12 @@ $data-table-compact-height: rem(32px);
 $data-table-short-height: rem(40px);
 $data-table-tall-height: rem(70px);
 $data-table-toolbar-small-height: rem(48px);
+$list-box-height: rem(60px);
+$list-box-inline-height: rem(48px);
+$list-box-sm-height: rem(48px);
+$list-box-xl-height: rem(72px);
+$list-box-invalid-padding: rem(80px);
+$list-box-selection-right: rem(55px);
 
 @import '~carbon-components/scss/globals/scss/vendor/@carbon/elements/scss/themes/themes';
 // Ensures `$carbon--theme` and `$carbon--theme--white` are in sync

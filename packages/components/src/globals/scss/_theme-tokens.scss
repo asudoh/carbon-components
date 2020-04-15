@@ -282,6 +282,45 @@ $data-table-toolbar-small-height: rem(32px) !default;
 /// @group date-picker
 $date-picker-in-range-background-color: $ibm-color__blue-20 !default;
 
+// List box
+
+/// @type Number
+/// @access private
+/// @group list-box
+$list-box-height: rem(40px) !default;
+
+/// @type Number
+/// @access private
+/// @group list-box
+$list-box-inline-height: rem(32px) !default;
+
+/// @type Number
+/// @access private
+/// @group list-box
+$list-box-sm-height: rem(32px) !default;
+
+/// @type Number
+/// @access private
+/// @group list-box
+$list-box-xl-height: rem(48px) !default;
+
+/// @type Number
+/// @access private
+/// @group list-box
+$list-box-icon-padding: rem(42px) !default; // 2rem + SVG width
+
+/// @type Number
+/// @access private
+/// @group list-box
+$list-box-invalid-padding: rem(56px) !default;
+
+/// @type Number
+/// @access private
+/// @group list-box
+$list-box-selection-right: rem(
+  33px
+) !default; // to preserve .5rem space between icons according to spec
+
 // Modal
 
 /// @type Color
