@@ -100,6 +100,9 @@ $carbon--spacing-11: $spacing-11;
 $carbon--spacing-12: $spacing-12;
 
 @import '~carbon-components/scss/globals/scss/typography';
+$button-sm-height: 48px;
+$button-field-height: 60px;
+$button-icon-size: 20px;
 $data-table-compact-height: rem(32px);
 $data-table-short-height: rem(40px);
 $data-table-tall-height: rem(70px);
