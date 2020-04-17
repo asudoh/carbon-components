@@ -86,6 +86,11 @@ $layout-04: 4.5rem;
 $layout-05: 6rem;
 $layout-06: 9rem;
 $layout-07: 15rem;
+$container-01: 2.25rem;
+$container-02: 3rem;
+$container-03: 3.75rem;
+$container-04: 4.5rem;
+$container-05: 6rem;
 $carbon--spacing-01: $spacing-01;
 $carbon--spacing-02: $spacing-02;
 $carbon--spacing-03: $spacing-03;
@@ -98,21 +103,6 @@ $carbon--spacing-09: $spacing-09;
 $carbon--spacing-10: $spacing-10;
 $carbon--spacing-11: $spacing-11;
 $carbon--spacing-12: $spacing-12;
-
-@import '~carbon-components/scss/globals/scss/typography';
-$button-sm-height: 48px;
-$button-field-height: 60px;
-$button-icon-size: 20px;
-$data-table-compact-height: rem(32px);
-$data-table-short-height: rem(40px);
-$data-table-tall-height: rem(70px);
-$data-table-toolbar-small-height: rem(48px);
-$list-box-height: rem(60px);
-$list-box-inline-height: rem(48px);
-$list-box-sm-height: rem(48px);
-$list-box-xl-height: rem(72px);
-$list-box-invalid-padding: rem(80px);
-$list-box-selection-right: rem(55px);
 
 @import '~carbon-components/scss/globals/scss/vendor/@carbon/elements/scss/themes/themes';
 // Ensures `$carbon--theme` and `$carbon--theme--white` are in sync
@@ -148,6 +138,11 @@ $carbon--theme--white: map-merge(
     layout-05: $layout-05,
     layout-06: $layout-06,
     layout-07: $layout-07,
+    container-01: $container-01,
+    container-02: $container-02,
+    container-03: $container-03,
+    container-04: $container-04,
+    container-05: $container-05,
   )
 );
 
