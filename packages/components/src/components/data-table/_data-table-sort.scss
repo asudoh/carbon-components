@@ -23,7 +23,7 @@
   }
 
   .#{$prefix}--data-table--sort th {
-    height: $layout-04;
+    height: $data-table-regular-height;
     border-top: none;
     border-bottom: none;
   }
@@ -127,7 +127,7 @@
   //----------------------------------------------------------------------------
   // Sortable compact
   .#{$prefix}--data-table--compact.#{$prefix}--data-table--sort th {
-    height: rem(24px);
+    height: $data-table-compact-height;
   }
 
   .#{$prefix}--data-table--compact.#{$prefix}--data-table--sort
@@ -139,7 +139,7 @@
 
   // Sortable Short
   .#{$prefix}--data-table--short.#{$prefix}--data-table--sort th {
-    height: rem(32px);
+    height: $data-table-short-height;
   }
 
   .#{$prefix}--data-table--short.#{$prefix}--data-table--sort
@@ -151,7 +151,7 @@
 
   // Sortable Tall
   .#{$prefix}--data-table--tall.#{$prefix}--data-table--sort th {
-    height: rem(64px);
+    height: $data-table-tall-height;
   }
 
   .#{$prefix}--data-table--tall.#{$prefix}--data-table--sort

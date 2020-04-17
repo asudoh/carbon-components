@@ -88,17 +88,17 @@ $button-border-radius: 0 !default;
 /// @type Number
 /// @access public
 /// @group button
-$button-height: 48px !default;
+$button-height: $container-04 !default;
 
 /// @type Number
 /// @access public
 /// @group button
-$button-sm-height: 32px !default;
+$button-sm-height: $container-02 !default;
 
 /// @type Number
 /// @access public
 /// @group button
-$button-field-height: 40px !default;
+$button-field-height: $container-03 !default;
 
 /// @type Value
 /// @access public
@@ -258,22 +258,32 @@ $data-table-column-hover: $hover-selected-ui !default;
 /// @type Number
 /// @access public
 /// @group data-table
-$data-table-compact-height: rem(24px) !default;
+$data-table-compact-height: $container-01 !default;
 
 /// @type Number
 /// @access public
 /// @group data-table
-$data-table-short-height: rem(32px) !default;
+$data-table-short-height: $container-02 !default;
 
 /// @type Number
 /// @access public
 /// @group data-table
-$data-table-tall-height: rem(64px) !default;
+$data-table-regular-height: $container-04 !default;
 
 /// @type Number
 /// @access public
 /// @group data-table
-$data-table-toolbar-small-height: rem(32px) !default;
+$data-table-tall-height: $container-05 !default;
+
+/// @type Number
+/// @access public
+/// @group data-table
+$data-table-toolbar-regular-height: $container-04 !default;
+
+/// @type Number
+/// @access public
+/// @group data-table
+$data-table-toolbar-small-height: $container-02 !default;
 
 // Date Picker
 
@@ -287,22 +297,22 @@ $date-picker-in-range-background-color: $ibm-color__blue-20 !default;
 /// @type Number
 /// @access private
 /// @group list-box
-$list-box-height: rem(40px) !default;
+$list-box-height: $container-03 !default;
 
 /// @type Number
 /// @access private
 /// @group list-box
-$list-box-inline-height: rem(32px) !default;
+$list-box-inline-height: $container-02 !default;
 
 /// @type Number
 /// @access private
 /// @group list-box
-$list-box-sm-height: rem(32px) !default;
+$list-box-sm-height: $container-02 !default;
 
 /// @type Number
 /// @access private
 /// @group list-box
-$list-box-xl-height: rem(48px) !default;
+$list-box-xl-height: $container-04 !default;
 
 /// @type Number
 /// @access private

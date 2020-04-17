@@ -19,7 +19,7 @@
   .#{$prefix}--table-toolbar {
     background: $ui-01;
     display: flex;
-    height: $layout-04;
+    height: $data-table-toolbar-regular-height;
     overflow: hidden;
     position: relative; //need for batch actions
     width: 100%;
@@ -27,7 +27,7 @@
 
   .#{$prefix}--toolbar-content {
     display: flex;
-    height: $layout-04;
+    height: $data-table-toolbar-regular-height;
     width: 100%;
     justify-content: flex-end;
     transform: translate3d(0, 0, 0);
@@ -57,15 +57,15 @@
   //HIDDEN SEARCH - DEFAULT TOOLBAR
   //-------------------------------------------------
   .#{$prefix}--toolbar-search-container-expandable {
-    height: $layout-04;
-    width: $layout-04;
+    height: $data-table-toolbar-regular-height;
+    width: $data-table-toolbar-regular-height;
     position: relative;
     transition: flex $transition--expansion $carbon--standard-easing;
     box-shadow: none;
   }
 
   .#{$prefix}--toolbar-search-container-expandable .#{$prefix}--search {
-    width: $layout-04;
+    width: $data-table-toolbar-regular-height;
     height: 100%;
     position: initial;
   }
@@ -73,8 +73,8 @@
   .#{$prefix}--toolbar-search-container-expandable
     .#{$prefix}--search
     .#{$prefix}--search-magnifier {
-    height: $layout-04;
-    width: $layout-04;
+    height: $data-table-toolbar-regular-height;
+    width: $data-table-toolbar-regular-height;
     padding: $spacing-05;
     left: 0;
     cursor: pointer;
@@ -113,8 +113,8 @@
   .#{$prefix}--toolbar-search-container-expandable
     .#{$prefix}--search
     .#{$prefix}--search-close {
-    height: $layout-04;
-    width: $layout-04;
+    height: $data-table-toolbar-regular-height;
+    width: $data-table-toolbar-regular-height;
 
     &:before {
       top: 2px;
@@ -215,8 +215,8 @@
     @include button-reset;
     display: flex;
     cursor: pointer;
-    height: $layout-04;
-    width: $layout-04;
+    height: $data-table-toolbar-regular-height;
+    width: $data-table-toolbar-regular-height;
     padding: $spacing-05;
     transition: background $duration--fast-02 motion(entrance, productive);
   }
@@ -226,8 +226,8 @@
     @include button-reset;
     display: flex;
     cursor: pointer;
-    height: $layout-04;
-    width: $layout-04;
+    height: $data-table-toolbar-regular-height;
+    width: $data-table-toolbar-regular-height;
     transition: background $duration--fast-02 motion(entrance, productive);
   }
 
@@ -265,7 +265,7 @@
   }
 
   .#{$prefix}--overflow-menu--data-table {
-    height: $layout-04;
+    height: $data-table-toolbar-regular-height;
   }
 
   //-------------------------------------------------
@@ -283,7 +283,7 @@
   //-------------------------------------------------
   .#{$prefix}--toolbar-search-container-persistent {
     width: 100%;
-    height: $layout-04;
+    height: $data-table-toolbar-regular-height;
     opacity: 1;
     position: relative;
   }
@@ -307,7 +307,7 @@
   .#{$prefix}--toolbar-search-container-persistent
     .#{$prefix}--search
     .#{$prefix}--search-input {
-    height: $layout-04;
+    height: $data-table-toolbar-regular-height;
     padding: 0 $spacing-09;
     border: none;
   }
@@ -336,8 +336,8 @@
   .#{$prefix}--toolbar-search-container-persistent
     .#{$prefix}--search
     .#{$prefix}--search-close {
-    height: $layout-04;
-    width: $layout-04;
+    height: $data-table-toolbar-regular-height;
+    width: $data-table-toolbar-regular-height;
   }
 
   .#{$prefix}--batch-actions--active ~ .#{$prefix}--toolbar-search-container,
