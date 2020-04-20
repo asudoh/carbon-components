@@ -447,6 +447,18 @@ $tab-underline-disabled: 2px solid $disabled-01 !default;
 /// @group skeleton
 $skeleton: $skeleton-01 !default; // TODO: Remove this in next major release
 
+// Loading
+
+/// @type Number
+/// @access public
+/// @group loading
+$loading-size: 10.5rem !default;
+
+/// @type Number
+/// @access public
+/// @group loading
+$loading-small-size: 2rem !default;
+
 // Number input, search, text input
 
 /// @type Number

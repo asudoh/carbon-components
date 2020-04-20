@@ -19,8 +19,8 @@
   .#{$prefix}--loading {
     @include reset;
     @include animation__loading--spin;
-    width: $loading__size;
-    height: $loading__size;
+    width: $loading-size;
+    height: $loading-size;
   }
 
   // Animation (Spin by default)
@@ -48,8 +48,8 @@
   }
 
   .#{$prefix}--loading--small {
-    width: 2rem;
-    height: 2rem;
+    width: $loading-small-size;
+    height: $loading-small-size;
     circle {
       stroke-width: 12;
     }
