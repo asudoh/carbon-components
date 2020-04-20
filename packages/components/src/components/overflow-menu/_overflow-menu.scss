@@ -26,8 +26,8 @@
     @include reset;
     @include focus-outline('reset');
     position: relative;
-    width: rem(32px);
-    height: rem(32px);
+    width: $overflow-menu-size;
+    height: $overflow-menu-size;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -115,28 +115,28 @@
   .#{$prefix}--overflow-menu-options[data-floating-menu-direction='bottom']::after {
     top: rem(-3px);
     left: 0;
-    width: rem(32px);
+    width: $overflow-menu-size;
     height: rem(3px);
   }
 
   .#{$prefix}--overflow-menu-options[data-floating-menu-direction='top']::after {
     bottom: rem(-8px);
     left: 0;
-    width: rem(32px);
+    width: $overflow-menu-size;
     height: rem(8px);
   }
 
   .#{$prefix}--overflow-menu-options[data-floating-menu-direction='left']::after {
     right: rem(-6px);
     top: 0;
-    height: rem(32px);
+    height: $overflow-menu-size;
     width: rem(6px);
   }
 
   .#{$prefix}--overflow-menu-options[data-floating-menu-direction='right']::after {
     top: 0;
     left: rem(-6px);
-    height: rem(32px);
+    height: $overflow-menu-size;
     width: rem(6px);
   }
 
@@ -166,7 +166,7 @@
     background-color: transparent;
     align-items: center;
     width: 100%;
-    height: rem(40px);
+    height: $overflow-menu-option-size;
     padding: 0;
     transition: background-color $duration--fast-02 motion(entrance, productive);
   }

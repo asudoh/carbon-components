@@ -476,6 +476,18 @@ $input-sm-height: $container-02 !default;
 /// @group input
 $input-xl-height: $container-04 !default;
 
+// Overflow menu
+
+/// @type Number
+/// @access public
+/// @group overflow-menu
+$overflow-menu-size: $container-02 !default;
+
+/// @type Number
+/// @access public
+/// @group overflow-menu
+$overflow-menu-option-size: $container-04 !default;
+
 // Search
 
 /// @type Number
