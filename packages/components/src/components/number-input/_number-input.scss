@@ -167,6 +167,8 @@
     position: absolute;
     right: 2rem;
     fill: $support-01;
+    width: $icon-size-01;
+    height: $icon-size-01;
   }
 
   .#{$prefix}--number--light input[type='number'] {

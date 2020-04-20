@@ -62,24 +62,6 @@ module.exports = ({ config, mode }) => {
     ],
   };
 
-  const babelLoaderRule = config.module.rules.find(
-    item =>
-      item.use &&
-      item.use.some &&
-      item.use.some(use => /babel-loader/i.test(use.loader))
-  );
-  if (babelLoaderRule) {
-    babelLoaderRule.use.forEach(item => {
-      const { plugins = [], presets = [] } = item.options;
-      if (presets.find(preset => /@babel\/preset-env/.test(preset))) {
-        plugins.push([
-          path.resolve(__dirname, 'tools/babel-plugin-replace-icons'),
-          { size: 20 },
-        ]);
-      }
-    });
-  }
-
   config.module.rules.push({
     test: /(\/|\\)FeatureFlags\.js$/,
     loader: 'string-replace-loader',

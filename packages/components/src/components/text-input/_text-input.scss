@@ -80,6 +80,8 @@
       top: 50%;
       transform: translateY(-50%);
       fill: $support-01;
+      width: $icon-size-01;
+      height: $icon-size-01;
     }
 
     // TODO: deprecate this style block
@@ -135,6 +137,12 @@
     svg {
     opacity: 0.5;
     cursor: not-allowed;
+  }
+
+  .#{$prefix}--icon-visibility-off,
+  .#{$prefix}--icon-visibility-on {
+    width: $icon-size-01;
+    height: $icon-size-01;
   }
 
   //-----------------------------

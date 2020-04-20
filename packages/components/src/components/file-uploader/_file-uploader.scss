@@ -231,6 +231,8 @@
   .#{$prefix}--file__state-container .#{$prefix}--file-complete {
     fill: $interactive-04;
     cursor: pointer;
+    width: $icon-size-01;
+    height: $icon-size-01;
 
     &:focus {
       @include focus-outline('border');
@@ -246,6 +248,8 @@
   .#{$prefix}--file__state-container .#{$prefix}--file-invalid {
     fill: $support-01;
     margin-right: $carbon--spacing-03;
+    width: $icon-size-01;
+    height: $icon-size-01;
   }
 
   .#{$prefix}--file__state-container .#{$prefix}--file-close {
@@ -255,6 +259,8 @@
     cursor: pointer;
     padding: 0;
     fill: $icon-01;
+    width: $icon-size-01;
+    height: $icon-size-01;
 
     &:focus {
       @include focus-outline('border');

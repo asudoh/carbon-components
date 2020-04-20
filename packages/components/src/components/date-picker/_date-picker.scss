@@ -137,6 +137,8 @@
     // vertically center icon within parent container on IE11
     top: 50%;
     transform: translateY(-50%);
+    width: $icon-size-01;
+    height: $icon-size-01;
   }
 
   .#{$prefix}--date-picker__icon ~ .#{$prefix}--date-picker__input {
@@ -456,6 +458,12 @@
   .flatpickr-prev-month,
   .flatpickr-next-month {
     padding-top: 12px;
+  }
+
+  .flatpickr-prev-month svg,
+  .flatpickr-next-month svg {
+    width: $icon-size-01;
+    height: $icon-size-01;
   }
 
   .flatpickr-prev-month:hover svg,

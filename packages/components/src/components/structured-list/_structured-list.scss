@@ -128,6 +128,8 @@
     fill: transparent;
     vertical-align: middle;
     transition: all $duration--fast-02 motion(standard, productive);
+    width: $icon-size-01;
+    height: $icon-size-01;
   }
 
   .#{$prefix}--structured-list-row:hover .#{$prefix}--structured-list-svg {

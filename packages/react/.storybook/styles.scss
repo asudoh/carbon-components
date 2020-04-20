@@ -104,6 +104,9 @@ $carbon--spacing-10: $spacing-10;
 $carbon--spacing-11: $spacing-11;
 $carbon--spacing-12: $spacing-12;
 
+$icon-size-01: 1.25rem;
+$icon-size-02: 1.5rem;
+
 @import '~carbon-components/scss/globals/scss/vendor/@carbon/elements/scss/themes/themes';
 // Ensures `$carbon--theme` and `$carbon--theme--white` are in sync
 // to ensure the comparison in `@function get-token-value` works.
@@ -143,6 +146,8 @@ $carbon--theme--white: map-merge(
     container-03: $container-03,
     container-04: $container-04,
     container-05: $container-05,
+    icon-size-01: $icon-size-01,
+    icon-size-02: $icon-size-02,
   )
 );
 

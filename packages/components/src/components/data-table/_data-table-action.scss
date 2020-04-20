@@ -399,6 +399,8 @@
     fill: $icon-03;
     position: static;
     margin-left: $spacing-03;
+    width: $icon-size-01;
+    height: $icon-size-01;
   }
 
   .#{$prefix}--action-list .#{$prefix}--btn .#{$prefix}--btn__icon .st0 {
