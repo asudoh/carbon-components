@@ -108,6 +108,8 @@ $list-box-menu-width: rem(300px);
     right: $carbon--spacing-08;
     fill: $support-01;
     transform: translateY(-50%);
+    width: $icon-size-01;
+    height: $icon-size-01;
   }
 
   .#{$prefix}--list-box[data-invalid] .#{$prefix}--list-box__field {
@@ -161,6 +163,8 @@ $list-box-menu-width: rem(300px);
 
   .#{$prefix}--list-box--disabled .#{$prefix}--list-box__menu-icon > svg {
     fill: $disabled-02;
+    width: $icon-size-01;
+    height: $icon-size-01;
   }
 
   .#{$prefix}--list-box--disabled,
@@ -367,6 +371,8 @@ $list-box-menu-width: rem(300px);
 
   .#{$prefix}--list-box__selection > svg {
     fill: $icon-02;
+    width: $icon-size-01;
+    height: $icon-size-01;
   }
 
   .#{$prefix}--list-box--disabled .#{$prefix}--list-box__selection:focus {

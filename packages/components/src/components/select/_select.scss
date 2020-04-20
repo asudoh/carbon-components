@@ -146,6 +146,13 @@
     height: 100%;
     fill: $ui-05;
     pointer-events: none;
+    width: $icon-size-01;
+    height: $icon-size-01;
+  }
+
+  .#{$prefix}--select__invalid-icon {
+    width: $icon-size-01;
+    height: $icon-size-01;
   }
 
   .#{$prefix}--select-input__wrapper[data-invalid]

@@ -194,6 +194,8 @@
   .#{$prefix}--snippet__icon {
     fill: $icon-01;
     transition: all $duration--fast-01 motion(standard, productive);
+    width: $icon-size-01;
+    height: $icon-size-01;
   }
 
   .#{$prefix}--snippet-button {

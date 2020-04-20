@@ -101,7 +101,7 @@
   }
 
   .#{$prefix}--tile__checkmark {
-    height: 1rem;
+    height: $icon-size-01;
     top: 1rem;
     right: 1rem;
     opacity: 0;
@@ -109,6 +109,8 @@
     svg {
       border-radius: 50%;
       fill: $icon-02;
+      width: $icon-size-01;
+      height: $icon-size-01;
     }
 
     &:focus {
@@ -120,12 +122,14 @@
     position: absolute;
     bottom: 0.5rem;
     right: 0.5rem;
-    height: 1rem;
+    height: $icon-size-01;
 
     svg {
       transform-origin: center;
       transition: $duration--fast-02 motion(standard, productive);
       fill: $ui-05;
+      width: $icon-size-01;
+      height: $icon-size-01;
     }
 
     &:hover {

@@ -109,8 +109,8 @@
   }
 
   .#{$prefix}--search--xl .#{$prefix}--search-magnifier {
-    height: rem(20px);
-    width: rem(20px);
+    height: $icon-size-02;
+    width: $icon-size-02;
     left: rem(24px);
     transform: translate(-50%, -50%);
   }
@@ -147,6 +147,8 @@
     svg {
       vertical-align: middle;
       fill: currentColor;
+      width: $icon-size-01;
+      height: $icon-size-01;
     }
   }
 
