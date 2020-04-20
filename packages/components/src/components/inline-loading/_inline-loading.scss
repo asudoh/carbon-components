@@ -38,8 +38,8 @@
 
   .#{$prefix}--inline-loading__animation {
     position: relative;
-    width: 2rem;
-    height: 2rem;
+    width: $loading-small-size;
+    height: $loading-small-size;
     display: flex;
     justify-content: center;
     align-items: center;
