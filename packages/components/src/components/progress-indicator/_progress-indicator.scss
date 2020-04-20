@@ -48,7 +48,8 @@
     width: $icon-size-01;
     height: $icon-size-01;
     border-radius: 50%;
-    margin: rem(10px) $carbon--spacing-03 0 0;
+    margin: #{($carbon--spacing-03 + $carbon--spacing-04) / 2}
+      $carbon--spacing-03 0 0;
     fill: $interactive-04;
   }
 
@@ -131,7 +132,7 @@
     position: absolute;
     left: 0;
     margin-left: $carbon--spacing-06;
-    margin-top: rem(28px);
+    margin-top: #{($carbon--spacing-06 + $carbon--spacing-07) / 2};
     color: $text-02;
     text-align: start;
   }
