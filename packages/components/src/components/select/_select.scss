@@ -141,9 +141,9 @@
 
   .#{$prefix}--select__arrow {
     position: absolute;
-    top: 0;
+    top: 50%;
+    transform: translateY(-50%);
     right: $spacing-05;
-    height: 100%;
     fill: $ui-05;
     pointer-events: none;
     width: $icon-size-01;
