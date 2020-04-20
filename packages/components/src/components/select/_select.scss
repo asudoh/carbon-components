@@ -37,7 +37,7 @@
   .#{$prefix}--select-input {
     @include type-style('body-short-01');
     @include focus-outline('reset');
-    height: rem(40px);
+    height: $input-height;
     appearance: none;
     display: block;
     width: rem(224px);
@@ -89,13 +89,13 @@
   }
 
   .#{$prefix}--select-input--sm {
-    height: rem(32px);
-    max-height: rem(32px);
+    height: $input-sm-height;
+    max-height: $input-sm-height;
   }
 
   .#{$prefix}--select-input--xl {
-    height: rem(48px);
-    max-height: rem(48px);
+    height: $input-xl-height;
+    max-height: $input-xl-height;
   }
 
   .#{$prefix}--select--disabled .#{$prefix}--label,
@@ -199,7 +199,8 @@
   .#{$prefix}--select--inline.#{$prefix}--select--invalid .#{$prefix}--label,
   .#{$prefix}--select--inline.#{$prefix}--select--invalid
     .#{$prefix}--form__helper-text {
-    margin-top: rem(13px); // offset label text margin
+    margin-top: #{$list-box-inline-height / 2};
+    transform: translateY(-50%);
     align-self: flex-start;
   }
 
@@ -219,6 +220,7 @@
     border-bottom: none;
     padding-left: $carbon--spacing-03;
     padding-right: $spacing-07;
+    height: $list-box-inline-height;
   }
 
   .#{$prefix}--select--inline .#{$prefix}--select-input[disabled],
@@ -258,7 +260,7 @@
   .#{$prefix}--select.#{$prefix}--skeleton {
     @include skeleton;
     width: 100%;
-    height: 2.5rem;
+    height: $input-height;
   }
 
   .#{$prefix}--select.#{$prefix}--skeleton .#{$prefix}--select-input {

@@ -26,7 +26,7 @@
     @include focus-outline('reset');
     background-color: $field-01;
     width: 100%;
-    height: rem(40px);
+    height: $input-height;
     padding: 0 $carbon--spacing-05;
     color: $text-01;
     border: none;
@@ -45,11 +45,11 @@
   }
 
   .#{$prefix}--text-input--xl {
-    height: rem(48px);
+    height: $input-xl-height;
   }
 
   .#{$prefix}--text-input--sm {
-    height: rem(32px);
+    height: $input-sm-height;
   }
 
   .#{$prefix}--password-input {

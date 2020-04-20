@@ -82,26 +82,26 @@
 
   .#{$prefix}--search--sm .#{$prefix}--search-input {
     @include type-style('body-short-01');
-    height: rem(32px);
+    height: $input-sm-height;
   }
 
   .#{$prefix}--search--lg .#{$prefix}--search-input {
     @include type-style('body-short-02');
-    height: rem(40px);
+    height: $input-height;
   }
 
   .#{$prefix}--search--xl .#{$prefix}--search-input {
     @include type-style('body-short-02');
-    height: rem(48px);
-    padding: 0 rem(64px) 0 rem(48px);
+    height: $input-xl-height;
+    padding: 0 $search-xl-magnifier-size 0 $input-xl-height;
   }
 
   .#{$prefix}--search-magnifier {
     left: 0.75rem;
     z-index: 2;
     position: absolute;
-    height: rem(16px);
-    width: rem(16px);
+    height: $icon-size-01;
+    width: $icon-size-01;
     top: 50%;
     transform: translateY(-50%);
     fill: $icon-02;
@@ -111,7 +111,7 @@
   .#{$prefix}--search--xl .#{$prefix}--search-magnifier {
     height: $icon-size-02;
     width: $icon-size-02;
-    left: rem(24px);
+    left: #{$search-xl-magnifier-size / 2};
     transform: translate(-50%, -50%);
   }
 
@@ -165,8 +165,8 @@
     cursor: pointer;
     visibility: inherit;
     opacity: 1;
-    height: rem(40px);
-    width: rem(40px);
+    height: $input-height;
+    width: $input-height;
     fill: $icon-01;
     border-style: solid;
     border-color: transparent;
@@ -206,24 +206,24 @@
   .#{$prefix}--search--sm {
     .#{$prefix}--search-close,
     ~ .#{$prefix}--search-button {
-      height: rem(32px);
-      width: rem(32px);
+      height: $input-sm-height;
+      width: $input-sm-height;
     }
   }
 
   .#{$prefix}--search--lg {
     .#{$prefix}--search-close,
     ~ .#{$prefix}--search-button {
-      height: rem(40px);
-      width: rem(40px);
+      height: $input-height;
+      width: $input-height;
     }
   }
 
   .#{$prefix}--search--xl {
     .#{$prefix}--search-close,
     ~ .#{$prefix}--search-button {
-      height: rem(48px);
-      width: rem(48px);
+      height: $input-xl-height;
+      width: $input-xl-height;
     }
   }
 
