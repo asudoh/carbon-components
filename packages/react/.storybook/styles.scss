@@ -110,6 +110,8 @@ $icon-size-02: 1.5rem;
 $loading-size: 15.75rem;
 $loading-small-size: 3rem;
 
+$tooltip-link-font-size: 1rem;
+
 @import '~carbon-components/scss/globals/scss/vendor/@carbon/elements/scss/themes/themes';
 // Ensures `$carbon--theme` and `$carbon--theme--white` are in sync
 // to ensure the comparison in `@function get-token-value` works.
