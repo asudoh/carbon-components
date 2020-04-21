@@ -322,19 +322,22 @@ $list-box-xl-height: $container-04 !default;
 /// @type Number
 /// @access private
 /// @group list-box
-$list-box-icon-padding: rem(42px) !default; // 2rem + SVG width
+$list-box-icon-padding: 2.625rem !default; // 2rem + SVG width
 
 /// @type Number
 /// @access private
 /// @group list-box
-$list-box-invalid-padding: rem(56px) !default;
+$list-box-invalid-padding: 3.5rem !default;
 
 /// @type Number
 /// @access private
 /// @group list-box
-$list-box-selection-right: rem(
-  33px
-) !default; // to preserve .5rem space between icons according to spec
+$list-box-selection-right: 2.0625rem !default; // The left position of close icon minus `$spacing-05`
+
+/// @type Number
+/// @access private
+/// @group list-box
+$list-box-selection-size: 1.875rem !default;
 
 // Modal
 

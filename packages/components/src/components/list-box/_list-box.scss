@@ -336,6 +336,8 @@ $list-box-menu-width: rem(300px);
   .#{$prefix}--list-box__menu-icon > svg {
     fill: $icon-01;
     height: 100%;
+    width: $icon-size-01;
+    height: $icon-size-01;
   }
 
   .#{$prefix}--list-box__menu-icon--open {
@@ -352,8 +354,8 @@ $list-box-menu-width: rem(300px);
     display: flex;
     justify-content: center;
     align-items: center;
-    height: rem(30px);
-    width: rem(30px);
+    height: $list-box-selection-size;
+    width: $list-box-selection-size;
     cursor: pointer;
     user-select: none;
     transition: background-color $duration--fast-01 motion(standard, productive);
@@ -611,9 +613,11 @@ $list-box-menu-width: rem(300px);
     display: none;
     position: absolute;
     top: 50%;
-    right: rem(16px);
+    right: $carbon--spacing-05;
     transform: translateY(-50%);
     fill: $icon-01;
+    width: $icon-size-01;
+    height: $icon-size-01;
   }
 
   .#{$prefix}--list-box--inline
