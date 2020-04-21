@@ -110,6 +110,8 @@
     right: $list-box-height;
     fill: $support-01;
     transform: translateY(-50%);
+    width: $icon-size-01;
+    height: $icon-size-01;
   }
 
   .#{$prefix}--dropdown--open:hover {
