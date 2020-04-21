@@ -384,7 +384,7 @@
 
     .#{$prefix}--link {
       color: $inverse-link;
-      font-size: rem(14px);
+      font-size: $tooltip-link-font-size;
 
       &:focus {
         outline: 1px solid $inverse-focus-ui;

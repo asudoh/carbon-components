@@ -68,6 +68,11 @@ $link-inverse-color: #6ea6ff !default;
 /// @group tooltip
 $tooltip-background-color: $inverse-02 !default;
 
+/// @type Number
+/// @access public
+/// @group tooltip
+$tooltip-link-font-size: 0.875rem !default;
+
 // Button
 
 /// @type Number
