@@ -98,8 +98,8 @@
     border: none;
     max-width: rem(760px);
     min-width: rem(320px);
-    height: $carbon--spacing-08;
-    padding: 0 $carbon--spacing-08 0 0;
+    height: $copy-btn-size;
+    padding: 0 $copy-btn-size 0 0;
   }
 
   .#{$prefix}--snippet--single .#{$prefix}--snippet-container {
@@ -163,8 +163,8 @@
   // closed pre
   .#{$prefix}--snippet--multi .#{$prefix}--snippet-container pre {
     overflow-x: scroll;
-    padding-right: $carbon--spacing-08;
-    padding-bottom: rem(24px);
+    padding-right: $copy-btn-size;
+    padding-bottom: $spacing-06;
   }
 
   // expanded pre
@@ -208,8 +208,8 @@
     background-color: $ui-01;
     outline: none;
     padding: 0;
-    height: $carbon--spacing-08;
-    width: $carbon--spacing-08;
+    height: $copy-btn-size;
+    width: $copy-btn-size;
     overflow: visible;
     display: flex;
     justify-content: center;
