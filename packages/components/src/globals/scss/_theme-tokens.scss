@@ -407,6 +407,11 @@ $copy-active: $active-ui !default;
 /// @group copy-button
 $copy-btn-feedback: $inverse-02 !default;
 
+/// @type Number
+/// @access public
+/// @group code-snippet
+$copy-btn-size: $container-03 !default;
+
 // Radio Button
 
 /// @type Number
