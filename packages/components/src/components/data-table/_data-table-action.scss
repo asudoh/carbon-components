@@ -272,9 +272,9 @@
   //TOOLBAR BUTTON ICONS
   //-------------------------------------------------
   .#{$prefix}--toolbar-action__icon {
-    height: $layout-01;
+    height: $icon-size-01;
     width: auto;
-    max-width: $layout-01;
+    max-width: $icon-size-01;
     fill: $icon-01;
   }
 
@@ -343,7 +343,7 @@
   .#{$prefix}--batch-actions--active ~ .#{$prefix}--toolbar-search-container,
   .#{$prefix}--batch-actions--active ~ .#{$prefix}--toolbar-content {
     clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
-    transform: translate3d(0, 48px, 0);
+    transform: translate3d(0, $data-table-toolbar-regular-height, 0);
     transition: transform $duration--fast-02 motion(standard, productive),
       clip-path $duration--fast-02 motion(standard, productive);
   }
@@ -368,7 +368,7 @@
     transition: transform $duration--fast-02 motion(standard, productive),
       clip-path $duration--fast-02 motion(standard, productive),
       opacity $duration--fast-02 motion(standard, productive);
-    transform: translate3d(0, 48px, 0);
+    transform: translate3d(0, $data-table-toolbar-regular-height, 0);
   }
 
   .#{$prefix}--batch-actions:focus {
