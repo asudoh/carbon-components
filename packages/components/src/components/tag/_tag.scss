@@ -29,12 +29,14 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
+    margin: $carbon--spacing-02;
     padding: $carbon--spacing-02 $carbon--spacing-03;
     min-height: 1.5rem;
+    height: $tag-height;
     max-width: 100%; // restricts size of contained elements
     min-width: rem(32px); // ensures tag stays pill shaped;
     margin: $carbon--spacing-02;
-    border-radius: rem(15px);
+    border-radius: #{$tag-height * 0.625};
     word-break: break-word;
     cursor: default;
 
@@ -160,10 +162,10 @@
 
   .#{$prefix}--tag__close-icon {
     flex-shrink: 0;
-    width: rem(20px);
-    height: rem(20px);
-    margin: 0 0 0 rem(4px);
-    padding: rem(2px);
+    width: #{$icon-size-01 + $carbon--spacing-01 * 2};
+    height: #{$icon-size-01 + $carbon--spacing-01 * 2};
+    margin: 0 0 0 $carbon--spacing-02;
+    padding: $carbon--spacing-01;
     border: 0;
     background-color: transparent;
     border-radius: 50%;
