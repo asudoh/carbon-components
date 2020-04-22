@@ -79,7 +79,7 @@
 
     display: block;
     position: relative;
-    height: rem(40px);
+    height: $input-height;
     min-width: rem(144px);
     padding: 0 $carbon--spacing-05;
     background-color: $field-01;
