@@ -475,6 +475,11 @@ $tab-container-height: $container-04 !default;
 /// @group tag
 $tag-height: $container-01 !default;
 
+/// @type Number
+/// @access public
+/// @group tag
+$tag-border-radius: 0.9375rem !default;
+
 // Skeleton Loading
 
 /// @type Color
