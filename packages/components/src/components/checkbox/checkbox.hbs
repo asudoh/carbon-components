@@ -11,32 +11,32 @@
   <div class="{{@root.prefix}}--form-item {{@root.prefix}}--checkbox-wrapper">
     <input id="{{@root.prefix}}--checkbox-new" class="{{@root.prefix}}--checkbox" type="checkbox" value="new"
       name="checkbox" checked>
-    <label for="{{@root.prefix}}--checkbox-new" class="{{@root.prefix}}--checkbox-label">Checkbox</label>
+    <label for="{{@root.prefix}}--checkbox-new" class="{{@root.prefix}}--checkbox-label"><span class="{{@root.prefix}}--checkbox-label-text">Checkbox</span></label>
   </div>
   <!-- input + label indeterminate -->
   <div class="{{@root.prefix}}--form-item {{@root.prefix}}--checkbox-wrapper">
     <input id="{{@root.prefix}}--checkbox-ind" class="{{@root.prefix}}--checkbox" type="checkbox" value="new"
       name="checkbox" aria-checked="mixed">
-    <label for="{{@root.prefix}}--checkbox-ind" class="{{@root.prefix}}--checkbox-label">Indeterminate checkbox</label>
+    <label for="{{@root.prefix}}--checkbox-ind" class="{{@root.prefix}}--checkbox-label"><span class="{{@root.prefix}}--checkbox-label-text">Indeterminate checkbox</span></label>
   </div>
   <!-- input + label checked disabled -->
   <div class="{{@root.prefix}}--form-item {{@root.prefix}}--checkbox-wrapper">
     <input id="{{@root.prefix}}--checkbox-new--disabled" class="{{@root.prefix}}--checkbox" type="checkbox" value="new"
       name="checkbox" checked disabled>
-    <label for="{{@root.prefix}}--checkbox-new--disabled" class="{{@root.prefix}}--checkbox-label">Checkbox</label>
+    <label for="{{@root.prefix}}--checkbox-new--disabled" class="{{@root.prefix}}--checkbox-label"><span class="{{@root.prefix}}--checkbox-label-text">Checkbox</span></label>
   </div>
   <!-- input + label indeterminate disabled -->
   <div class="{{@root.prefix}}--form-item {{@root.prefix}}--checkbox-wrapper">
     <input id="{{@root.prefix}}--checkbox-ind--disabled" class="{{@root.prefix}}--checkbox" type="checkbox" value="new"
       name="checkbox" aria-checked="mixed" disabled>
-    <label for="{{@root.prefix}}--checkbox-ind--disabled" class="{{@root.prefix}}--checkbox-label">Indeterminate
-      checkbox</label>
+    <label for="{{@root.prefix}}--checkbox-ind--disabled" class="{{@root.prefix}}--checkbox-label"><span class="{{@root.prefix}}--checkbox-label-text">Indeterminate
+      checkbox</span></label>
   </div>
   <!-- input + label disabled -->
   <div class="{{@root.prefix}}--form-item {{@root.prefix}}--checkbox-wrapper">
     <input id="{{@root.prefix}}--checkbox-disabled" class="{{@root.prefix}}--checkbox" type="checkbox" value="new"
       name="checkbox" disabled>
-    <label for="{{@root.prefix}}--checkbox-disabled" class="{{@root.prefix}}--checkbox-label">Disabled checkbox</label>
+    <label for="{{@root.prefix}}--checkbox-disabled" class="{{@root.prefix}}--checkbox-label"><span class="{{@root.prefix}}--checkbox-label-text">Disabled checkbox</span></label>
   </div>
 </fieldset>
 <fieldset class="{{@root.prefix}}--fieldset">
@@ -46,7 +46,7 @@
     <label for="{{@root.prefix}}--checkbox-new2" class="{{@root.prefix}}--checkbox-label">
       <input id="{{@root.prefix}}--checkbox-new2" class="{{@root.prefix}}--checkbox" type="checkbox" value="yellow"
         name="checkbox" checked>
-      Checkbox
+      <span class="{{@root.prefix}}--checkbox-label-text">Checkbox</span>
     </label>
   </div>
   <!-- label > input indeterminate -->
@@ -55,7 +55,7 @@
       data-contained-checkbox-state="mixed">
       <input id="{{@root.prefix}}--checkbox-ind2" class="{{@root.prefix}}--checkbox" type="checkbox" value="yellow"
         name="checkbox" aria-checked="mixed">
-      Indeterminate checkbox
+      <span class="{{@root.prefix}}--checkbox-label-text">Indeterminate checkbox</span>
     </label>
   </div>
   <!-- label > input checked disabled -->
@@ -63,7 +63,7 @@
     <label for="{{@root.prefix}}--checkbox-new2--disabled" class="{{@root.prefix}}--checkbox-label">
       <input id="{{@root.prefix}}--checkbox-new2--disabled" class="{{@root.prefix}}--checkbox" type="checkbox"
         value="yellow" name="checkbox" checked disabled>
-      Checkbox
+      <span class="{{@root.prefix}}--checkbox-label-text">Checkbox</span>
     </label>
   </div>
   <!-- label > input indeterminate disabled -->
@@ -72,7 +72,7 @@
       data-contained-checkbox-state="mixed">
       <input id="{{@root.prefix}}--checkbox-ind2--disabled" class="{{@root.prefix}}--checkbox" type="checkbox"
         value="yellow" name="checkbox" aria-checked="mixed" disabled>
-      Indeterminate checkbox
+      <span class="{{@root.prefix}}--checkbox-label-text">Indeterminate checkbox</span>
     </label>
   </div>
   <!-- label > input unchecked disabled -->
@@ -80,7 +80,7 @@
     <label for="{{@root.prefix}}--checkbox-disabled2" class="{{@root.prefix}}--checkbox-label">
       <input id="{{@root.prefix}}--checkbox-disabled2" class="{{@root.prefix}}--checkbox" type="checkbox" value="yellow"
         name="checkbox" disabled>
-      Disabled checkbox
+      <span class="{{@root.prefix}}--checkbox-label-text">Disabled checkbox</span>
     </label>
   </div>
 </fieldset>
