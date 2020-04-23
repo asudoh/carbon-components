@@ -16,8 +16,16 @@ $caption-01: (
   letter-spacing: 0.16px,
 );
 
+$label-01: (
+  font-size: carbon--type-scale(2),
+  font-weight: carbon--font-weight('regular'),
+  line-height: carbon--rem(18px),
+  letter-spacing: 0.16px,
+);
+
 $helper-text-01: (
   font-size: carbon--type-scale(2),
+  font-weight: carbon--font-weight('regular'),
   line-height: carbon--rem(18px),
   letter-spacing: 0.16px,
 );
@@ -60,52 +68,20 @@ $heading-01: (
 );
 
 $expressive-heading-01: (
-  font-size: carbon--type-scale(2),
+  font-size: carbon--type-scale(3),
   font-weight: carbon--font-weight('semibold'),
-  line-height: carbon--rem(20px),
+  line-height: carbon--rem(24px),
   letter-spacing: 0.16px,
 );
 
 @import '~carbon-components/scss/globals/scss/vendor/@carbon/elements/scss/layout/spacing';
-$spacing-01: 0.15rem;
-$spacing-02: 0.3rem;
-$spacing-03: 0.6rem;
-$spacing-04: 0.9rem;
-$spacing-05: 1.2rem;
-$spacing-06: 1.8rem;
-$spacing-07: 2.4rem;
-$spacing-08: 3rem;
-$spacing-09: 3.6rem;
-$spacing-10: 4.8rem;
-$spacing-11: 6rem;
-$spacing-12: 7.2rem;
-$layout-01: 1.44rem;
-$layout-02: 2.16rem;
-$layout-03: 2.88rem;
-$layout-04: 4.32rem;
-$layout-05: 5.76rem;
-$layout-06: 8.64rem;
-$layout-07: 14.4rem;
-$container-01: 1.8rem;
-$container-02: 2.4rem;
+$container-01: 2rem;
+$container-02: 2.5rem;
 $container-03: 3rem;
-$container-04: 3.6rem;
-$container-05: 4.8rem;
-$carbon--spacing-01: $spacing-01;
-$carbon--spacing-02: $spacing-02;
-$carbon--spacing-03: $spacing-03;
-$carbon--spacing-04: $spacing-04;
-$carbon--spacing-05: $spacing-05;
-$carbon--spacing-06: $spacing-06;
-$carbon--spacing-07: $spacing-07;
-$carbon--spacing-08: $spacing-08;
-$carbon--spacing-09: $spacing-09;
-$carbon--spacing-10: $spacing-10;
-$carbon--spacing-11: $spacing-11;
-$carbon--spacing-12: $spacing-12;
+$container-04: 3rem;
+$container-05: 4.5rem;
 
 $icon-size-01: 1.25rem;
-$icon-size-02: 1.5rem;
 
 $list-box-selection-size: 2.25rem;
 $list-box-selection-right: 2.7rem;
@@ -123,6 +99,7 @@ $carbon--theme--white: map-merge(
   $carbon--theme--white,
   (
     caption-01: $caption-01,
+    label-01: $label-01,
     helper-text-01: $helper-text-01,
     body-short-01: $body-short-01,
     body-long-01: $body-long-01,
@@ -130,32 +107,12 @@ $carbon--theme--white: map-merge(
     code-02: $code-02,
     heading-01: $heading-01,
     expressive-heading-01: $expressive-heading-01,
-    spacing-01: $spacing-01,
-    spacing-02: $spacing-02,
-    spacing-03: $spacing-03,
-    spacing-04: $spacing-04,
-    spacing-05: $spacing-05,
-    spacing-06: $spacing-06,
-    spacing-07: $spacing-07,
-    spacing-08: $spacing-08,
-    spacing-09: $spacing-09,
-    spacing-10: $spacing-10,
-    spacing-11: $spacing-11,
-    spacing-12: $spacing-12,
-    layout-01: $layout-01,
-    layout-02: $layout-02,
-    layout-03: $layout-03,
-    layout-04: $layout-04,
-    layout-05: $layout-05,
-    layout-06: $layout-06,
-    layout-07: $layout-07,
     container-01: $container-01,
     container-02: $container-02,
     container-03: $container-03,
     container-04: $container-04,
     container-05: $container-05,
     icon-size-01: $icon-size-01,
-    icon-size-02: $icon-size-02,
   )
 );
 
