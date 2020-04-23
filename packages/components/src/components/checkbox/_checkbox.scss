@@ -49,13 +49,13 @@
   .#{$prefix}--checkbox-label {
     @include reset;
     @include type-style('body-short-01');
-    line-height: 1.5rem;
+    line-height: $checkbox-label-line-height;
     position: relative;
     display: flex;
     cursor: pointer;
-    min-height: rem(24px);
+    min-height: $checkbox-label-line-height;
     user-select: none;
-    padding-left: rem(20px);
+    padding-left: $checkbox-label-padding;
   }
 
   .#{$prefix}--checkbox-label-text {
@@ -75,8 +75,8 @@
     // According to the spec, we'll want the bounding box for our checkbox to
     // be 16px. The border size will be what will be updated during the
     // different checkbox states.
-    width: rem(16px);
-    height: rem(16px);
+    width: $icon-size-01;
+    height: $icon-size-01;
     margin: rem(2px);
 
     // We need to position the pseudo-element absolutely in the space that we've
@@ -98,8 +98,8 @@
     content: '';
 
     position: absolute;
-    left: rem(6px);
-    top: rem(8px);
+    left: $checkbox-checkmark-left-position;
+    top: $checkbox-checkmark-top-position;
     width: rem(9px);
     height: rem(5px);
     background: none;
@@ -137,7 +137,8 @@
     border-left: 0 solid $inverse-01;
     border-bottom: 2px solid $inverse-01;
     width: rem(8px);
-    top: rem(11px);
+    left: $checkbox-indeterminate-mark-left-position;
+    top: $checkbox-indeterminate-mark-top-position;
   }
 
   //----------------------------------------------
@@ -155,6 +156,13 @@
   .#{$prefix}--checkbox-label[data-contained-checkbox-state='mixed'].#{$prefix}--checkbox-label__focus::before {
     // Must use box-shadow for appearance of multiple borders with rounded corners.
     box-shadow: 0 0 0 2px $inverse-01, 0 0 0 4px $focus;
+    // We can't use outline here because of the rounded corners so have to increase the width/height to fake an outline.
+    border-color: $focus;
+    border-width: 3px;
+    width: $checkbox-focused-icon-size;
+    height: $checkbox-focused-icon-size;
+    left: -2px;
+    top: 0;
   }
 
   //----------------------------------------------
