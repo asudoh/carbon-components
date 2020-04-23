@@ -34,7 +34,7 @@
     max-width: 100%; // restricts size of contained elements
     min-width: rem(32px); // ensures tag stays pill shaped;
     margin: $carbon--spacing-02;
-    border-radius: #{$tag-height * 0.625};
+    border-radius: $tag-border-radius;
     cursor: default;
 
     &:not(:first-child) {
