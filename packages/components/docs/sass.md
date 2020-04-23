@@ -131,7 +131,6 @@
   - [❌custom-property [mixin]](#custom-property-mixin)
   - [❌should-emit [function]](#should-emit-function)
   - [✅carbon--theme [mixin]](#carbon--theme-mixin)
-  - [❌emit-component-tokens [mixin]](#emit-component-tokens-mixin)
   - [✅carbon--theme--g10 [variable]](#carbon--theme--g10-variable)
   - [✅carbon--theme--g90 [variable]](#carbon--theme--g90-variable)
   - [✅carbon--theme--g100 [variable]](#carbon--theme--g100-variable)
@@ -4071,7 +4070,6 @@ $custom-property-prefix: 'cds';
 - **Group**: [@carbon/themes](#carbonthemes)
 - **Used by**:
   - [carbon--theme [mixin]](#carbon--theme-mixin)
-  - [emit-component-tokens [mixin]](#emit-component-tokens-mixin)
   - [custom-properties [mixin]](#custom-properties-mixin)
 
 ### ❌custom-property [mixin]
@@ -6033,57 +6031,6 @@ Define theme variables from a map of tokens
   - [icon-size-02 [variable]](#icon-size-02-variable)
   - [custom-property-prefix [variable]](#custom-property-prefix-variable)
 
-### ❌emit-component-tokens [mixin]
-
-<details>
-<summary>Source code</summary>
-
-```scss
-@mixin emit-component-tokens($tokens, $theme) {
-  @if type-of($tokens) == 'map' {
-    @each $key, $options in $tokens {
-      @each $option in $options {
-        $theme: map-get($option, 'theme');
-
-        @if ($theme == $carbon--theme) {
-          $value: map-get($option, 'value');
-
-          --#{$custom-property-prefix}-#{$key}: #{$value};
-        }
-      }
-    }
-  } @else {
-    @error 'Unable to find map';
-  }
-}
-```
-
-</details>
-
-- **Parameters**:
-
-| Name      | Description             | Type     | Default value |
-| --------- | ----------------------- | -------- | ------------- |
-| `$tokens` | Map of component tokens | `Map`    | —             |
-| `$theme`  | Theme identifier        | `String` | —             |
-
-**Example**:
-
-<details>
-<summary>Example code</summary>
-
-```scss
-@include emit-component-tokens($component-tokens);
-```
-
-</details>
-
-- **Group**: [@carbon/themes](#carbonthemes)
-- **Requires**:
-  - [tokens [variable]](#tokens-variable)
-  - [carbon--theme [variable]](#carbon--theme-variable)
-  - [custom-property-prefix [variable]](#custom-property-prefix-variable)
-
 ### ✅carbon--theme--g10 [variable]
 
 Carbon's g10 color theme
@@ -6484,7 +6431,6 @@ $carbon--theme: (
 - **Type**: `Map`
 - **Used by**:
   - [carbon--theme [mixin]](#carbon--theme-mixin)
-  - [emit-component-tokens [mixin]](#emit-component-tokens-mixin)
 
 ### ✅interactive-01 [variable]
 
@@ -7252,7 +7198,6 @@ $field-02: if(
   - [tabs [mixin]](#tabs-mixin)
   - [text-area [mixin]](#text-area-mixin)
   - [text-input [mixin]](#text-input-mixin)
-  - [tile [mixin]](#tile-mixin)
   - [toolbar [mixin]](#toolbar-mixin)
 
 ### ✅inverse-01 [variable]
@@ -13152,7 +13097,6 @@ $tokens: (
 - **Group**: [@carbon/type](#carbontype)
 - **Type**: `Map`
 - **Used by**:
-  - [emit-component-tokens [mixin]](#emit-component-tokens-mixin)
   - [carbon--type-classes [mixin]](#carbon--type-classes-mixin)
   - [carbon--type-style [mixin]](#carbon--type-style-mixin)
 
@@ -14358,7 +14302,7 @@ Checkbox styles
     @include skeleton;
     width: rem(100px);
     height: $spacing-05;
-    margin: auto 0;
+    margin: auto 0 auto rem(6px); // Add extra spacing when label is present
   }
 }
 ```
@@ -16146,7 +16090,6 @@ Data table core styles
   // -------------
   .#{$prefix}--data-table_inner-container {
     background-color: $ui-03;
-    padding-top: rem(48px);
     transform: translateZ(0);
   }
 
@@ -16164,7 +16107,8 @@ Data table core styles
     }
 
     thead {
-      position: fixed;
+      position: sticky;
+      z-index: 1;
       top: 0;
       width: 100%;
       overflow: scroll;
@@ -21487,12 +21431,22 @@ Progress indicator styles
     }
   }
 
+  .#{$prefix}--progress--space-equal .#{$prefix}--progress-step {
+    min-width: 8rem;
+    flex-grow: 1;
+  }
+
   .#{$prefix}--progress-line {
     position: absolute;
     left: 0;
     height: 1px;
     width: rem(128px);
     border: $progress-indicator-bar-width;
+  }
+
+  .#{$prefix}--progress--space-equal .#{$prefix}--progress-line {
+    min-width: rem(128px);
+    width: 100%;
   }
 
   .#{$prefix}--progress-step svg {
@@ -21533,6 +21487,11 @@ Progress indicator styles
     outline: none;
     color: $link-01;
     box-shadow: 0 rem(3px) 0 0 $link-01;
+  }
+
+  .#{$prefix}--progress--space-equal .#{$prefix}--progress-label {
+    max-width: 100%;
+    margin-right: 0.75rem;
   }
 
   .#{$prefix}--progress-label:active {
@@ -21622,7 +21581,22 @@ Progress indicator styles
 
   //unclickable button
   .#{$prefix}--progress-step-button--unclickable {
+    cursor: default;
     outline: none;
+  }
+
+  .#{$prefix}--progress-step-button--unclickable
+    .#{$prefix}--progress-label:hover {
+    color: $text-01;
+    cursor: default;
+    box-shadow: none;
+  }
+
+  .#{$prefix}--progress-step-button--unclickable
+    .#{$prefix}--tooltip__label:hover {
+    color: $link-01;
+    cursor: pointer;
+    box-shadow: 0 rem(1px) $link-01;
   }
 
   //DISABLED STYLING
@@ -23179,32 +23153,6 @@ Tabs styles
     padding: $carbon--spacing-05;
   }
 
-  .#{$prefix}--tabs--container
-    ~ .#{$prefix}--tab-content
-    .#{$prefix}--text-input,
-  .#{$prefix}--tabs--container
-    ~ .#{$prefix}--tab-content
-    .#{$prefix}--text-area,
-  .#{$prefix}--tabs--container
-    ~ .#{$prefix}--tab-content
-    .#{$prefix}--search-input,
-  .#{$prefix}--tabs--container
-    ~ .#{$prefix}--tab-content
-    .#{$prefix}--select-input,
-  .#{$prefix}--tabs--container ~ .#{$prefix}--tab-content .#{$prefix}--dropdown,
-  .#{$prefix}--tabs--container
-    ~ .#{$prefix}--tab-content
-    .#{$prefix}--dropdown-list,
-  .#{$prefix}--tabs--container
-    ~ .#{$prefix}--tab-content
-    .#{$prefix}--number
-    input[type='number'],
-  .#{$prefix}--tabs--container
-    ~ .#{$prefix}--tab-content
-    .#{$prefix}--date-picker__input {
-    background-color: $field-02;
-  }
-
   //-----------------------------
   // Skeleton state
   //-----------------------------
@@ -23814,17 +23762,6 @@ Tile styles
     }
   }
 
-  .#{$prefix}--tile .#{$prefix}--text-input,
-  .#{$prefix}--tile .#{$prefix}--text-area,
-  .#{$prefix}--tile .#{$prefix}--search-input,
-  .#{$prefix}--tile .#{$prefix}--select-input,
-  .#{$prefix}--tile .#{$prefix}--dropdown,
-  .#{$prefix}--tile .#{$prefix}--dropdown-list,
-  .#{$prefix}--tile .#{$prefix}--number input[type='number'],
-  .#{$prefix}--tile .#{$prefix}--date-picker__input {
-    background-color: $field-02;
-  }
-
   .#{$prefix}--tile--light {
     background-color: $ui-02;
   }
@@ -23993,7 +23930,6 @@ Tile styles
   - [prefix [variable]](#prefix-variable)
   - [ui-01 [variable]](#ui-01-variable)
   - [carbon--spacing-05 [variable]](#carbon--spacing-05-variable)
-  - [field-02 [variable]](#field-02-variable)
   - [ui-02 [variable]](#ui-02-variable)
   - [hover-ui [variable]](#hover-ui-variable)
   - [text-01 [variable]](#text-01-variable)
@@ -26862,6 +26798,7 @@ UI shell side nav
   }
 
   .#{$prefix}--side-nav--fixed
+    .#{$prefix}--side-nav__item:not(.#{$prefix}--side-nav__item--icon)
     .#{$prefix}--side-nav__menu
     a.#{$prefix}--side-nav__link {
     padding-left: mini-units(4);
