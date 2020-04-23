@@ -195,6 +195,11 @@ $accordion-title-margin: 0 0 0 $carbon--spacing-05 !default;
 /// @type Value
 /// @access public
 /// @group accordion
+$accordion-button-padding: carbon--rem(6px) 0 !default;
+
+/// @type Value
+/// @access public
+/// @group accordion
 $accordion-content-padding: 0 0 0 $carbon--spacing-05 !default;
 
 // Checkbox

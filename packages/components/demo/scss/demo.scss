@@ -25,6 +25,9 @@ $feature-flags: (
 );
 
 @import '../../src/globals/scss/vendor/@carbon/themes/scss/mixins';
+
+// Makes button height 48px ($container-03)
+$accordion-button-padding: carbon--rem(12px) 0;
 @import '../../src/globals/scss/styles';
 
 $deprecations--entry: true;
@@ -130,6 +133,10 @@ $deprecations--message: 'Deprecated code was found, this code will be removed be
     $theme: $carbon--theme--g100,
     $emit-custom-properties: true
   );
+}
+
+.component-example__live--rendered.accordion > div {
+  width: 100%;
 }
 
 .demo--container.demo--container--list-box > .demo--container__panel,
