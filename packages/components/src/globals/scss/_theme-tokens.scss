@@ -361,25 +361,56 @@ $list-box-sm-height: $container-02 !default;
 /// @group list-box
 $list-box-xl-height: $container-04 !default;
 
-/// @type Number
-/// @access private
-/// @group list-box
-$list-box-icon-padding: 2.625rem !default; // 2rem + SVG width
+// $list-box-icon-spacing-0n is basically for `padding-right` of combo box's text input,
+// where we want focus/invalid outline to take up the entire width including the area of icons,
+// but we don't want the editable area to overlap the area of icons.
+// We may put the focus outline to the outer element, but doing so requires `:focus-within`,
+// where polyfilling it (or requiring a polyfill) is a breaking change.
+//
+// $list-box-icon-spacing-0n equals to the sum of the following:
+// a) 2 * $spacing-05 (left/right space)
+// b) n * $icon-size-01
+// c) (n - 1) * $spacing-03 (spaces between icons)
+//
+// $list-box-inline-icon-spacing-0n equals to the sum of the following:
+// a) 2 * $spacing-03 (left/right space)
+// b) n * $icon-size-01
+// c) (n - 1) * $spacing-03 (spaces between icons)
 
 /// @type Number
-/// @access private
+/// @access public
 /// @group list-box
-$list-box-invalid-padding: 3.5rem !default;
+$list-box-icon-spacing-01: 2.5rem !default;
 
 /// @type Number
-/// @access private
+/// @access public
 /// @group list-box
-$list-box-selection-right: 2.0625rem !default; // The left position of close icon minus `$spacing-05`
+$list-box-icon-spacing-02: 4rem !default;
 
 /// @type Number
-/// @access private
+/// @access public
 /// @group list-box
-$list-box-selection-size: 1.875rem !default;
+$list-box-icon-spacing-03: 5.5rem !default;
+
+/// @type Number
+/// @access public
+/// @group list-box
+$list-box-inline-icon-spacing-01: 2rem !default;
+
+/// @type Number
+/// @access public
+/// @group list-box
+$list-box-inline-icon-spacing-02: 3.5rem !default;
+
+/// @type Number
+/// @access public
+/// @group list-box
+$list-box-inline-icon-spacing-03: 5rem !default;
+
+/// @type Number
+/// @access public
+/// @group list-box
+$list-box-selection-multi-space: 3.5rem !default;
 
 // Modal
 

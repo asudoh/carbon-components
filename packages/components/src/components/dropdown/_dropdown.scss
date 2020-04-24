@@ -94,7 +94,7 @@
     @include focus-outline('invalid');
 
     .#{$prefix}--dropdown-text {
-      padding-right: $list-box-invalid-padding;
+      padding-right: $list-box-icon-spacing-02;
     }
 
     + .#{$prefix}--form-requirement {
@@ -107,7 +107,7 @@
   .#{$prefix}--dropdown__invalid-icon {
     position: absolute;
     top: 50%;
-    right: $list-box-height;
+    right: $list-box-icon-spacing-01;
     fill: $support-01;
     transform: translateY(-50%);
     width: $icon-size-01;
@@ -142,6 +142,8 @@
     pointer-events: none;
     transition: transform $duration--fast-02 motion(standard, productive);
     transform-origin: 50% 45%;
+    width: $icon-size-01;
+    height: $icon-size-01;
   }
 
   button.#{$prefix}--dropdown-text {
@@ -162,7 +164,7 @@
     display: block;
     height: calc(100% + 1px); // Account for the border in `.bx--dropdown`
     padding-left: $carbon--spacing-05;
-    padding-right: $list-box-icon-padding;
+    padding-right: $list-box-icon-spacing-01;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -382,7 +384,8 @@
 
   .#{$prefix}--dropdown--inline .#{$prefix}--dropdown-text {
     display: inline-block;
-    padding: rem(7px) $list-box-inline-height rem(7px) $carbon--spacing-04; // TODO: spacing token
+    padding: rem(7px) $list-box-inline-icon-spacing-01 rem(7px)
+      $carbon--spacing-04; // TODO: spacing token
     height: $list-box-inline-height;
     overflow: visible;
     color: $text-01;
@@ -400,12 +403,12 @@
 
   .#{$prefix}--dropdown--inline.#{$prefix}--dropdown--invalid
     .#{$prefix}--dropdown__invalid-icon {
-    right: $list-box-inline-height;
+    right: $list-box-inline-icon-spacing-01;
   }
 
   .#{$prefix}--dropdown--inline.#{$prefix}--dropdown--invalid
     .#{$prefix}--dropdown-text {
-    padding-right: $list-box-invalid-padding;
+    padding-right: $list-box-inline-icon-spacing-02;
   }
 
   .#{$prefix}--dropdown--inline.#{$prefix}--dropdown--open:focus
