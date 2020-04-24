@@ -334,11 +334,6 @@ export default class MultiSelect extends React.Component {
                   invalidText={invalidText}
                   isOpen={isOpen}
                   {...getRootProps({ refKey: 'innerRef' })}>
-                  {invalid && (
-                    <WarningFilled16
-                      className={`${prefix}--list-box__invalid-icon`}
-                    />
-                  )}
                   <ListBox.Field
                     id={id}
                     tabIndex="0"
@@ -353,6 +348,11 @@ export default class MultiSelect extends React.Component {
                         selectionCount={selectedItem.length}
                         translateWithId={translateWithId}
                         disabled={disabled}
+                      />
+                    )}
+                    {invalid && (
+                      <WarningFilled16
+                        className={`${prefix}--list-box__invalid-icon`}
                       />
                     )}
                     <span

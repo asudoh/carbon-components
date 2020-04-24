@@ -98,28 +98,21 @@ $list-box-menu-width: rem(300px);
   }
 
   .#{$prefix}--list-box .#{$prefix}--text-input {
-    height: 100%;
+    grid-row: 1;
+    grid-column: 1/-1;
   }
 
   // invalid states
   .#{$prefix}--list-box__invalid-icon {
-    position: absolute;
-    top: 50%;
-    right: $carbon--spacing-08;
+    grid-area: invalid-icon;
     fill: $support-01;
-    transform: translateY(-50%);
     width: $icon-size-01;
     height: $icon-size-01;
+    margin-left: $carbon--spacing-03;
   }
 
   .#{$prefix}--list-box[data-invalid] .#{$prefix}--list-box__field {
     border-bottom: 0;
-    padding-right: carbon--mini-units(8);
-  }
-
-  .#{$prefix}--list-box[data-invalid].#{$prefix}--list-box--inline
-    .#{$prefix}--list-box__field {
-    padding-right: carbon--mini-units(7);
   }
 
   // Light variation for 'list-box'
@@ -185,17 +178,6 @@ $list-box-menu-width: rem(300px);
     cursor: not-allowed;
   }
 
-  // disabled && invalid
-  .#{$prefix}--list-box--disabled.#{$prefix}--list-box[data-invalid]
-    .#{$prefix}--list-box__field {
-    padding-right: $carbon--spacing-09;
-  }
-
-  .#{$prefix}--list-box--disabled.#{$prefix}--list-box[data-invalid].#{$prefix}--list-box--inline
-    .#{$prefix}--list-box__field {
-    padding-right: carbon--mini-units(4);
-  }
-
   // Inline variant for a `list-box`
   .#{$prefix}--list-box.#{$prefix}--list-box--inline {
     background-color: transparent;
@@ -230,13 +212,8 @@ $list-box-menu-width: rem(300px);
   }
 
   .#{$prefix}--list-box.#{$prefix}--list-box--inline
-    .#{$prefix}--list-box__field {
-    padding: 0 carbon--mini-units(4) 0 $carbon--spacing-03;
-  }
-
-  .#{$prefix}--list-box.#{$prefix}--list-box--inline
     .#{$prefix}--list-box__menu-icon {
-    right: $carbon--spacing-03;
+    margin-right: $carbon--spacing-03;
   }
 
   .#{$prefix}--list-box.#{$prefix}--list-box--inline
@@ -246,17 +223,20 @@ $list-box-menu-width: rem(300px);
 
   .#{$prefix}--list-box--inline .#{$prefix}--list-box__label {
     color: $text-01;
+    padding-left: $spacing-03;
+    padding-right: 0;
   }
 
   // The field we use for input, showing selection, etc.
   .#{$prefix}--list-box__field {
     @include button-reset;
     position: relative;
-    display: inline-flex;
+    display: inline-grid;
+    grid-template-areas: 'selection-multi content invalid-icon selection expando';
+    grid-template-columns: auto 1fr auto auto auto;
     align-items: center;
     vertical-align: top;
     height: calc(100% + 1px); // Account for the border in `.bx--list-box`
-    padding: 0 $carbon--spacing-09 0 $carbon--spacing-05;
     cursor: pointer;
     outline: none;
     white-space: nowrap;
@@ -275,40 +255,26 @@ $list-box-menu-width: rem(300px);
 
   // populated input field
   .#{$prefix}--list-box__field .#{$prefix}--text-input {
-    padding-right: carbon--mini-units(9);
+    padding-right: $list-box-icon-spacing-02;
   }
 
   // invalid && populated input field
   .#{$prefix}--list-box[data-invalid]
     .#{$prefix}--list-box__field
     .#{$prefix}--text-input {
-    padding-right: rem(98px); // to account for clear input button outline
-  }
-
-  .#{$prefix}--list-box[data-invalid]
-    .#{$prefix}--list-box__field
-    .#{$prefix}--text-input
-    + .#{$prefix}--list-box__invalid-icon {
-    right: rem(66px); // to account for clear input button outline
+    padding-right: $list-box-icon-spacing-03;
   }
 
   // empty input field
   .#{$prefix}--list-box__field .#{$prefix}--text-input--empty {
-    padding-right: $carbon--spacing-09;
+    padding-right: $list-box-icon-spacing-01;
   }
 
   // invalid && empty input field
   .#{$prefix}--list-box[data-invalid]
     .#{$prefix}--list-box__field
     .#{$prefix}--text-input--empty {
-    padding-right: carbon--mini-units(9);
-  }
-
-  .#{$prefix}--list-box[data-invalid]
-    .#{$prefix}--list-box__field
-    .#{$prefix}--text-input--empty
-    + .#{$prefix}--list-box__invalid-icon {
-    right: $list-box-height; // to account for clear input button outline
+    padding-right: $list-box-icon-spacing-02;
   }
 
   // Label for a `list-box__field`
@@ -319,23 +285,23 @@ $list-box-menu-width: rem(300px);
     text-overflow: ellipsis;
     overflow: hidden;
     white-space: nowrap;
+    grid-area: content;
+    padding-left: $carbon--spacing-05;
+    padding-right: $carbon--spacing-03;
   }
 
   // Menu status inside of a `list-box__field`
   .#{$prefix}--list-box__menu-icon {
-    position: absolute;
-    top: 0;
-    right: $carbon--spacing-05;
-    height: 100%;
+    grid-area: expando;
     display: flex;
-    align-items: center;
+    margin-left: $carbon--spacing-03;
+    margin-right: $carbon--spacing-05;
     transition: transform $duration--fast-01 motion(standard, productive);
     cursor: pointer;
   }
 
   .#{$prefix}--list-box__menu-icon > svg {
     fill: $icon-01;
-    height: 100%;
     width: $icon-size-01;
     height: $icon-size-01;
   }
@@ -346,16 +312,14 @@ $list-box-menu-width: rem(300px);
 
   // Selection indicator for a `list-box__field`
   .#{$prefix}--list-box__selection {
-    position: absolute;
-    right: $list-box-selection-right;
-    // top/transform used to center the combobox clear selection icon in IE11
-    top: 50%;
-    transform: translateY(-50%);
+    grid-area: selection;
+    padding: rem(5px);
+    margin-left: rem(3px);
+    margin-right: rem(-5px);
     display: flex;
-    justify-content: center;
     align-items: center;
-    height: $list-box-selection-size;
-    width: $list-box-selection-size;
+
+    // top/transform used to center the combobox clear selection icon in IE11
     cursor: pointer;
     user-select: none;
     transition: background-color $duration--fast-01 motion(standard, productive);
@@ -367,8 +331,8 @@ $list-box-menu-width: rem(300px);
 
   // reset multiselect selection counter positioning
   .#{$prefix}--list-box__selection--multi {
-    top: auto;
     transform: none;
+    z-index: 1;
   }
 
   .#{$prefix}--list-box__selection > svg {
@@ -398,9 +362,11 @@ $list-box-menu-width: rem(300px);
     width: auto;
     color: $inverse-01;
     line-height: 0;
+    grid-area: selection-multi;
+    margin-left: $carbon--spacing-03;
+    margin-right: $carbon--spacing-03;
     padding: rem(8px);
     padding-right: rem(2px); // Align with hover circle of X button
-    margin-right: rem(10px);
     border-radius: rem(12px);
   }
 
@@ -420,6 +386,10 @@ $list-box-menu-width: rem(300px);
   .#{$prefix}--list-box__selection--multi:focus,
   .#{$prefix}--list-box__selection--multi:hover {
     outline: none;
+  }
+
+  .#{$prefix}--list-box__selection--multi ~ .#{$prefix}--list-box__label {
+    padding-left: 0;
   }
 
   // Descendant of a `list-box` that displays a list of options to select

@@ -273,11 +273,6 @@ export default class Dropdown extends React.Component {
                 invalidText={invalidText}
                 light={light}
                 {...getRootProps({ refKey: 'innerRef' })}>
-                {invalid && (
-                  <WarningFilled16
-                    className={`${prefix}--list-box__invalid-icon`}
-                  />
-                )}
                 <ListBox.Field
                   id={id}
                   tabIndex="0"
@@ -286,6 +281,11 @@ export default class Dropdown extends React.Component {
                   aria-labelledby={`${labelId} ${fieldLabelId}`}
                   aria-describedby={helperId}
                   {...buttonProps}>
+                  {invalid && (
+                    <WarningFilled16
+                      className={`${prefix}--list-box__invalid-icon`}
+                    />
+                  )}
                   <span
                     id={fieldLabelId}
                     className={`${prefix}--list-box__label`}
