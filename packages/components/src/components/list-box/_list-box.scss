@@ -105,7 +105,7 @@ $list-box-menu-width: rem(300px);
   .#{$prefix}--list-box__invalid-icon {
     position: absolute;
     top: 50%;
-    right: $carbon--spacing-08;
+    right: $list-box-icon-spacing-01;
     fill: $support-01;
     transform: translateY(-50%);
     width: $icon-size-01;
@@ -114,12 +114,12 @@ $list-box-menu-width: rem(300px);
 
   .#{$prefix}--list-box[data-invalid] .#{$prefix}--list-box__field {
     border-bottom: 0;
-    padding-right: carbon--mini-units(8);
+    padding-right: $list-box-icon-spacing-02;
   }
 
   .#{$prefix}--list-box[data-invalid].#{$prefix}--list-box--inline
     .#{$prefix}--list-box__field {
-    padding-right: carbon--mini-units(7);
+    padding-right: $list-box-inline-icon-spacing-02;
   }
 
   // Light variation for 'list-box'
@@ -241,7 +241,7 @@ $list-box-menu-width: rem(300px);
 
   .#{$prefix}--list-box.#{$prefix}--list-box--inline
     .#{$prefix}--list-box__invalid-icon {
-    right: $carbon--spacing-07;
+    right: $list-box-inline-icon-spacing-01;
   }
 
   .#{$prefix}--list-box--inline .#{$prefix}--list-box__label {
@@ -256,7 +256,7 @@ $list-box-menu-width: rem(300px);
     align-items: center;
     vertical-align: top;
     height: calc(100% + 1px); // Account for the border in `.bx--list-box`
-    padding: 0 $carbon--spacing-09 0 $carbon--spacing-05;
+    padding: 0 $list-box-icon-spacing-01 0 $carbon--spacing-05;
     cursor: pointer;
     outline: none;
     white-space: nowrap;
@@ -275,40 +275,40 @@ $list-box-menu-width: rem(300px);
 
   // populated input field
   .#{$prefix}--list-box__field .#{$prefix}--text-input {
-    padding-right: carbon--mini-units(9);
+    padding-right: $list-box-icon-spacing-02;
   }
 
   // invalid && populated input field
   .#{$prefix}--list-box[data-invalid]
     .#{$prefix}--list-box__field
     .#{$prefix}--text-input {
-    padding-right: rem(98px); // to account for clear input button outline
+    padding-right: $list-box-icon-spacing-03;
   }
 
   .#{$prefix}--list-box[data-invalid]
     .#{$prefix}--list-box__field
     .#{$prefix}--text-input
     + .#{$prefix}--list-box__invalid-icon {
-    right: rem(66px); // to account for clear input button outline
+    right: $list-box-icon-spacing-02;
   }
 
   // empty input field
   .#{$prefix}--list-box__field .#{$prefix}--text-input--empty {
-    padding-right: $carbon--spacing-09;
+    padding-right: $list-box-icon-spacing-01;
   }
 
   // invalid && empty input field
   .#{$prefix}--list-box[data-invalid]
     .#{$prefix}--list-box__field
     .#{$prefix}--text-input--empty {
-    padding-right: carbon--mini-units(9);
+    padding-right: $list-box-icon-spacing-02;
   }
 
   .#{$prefix}--list-box[data-invalid]
     .#{$prefix}--list-box__field
     .#{$prefix}--text-input--empty
     + .#{$prefix}--list-box__invalid-icon {
-    right: $list-box-height; // to account for clear input button outline
+    right: $list-box-icon-spacing-01;
   }
 
   // Label for a `list-box__field`
@@ -347,15 +347,15 @@ $list-box-menu-width: rem(300px);
   // Selection indicator for a `list-box__field`
   .#{$prefix}--list-box__selection {
     position: absolute;
-    right: $list-box-selection-right;
+    right: $list-box-icon-spacing-01;
     // top/transform used to center the combobox clear selection icon in IE11
     top: 50%;
     transform: translateY(-50%);
     display: flex;
     justify-content: center;
     align-items: center;
-    height: $list-box-selection-size;
-    width: $list-box-selection-size;
+    padding: rem(5px);
+    margin-right: rem(-5px);
     cursor: pointer;
     user-select: none;
     transition: background-color $duration--fast-01 motion(standard, productive);
