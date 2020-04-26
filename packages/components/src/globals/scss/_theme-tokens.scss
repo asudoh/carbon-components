@@ -425,6 +425,11 @@ $modal-border-top: $brand-01 4px solid !default;
 /// @deprecated
 $modal-footer-background-color: $ui-03 !default;
 
+/// @type Number
+/// @access public
+/// @group list-box
+$modal-close-button-size: carbon--rem(48px) !default;
+
 // Notification
 
 /// @type Color

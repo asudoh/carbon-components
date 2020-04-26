@@ -314,11 +314,13 @@
 
   .#{$prefix}--modal-close {
     position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     top: 0;
     right: 0;
-    height: 3rem;
-    width: 3rem;
-    padding: rem(12px);
+    height: $modal-close-button-size;
+    width: $modal-close-button-size;
     border: 2px solid transparent;
     overflow: hidden;
     cursor: pointer;
@@ -333,6 +335,11 @@
       outline: none;
       border-color: $focus;
     }
+  }
+
+  .#{$prefix}--modal-close svg {
+    width: $icon-size-01;
+    height: $icon-size-01;
   }
 
   .#{$prefix}--modal-close::-moz-focus-inner {
