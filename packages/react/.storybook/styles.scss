@@ -67,6 +67,13 @@ $heading-01: (
   letter-spacing: 0,
 );
 
+$productive-heading-01: (
+  font-size: carbon--type-scale(3),
+  font-weight: carbon--font-weight('semibold'),
+  line-height: carbon--rem(22px),
+  letter-spacing: 0,
+);
+
 $expressive-heading-01: (
   font-size: carbon--type-scale(3),
   font-weight: carbon--font-weight('semibold'),
@@ -134,6 +141,7 @@ $carbon--theme--white: map-merge(
     code-01: $code-01,
     code-02: $code-02,
     heading-01: $heading-01,
+    productive-heading-01: $productive-heading-01,
     expressive-heading-01: $expressive-heading-01,
     container-01: $container-01,
     container-02: $container-02,
