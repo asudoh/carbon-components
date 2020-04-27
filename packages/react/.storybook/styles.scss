@@ -101,26 +101,6 @@ $checkbox-indeterminate-mark-top-position: 0.8125rem;
 $checkbox-label-padding: 1.5rem;
 $checkbox-label-line-height: 1.75rem; // Original line height (1.5rem) plus increased icon size
 
-// $list-box-icon-spacing-0n equals to the sum of the following:
-// a) $spacing-03 + $spacing-05 (left/right space)
-// b) n * $icon-size-01
-// c) (n - 1) * $spacing-03 (spaces between icons)
-
-$list-box-icon-spacing-01: 2.75rem;
-$list-box-icon-spacing-02: 4.5rem;
-$list-box-icon-spacing-03: 6.25rem;
-
-// $list-box-inline-icon-spacing-0n equals to the sum of the following:
-// a) 2 * $spacing-03 (left/right space)
-// b) n * $icon-size-01
-// c) (n - 1) * $spacing-03 (spaces between icons)
-
-$list-box-inline-icon-spacing-01: 2.25rem;
-$list-box-inline-icon-spacing-02: 4rem;
-$list-box-inline-icon-spacing-03: 5.75rem;
-
-$list-box-selection-multi-space: 3.75rem;
-
 $loading-size: 12.6rem;
 $loading-small-size: 2.4rem;
 
