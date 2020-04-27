@@ -368,7 +368,7 @@ $list-box-xl-height: $container-04 !default;
 // where polyfilling it (or requiring a polyfill) is a breaking change.
 //
 // $list-box-icon-spacing-0n equals to the sum of the following:
-// a) 2 * $spacing-05 (left/right space)
+// a) $spacing-05 + $spacing-03 (left/right space)
 // b) n * $icon-size-01
 // c) (n - 1) * $spacing-03 (spaces between icons)
 //
@@ -378,39 +378,53 @@ $list-box-xl-height: $container-04 !default;
 // c) (n - 1) * $spacing-03 (spaces between icons)
 
 /// @type Number
-/// @access public
+/// @access private
 /// @group list-box
-$list-box-icon-spacing-01: 2.5rem !default;
+$list-box-icon-spacing-01: calc(
+  #{$spacing-05} + #{$icon-size-01} + #{$spacing-03}
+) !default;
 
 /// @type Number
-/// @access public
+/// @access private
 /// @group list-box
-$list-box-icon-spacing-02: 4rem !default;
+$list-box-icon-spacing-02: calc(
+  #{$spacing-05} + 2 * #{$icon-size-01} + 2 * #{$spacing-03}
+) !default;
 
 /// @type Number
-/// @access public
+/// @access private
 /// @group list-box
-$list-box-icon-spacing-03: 5.5rem !default;
+$list-box-icon-spacing-03: calc(
+  #{$spacing-05} + 3 * #{$icon-size-01} + 3 * #{$spacing-03}
+) !default;
 
 /// @type Number
-/// @access public
+/// @access private
 /// @group list-box
-$list-box-inline-icon-spacing-01: 2rem !default;
+$list-box-inline-icon-spacing-01: calc(
+  2 * #{$spacing-03} + #{$icon-size-01}
+) !default;
 
 /// @type Number
-/// @access public
+/// @access private
 /// @group list-box
-$list-box-inline-icon-spacing-02: 3.5rem !default;
+$list-box-inline-icon-spacing-02: calc(
+  3 * #{$spacing-03} + 2 * #{$icon-size-01}
+) !default;
 
 /// @type Number
-/// @access public
+/// @access private
 /// @group list-box
-$list-box-inline-icon-spacing-03: 5rem !default;
+$list-box-inline-icon-spacing-03: calc(
+  4 * #{$spacing-03} + 3 * #{$icon-size-01}
+) !default;
 
 /// @type Number
-/// @access public
+/// @access private
 /// @group list-box
-$list-box-selection-multi-space: 3.5rem !default;
+$list-box-filterable-selection-multi-space: calc(
+  2.5rem + #{$icon-size-01}
+) !default;
 
 // Modal
 
