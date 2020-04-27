@@ -194,8 +194,9 @@
   }
 
   .#{$prefix}--btn--icon-only {
-    padding-left: calc(#{$carbon--spacing-05} - 1px);
-    padding-right: calc(#{$carbon--spacing-05} - 1px);
+    justify-content: center;
+    padding-left: 12px;
+    min-width: $button-height;
 
     .#{$prefix}--btn__icon {
       position: static;
@@ -235,13 +236,11 @@
   }
 
   .#{$prefix}--btn--field.#{$prefix}--btn--icon-only {
-    padding-left: calc(#{$carbon--spacing-04} - 1px);
-    padding-right: calc(#{$carbon--spacing-04} - 1px);
+    min-width: $button-field-height;
   }
 
   .#{$prefix}--btn--sm.#{$prefix}--btn--icon-only {
-    padding-left: calc(#{$carbon--spacing-03} - 1px);
-    padding-right: calc(#{$carbon--spacing-03} - 1px);
+    min-width: $button-sm-height;
   }
 
   .#{$prefix}--btn--danger {
