@@ -212,39 +212,17 @@ $checkbox-border-width: 2px !default;
 /// @type Number
 /// @access public
 /// @group checkbox
-$checkbox-checkmark-left-position: carbon--rem(6px) !default;
+$checkbox-focused-icon-size: calc(#{$icon-size-01} + 0.25rem) !default;
 
 /// @type Number
 /// @access public
 /// @group checkbox
-$checkbox-checkmark-top-position: carbon--rem(8px) !default;
+$checkbox-label-padding: calc(#{$icon-size-01} + #{$spacing-02}) !default;
 
 /// @type Number
 /// @access public
 /// @group checkbox
-$checkbox-indeterminate-mark-left-position: carbon--rem(6px) !default;
-
-/// @type Number
-/// @access public
-/// @group checkbox
-$checkbox-indeterminate-mark-top-position: carbon--rem(11px) !default;
-
-/// @type Number
-/// @access public
-/// @group checkbox
-$checkbox-focused-icon-size: carbon--rem(20px) !default;
-
-/// @type Number
-/// @access public
-/// @group checkbox
-$checkbox-label-padding: carbon--rem(
-  20px
-) !default; // `$icon-size-01 + $spacing-02`
-
-/// @type Number
-/// @access public
-/// @group checkbox
-$checkbox-label-line-height: carbon--rem(24px) !default;
+$checkbox-label-line-height: calc(#{$icon-size-01} + #{$spacing-03}) !default;
 
 // Code Snippet
 

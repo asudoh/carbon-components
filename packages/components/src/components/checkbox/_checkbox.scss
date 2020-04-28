@@ -98,16 +98,17 @@
     content: '';
 
     position: absolute;
-    left: $checkbox-checkmark-left-position;
-    top: $checkbox-checkmark-top-position;
+    left: calc(#{$icon-size-01} / 2);
+    top: calc(#{$icon-size-01} / 2);
     width: rem(9px);
     height: rem(5px);
     background: none;
     border-left: 2px solid $inverse-01;
     border-bottom: 2px solid $inverse-01;
-    transform: scale(0) rotate(-45deg);
-    transform-origin: bottom right;
-    margin-top: rem(-3px);
+    transform: translateX(-50%) translateY(-50%);
+    transform-origin: center;
+    margin-left: rem(2px);
+    margin-top: rem(3px);
   }
 
   //----------------------------------------------
@@ -127,18 +128,15 @@
   // Display the check
   .#{$prefix}--checkbox:checked + .#{$prefix}--checkbox-label::after,
   .#{$prefix}--checkbox-label[data-contained-checkbox-state='true']::after {
-    transform: scale(1) rotate(-45deg);
+    transform: translateX(-50%) translateY(-50%) rotate(-45deg);
   }
 
   // Indeterminate symbol
   .#{$prefix}--checkbox:indeterminate + .#{$prefix}--checkbox-label::after,
   .#{$prefix}--checkbox-label[data-contained-checkbox-state='mixed']::after {
-    transform: scale(1) rotate(0deg);
     border-left: 0 solid $inverse-01;
     border-bottom: 2px solid $inverse-01;
     width: rem(8px);
-    left: $checkbox-indeterminate-mark-left-position;
-    top: $checkbox-indeterminate-mark-top-position;
   }
 
   //----------------------------------------------
