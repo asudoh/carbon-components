@@ -195,7 +195,8 @@
 
   .#{$prefix}--btn--icon-only {
     justify-content: center;
-    padding-left: 12px;
+    padding-left: rem(12px);
+    padding-right: rem(12px);
     min-width: $button-height;
 
     .#{$prefix}--btn__icon {
@@ -237,10 +238,14 @@
 
   .#{$prefix}--btn--field.#{$prefix}--btn--icon-only {
     min-width: $button-field-height;
+    padding-left: rem(12px);
+    padding-right: rem(12px);
   }
 
   .#{$prefix}--btn--sm.#{$prefix}--btn--icon-only {
     min-width: $button-sm-height;
+    padding-left: rem(9px);
+    padding-right: rem(9px);
   }
 
   .#{$prefix}--btn--danger {
