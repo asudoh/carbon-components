@@ -60,12 +60,7 @@ export const getMenuOffset = (menuBody, direction, trigger) => {
   const menuWidth = menuBody.offsetWidth;
   const menuHeight = menuBody.offsetHeight;
 
-  // eslint-disable-next-line no-use-before-define
-  const menu = OverflowMenu.components.get(trigger);
-  if (!menu) {
-    throw new TypeError('Overflow menu instance cannot be found.');
-  }
-  const flip = menuBody.classList.contains(menu.options.classMenuFlip);
+  const flip = menuBody.classList.contains(this.options.classMenuFlip);
 
   if (
     triggerButtonPositionProp === 'top' ||
@@ -163,7 +158,7 @@ class OverflowMenu extends mixin(
         refNode: this.element,
         classShown: this.options.classMenuShown,
         classRefShown: this.options.classShown,
-        offset: this.options.objMenuOffset,
+        offset: this.options.objMenuOffset.bind(this),
         triggerNode: this.triggerNode,
         contentNode: this.element.querySelector(this.options.selectorContent),
       });
