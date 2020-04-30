@@ -255,7 +255,7 @@
 
   .#{$prefix}--date-picker__month .flatpickr-current-month,
   .flatpickr-month .flatpickr-current-month {
-    @include type-style('productive-heading-01');
+    @include type-style($date-picker-month-type);
     padding: 0;
   }
 
@@ -328,14 +328,14 @@
 
   span.#{$prefix}--date-picker__weekday,
   span.flatpickr-weekday {
-    @include type-style('body-short-01');
+    @include type-style($date-picker-day-type);
     color: $text-01;
     font-weight: 400;
   }
 
   .#{$prefix}--date-picker__day,
   .flatpickr-day {
-    @include type-style('body-short-01');
+    @include type-style($date-picker-day-type);
     display: flex;
     align-items: center;
     justify-content: center;

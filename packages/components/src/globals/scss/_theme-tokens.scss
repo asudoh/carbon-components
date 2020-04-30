@@ -337,6 +337,16 @@ $date-picker-calendar-width: 18rem !default;
 /// @group date-picker
 $date-picker-calendar-height: 21rem !default;
 
+/// @type String
+/// @access public
+/// @group date-picker
+$date-picker-day-type: 'body-short-01' !default;
+
+/// @type String
+/// @access public
+/// @group date-picker
+$date-picker-month-type: 'productive-heading-01' !default;
+
 // List box
 
 /// @type Number
