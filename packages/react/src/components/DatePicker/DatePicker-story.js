@@ -129,6 +129,7 @@ storiesOf('DatePicker', module)
           <DatePickerInput
             {...datePickerInputProps}
             id="date-picker-input-id-start"
+            iconMode="external"
           />
           <DatePickerInput
             {...datePickerInputProps}
@@ -159,6 +160,7 @@ storiesOf('DatePicker', module)
           <DatePickerInput
             {...datePickerInputProps}
             id="date-picker-input-id"
+            iconMode="external"
           />
           <DatePickerInput
             {...datePickerInputProps}

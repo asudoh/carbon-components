@@ -9,12 +9,11 @@
 <div class="{{@root.prefix}}--form-item">
   <div data-date-picker data-date-picker-type="range"
     class="{{@root.prefix}}--date-picker {{@root.prefix}}--date-picker--range">
-    <div class="{{@root.prefix}}--date-picker-container">
+    <div class="{{@root.prefix}}--date-picker-container {{@root.prefix}}--date-picker-container--with-external-icon">
       <label for="date-picker-1" class="{{@root.prefix}}--label">Start date label</label>
       <div class="{{@root.prefix}}--date-picker-input__wrapper">
         <input type="text" id="date-picker-1" class="{{@root.prefix}}--date-picker__input"
           pattern="\d{1,2}/\d{1,2}/\d{4}" placeholder="mm/dd/yyyy" data-date-picker-input-from />
-        {{ carbon-icon 'Calendar16' class=(add @root.prefix '--date-picker__icon') data-date-picker-icon="true" }}
       </div>
     </div>
     <div class="{{@root.prefix}}--date-picker-container">

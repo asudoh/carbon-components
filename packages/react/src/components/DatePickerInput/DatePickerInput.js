@@ -58,6 +58,11 @@ export default class DatePickerInput extends Component {
     type: PropTypes.string,
 
     /**
+     * Specify how the icon should be placed.
+     */
+    iconMode: PropTypes.oneOf(['embed', 'external']),
+
+    /**
      * Specify whether or not the input should be disabled
      */
     disabled: PropTypes.bool,
@@ -82,6 +87,7 @@ export default class DatePickerInput extends Component {
   static defaultProps = {
     pattern: '\\d{1,2}\\/\\d{1,2}\\/\\d{4}',
     type: 'text',
+    iconMode: 'embed',
     disabled: false,
     invalid: false,
     onClick: () => {},
@@ -92,6 +98,7 @@ export default class DatePickerInput extends Component {
     const {
       id,
       labelText,
+      iconMode,
       disabled,
       invalid,
       invalidText,
@@ -135,7 +142,7 @@ export default class DatePickerInput extends Component {
     });
 
     const datePickerIcon = (() => {
-      if (datePickerType === 'simple') {
+      if (iconMode !== 'embed' || datePickerType === 'simple') {
         return;
       }
       return (
@@ -161,6 +168,8 @@ export default class DatePickerInput extends Component {
 
     const containerClasses = classNames(`${prefix}--date-picker-container`, {
       [`${prefix}--date-picker--nolabel`]: !label,
+      [`${prefix}--date-picker-container--with-external-icon`]:
+        iconMode === 'external',
     });
 
     const input = invalid ? (
