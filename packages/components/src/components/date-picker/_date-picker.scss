@@ -57,19 +57,19 @@
 
   .#{$prefix}--date-picker.#{$prefix}--date-picker--simple {
     .#{$prefix}--date-picker__input {
-      width: rem(120px);
+      width: $date-picker-simple-width;
     }
   }
 
   .#{$prefix}--date-picker.#{$prefix}--date-picker--simple.#{$prefix}--date-picker--short {
     .#{$prefix}--date-picker__input {
-      width: 5.7rem;
+      width: $date-picker-short-width;
     }
   }
 
   .#{$prefix}--date-picker.#{$prefix}--date-picker--single
     .#{$prefix}--date-picker__input {
-    width: rem(288px);
+    width: $date-picker-calendar-width;
   }
 
   .#{$prefix}--date-picker__input {
@@ -80,7 +80,6 @@
     display: block;
     position: relative;
     height: $input-height;
-    min-width: rem(144px);
     padding: 0 $carbon--spacing-05;
     background-color: $field-01;
     border: none;
@@ -157,7 +156,7 @@
 
   .#{$prefix}--date-picker--range .#{$prefix}--date-picker-container,
   .#{$prefix}--date-picker--range .#{$prefix}--date-picker__input {
-    width: rem(143.5px);
+    width: calc(#{$date-picker-calendar-width} / 2);
   }
 
   .#{$prefix}--date-picker__calendar,
@@ -170,8 +169,8 @@
     justify-content: center;
     padding: $carbon--spacing-02 $carbon--spacing-02 $carbon--spacing-03
       $carbon--spacing-02;
-    width: rem(288px) !important;
-    height: rem(336px);
+    width: $date-picker-calendar-width !important;
+    height: $date-picker-calendar-height;
     border-radius: 0;
     border: none;
     overflow: hidden;
@@ -301,8 +300,6 @@
   .#{$prefix}--date-picker__day,
   .flatpickr-day {
     @include type-style('body-short-01');
-    height: rem(40px);
-    width: rem(40px);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -310,6 +307,10 @@
     border-radius: 0;
     border: none;
     transition: all $duration--fast-01 motion(standard, productive);
+    width: auto;
+    max-width: none;
+    height: auto;
+    line-height: inherit;
 
     &:hover {
       background: $hover-ui;
@@ -423,13 +424,31 @@
   .dayContainer {
     width: 100%;
     min-width: 100%;
-    height: rem(246px);
+  }
+
+  .#{$prefix}--date-picker__days {
+    flex: 1;
+  }
+
+  .dayContainer {
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
   }
 
   .flatpickr-innerContainer,
   .flatpickr-rContainer {
     width: 100%;
-    height: auto;
+  }
+
+  .flatpickr-innerContainer {
+    flex: 1;
+  }
+
+  .flatpickr-rContainer {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
   }
 
   .#{$prefix}--date-picker__weekdays,

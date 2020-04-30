@@ -317,6 +317,26 @@ $data-table-toolbar-small-height: $container-02 !default;
 /// @group date-picker
 $date-picker-in-range-background-color: $ibm-color__blue-20 !default;
 
+/// @type Number
+/// @access public
+/// @group date-picker
+$date-picker-short-width: 5.7rem !default;
+
+/// @type Number
+/// @access public
+/// @group date-picker
+$date-picker-simple-width: 7.5rem !default;
+
+/// @type Number
+/// @access public
+/// @group date-picker
+$date-picker-calendar-width: 18rem !default;
+
+/// @type Number
+/// @access public
+/// @group date-picker
+$date-picker-calendar-height: 21rem !default;
+
 // List box
 
 /// @type Number
