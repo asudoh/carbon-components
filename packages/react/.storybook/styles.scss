@@ -5,90 +5,10 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-// The minimum set of dependencies to define custom type tokens
-@import '~carbon-components/scss/globals/scss/vendor/@carbon/elements/scss/type/font-family';
-@import '~carbon-components/scss/globals/scss/vendor/@carbon/elements/scss/type/scale';
-
-$caption-01: (
-  font-size: carbon--type-scale(2),
-  font-weight: carbon--font-weight('regular'),
-  line-height: carbon--rem(18px),
-  letter-spacing: 0.16px,
-);
-
-$label-01: (
-  font-size: carbon--type-scale(2),
-  font-weight: carbon--font-weight('regular'),
-  line-height: carbon--rem(18px),
-  letter-spacing: 0.16px,
-);
-
-$helper-text-01: (
-  font-size: carbon--type-scale(2),
-  font-weight: carbon--font-weight('regular'),
-  line-height: carbon--rem(18px),
-  letter-spacing: 0.16px,
-);
-
-$body-short-01: (
-  font-size: carbon--type-scale(3),
-  font-weight: carbon--font-weight('regular'),
-  line-height: carbon--rem(22px),
-  letter-spacing: 0,
-);
-
-$body-long-01: (
-  font-size: carbon--type-scale(3),
-  font-weight: carbon--font-weight('regular'),
-  line-height: carbon--rem(24px),
-  letter-spacing: 0,
-);
-
-$code-01: (
-  font-family: carbon--font-family('mono'),
-  font-size: carbon--type-scale(2),
-  font-weight: carbon--font-weight('regular'),
-  line-height: carbon--rem(20px),
-  letter-spacing: 0,
-);
-
-$code-02: (
-  font-family: carbon--font-family('mono'),
-  font-size: carbon--type-scale(3),
-  font-weight: carbon--font-weight('regular'),
-  line-height: carbon--rem(24px),
-  letter-spacing: 0,
-);
-
-$heading-01: (
-  font-size: carbon--type-scale(3),
-  font-weight: carbon--font-weight('semibold'),
-  line-height: carbon--rem(22px),
-  letter-spacing: 0,
-);
-
-$productive-heading-01: (
-  font-size: carbon--type-scale(3),
-  font-weight: carbon--font-weight('semibold'),
-  line-height: carbon--rem(22px),
-  letter-spacing: 0,
-);
-
-$expressive-heading-01: (
-  font-size: carbon--type-scale(3),
-  font-weight: carbon--font-weight('semibold'),
-  line-height: carbon--rem(24px),
-  letter-spacing: 0.16px,
-);
-
-@import '~carbon-components/scss/globals/scss/vendor/@carbon/elements/scss/layout/spacing';
-$container-01: 2rem;
-$container-02: 2.5rem;
-$container-03: 3rem;
-$container-04: 3rem;
-$container-05: 4.5rem;
-
-$icon-size-01: 1.25rem;
+// IMPORTANT: Demo-purpose only code.
+// This import path should _not_ be used outside our source tree
+// as `demo` directory is _not_ shipped in our NPM package.
+@import '~carbon-components/demo/scss/expressive-theme';
 
 $accordion-button-padding: carbon--rem(12px) 0;
 
@@ -107,32 +27,6 @@ $loading-small-size: 2.4rem;
 $modal-close-button-size: 3.25rem;
 
 $tooltip-link-font-size: 1rem;
-
-@import '~carbon-components/scss/globals/scss/vendor/@carbon/elements/scss/themes/themes';
-// Ensures `$carbon--theme` and `$carbon--theme--white` are in sync
-// to ensure the comparison in `@function get-token-value` works.
-// Ref: https://github.com/carbon-design-system/carbon/blob/v10.11.0/packages/components/src/globals/scss/_component-tokens.scss#L28
-$carbon--theme--white: map-merge(
-  $carbon--theme--white,
-  (
-    caption-01: $caption-01,
-    label-01: $label-01,
-    helper-text-01: $helper-text-01,
-    body-short-01: $body-short-01,
-    body-long-01: $body-long-01,
-    code-01: $code-01,
-    code-02: $code-02,
-    heading-01: $heading-01,
-    productive-heading-01: $productive-heading-01,
-    expressive-heading-01: $expressive-heading-01,
-    container-01: $container-01,
-    container-02: $container-02,
-    container-03: $container-03,
-    container-04: $container-04,
-    container-05: $container-05,
-    icon-size-01: $icon-size-01,
-  )
-);
 
 $css--font-face: true;
 $css--reset: true;
