@@ -1,0 +1,9 @@
+$button-height: var(--button-height);
+
+@import 'carbon-components/scss/components/button/button';
+
+/* You can write your styles here 👇 */
+#app {
+  --button-height: 5rem;
+  max-width: 502px;
+}

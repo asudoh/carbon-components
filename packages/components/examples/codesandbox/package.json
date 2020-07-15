@@ -12,7 +12,8 @@
     "carbon-components": "latest"
   },
   "devDependencies": {
-    "parcel-bundler": "^1.10.0"
+    "parcel-bundler": "^1.10.0",
+    "sass": "^1.26.9"
   },
   "keywords": []
 }
